@@ -16,7 +16,7 @@
 
 <script src="../assets/plugins/select2/js/select2.min.js"></script>
 
-
+<script src="../assets/plugins/owlcarousel/owl.carousel.min.js"></script>
 <script src="../assets/plugins/apexchart/apexcharts.min.js"></script>
 <script src="../assets/plugins/apexchart/chart-data.js"></script>
 

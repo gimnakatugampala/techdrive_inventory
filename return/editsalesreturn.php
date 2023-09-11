@@ -175,7 +175,7 @@
 </div>
 <div class="col-lg-12">
 <a class="btn btn-submit me-2">Update</a>
-<a href="./salesreturnlist.html" class="btn btn-cancel">Cancel</a>
+<a href="../return/salesreturnlist.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>
