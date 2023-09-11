@@ -177,10 +177,10 @@
         </div>
         </div>
         <hr class="m-0">
-        <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My Profile</a>
-        <a class="dropdown-item" href="generalsettings.html"><i class="me-2" data-feather="settings"></i>Settings</a>
+        <a class="dropdown-item" href="../dashboard/profile.php"> <i class="me-2" data-feather="user"></i> My Profile</a>
+        <a class="dropdown-item" href="../dashboard/generalsettings.php"><i class="me-2" data-feather="settings"></i>Settings</a>
         <hr class="m-0">
-        <a class="dropdown-item logout pb-0" href="signin.html"><img src="../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+        <a class="dropdown-item logout pb-0" href="../auth/signin.php"><img src="../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
         </div>
         </div>
         </li>
@@ -190,9 +190,9 @@
         <div class="dropdown mobile-user-menu">
         <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
         <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="profile.html">My Profile</a>
-        <a class="dropdown-item" href="generalsettings.html">Settings</a>
-        <a class="dropdown-item" href="signin.html">Logout</a>
+        <a class="dropdown-item" href="../dashboard/profile.php">My Profile</a>
+        <a class="dropdown-item" href="../dashboard/generalsettings.php">Settings</a>
+        <a class="dropdown-item" href="../auth/signin.php">Logout</a>
         </div>
         </div>
         

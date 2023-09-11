@@ -18,10 +18,10 @@
 <div class="profile-top">
 <div class="profile-content">
 <div class="profile-contentimg">
-<img src="assets/img/customer/customer5.jpg" alt="img" id="blah">
+<img src="../assets/img/customer/customer5.jpg" alt="img" id="blah">
 <div class="profileupload">
 <input type="file" id="imgInp">
-<a href="javascript:void(0);"><img src="assets/img/icons/edit-set.svg" alt="img"></a>
+<a href="javascript:void(0);"><img src="../assets/img/icons/edit-set.svg" alt="img"></a>
 </div>
 </div>
 <div class="profile-contentname">

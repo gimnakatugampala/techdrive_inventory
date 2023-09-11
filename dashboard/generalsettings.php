@@ -72,7 +72,7 @@
 <div class="image-upload">
 <input type="file">
 <div class="image-uploads">
-<img src="assets/img/icons/upload.svg" alt="img">
+<img src="../assets/img/icons/upload.svg" alt="img">
 <h4>Drag and drop a file to upload</h4>
 </div>
 </div>
