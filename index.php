@@ -1,5 +1,5 @@
 <?php
-// New Commit
+// Second Commit
 header('Location: auth/signin.php');
 
 ?>
