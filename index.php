@@ -1,5 +1,5 @@
 <?php
 
-header('Location: dashboard/');
+header('Location: auth/signin.php');
 
 ?>

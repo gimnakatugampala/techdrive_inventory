@@ -10,7 +10,7 @@
 </div>
 <div class="page-btn">
 <a href="addquotation.html" class="btn btn-added">
-<img src="assets/img/icons/plus.svg" alt="img" class="me-2"> Add Quotation
+<img src="../assets/img/icons/plus.svg" alt="img" class="me-2"> Add Quotation
 </a>
 </div>
 </div>
