@@ -1,5 +1,5 @@
 <?php
-// Second Commit
+// Gimna Chnaged
 header('Location: auth/signin.php');
 
 ?>

@@ -12,7 +12,8 @@
 <div class="card">
 <div class="card-body">
 <div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Customer</label>
 <div class="row">
@@ -30,9 +31,10 @@
 </div>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
-<label>Customer</label>
+<label>Sale Date</label>
 <div class="input-groupicon">
 <input type="text" placeholder="Choose Date" class="datetimepicker">
 <a class="addonset">
@@ -41,15 +43,7 @@
 </div>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Supplier</label>
-<select class="select">
-<option>Choose</option>
-<option>Supplier Name</option>
-</select>
-</div>
-</div>
+
 <div class="col-lg-12 col-sm-6 col-12">
 <div class="form-group">
 <label>Product Name</label>
