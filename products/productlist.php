@@ -143,10 +143,10 @@
 <td>100.00</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="product-details.html">
+<a class="me-3" href="product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
 </a>
-<a class="me-3" href="editproduct.html">
+<a class="me-3" href="editproduct.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="confirm-text" href="javascript:void(0);">

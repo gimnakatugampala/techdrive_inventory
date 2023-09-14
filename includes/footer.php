@@ -24,5 +24,9 @@
 <script src="../assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
 <script src="../assets/js/script.js"></script>
+
+<script src="../assets/js/addbrand.js"></script>
+
+<script src="../assets/js/brandlist.js"></script>
 </body>
 </html>
