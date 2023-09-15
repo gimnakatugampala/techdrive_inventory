@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Perform a SQL query to check if the email and password exist in the database
+
     $sql = "SELECT * FROM tbuser WHERE username = '$email' AND password = '$password'";
     $result = $conn->query($sql);
 
