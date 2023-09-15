@@ -12,25 +12,22 @@
 <div class="card">
 <div class="card-body">
 <div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Supplier Name</label>
 <div class="row">
-<div class="col-lg-10 col-sm-10 col-10">
+<div class="col-lg-12 col-sm-10 col-10">
 <select class="select">
 <option>Select</option>
 <option>Supplier</option>
 </select>
 </div>
-<div class="col-lg-2 col-sm-2 col-2 ps-0">
-<div class="add-icon">
-<a href="javascript:void(0);"><img src="../assets/img/icons/plus1.svg" alt="img"></a>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Purchase Date </label>
 <div class="input-groupicon">
@@ -41,21 +38,8 @@
 </div>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Product Name</label>
-<select class="select">
-<option>Choose</option>
-<option>Supplier Name</option>
-</select>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Reference No.</label>
-<input type="text">
-</div>
-</div>
+
+
 <div class="col-lg-12 col-sm-6 col-12">
 <div class="form-group">
 <label>Product Name</label>

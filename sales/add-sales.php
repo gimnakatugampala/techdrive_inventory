@@ -17,17 +17,17 @@
 <div class="form-group">
 <label>Customer</label>
 <div class="row">
-<div class="col-lg-10 col-sm-10 col-10">
+<div class="col-lg-12 col-sm-10 col-10">
 <select class="select">
 <option>Choose</option>
 <option>Customer Name</option>
 </select>
 </div>
-<div class="col-lg-2 col-sm-2 col-2 ps-0">
+<!-- <div class="col-lg-2 col-sm-2 col-2 ps-0">
 <div class="add-icon">
 <span><img src="../assets/img/icons/plus1.svg" alt="img"></span>
 </div>
-</div>
+</div> -->
 </div>
 </div>
 </div>
@@ -55,6 +55,7 @@
 </div>
 </div>
 </div>
+
 </div>
 <div class="row">
 <div class="table-responsive mb-3">
