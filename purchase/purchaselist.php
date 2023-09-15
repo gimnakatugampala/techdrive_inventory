@@ -9,7 +9,7 @@
 <h6>Manage your purchases</h6>
 </div>
 <div class="page-btn">
-<a href="addpurchase.html" class="btn btn-added">
+<a href="../purchase/addpurchase.php" class="btn btn-added">
 <img src="../assets/img/icons/plus.svg" alt="img">Add New Purchases
 </a>
 </div>
@@ -128,7 +128,7 @@
 <td>550</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -152,7 +152,7 @@
 <td>410</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -176,7 +176,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -200,7 +200,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -224,7 +224,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">UnPaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -248,7 +248,7 @@
 <td>210</td>
 <td><span class="badges bg-lightgreen">paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -272,7 +272,7 @@
 <td>1000</td>
 <td><span class="badges bg-lightyellow">Partial</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -296,7 +296,7 @@
 <td>550</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -320,7 +320,7 @@
 <td>410</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -344,7 +344,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -368,7 +368,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -392,7 +392,7 @@
 <td>210</td>
 <td><span class="badges bg-lightred">UnPaid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -416,7 +416,7 @@
 <td>210</td>
 <td><span class="badges bg-lightgreen">paid</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -440,7 +440,7 @@
 <td>1000</td>
 <td><span class="badges bg-lightyellow">Partial</span></td>
 <td>
-<a class="me-3" href="editpurchase.html">
+<a class="me-3" href="../purchase/editpurchase.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">

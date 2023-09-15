@@ -118,10 +118,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -160,10 +160,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -202,10 +202,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -244,10 +244,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -285,10 +285,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -327,10 +327,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -369,10 +369,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -411,10 +411,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -453,10 +453,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -495,10 +495,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
@@ -537,10 +537,10 @@
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="sales-details.html" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
 <li>
-<a href="edit-sales.html" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>

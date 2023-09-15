@@ -121,7 +121,7 @@
 </div> -->
 <div class="col-lg-12">
 <a href="javascript:void(0);" class="btn btn-submit me-2">Update</a>
-<a href="productlist.html" class="btn btn-cancel">Cancel</a>
+<a href="../products/productlist.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>
