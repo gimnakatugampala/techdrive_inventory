@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Function to populate the table with data
   function populateTable(data) {
-    var tableBody = $("table.datanew tbody");
+    var tableBody = $("table.brandlist tbody");
 
     data.forEach(function (brand) {
       var row = $("<tr>");
@@ -11,7 +11,9 @@ $(document).ready(function () {
       row.append("<td>" + brand.brandname + "</td>");
       row.append("<td>" + brand.branddesciption + "</td>");
       row.append(
-        "<td><a class='me-3 btnedit'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-brand-id='" +
+        "<td><a class='me-3 btnedit'data-brand-id='" +
+          brand.id +
+          "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-brand-id='" +
           brand.id +
           "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
       );
