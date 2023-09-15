@@ -9,7 +9,7 @@
 <h6>View/Search product Category</h6>
 </div>
 <div class="page-btn">
-<a href="addcategory.html" class="btn btn-added">
+<a href="../products/addcategory.php" class="btn btn-added">
 <img src="../assets/img/icons/plus.svg" class="me-1" alt="img">Add Category
 </a>
 </div>
@@ -115,7 +115,7 @@
 <td>Computers Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -140,7 +140,7 @@
 <td>Fruits Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -165,7 +165,7 @@
 <td>Fruits Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -190,7 +190,7 @@
 <td>Fruits Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -215,7 +215,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -240,7 +240,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -265,7 +265,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -290,7 +290,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -315,7 +315,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -340,7 +340,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -365,7 +365,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -390,7 +390,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -415,7 +415,7 @@
 <td>Accessories Description</td>
 <td>Admin</td>
 <td>
-<a class="me-3" href="editcategory.html">
+<a class="me-3" href="../products/editcategory.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">

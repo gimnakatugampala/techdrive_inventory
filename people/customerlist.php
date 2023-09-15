@@ -9,7 +9,7 @@
 <h6>Manage your Customers</h6>
 </div>
 <div class="page-btn">
-<a href="addcustomer.html" class="btn btn-added"><img src="../assets/img/icons/plus.svg" alt="img">Add Customer</a>
+<a href="../people/addcustomer.php" class="btn btn-added"><img src="../assets/img/icons/plus.svg" alt="img">Add Customer</a>
 </div>
 </div>
 
@@ -113,7 +113,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1165797e7c7062517469707c617d743f727e7c">[email&#160;protected]</a></td>
 <!-- <td>USA</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -140,7 +140,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbfa9afa8b3b1b9ae9cb9a4bdb1acb0b9f2bfb3b1">[email&#160;protected]</a></td>
 <!-- <td>USA</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -167,7 +167,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d0e181e190200081f2d08150c001d0108430e0200">[email&#160;protected]</a></td>
 <!-- <td>USA</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -194,7 +194,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aeccdcdbc5c2c7c0eecbd6cfc3dec2cb80cdc1c3">[email&#160;protected]</a></td>
 <!-- <td>Thailand</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -221,7 +221,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0143647764736d78416479606c716d642f626e6c">[email&#160;protected]</a></td>
 <!-- <td>Phuket island</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -248,7 +248,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e8a09d8a8d9aa88d90898598848dc68b8785">[email&#160;protected]</a></td>
 <!-- <td>Germany</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -275,7 +275,7 @@
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e7d6b6d6a71737b6c5e7b667f736e727b307d7173">[email&#160;protected]</a></td>
 <!-- <td>Angola</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -302,7 +302,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="573d383f3917322f363a273b327934383a">[email&#160;protected]</a></td>
 <!-- <td>Albania</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -329,7 +329,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a320f181f083a1f021b170a161f54191517">[email&#160;protected]</a></td>
 <!-- <td>Germany</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -356,7 +356,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caa9bfb9bea5a7afb88aafb2aba7baa6afe4a9a5a7">[email&#160;protected]</a></td>
 <!-- <td>Angola</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -383,7 +383,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e040106002e0b160f031e020b400d0103">[email&#160;protected]</a></td>
 <!-- <td>Albania</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -410,7 +410,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c68eb3a4a3b486a3bea7abb6aaa3e8a5a9ab">[email&#160;protected]</a></td>
 <!-- <td>Germany</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -438,7 +438,7 @@ WC
 <!-- <td>Angola</td> -->
 <td>
 
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
@@ -465,7 +465,7 @@ WC
 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec4c1c6c0eecbd6cfc3dec2cb80cdc1c3">[email&#160;protected]</a></td>
 <!-- <td>Albania</td> -->
 <td>
-<a class="me-3" href="editcustomer.html">
+<a class="me-3" href="../people/editcustomer.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
 <a class="me-3 confirm-text" href="javascript:void(0);">
