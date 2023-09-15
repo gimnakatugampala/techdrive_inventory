@@ -27,7 +27,7 @@ $(document).ready(function () {
     populateTable(data);
   });
 
-  $("table.datanew").on("click", ".btnedit", function () {
+  $("table.brandlist").on("click", ".btnedit", function () {
     var brandId = $(this).data("brand-id");
     var brandName = $(this).closest("tr").find("td:nth-child(2)").text();
     var brandDescription = $(this).closest("tr").find("td:nth-child(3)").text();
@@ -42,7 +42,7 @@ $(document).ready(function () {
       encodeURIComponent(brandDescription);
   });
 
-  $("table.datanew").on("click", ".btn-delete", function () {
+  $("table.brandlist").on("click", ".btn-delete", function () {
     var brandId = $(this).data("brand-id");
 
     if (confirm("Are you sure you want to delete this brand?")) {
