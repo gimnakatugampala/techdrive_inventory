@@ -46,25 +46,20 @@
 </select>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
-    <div class="form-group">
-    <label>Price</label>
-    <input type="text" value="1500.00">
-    </div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Warrenty</label>
 <input type="text" value="4">
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Minimum Qty</label>
 <input type="text" value="5">
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Quantity</label>
 <input type="text" value="50">
@@ -87,6 +82,22 @@
 </select>
 </div>
 </div>
+
+<div class="col-lg-4 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Selling Price</label>
+        <input value="10.00" type="text">
+    </div>
+</div>
+
+<div class="col-lg-4 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Buying Price</label>
+        <input value="5.00" type="text">
+    </div>
+</div>
+
+
 <!-- <div class="col-lg-12">
 <div class="form-group">
 <label> Product Image</label>
