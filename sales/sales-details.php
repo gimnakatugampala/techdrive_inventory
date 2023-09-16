@@ -64,12 +64,15 @@
 Product Name
 </td>
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
-QTY
-</td>
-<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Price
 </td>
+<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+QTY
+</td>
 
+<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+Dicount
+</td>
 
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Subtotal
@@ -77,52 +80,66 @@ Subtotal
 </tr>
 <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
 <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
-<img src="../assets/img/product/product1.jpg" alt="img" class="me-2" style="width:40px;height:40px;">
+<img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
 Macbook pro
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1.00
 </td>
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
 
 <td style="padding: 10px;vertical-align: top; ">
+1.00
+</td>
+
+<td style="padding: 10px;vertical-align: top; ">
+00.00
+</td>
+<td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
 </tr>
+
 <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
 <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
-<img src="../assets/img/product/product7.jpg" alt="img" class="me-2" style="width:40px;height:40px;">
+<img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
 Apple Earpods
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1.00
 </td>
 <td style="padding: 10px;vertical-align: top; ">
 2000.00
 </td>
+<td style="padding: 10px;vertical-align: top; ">
+1.00
+</td>
 
+<td style="padding: 10px;vertical-align: top; ">
+00.00
+</td>
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
 </tr>
+
 <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
 <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
-<img src="../assets/img/product/product8.jpg" alt="img" class="me-2" style="width:40px;height:40px;">
+<img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
 samsung
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1.00
 </td>
 <td style="padding: 10px;vertical-align: top; ">
 8000.00
 </td>
 
 <td style="padding: 10px;vertical-align: top; ">
+1.00
+</td>
+
+<td style="padding: 10px;vertical-align: top; ">
+00.00
+</td>
+<td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="row">
@@ -140,7 +157,7 @@ samsung
 <h5>Rs. 0.00</h5>
 </li>
 <li>
-<h4>Discount	</h4>
+<h4>Discount</h4>
 <h5>Rs. 0.00</h5>
 </li>
 <li>
@@ -163,6 +180,6 @@ samsung
 </div>
 
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
+
 
 <?php require_once '../includes/footer.php' ?>

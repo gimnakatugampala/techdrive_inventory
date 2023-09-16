@@ -9,7 +9,7 @@
 <div class="page-header">
 <div class="page-title">
 <h4>Pending Sales</h4>
-<h6>Manage your sales</h6>
+<h6>Manage your pending sales</h6>
 </div>
 
 </div>
@@ -85,13 +85,12 @@
 </th>
 <th>Customer Name</th>
 <th>Date</th>
-<th>Reference</th>
+<th>Sales Code</th>
 <th>Status</th>
 <th>Payment</th>
 <th>Total</th>
 <th>Paid</th>
 <th>Due</th>
-<th>Biller</th>
 <th class="text-center">Action</th>
 </tr>
 </thead>
@@ -111,7 +110,6 @@
 <td>0.00</td>
 <td>0.00</td>
 <td class="text-red">100.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -124,16 +122,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -153,30 +148,31 @@
 <td>0.00</td>
 <td>0.00</td>
 <td class="text-red">100.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
 </a>
 <ul class="dropdown-menu">
+
 <li>
 <a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
 </li>
+
 <li>
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
+
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
  </li>
+
+ <li>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
+</li>
 </ul>
 </td>
 </tr>
@@ -195,7 +191,6 @@
 <td>0.00</td>
 <td class="text-green">100.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -208,16 +203,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -237,7 +229,6 @@
 <td>0.00</td>
 <td class="text-green">100.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -250,16 +241,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -278,7 +266,6 @@
 <td><span class="badges bg-lightred">Due</span></td><td>0.00</td>
 <td>0.00</td>
 <td class="text-green">100.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -291,16 +278,10 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 </ul>
 </td>
@@ -320,7 +301,6 @@
 <td>0.00</td>
 <td>0.00</td>
 <td class="text-red">100.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -333,16 +313,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -362,7 +339,6 @@
 <td>0.00</td>
 <td>0.00</td>
 <td class="text-red">100.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -375,16 +351,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -404,7 +377,6 @@
 <td>0.00</td>
 <td class="text-green">100.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -417,16 +389,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>
@@ -446,7 +415,6 @@
 <td>0.00</td>
 <td class="text-green">100.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -459,16 +427,10 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 </ul>
 </td>
@@ -488,7 +450,6 @@
 <td>0.00</td>
 <td class="text-green">100.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -501,16 +462,10 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 </ul>
 </td>
@@ -530,7 +485,6 @@
 <td>0.00</td>
 <td>0.00</td>
 <td>0.00</td>
-<td>Admin</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -543,16 +497,13 @@
 <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="../assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="../assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
 </li>
 <li>
-<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
-</li>
-<li>
-<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
 </li>
 </ul>
 </td>

@@ -597,13 +597,14 @@ $(document).ready(function () {
     <td>${count}</td>
     <td class="productimgname">
     <a class="product-img">
-    <img src="../assets/img/product/product7.jpg" alt="product">
+    <img src="../assets/img/product/noimage.png" alt="product">
     </a>
     <a href="javascript:void(0);">Apple Earpods</a>
     </td>
-    <td><input type="number" class="form-control" value="1"></td>
-    <td><input type="text" class="form-control" value="1500.00"></td>
     <td>1500.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td>1500.00</td>
     <td>
     <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
     </td>
@@ -616,7 +617,6 @@ $(document).ready(function () {
 
   
 // Edit Sales
-
 let edittableBody;
 let editmarkup = "";
 
@@ -630,13 +630,14 @@ $('#edit-sales-items-select').on('change', function() {
   <td>${editcount}</td>
   <td class="productimgname">
   <a class="product-img">
-  <img src="../assets/img/product/product7.jpg" alt="product">
+  <img src="../assets/img/product/noimage.png" alt="product">
   </a>
   <a href="javascript:void(0);">Apple Earpods</a>
   </td>
-  <td><input type="number" class="form-control" value="1"></td>
-  <td><input type="text" class="form-control" value="1500.00"></td>
   <td>1500.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td>1500.00</td>
   <td>
   <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
   </td>
@@ -646,6 +647,44 @@ $('#edit-sales-items-select').on('change', function() {
   edittableBody.append(editmarkup);
   
 });
+
+
+// Add Purchase Order - Product Item
+let addpurchasetableBody;
+let addpurchasemarkup = "";
+
+let addpurchasecount=0;
+
+$('#add-purchase-items-select').on('change', function() {
+  console.log( this.value );
+
+  
+  addpurchasecount+=1;
+  addpurchasemarkup = `
+  <tr>
+    <td class="productimgname">
+    <a class="product-img">
+    <img src="../assets/img/product/noimage.png" alt="product">
+    </a>
+    <a href="javascript:void(0);">Apple Earpods</a>
+    </td>
+    <td><input type="text" class="form-control" value="10.00"></td>
+    <td><input type="text" class="form-control" value="2000.00"></td>
+    <td><input type="text" class="form-control" value="0.00"></td>
+    <td class="text-end">2000.00</td>
+    <td>
+    <a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+    </td>
+  </tr>
+      
+      `;
+
+  addpurchasetableBody = $("table #table-add-purchase");
+  addpurchasetableBody.append(addpurchasemarkup);
+  
+});
+
+
 
 
 
