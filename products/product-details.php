@@ -51,8 +51,12 @@
 <h6>50</h6>
 </li>
 <li>
-<h4>Price</h4>
+<h4>Selling Price</h4>
 <h6>1500.00</h6>
+</li>
+<li>
+<h4>Buying Price</h4>
+<h6>1200.00</h6>
 </li>
 <li>
 <h4>Availablity</h4>

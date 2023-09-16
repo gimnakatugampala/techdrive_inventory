@@ -48,25 +48,20 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
+                  
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Warrenty</label>
                             <input type="text">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Minimum Qty</label>
                             <input type="text">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Quantity</label>
                             <input type="text">
@@ -103,13 +98,27 @@
 <input type="text">
 </div>
 </div> -->
-                    <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Availablity</label>
                             <select class="select">
                                 <option>In Stock</option>
                                 <option>Out of Stock</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Selling Price</label>
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Buying Price</label>
+                            <input type="text">
                         </div>
                     </div>
                     <!-- <div class="col-lg-12">

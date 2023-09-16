@@ -15,7 +15,7 @@
 <h2>Sale Detail : SL0101</h2>
 <ul>
 <li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+<a href="../sales/edit-sales.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
 </li>
 <li>
 <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
@@ -37,17 +37,11 @@
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Customer Info</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> walk-in-customer</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a4d5b565117535417594f494e55575f487a5f425b574a565f14595557">[email&#160;protected]</a></font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="mailto:gimna@gmail.com" class="__cf_email__" >gimna@gmail.com</a></font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 123456780</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> N45 , Dhaka</font></font><br>
 </td>
-<td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
-<font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Company Info</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> DGT </font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ffefbf2f6f1dffae7fef2eff3fab1fcf0f2">[email&#160;protected]</a></font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">6315996770</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 3618 Abia Martin Drive</font></font><br>
-</td>
+
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Invoice Info</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Reference </font></font><br>
@@ -61,7 +55,8 @@
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#2E7D32;font-weight: 400;"> Completed</font></font><br>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </td>
 </tr>
 <tr class="heading " style="background: #F3F2F7;">
@@ -74,12 +69,8 @@ QTY
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Price
 </td>
-<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
-Discount
-</td>
-<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
-TAX
-</td>
+
+
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Subtotal
 </td>
@@ -95,12 +86,7 @@ Macbook pro
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
+
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
@@ -116,12 +102,7 @@ Apple Earpods
 <td style="padding: 10px;vertical-align: top; ">
 2000.00
 </td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
+
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
@@ -137,12 +118,7 @@ samsung
 <td style="padding: 10px;vertical-align: top; ">
 8000.00
 </td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-0.00
-</td>
+
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
@@ -150,67 +126,34 @@ samsung
 </tbody></table>
 </div>
 <div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Order Tax</label>
-<input type="text">
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Discount</label>
-<input type="text">
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Shipping</label>
-<input type="text">
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Status</label>
-<select class="select">
-<option>Choose Status</option>
-<option>Completed</option>
-<option>Inprogress</option>
-</select>
-</div>
-</div>
+
 <div class="row">
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
-<ul>
-<li>
-<h4>Order Tax</h4>
-<h5>$ 0.00 (0.00%)</h5>
-</li>
-<li>
-<h4>Discount	</h4>
-<h5>$ 0.00</h5>
-</li>
-</ul>
 </div>
 </div>
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
 <ul>
 <li>
-<h4>Shipping</h4>
-<h5>$ 0.00</h5>
+<h4>Grand Total</h4>
+<h5>Rs. 0.00</h5>
+</li>
+<li>
+<h4>Discount	</h4>
+<h5>Rs. 0.00</h5>
+</li>
+<li>
+<h4>Paid Amount</h4>
+<h5>Rs. 0.00</h5>
 </li>
 <li class="total">
-<h4>Grand Total</h4>
-<h5>$ 0.00</h5>
+<h4>To Be Paid</h4>
+<h5>Rs. 0.00</h5>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Update</a>
-<a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>

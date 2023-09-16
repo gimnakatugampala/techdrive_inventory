@@ -114,10 +114,10 @@
 <th>Warrenty</th>
 <th>Category </th>
 <th>Brand</th>
-<th>price</th>
+<th>Buying Price</th>
 <th>Availability</th>
 <th>Qty</th>
-<th>Created By</th>
+<th>Selling Price</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -141,7 +141,7 @@
 <td>1500.00</td>
 <td><span class="badges bg-lightgreen">InStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -173,7 +173,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -205,7 +205,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -237,7 +237,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -269,7 +269,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>150.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -301,7 +301,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -333,7 +333,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
- <td>Admin</td>
+ <td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -365,7 +365,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -397,7 +397,7 @@
 <td>10.00</td>
 <td><span class="badges bg-lightred">OutStock</span></td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -429,7 +429,7 @@
 <td>10.00</td>
 <td>kg</td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
@@ -461,7 +461,7 @@
 <td>10.00</td>
 <td>kg</td>
 <td>100.00</td>
-<td>Admin</td>
+<td>90.00</td>
 <td>
 <a class="me-3" href="../products/product-details.php">
 <img src="../assets/img/icons/eye.svg" alt="img">
