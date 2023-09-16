@@ -334,11 +334,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<!-- <td>
-<a class="product-img">
-<img src="../assets/img/product/product9.jpg" alt="product">
-</a>
-</td> -->
 <td>Computers</td>
 <td>Computers</td>
 <td>CT009</td>
@@ -547,7 +542,6 @@
 </a>
 </td>
 </tr>
-
 <tr>
 <td>
 <label class="checkboxs">
