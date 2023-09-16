@@ -1,6 +1,14 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
 
+<?php
+// Retrieve brand ID, brand name, and brand description from query parameters
+$supname = isset( $_GET[ 'supname' ] ) ? $_GET[ 'supname' ] : '';
+$supemail = isset( $_GET[ 'supemail' ] ) ? $_GET[ 'supemail' ] : '';
+$supphone = isset( $_GET[ 'supphone' ] ) ? $_GET[ 'supphone' ] : '';
+$supaddress = isset( $_GET[ 'supaddress' ] ) ? $_GET[ 'supaddress' ] : '';
+?>
+
 
 <div class="page-wrapper">
 <div class="content">
@@ -17,67 +25,38 @@
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Supplier Name</label>
-<input type="text" value="Apex Computers">
+<input type="text" id="supname" name="supname"
+value = "<?php echo htmlspecialchars($_GET['supname']); ?>">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Email</label>
-<input type="text" value="Apexcomputers@example.com">
+<input type="text" id="supemail" name="supemail"
+value = "<?php echo htmlspecialchars($_GET['supemail']); ?>">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Phone</label>
-<input type="text" value="+12163547758 ">
+<input type="number" id="supphone" name="supphone"
+value = "<?php echo htmlspecialchars($_GET['supphone']); ?>">
 </div>
 </div>
-<!-- <div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Choose Country</label>
-<select class="select">
-<option>United States</option>
-<option>India</option>
-</select>
-</div>
-</div> -->
-<!-- <div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>City</label>
-<select class="select">
-<option>Newyork</option>
-<option>City 1</option>
-</select>
-</div>
-</div> -->
+
 <div class="col-lg-12 col-12">
 <div class="form-group">
 <label>Address</label>
-<input type="text" value="132, My Street, Kingston, New York ">
+<input type="text" id="supaddress" name="supaddress"
+value = "<?php echo htmlspecialchars($_GET['supaddress']); ?>">
 </div>
 </div>
-<!-- <div class="col-lg-12">
-<div class="form-group">
-<label>Description</label>
-<textarea class="form-control">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </textarea>
-</div>
-</div>
+
 <div class="col-lg-12">
-<div class="form-group">
-<label> Avatar</label>
-<div class="image-upload">
-<input type="file">
-<div class="image-uploads">
-<img src="../assets/img/icons/upload.svg" alt="img">
-<h4>Drag and drop a file to upload</h4>
+<a class="btn btn-submit me-2" id="updateSup">Update</a>
 </div>
-</div>
-</div>
-</div> -->
-<div class="col-lg-12">
-<a class="btn btn-submit me-2">Update</a>
-<a class="btn btn-cancel">Cancel</a>
-</div>
+<input type = 'hidden' id = 'supid' name = 'supid'
+value = "<?php echo htmlspecialchars($_GET['supid']); ?>">
 </div>
 </div>
 </div>

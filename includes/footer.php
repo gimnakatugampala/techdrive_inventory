@@ -34,6 +34,18 @@
 <script src="../assets/js/catedit.js"></script>
 <script src="../assets/js/loadcatlist.js"></script>
 <script src="../assets/js/subcatadd.js"></script>
+<script src="../assets/js/subcatlist.js"></script>
+<script src="../assets/js/editsubcat.js"></script>
+
+<script src="../assets/js/People/addcustomer.js"></script>
+<script src="../assets/js/People/customerlist.js"></script>
+<script src="../assets/js/People/editcustomer.js"></script>
+
+
+<script src="../assets/js/People/addsupplier.js"></script>
+<script src="../assets/js/People/supplierlist.js"></script>
+<script src="../assets/js/People/editsupplier.js"></script>
+
 
 </body>
 </html>

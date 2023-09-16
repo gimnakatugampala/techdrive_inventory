@@ -6,7 +6,7 @@
 <div class="page-header">
 <div class="page-title">
 <h4>Customer Management</h4>
-<h6>Add/Update Customer</h6>
+<h6>Add Customer</h6>
 </div>
 </div>
 
@@ -16,48 +16,29 @@
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Customer Name</label>
-<input type="text">
+<input type="text" id="cusname" Name="cusname">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Email</label>
-<input type="text">
+<input type="text" id="cusemail" Name="cusemail">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Phone</label>
-<input type="text">
+<input type="number" id="cusphone" Name="cusphone" maxlength="10">
 </div>
 </div>
 <div class="col-lg-12 col-12">
 <div class="form-group">
 <label>Address</label>
-<input type="text">
-</div>
-</div>
-<!-- <div class="col-lg-12">
-<div class="form-group">
-<label>Description</label>
-<textarea class="form-control"></textarea>
+<input type="text" id="cusaddress" Name="cusadress">
 </div>
 </div>
 <div class="col-lg-12">
-<div class="form-group">
-<label> Avatar</label>
-<div class="image-upload">
-<input type="file">
-<div class="image-uploads">
-<img src="../assets/img/icons/upload.svg" alt="img">
-<h4>Drag and drop a file to upload</h4>
-</div>
-</div>
-</div>
-</div> -->
-<div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-<a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
+<a class="btn btn-submit me-2" id="cusAdd">Submit</a>
 </div>
 </div>
 </div>

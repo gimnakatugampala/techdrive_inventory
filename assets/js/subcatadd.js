@@ -1,10 +1,10 @@
 $(document).ready(function () {
   $("#addSubCat").click(function () {
     const selectElement = document.getElementById("categorySelect");
-    const cid = selectElement.selectedIndex;
+    const cid = selectElement.value;
     var subcatname = $("#subcatname").val();
 
-    if (cid == 0) {
+    if (cid === '0') {
       Swal.fire({
         icon: "error",
         title: "Error",

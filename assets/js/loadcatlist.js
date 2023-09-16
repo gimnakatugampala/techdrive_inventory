@@ -25,6 +25,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Load categories when the page loads
     loadCategories();
 });
