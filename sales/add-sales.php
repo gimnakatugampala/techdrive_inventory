@@ -47,12 +47,18 @@
 <div class="col-lg-12 col-sm-6 col-12">
 <div class="form-group">
 <label>Product Name</label>
-<div class="input-groupicon">
+<select id="add-sales-items-select" class="form-select"  aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">Mac Book Pro</option>
+  <option value="2">Iphone 15</option>
+  <option value="3">Watch</option>
+</select>
+<!-- <div class="input-groupicon">
 <input type="text" placeholder="Please type product code and select...">
 <div class="addonset">
 <img src="../assets/img/icons/scanners.svg" alt="img">
 </div>
-</div>
+</div> -->
 </div>
 </div>
 
@@ -66,13 +72,14 @@
 <th>Product Name</th>
 <th>QTY</th>
 <th>Price</th>
-<th>Discount</th>
-<th>Tax</th>
 <th>Subtotal</th>
 <th></th>
 </tr>
 </thead>
-<tbody>
+
+<tbody id="table-add-sales">
+
+
 <tr>
 <td>1</td>
 <td class="productimgname">
@@ -81,15 +88,14 @@
 </a>
 <a href="javascript:void(0);">Apple Earpods</a>
 </td>
-<td>1.00</td>
-<td>15000.00</td>
-<td>0.00</td>
-<td>0.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="1500.00"></td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
 </td>
 </tr>
+
 <tr>
 <td>2</td>
 <td class="productimgname">
@@ -98,15 +104,15 @@
 </a>
 <a href="javascript:void(0);">iPhone 11</a>
 </td>
-<td>1.00</td>
- <td>1500.00</td>
-<td>0.00</td>
-<td>0.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="1500.00"></td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
 </td>
 </tr>
+
+
 <tr>
 <td>2</td>
 <td class="productimgname">
@@ -115,15 +121,15 @@
 </a>
 <a href="javascript:void(0);">Macbook pro</a>
 </td>
-<td>1.00</td>
-<td>1500.00</td>
-<td>0.00</td>
-<td>0.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="1500.00"></td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
 </td>
 </tr>
+
+
 </tbody>
 </table>
 </div>
@@ -131,8 +137,15 @@
 <div class="row">
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Order Tax</label>
-<input type="text">
+
+<label>Paid Status</label>
+<select class="select">
+<option>Choose Paid Status</option>
+<option>Not Paid</option>
+<option>Advance</option>
+<option>Paid</option>
+</select>
+
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
@@ -143,7 +156,7 @@
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Shipping</label>
+<label>Paid Amount</label>
 <input type="text">
 </div>
 </div>
@@ -160,28 +173,27 @@
 <div class="row">
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
-<ul>
-<li>
-<h4>Order Tax</h4>
-<h5>$ 0.00 (0.00%)</h5>
-</li>
-<li>
-<h4>Discount	</h4>
-<h5>$ 0.00</h5>
-</li>
-</ul>
+
 </div>
 </div>
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
 <ul>
 <li>
-<h4>Shipping</h4>
-<h5>$ 0.00</h5>
+<h4>Grand Total</h4>
+<h5>Rs. 0.00</h5>
+</li>
+<li>
+<h4>Discount	</h4>
+<h5>Rs. 0.00</h5>
+</li>
+<li>
+<h4>Paid Amount</h4>
+<h5>Rs. 0.00</h5>
 </li>
 <li class="total">
-<h4>Grand Total</h4>
-<h5>$ 0.00</h5>
+<h4>To Be Paid</h4>
+<h5>Rs. 0.00</h5>
 </li>
 </ul>
 </div>

@@ -102,6 +102,7 @@
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -128,6 +129,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -154,6 +157,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -180,6 +185,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -206,6 +213,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -232,6 +241,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -258,6 +269,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -284,6 +297,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -310,6 +325,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -336,6 +353,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -362,6 +381,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -388,6 +409,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -414,6 +437,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -421,11 +446,11 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td>
+<!-- <td>
 <a class="product-img">
 <img src="../assets/img/product/product6.jpg" alt="product">
 </a>
-</td>
+</td> -->
 <td>Shoes</td>
 <td>Shoes</td>
 <td>CT006</td>
@@ -440,6 +465,7 @@
 </a>
 </td>
 </tr>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -466,6 +492,8 @@
 </a>
 </td>
 </tr>
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -473,11 +501,11 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td>
+<!-- <td>
 <a class="product-img">
 <img src="../assets/img/product/product8.jpg" alt="product">
 </a>
-</td>
+</td> -->
 <td>Fruits</td>
 <td>Fruits</td>
 <td>CT008</td>
@@ -492,6 +520,7 @@
 </a>
 </td>
 </tr>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -518,6 +547,7 @@
 </a>
 </td>
 </tr>
+
 <tr>
 <td>
 <label class="checkboxs">

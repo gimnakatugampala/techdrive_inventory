@@ -583,6 +583,70 @@ $(document).ready(function () {
     }
   });
 
+  // Add Sales
+  let addtableBody;
+  let addmarkup = "";
+  
+  let count=0;
+  $('#add-sales-items-select').on('change', function() {
+    console.log( this.value );
+
+    
+    count+=1;
+    addmarkup = `<tr>
+    <td>${count}</td>
+    <td class="productimgname">
+    <a class="product-img">
+    <img src="../assets/img/product/product7.jpg" alt="product">
+    </a>
+    <a href="javascript:void(0);">Apple Earpods</a>
+    </td>
+    <td><input type="number" class="form-control" value="1"></td>
+    <td><input type="text" class="form-control" value="1500.00"></td>
+    <td>1500.00</td>
+    <td>
+    <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+    </td>
+    </tr>`;
+
+    addtableBody = $("table #table-add-sales");
+    addtableBody.append(addmarkup);
+    
+  });
+
+  
+// Edit Sales
+
+let edittableBody;
+let editmarkup = "";
+
+let editcount=0;
+$('#edit-sales-items-select').on('change', function() {
+  console.log( this.value );
+
+  
+  editcount+=1;
+  editmarkup = `<tr>
+  <td>${editcount}</td>
+  <td class="productimgname">
+  <a class="product-img">
+  <img src="../assets/img/product/product7.jpg" alt="product">
+  </a>
+  <a href="javascript:void(0);">Apple Earpods</a>
+  </td>
+  <td><input type="number" class="form-control" value="1"></td>
+  <td><input type="text" class="form-control" value="1500.00"></td>
+  <td>1500.00</td>
+  <td>
+  <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+  </td>
+  </tr>`;
+
+  edittableBody = $("table #table-edit-sales");
+  edittableBody.append(editmarkup);
+  
+});
+
 
 
   

@@ -6,12 +6,10 @@
 <div class="content">
 <div class="page-header">
 <div class="page-title">
-<h4>Sales List</h4>
-<h6>Manage your sales</h6>
+<h4>Canceled Sales List</h4>
+<h6>Manage your canceled sales</h6>
 </div>
-<div class="page-btn">
-<a href="../sales/add-sales.php" class="btn btn-added"><img src="../assets/img/icons/plus.svg" alt="img" class="me-1">Add Sales</a>
-</div>
+
 </div>
 
 <div class="card">
@@ -84,14 +82,13 @@
 </label>
 </th>
 <th>Customer Name</th>
-<th>Date</th>
-<th>Reference</th>
+<th>Sale Date</th>
+<th>Sales Code</th>
 <th>Status</th>
 <th>Payment</th>
-<th>Total</th>
-<th>Paid</th>
-<th>Due</th>
-<th>Biller</th>
+<th>Grand Total</th>
+<th>Invoice Code</th>
+<th>Canceled Date</th>
 <th class="text-center">Action</th>
 </tr>
 </thead>
@@ -109,9 +106,8 @@
 <td><span class="badges bg-lightgreen">Completed</span></td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>0.00</td>
-<td>0.00</td>
-<td class="text-red">100.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -138,9 +134,8 @@
 <td><span class="badges bg-lightgreen">Completed</span></td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>0.00</td>
-<td>0.00</td>
-<td class="text-red">100.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -167,9 +162,8 @@
 <td><span class="badges bg-lightgreen">Completed</span></td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -196,9 +190,8 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -223,10 +216,10 @@
 <td>19 Nov 2022</td>
 <td>SL0105</td>
 <td><span class="badges bg-lightred">Pending</span></td>
-<td><span class="badges bg-lightred">Due</span></td><td>0.00</td>
+<td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -253,9 +246,8 @@
 <td><span class="badges bg-lightgreen">Completed</span></td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>0.00</td>
-<td>0.00</td>
-<td class="text-red">100.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -282,9 +274,8 @@
 <td><span class="badges bg-lightgreen">Completed</span></td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>0.00</td>
-<td>0.00</td>
-<td class="text-red">100.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -311,9 +302,8 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -340,9 +330,8 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -369,9 +358,8 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td class="text-green">100.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -398,9 +386,8 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td><span class="badges bg-lightred">Due</span></td>
 <td>0.00</td>
-<td>0.00</td>
-<td>0.00</td>
-<td>Admin</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
 <td class="text-center">
 <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
