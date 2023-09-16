@@ -55,14 +55,9 @@
                                     <input type="text" placeholder="Enter Brand Name">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Enter Brand Description">
-                                </div>
-                            </div>
                             <div class="col-lg-1 col-sm-6 col-12 ms-auto">
                                 <div class="form-group">
-                                    <a class="btn btn-filters ms-auto"><img src="../assets/img/icons/search-whites.svg"
+                                    <a class="btn btn-filters ms-auto" id="brandFilterButton"><img src="../assets/img/icons/search-whites.svg"
                                             alt="img"></a>
                                 </div>
                             </div>
@@ -74,21 +69,11 @@
                     <table class="table brandlist">
                         <thead>
                             <tr>
-                                <th>
-                                    <label class="checkboxs">
-                                        <input type="checkbox" id="select-all">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </th>
-                                <!-- <th>Image</th> -->
                                 <th>Brand Name</th>
                                 <th>Brand Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            
-                        </tbody>
                     </table>
                 </div>
             </div>

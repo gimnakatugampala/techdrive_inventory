@@ -3,11 +3,9 @@ require_once '../includes/db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
-        $brandName = $_POST["brandName"];
-        $brandDescription = $_POST["brandDescription"];
-        $brandId = $_POST["brandId"];
+        $catid = $_POST["catid"];
 
-        $sql = "UPDATE tbbrand SET brandname = '$brandName', branddesciption = '$brandDescription' WHERE id = '$brandId'";
+        $sql = "UPDATE tbcategory SET isdeleted = 1 WHERE id = '$catid'";
         if ($conn->query($sql) === TRUE) {
             echo "success";
         } else {

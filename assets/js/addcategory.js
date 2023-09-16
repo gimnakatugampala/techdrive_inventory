@@ -1,34 +1,34 @@
 $(document).ready(function () {
-  $("#addBrandBtn").click(function () {
-    var brandName = $("#brandName").val();
-    var description = $("#description").val();
+  $("#addCat").click(function () {
+    var catname = $("#catname").val();
+    var catdis = $("#catdis").val();
 
-    if (brandName === "") {
+    if (catname === "") {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Please Enter Brand Name",
+        text: "Please Enter Category Name",
       });
-    } else if (description === "") {
+    } else if (catdis === "") {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Please Enter Brand Description",
+        text: "Please Enter Category Description",
       });
     } else {
       $.ajax({
         type: "POST",
-        url: "../pages/addbrand.php",
+        url: "../pages/addcategory.php",
         data: {
-          brandName: brandName,
-          description: description,
+          catname: catname,
+          catdis: catdis,
         },
         success: function (response) {
           if (response === "success") {
             Swal.fire({
               icon: "success",
               title: "Success",
-              text: "Brand added successfully",
+              text: "Category added successfully",
             });
             clearAB();
           } else {
@@ -45,14 +45,14 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $("#clearBrandBtn").click(function () {
+  $("#clearCat").click(function () {
     clearAB();
   });
 });
 
 function clearAB() {
-  var brandName = document.getElementById("brandName");
-  brandName.value = "";
-  var description = document.getElementById("description");
-  description.value = "";
+  var catname = document.getElementById("catname");
+  catname.value = "";
+  var catdis = document.getElementById("catdis");
+  catdis.value = "";
 }

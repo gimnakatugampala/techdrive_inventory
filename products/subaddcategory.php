@@ -1,5 +1,5 @@
-<?php require_once '../includes/header.php' ?>
-<?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../includes/header.php'; ?>
+<?php require_once '../includes/sidebar.php'; ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -16,33 +16,20 @@
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Select Category Name</label>
-<select class="select">
-<option>Choose Category</option>
-<option>Category</option>
+<select class="form-select"  id="categorySelect">
+<option value="0">Select a category</option>
 </select>
 </div>
 </div>
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Sub Category Name</label>
-<input type="text">
-</div>
-</div>
-<!-- <div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Category Code</label>
-<input type="text">
-</div>
-</div> -->
-<div class="col-lg-12">
-<div class="form-group">
-<label>Description</label>
-<textarea class="form-control"></textarea>
+<input type="text" id="subcatname" name="subcatname">
 </div>
 </div>
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-<a href="../products/subcategorylist.php" class="btn btn-cancel">Cancel</a>
+<a class="btn btn-submit me-2" id="addSubCat">Submit</a>
+<a class="btn btn-cancel" id="clearSubCat">Cancel</a>
 </div>
 </div>
 </div>
@@ -53,4 +40,4 @@
 </div>
 
 
-<?php require_once '../includes/footer.php' ?>
+<?php require_once '../includes/footer.php'; ?>

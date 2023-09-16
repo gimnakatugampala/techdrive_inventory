@@ -5,9 +5,6 @@ $(document).ready(function () {
 
     data.forEach(function (brand) {
       var row = $("<tr>");
-      row.append(
-        "<td><label class='checkboxs'><input type='checkbox'><span class='checkmarks'></span></label></td>"
-      );
       row.append("<td>" + brand.brandname + "</td>");
       row.append("<td>" + brand.branddesciption + "</td>");
       row.append(

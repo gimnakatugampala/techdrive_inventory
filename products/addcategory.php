@@ -16,36 +16,21 @@
                                         <div class="col-lg-12 col-sm-12 col-12">
                                                 <div class="form-group">
                                                         <label>Category Name</label>
-                                                        <input type="text">
+                                                        <input type="text" id="catname" name="catname">
                                                 </div>
                                         </div>
-                                        <!-- <div class="col-lg-6 col-sm-6 col-12">
-<div class="form-group">
-<label>Category Code</label>
-<input type="text">
-</div>
-</div> -->
                                         <div class="col-lg-12">
                                                 <div class="form-group">
                                                         <label>Description</label>
-                                                        <textarea class="form-control"></textarea>
+                                                        <textarea class="form-control" id="catdis"
+                                                                name="catdis"></textarea>
                                                 </div>
                                         </div>
-                                        <!-- <div class="col-lg-12">
-<div class="form-group">
-<label> Product Image</label>
-<div class="image-upload">
-<input type="file">
-<div class="image-uploads">
-<img src="../assets/img/icons/upload.svg" alt="img">
-<h4>Drag and drop a file to upload</h4>
-</div>
-</div>
-</div>
-</div> -->
                                         <div class="col-lg-12">
-                                                <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                                                <a href="../products/categorylist.php" class="btn btn-cancel">Cancel</a>
+                                                <a href="javascript:void(0);" class="btn btn-submit me-2"
+                                                        id="addCat">Submit</a>
+                                                <a href="../products/categorylist.php" class="btn btn-cancel"
+                                                        id="clearCat">Cancel</a>
                                         </div>
                                 </div>
                         </div>

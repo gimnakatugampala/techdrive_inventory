@@ -26,7 +26,14 @@
 <script src="../assets/js/script.js"></script>
 
 <script src="../assets/js/addbrand.js"></script>
-
 <script src="../assets/js/brandlist.js"></script>
+<script src="../assets/js/brandedit.js"></script>
+<script src="../assets/js/filterbrand.js"></script>
+<script src="../assets/js/catlist.js"></script>
+<script src="../assets/js/addcategory.js"></script>
+<script src="../assets/js/catedit.js"></script>
+<script src="../assets/js/loadcatlist.js"></script>
+<script src="../assets/js/subcatadd.js"></script>
+
 </body>
 </html>

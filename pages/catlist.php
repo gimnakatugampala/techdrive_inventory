@@ -1,16 +1,16 @@
 <?php
 require_once '../includes/db_config.php';
 
-$sql = 'SELECT * FROM tbbrand';
+$sql = 'SELECT * FROM tbcategory where isdeleted = 0';
 $result = $conn->query( $sql );
 
-$brands = array();
+$cats = array();
 
 if ( $result->num_rows > 0 ) {
     while ( $row = $result->fetch_assoc() ) {
-        $brands[] = $row;
+        $cats[] = $row;
     }
 }
 
-echo json_encode( $brands );
+echo json_encode( $cats );
 ?>

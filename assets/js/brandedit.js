@@ -4,16 +4,14 @@ $(document).ready(function () {
     var brandDescription = $("#brandDescription").val();
     var brandId = $("#brandId").val();
 
-    var data = {
-      brandName: brandName,
-      brandDescription: brandDescription,
-      brandId: brandId,
-    };
-
     $.ajax({
-      url: "update.php",
+      url: "../pages/editbrand.php",
       type: "POST",
-      data: data,
+      data: {
+        brandName: brandName,
+        brandDescription: brandDescription,
+        brandId: brandId,
+      },
       success: function (response) {
         if (response === "success") {
           Swal.fire({
@@ -35,9 +33,17 @@ $(document).ready(function () {
       },
     });
   });
+});
 
-  $("#btnClear").click(function () {
-    $("#brandName").val("");
-    $("#brandDescription").val("");
+$(document).ready(function () {
+  $("#clearBrandBtn").click(function () {
+    clear();
   });
 });
+
+function clear() {
+  var brandName = document.getElementById("brandName");
+  brandName.value = "";
+  var description = document.getElementById("brandDescription");
+  description.value = "";
+}
