@@ -1,5 +1,5 @@
-<?php require_once '../includes/header.php' ?>
-<?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../includes/header.php'; ?>
+<?php require_once '../includes/sidebar.php'; ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -87,10 +87,6 @@
 <thead>
 <tr>
 <th>
-<label class="checkboxs">
-<input type="checkbox" id="select-all">
-<span class="checkmarks"></span>
-</label>
 </th>
 <!-- <th>Image</th> -->
 <th>Category</th>
@@ -334,6 +330,11 @@
 <span class="checkmarks"></span>
 </label>
 </td>
+<!-- <td>
+<a class="product-img">
+<img src="../assets/img/product/product9.jpg" alt="product">
+</a>
+</td> -->
 <td>Computers</td>
 <td>Computers</td>
 <td>CT009</td>
@@ -542,6 +543,7 @@
 </a>
 </td>
 </tr>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -579,4 +581,4 @@
 </div>
 
 
-<?php require_once '../includes/footer.php' ?>
+<?php require_once '../includes/footer.php'; ?>
