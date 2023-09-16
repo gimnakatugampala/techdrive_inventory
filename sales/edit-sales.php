@@ -72,8 +72,9 @@
 <tr>
 <th>#</th>
 <th>Product Name</th>
-<th>QTY</th>
 <th>Price</th>
+<th>QTY</th>
+<th>Discount</th>
 <th>Subtotal</th>
 <th></th>
 </tr>
@@ -83,12 +84,13 @@
 <td>1</td>
 <td class="productimgname">
 <a class="product-img">
-<img src="../assets/img/product/product7.jpg" alt="product">
+<img src="../assets/img/product/noimage.png" alt="product">
 </a>
 <a href="javascript:void(0);">Apple Earpods</a>
 </td>
-<td>1.00</td>
 <td>15000.00</td>
+<td>1.00</td>
+<td>00.00</td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
@@ -98,12 +100,13 @@
 <td>2</td>
 <td class="productimgname">
 <a class="product-img">
-<img src="../assets/img/product/product8.jpg" alt="product">
+<img src="../assets/img/product/noimage.png" alt="product">
 </a>
 <a href="javascript:void(0);">iPhone 11</a>
 </td>
-<td>1.00</td>
 <td>1500.00</td>
+<td>1.00</td>
+<td>00.00</td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
@@ -113,12 +116,13 @@
 <td>2</td>
 <td class="productimgname">
 <a class="product-img">
-<img src="../assets/img/product/product1.jpg" alt="product">
+<img src="../assets/img/product/noimage.png" alt="product">
 </a>
 <a href="javascript:void(0);">Macbook pro</a>
 </td>
-<td>1.00</td>
 <td>1500.00</td>
+<td>1.00</td>
+<td>00.00</td>
 <td>1500.00</td>
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
@@ -129,7 +133,7 @@
 </div>
 </div>
 <div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 
 <label>Paid Status</label>
@@ -142,19 +146,14 @@
 
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Discount</label>
-<input value="300.00" type="text">
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
+
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Paid Amount</label>
 <input value="1300.00" type="text">
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Status</label>
 <select class="select">
