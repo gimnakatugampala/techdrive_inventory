@@ -83,7 +83,7 @@
 </div>
 
 <div class="table-responsive">
-<table class="table subcatlist datanew">
+<table class="table sub">
 <thead>
 <tr>
 <th>Category</th>
@@ -92,7 +92,7 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody id="sclist">
+<tbody>
 </tbody>
 </table>
 </div>
