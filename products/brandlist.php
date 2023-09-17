@@ -74,6 +74,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        <tbody id="blist"></tbody>
                     </table>
                 </div>
             </div>

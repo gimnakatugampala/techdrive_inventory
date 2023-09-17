@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Function to populate the table with data
   function populateTable(data) {
-    var tableBody = $("table.brandlist tbody");
+    var tableBody = $("table.brandlist #blist");
 
     data.forEach(function (brand) {
       var row = $("<tr>");
