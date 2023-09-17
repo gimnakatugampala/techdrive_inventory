@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const option = document.createElement("option");
             option.value = category.id;
             option.textContent = category.catname;
-            categorySelect.appendChild(option);
+            if(null) {
+                categorySelect.appendChild(option);
+            }
         });
     }
 

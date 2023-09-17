@@ -9,7 +9,7 @@
 <h6>Manage your Quotations</h6>
 </div>
 <div class="page-btn">
-<a href="addquotation.html" class="btn btn-added">
+<a href="../quotation/addquotation.php" class="btn btn-added">
 <img src="../assets/img/icons/plus.svg" alt="img" class="me-2"> Add Quotation
 </a>
 </div>
@@ -93,11 +93,11 @@
 <span class="checkmarks"></span>
 </label>
 </th>
-<th>Product Name</th>
-<th>Reference</th>
-<th>Custmer Name</th>
+<th>Customer Name</th>
+<th>Quotation Code</th>
+<th>Date</th>
 <th>Status</th>
-<th>Grand Total ($)</th>
+<th>Grand Total ( Rs.)</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -120,6 +120,11 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -146,6 +151,9 @@
 <td><span class="badges bg-lightyellow">Ordered</span></td>
 <td>410</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -172,6 +180,9 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>210</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -198,6 +209,9 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>500</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -224,6 +238,9 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>1050</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -250,6 +267,9 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>2530</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -276,6 +296,9 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -302,6 +325,9 @@
 <td><span class="badges bg-lightgreen">Ordered</span></td>
 <td>550</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -328,6 +354,9 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>210</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -354,6 +383,9 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>2530</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -380,6 +412,9 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -406,6 +441,9 @@
 <td><span class="badges bg-lightgreen">Ordered</span></td>
 <td>550</td>
 <td>
+<a class="me-3 confirm-text" href="javascript:void(0);">
+    <i class="fas fa-exchange-alt fa-lg"></i>
+</a>
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>

@@ -158,6 +158,7 @@
 <input type="text">
 </div>
 </div>
+
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Status</label>
@@ -168,6 +169,7 @@
 </select>
 </div>
 </div>
+
 <div class="row">
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
