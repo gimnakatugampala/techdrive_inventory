@@ -84,13 +84,13 @@
 
     </ul>
     </li>
-    <li class="submenu">
+    <!-- <li class="submenu">
     <a href="javascript:void(0);"><img src="../assets/img/icons/settings.svg" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
     <ul>
     <li><a <?php echo ($_SERVER['REQUEST_URI'] == "/inventory_tech_drive_lk/dashboard/generalsettings.php" || $_SERVER['REQUEST_URI'] == "/dashboard/generalsettings.php") ? 'class="active"' : '';   ?> href="../dashboard/generalsettings.php">General Settings</a></li>
 
     </ul>
-    </li>
+    </li> -->
     </ul>
     </div>
     </div>

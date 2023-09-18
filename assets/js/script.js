@@ -687,6 +687,100 @@ $('#add-purchase-items-select').on('change', function() {
 
 
 
+  // Edit Purchase
+  let editpurchaseorder_tableBody;
+  let editpurchasemarkup = "";
+
+let editpurchaseorder_count=0;
+$('#edit-purchase-order-select').on('change', function() {
+  console.log( this.value );
+
+  
+  editpurchaseorder_count+=1;
+  editpurchasemarkup = `<tr>
+  <td class="productimgname">
+  <a class="product-img">
+  <img src="../assets/img/product/product7.jpg" alt="product">
+  </a>
+  <a href="javascript:void(0);">Apple Earpods</a>
+  </td>
+  <td>2000.00</td>
+  <td><input type="text" class="form-control" value="10.00"></td>
+  <td><input type="text" class="form-control" value="500.00"></td>
+  <td class="text-end">2000.00</td>
+  <td>
+  <a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+  </td>
+  </tr>`;
+
+  editpurchaseorder_tableBody = $("table #table-edit-purchase-order-list");
+  editpurchaseorder_tableBody.append(editpurchasemarkup);
+  
+});
+
+
+
+// Add Quotation
+  let addquotation_tableBody;
+  let addquotationmarkup = "";
+
+$('#add-quotation-items-select').on('change', function() {
+  console.log( this.value );
+
+  
+  addquotationmarkup = `<tr>
+  <td class="productimgname">
+  <a class="product-img">
+  <img src="../assets/img/product/product6.jpg" alt="product">
+  </a>
+  <a href="javascript:void(0);">Macbook Pro</a>
+  </td>
+  <td><input type="text" class="form-control" value="0.00"></td>
+  <td><input type="number" class="form-control" value="0.00"></td>
+  <td><input type="text" class="form-control" value="0.00"></td>
+  <td class="text-end">1000.00</td>
+  <td>
+  <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+  </td>
+  </tr>`;
+
+  addquotation_tableBody = $("table #table-add-quotation-list");
+  addquotation_tableBody.append(addquotationmarkup);
+  
+});
+
+
+// Edit Quotation
+let editquotation_tableBody;
+let editquotationmarkup = "";
+
+$('#edit-quotation-items-select').on('change', function() {
+console.log( this.value );
+
+
+editquotationmarkup = `<tr>
+<td class="productimgname">
+<a class="product-img">
+<img src="../assets/img/product/product6.jpg" alt="product">
+</a>
+<a href="javascript:void(0);">Macbook Pro</a>
+</td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td><input type="number" class="form-control" value="0.00"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td class="text-end">1000.00</td>
+<td>
+<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+</td>
+</tr>`;
+
+editquotation_tableBody = $("table #table-edit-quotation-list");
+editquotation_tableBody.append(editquotationmarkup);
+
+});
+
+
+
 
   
 });

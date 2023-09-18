@@ -105,7 +105,7 @@
 <th>Date</th>
 <th>Status</th>
 <th>Grand Total</th>
-<th>Paid</th>
+<th>Amount Paid</th>
 <th>Due</th>
 <th>Payment Status</th>
 <th>Action</th>

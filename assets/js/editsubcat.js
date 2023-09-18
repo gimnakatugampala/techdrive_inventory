@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (category.id === subcatid) {
         option.selected = true;
       }
+
+     if(null) {
       categorySelect.appendChild(option);
+     }
+
     });
   }
   loadCategories();
