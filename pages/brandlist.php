@@ -1,7 +1,7 @@
 <?php
 require_once '../includes/db_config.php';
 
-$sql = 'SELECT * FROM tbbrand';
+$sql = 'SELECT * FROM tbbrand where isdeleted = 0';
 $result = $conn->query( $sql );
 
 $brands = array();

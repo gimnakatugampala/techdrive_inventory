@@ -17,33 +17,30 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Product Name</label>
-                            <input type="text">
+                            <input type="text" id="pname" name="pname">
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="select">
-                                <option>Choose Category</option>
-                                <option>Computers</option>
+                            <select class="form-select" id="selectCat">
+                                <option value="0">Choose Category</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Sub Category</label>
-                            <select class="select">
-                                <option>Choose Sub Category</option>
-                                <option>Fruits</option>
+                            <select class="form-select" id="selectSubCat">
+                                <option value="0">Choose Sub Category</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label>Brand</label>
-                            <select class="select">
-                                <option>Choose Brand</option>
-                                <option>Brand</option>
+                            <select class="form-select" id="selectBrand">
+                                <option value="0">Choose Brand</option>
                             </select>
                         </div>
                     </div>
@@ -52,58 +49,27 @@
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Warrenty</label>
-                            <input type="text">
+                            <input type="number" id="warrenty" name="warrenty">
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Minimum Qty</label>
-                            <input type="text">
+                            <input type="number" id="mqty" name="mqty">
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Quantity</label>
-                            <input type="text">
+                            <input type="number" id="qty" name="qty">
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-                    </div>
-                    <!-- <div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Tax</label>
-<select class="select">
-<option>Choose Tax</option>
-<option>2%</option>
-</select>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Discount Type</label>
-<select class="select">
-<option>Percentage</option>
-<option>10%</option>
-<option>20%</option>
-</select>
-</div>
-</div> -->
-                    <!-- <div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Price</label>
-<input type="text">
-</div>
-</div> -->
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Availablity</label>
-                            <select class="select">
-                                <option>In Stock</option>
-                                <option>Out of Stock</option>
+                            <select class="form-select" id="cmbavailablity">
+                                <option value="1">In Stock</option>
+                                <option value="2">Out of Stock</option>
                             </select>
                         </div>
                     </div>
@@ -111,31 +77,18 @@
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Selling Price</label>
-                            <input type="text">
+                            <input type="number" id="sprice" name="sprice">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Buying Price</label>
-                            <input type="text">
+                            <input type="number" id="bprice" name="bprice">
                         </div>
                     </div>
-                    <!-- <div class="col-lg-12">
-<div class="form-group">
-<label> Product Image</label>
-<div class="image-upload">
-<input type="file">
-<div class="image-uploads">
-<img src="../assets/img/icons/upload.svg" alt="img">
-<h4>Drag and drop a file to upload</h4>
-</div>
-</div>
-</div>
-</div> -->
                     <div class="col-lg-12">
-                        <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                        <a href="../products/productlist.php" class="btn btn-cancel">Cancel</a>
+                        <a class="btn btn-submit me-2" id="addproduct">Submit</a>
                     </div>
                 </div>
             </div>

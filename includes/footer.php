@@ -36,6 +36,9 @@
 <script src="../assets/js/subcatadd.js"></script>
 <script src="../assets/js/subcatlist.js"></script>
 <script src="../assets/js/editsubcat.js"></script>
+<script src="../assets/js/addproduct.js"></script>
+<script src="../assets/js/productlist.js"></script>
+<script src="../assets/js/editproduct.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>
 <script src="../assets/js/People/customerlist.js"></script>
@@ -45,6 +48,10 @@
 <script src="../assets/js/People/addsupplier.js"></script>
 <script src="../assets/js/People/supplierlist.js"></script>
 <script src="../assets/js/People/editsupplier.js"></script>
+
+<script src="../assets/js/productalllist/cmbbrandlist.js"></script>
+<script src="../assets/js/productalllist/cmbcatlist.js"></script>
+<script src="../assets/js/productalllist/cmbsubcatlist.js"></script>
 
 
 </body>

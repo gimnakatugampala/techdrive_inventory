@@ -39,28 +39,37 @@ $(document).ready(function () {
       encodeURIComponent(brandDescription);
   });
 
+
   $("table.brandlist").on("click", ".btn-delete", function () {
     var brandId = $(this).data("brand-id");
 
-    if (confirm("Are you sure you want to delete this brand?")) {
-      // Send an AJAX request to delete the brand
-      $.ajax({
-        url: "../pages/deletebrand.php", // PHP script to handle deletion
-        method: "POST",
-        data: { brandId: brandId },
-        success: function (response) {
-          // Handle success, e.g., remove the row from the table
-          if (response === "success") {
-            $(this).closest("tr").remove();
-            window.location.reload();
-          } else {
-            alert("Failed to delete the brand.");
-          }
-        },
-        error: function () {
-          alert("Error occurred while deleting the brand.");
-        },
-      });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "../pages/deletebrand.php",
+          method: "POST",
+          data: { brandId: brandId },
+          success: function (response) {
+            if (response === "success") {
+              $(this).closest("tr").remove();
+              window.location.reload();
+            } else {
+              alert("Failed to delete the Category.");
+            }
+          },
+          error: function () {
+            alert("Error occurred while deleting the Category.");
+          },
+        });
+      }
+    });
   });
 });

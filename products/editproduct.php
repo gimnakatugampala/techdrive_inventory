@@ -1,6 +1,17 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
 
+<?php
+$productname = isset( $_GET[ 'productname' ] ) ? $_GET[ 'productname' ] : '';
+$warrenty = isset( $_GET[ 'warrenty' ] ) ? $_GET[ 'warrenty' ] : '';
+$buyingprice = isset( $_GET[ 'buyingprice' ] ) ? $_GET[ 'buyingprice' ] : '';
+$quantity = isset( $_GET[ 'quantity' ] ) ? $_GET[ 'quantity' ] : '';
+$sellingprice = isset( $_GET[ 'sellingprice' ] ) ? $_GET[ 'sellingprice' ] : '';
+$minquanity = isset( $_GET[ 'minquanity' ] ) ? $_GET[ 'minquanity' ] : '';
+?>
+
+
+
 <div class="page-wrapper">
 <div class="content">
 <div class="page-header">
@@ -16,33 +27,31 @@
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Product Name</label>
-<input type="text" value="Macbook pro">
+<input type="text" id="productname" name="productname" 
+value = "<?php echo htmlspecialchars($_GET['productname']); ?>">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Category</label>
-<select class="select">
-<option>Computers</option>
-<option>Mac</option>
+<select class="form-select" id="Cat">
+<option value="0">Choose Category</option>
 </select>
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Sub Category</label>
-<select class="select">
-<option>None</option>
-<option>option1</option>
+<select class="form-select" id="SubCat">
+<option value="0">Choose Sub Category</option>
 </select>
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Brand</label>
-<select class="select">
-<option>None</option>
-<option>option1</option>
+<select class="form-select" id="Brand">
+<option value="0">Choose Brand</option>
 </select>
 </div>
 </div>
@@ -50,35 +59,31 @@
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Warrenty</label>
-<input type="text" value="4">
+<input type="text" id="warrenty" name="warrenty"
+value = "<?php echo htmlspecialchars($_GET['warrenty']); ?>">
 </div>
 </div>
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Minimum Qty</label>
-<input type="text" value="5">
+<input type="text" id="minquanity" name="minquanity"
+value = "<?php echo htmlspecialchars($_GET['minquanity']); ?>">
 </div>
 </div>
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Quantity</label>
-<input type="text" value="50">
+<input type="text" id="quantity" name="quantity"
+value = "<?php echo htmlspecialchars($_GET['quantity']); ?>">
 </div>
 </div>
-<div class="col-lg-12">
-<div class="form-group">
-<label>Description</label>
-<textarea class="form-control">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</textarea>
-</div>
-</div>
-
 
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Availablity</label>
-<select class="select">
-<option>In Stock</option>
-<option>Out of Stock</option>
+<select class="form-select" id="Availablity">
+<option value="1">In Stock</option>
+<option value="2">Out of Stock</option>
 </select>
 </div>
 </div>
@@ -86,53 +91,38 @@
 <div class="col-lg-4 col-sm-6 col-12">
     <div class="form-group">
         <label>Selling Price</label>
-        <input value="10.00" type="text">
+        <input type="text" id="sellingprice" name="sellingprice"
+value = "<?php echo htmlspecialchars($_GET['sellingprice']); ?>">
     </div>
 </div>
 
 <div class="col-lg-4 col-sm-6 col-12">
     <div class="form-group">
         <label>Buying Price</label>
-        <input value="5.00" type="text">
+        <input type="text" id="buyingprice" name="buyingprice"
+value = "<?php echo htmlspecialchars($_GET['buyingprice']); ?>">
     </div>
 </div>
 
 
-<!-- <div class="col-lg-12">
-<div class="form-group">
-<label> Product Image</label>
-<div class="image-upload">
-<input type="file">
-<div class="image-uploads">
-<img src="../assets/img/icons/upload.svg" alt="img">
-<h4>Drag and drop a file to upload</h4>
-</div>
-</div>
-</div>
-</div> -->
-<!-- <div class="col-12">
-<div class="product-list">
-<ul class="row">
-<li>
-<div class="productviews">
-<div class="productviewsimg">
-<img src="../assets/img/icons/macbook.svg" alt="img">
-</div>
-<div class="productviewscontent">
-<div class="productviewsname">
-<h2>macbookpro.jpg</h2>
-<h3>581kb</h3>
-</div>
-<a href="javascript:void(0);" class="hideset">x</a>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div> -->
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Update</a>
-<a href="../products/productlist.php" class="btn btn-cancel">Cancel</a>
+<a class="btn btn-submit me-2" id="btneditproduct">Update</a>
+<input type = 'hidden' id = 'pid' name = 'pid'
+value = "<?php echo htmlspecialchars($_GET['pid']); ?>">
+
+<input type = 'hidden' id = 'catid' name = 'catid'
+value = "<?php echo htmlspecialchars($_GET['catid']); ?>">
+
+<input type = 'hidden' id = 'scatid' name = 'scatid'
+value = "<?php echo htmlspecialchars($_GET['scatid']); ?>">
+
+<input type = 'hidden' id = 'avlid' name = 'avlid'
+value = "<?php echo htmlspecialchars($_GET['avlid']); ?>">
+
+<input type = 'hidden' id = 'bid' name = 'bid'
+value = "<?php echo htmlspecialchars($_GET['bid']); ?>">
+
+
 </div>
 </div>
 </div>

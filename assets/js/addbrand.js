@@ -30,7 +30,10 @@ $(document).ready(function () {
               title: "Success",
               text: "Brand added successfully",
             });
-            clearAB();
+            var brandName = document.getElementById("brandName");
+            brandName.value = "";
+            var description = document.getElementById("description");
+            description.value = "";
           } else {
             Swal.fire({
               icon: "error",
