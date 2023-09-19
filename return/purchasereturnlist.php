@@ -95,11 +95,11 @@
 <th>Image</th>
 <th>Date</th>
 <th>Supplier</th>
-<th>Reference</th>
+<th>POR Code</th>
 <th>Status</th>
-<th>Grand Total ($)</th>
-<th>Paid ($)</th>
-<th>Due ($)</th>
+<th>Grand Total (Rs.)</th>
+<th>Paid (Rs.)</th>
+<th>Discount (Rs.)</th>
 <th>Payment Status</th>
 <th>Action</th>
 </tr>

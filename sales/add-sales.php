@@ -11,6 +11,8 @@
 </div>
 <div class="card">
 <div class="card-body">
+
+
 <div class="row">
 
 <div class="col-lg-6 col-sm-6 col-12">
@@ -63,6 +65,8 @@
 </div>
 
 </div>
+
+
 <div class="row">
 <div class="table-responsive mb-3">
 <table class="table">
@@ -78,9 +82,7 @@
 </tr>
 </thead>
 
-<tbody id="table-add-sales">
-
-
+<tbody id="table-add-sales-return">
 <tr>
 <td>1</td>
 <td class="productimgname">
@@ -138,6 +140,8 @@
 </table>
 </div>
 </div>
+
+
 <div class="row">
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
@@ -199,6 +203,8 @@
 </div>
 </div>
 </div>
+
+
 <div class="col-lg-12">
 <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
 <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
