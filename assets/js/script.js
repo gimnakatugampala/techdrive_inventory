@@ -751,7 +751,145 @@ $(document).ready(function () {
 </td>
 </tr>`;
 
-    editquotation_tableBody = $("table #table-edit-quotation-list");
-    editquotation_tableBody.append(editquotationmarkup);
-  });
+editquotation_tableBody = $("table #table-edit-quotation-list");
+editquotation_tableBody.append(editquotationmarkup);
+
+});
+
+
+// Add Purchase Order Return
+let addpurchase_o_return_tableBody;
+let addpurchase_o_returnmarkup = "";
+
+$('#add-purchase-return-items-select').on('change', function() {
+console.log( this.value );
+
+
+addpurchase_o_returnmarkup = `
+<tr>
+<td class="productimgname">
+<a class="product-img">
+<img src="../assets/img/product/noimage.png" alt="product">
+</a>
+<a href="javascript:void(0);">Macbook Pro</a>
+</td>
+<td><input type="text" class="form-control" value="15.00"></td>
+<td><input type="text" class="form-control" value="6000.00"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td class="text-end">1000.00</td>
+<td>
+<a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+</td>
+</tr>
+`;
+
+addpurchase_o_return_tableBody = $("table #table-add-purchase-order-return");
+addpurchase_o_return_tableBody.append(addpurchase_o_returnmarkup);
+
+});
+
+
+// Edit Purchase Order Return
+let editpurchase_o_return_tableBody;
+let editpurchase_o_returnmarkup = "";
+
+$('#edit-purchase-return-items-select').on('change', function() {
+console.log( this.value );
+
+
+editpurchase_o_returnmarkup = `
+<tr>
+<td class="productimgname">
+<a class="product-img">
+<img src="../assets/img/product/noimage.png" alt="product">
+</a>
+<a href="javascript:void(0);">Macbook Pro</a>
+</td>
+<td><input type="text" class="form-control" value="15.00"></td>
+<td><input type="text" class="form-control" value="6000.00"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td class="text-end">1000.00</td>
+<td>
+<a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+</td>
+</tr>
+`;
+
+editpurchase_o_return_tableBody = $("table #table-edit-purchase-order-return");
+editpurchase_o_return_tableBody.append(editpurchase_o_returnmarkup);
+
+});
+
+
+// Add Sales Return 
+let add_sales_return_tableBody;
+let add_sales_returnmarkup = "";
+let sales_return_count=0;
+$('#add-sales-return-items-select').on('change', function() {
+console.log( this.value );
+
+sales_return_count+=1;
+
+add_sales_returnmarkup = `
+<tr>
+<td>${sales_return_count}</td>
+<td class="productimgname">
+<a class="product-img">
+<img src="../assets/img/product/noimage.png" alt="product">
+</a>
+<a href="javascript:void(0);">Apple Earpods</a>
+</td>
+<td>1500.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td>1500.00</td>
+<td>
+<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+</td>
+</tr>
+
+<tr>
+`;
+
+add_sales_return_tableBody = $("table #table-add-sales-return");
+add_sales_return_tableBody.append(add_sales_returnmarkup);
+
+});
+
+// Edit Sales Return
+let edit_sales_return_tableBody;
+let edit_sales_returnmarkup = "";
+let sales_return_count_edit=0;
+$('#edit-sales-return-items-select').on('change', function() {
+console.log( this.value );
+
+sales_return_count_edit+=1;
+
+edit_sales_returnmarkup = `
+<tr>
+<td>${sales_return_count_edit}</td>
+<td class="productimgname">
+<a class="product-img">
+<img src="../assets/img/product/noimage.png" alt="product">
+</a>
+<a href="javascript:void(0);">Apple Earpods</a>
+</td>
+<td>1500.00</td>
+<td><input type="number" class="form-control" value="1"></td>
+<td><input type="text" class="form-control" value="0.00"></td>
+<td>1500.00</td>
+<td>
+<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
+</td>
+</tr>
+
+<tr>
+`;
+
+edit_sales_return_tableBody = $("table #table-edit-sales-return");
+edit_sales_return_tableBody.append(edit_sales_returnmarkup);
+
+});
+
+  
 });

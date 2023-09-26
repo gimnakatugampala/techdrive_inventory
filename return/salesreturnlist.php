@@ -99,7 +99,6 @@
 <span class="checkmarks"></span>
 </label>
 </th>
-<th>Product Name</th>
 <th>Date</th>
 <th>Customer</th>
 <th>Status</th>
@@ -118,12 +117,7 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product1.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook pro</a>
-</td>
+
 <td>19 Nov 2022</td>
 <td>Thomas</td>
 <td><span class="badges bg-lightgreen">Received</span></td>
@@ -146,12 +140,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product2.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Orange</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Benjamin</td>
@@ -176,12 +164,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product3.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Pineapple</a> 
-</td>
 <td>19 Nov 2022</td>
 <td>James</td>
 <td><span class="badges bg-lightred">Pending</span></td>
@@ -204,12 +186,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product4.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Strawberry</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Bruklin</td>
@@ -234,12 +210,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product5.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Avocat</a>
-</td>
 <td>19 Nov 2022</td>
 <td>Beverly</td>
 <td><span class="badges bg-lightred">Pending</span></td>
@@ -262,12 +232,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product6.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook Pro</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Best Power Tools</td>
@@ -292,12 +256,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product7.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Apple Earpods</a>
-</td>
 <td>19 Nov 2022</td>
 <td>Apex Computers</td>
 <td><span class="badges bg-lightyellow">Ordered</span></td>
@@ -320,12 +278,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product1.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook pro</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Thomas</td>
@@ -350,12 +302,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product2.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Orange</a>
-</td>
 <td>19 Nov 2022</td>
 <td>Benjamin</td>
 <td><span class="badges bg-lightyellow">Pending</span></td>
@@ -378,12 +324,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product3.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Pineapple</a>
 </td>
 <td>19 Nov 2022</td>
 <td>James</td>
@@ -408,12 +348,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product4.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Strawberry</a>
-</td>
 <td>19 Nov 2022</td>
 <td>Bruklin</td>
 <td><span class="badges bg-lightgreen">Received</span></td>
@@ -436,12 +370,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product5.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Avocat</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Beverly</td>
@@ -466,12 +394,6 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product6.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook Pro</a>
-</td>
 <td>19 Nov 2022</td>
 <td>Best Power Tools</td>
 <td><span class="badges bg-lightgreen">Received</span></td>
@@ -494,12 +416,6 @@
 <input type="checkbox">
 <span class="checkmarks"></span>
 </label>
-</td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product7.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Apple Earpods</a>
 </td>
 <td>19 Nov 2022</td>
 <td>Apex Computers</td>
