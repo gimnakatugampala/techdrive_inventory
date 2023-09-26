@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $supaddress = $_POST['supaddress'];
 
     $min = 1;
-    $max = 1000000;
+    $max = 10000000000;
 
     $supcode = rand($min, $max);
 

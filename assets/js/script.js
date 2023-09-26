@@ -48,9 +48,9 @@ $(document).ready(function () {
   $(document).on("click", ".hideset", function () {
     $(this).parent().parent().parent().hide();
   });
-  $(document).on("click", ".delete-set", function () {
-    $(this).parent().parent().hide();
-  });
+  // $(document).on("click", ".delete-set", function () {
+  //   $(this).parent().parent().hide();
+  // });
   if ($(".product-slide").length > 0) {
     $(".product-slide").owlCarousel({
       items: 1,
@@ -586,13 +586,12 @@ $(document).ready(function () {
   // Add Sales
   let addtableBody;
   let addmarkup = "";
-  
-  let count=0;
-  $('#add-sales-items-select').on('change', function() {
-    console.log( this.value );
 
-    
-    count+=1;
+  let count = 0;
+  $("#add-sales-items-select").on("change", function () {
+    console.log(this.value);
+
+    count += 1;
     addmarkup = `<tr>
     <td>${count}</td>
     <td class="productimgname">
@@ -612,21 +611,18 @@ $(document).ready(function () {
 
     addtableBody = $("table #table-add-sales");
     addtableBody.append(addmarkup);
-    
   });
 
-  
-// Edit Sales
-let edittableBody;
-let editmarkup = "";
+  // Edit Sales
+  let edittableBody;
+  let editmarkup = "";
 
-let editcount=0;
-$('#edit-sales-items-select').on('change', function() {
-  console.log( this.value );
+  let editcount = 0;
+  $("#edit-sales-items-select").on("change", function () {
+    console.log(this.value);
 
-  
-  editcount+=1;
-  editmarkup = `<tr>
+    editcount += 1;
+    editmarkup = `<tr>
   <td>${editcount}</td>
   <td class="productimgname">
   <a class="product-img">
@@ -643,35 +639,28 @@ $('#edit-sales-items-select').on('change', function() {
   </td>
   </tr>`;
 
-  edittableBody = $("table #table-edit-sales");
-  edittableBody.append(editmarkup);
-  
-});
+    edittableBody = $("table #table-edit-sales");
+    edittableBody.append(editmarkup);
+  });
 
+  // Add Purchase Order - Product Item
+  let addpurchasetableBody;
+  let addpurchasemarkup = "";
 
-// Add Purchase Order - Product Item
-let addpurchasetableBody;
-let addpurchasemarkup = "";
+  let addpurchasecount = 0;
 
-let addpurchasecount=0;
+  $("#add-purchase-items-select").on("change", function () {
+    console.log(this.value);
 
-$('#add-purchase-items-select').on('change', function() {
-  console.log( this.value );
-
-  
-  addpurchasecount+=1;
-  addpurchasemarkup = `
+    addpurchasecount += 1;
+    addpurchasemarkup = `
   <tr>
-    <td class="productimgname">
-    <a class="product-img">
-    <img src="../assets/img/product/noimage.png" alt="product">
-    </a>
-    <a href="javascript:void(0);">Apple Earpods</a>
-    </td>
-    <td><input type="text" class="form-control" value="10.00"></td>
-    <td><input type="text" class="form-control" value="2000.00"></td>
-    <td><input type="text" class="form-control" value="0.00"></td>
-    <td class="text-end">2000.00</td>
+  <td><lable>Apple</lable></td>
+    
+    <td><input type="text" class="form-control"></td>
+    <td><input type="text" class="form-control"></td>
+    <td><input type="text" class="form-control"></td>
+    <td class="text-end"></td>
     <td>
     <a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
     </td>
@@ -679,25 +668,20 @@ $('#add-purchase-items-select').on('change', function() {
       
       `;
 
-  addpurchasetableBody = $("table #table-add-purchase");
-  addpurchasetableBody.append(addpurchasemarkup);
-  
-});
-
-
-
+    addpurchasetableBody = $("table #table-add-purchase");
+    addpurchasetableBody.append(addpurchasemarkup);
+  });
 
   // Edit Purchase
   let editpurchaseorder_tableBody;
   let editpurchasemarkup = "";
 
-let editpurchaseorder_count=0;
-$('#edit-purchase-order-select').on('change', function() {
-  console.log( this.value );
+  let editpurchaseorder_count = 0;
+  $("#edit-purchase-order-select").on("change", function () {
+    console.log(this.value);
 
-  
-  editpurchaseorder_count+=1;
-  editpurchasemarkup = `<tr>
+    editpurchaseorder_count += 1;
+    editpurchasemarkup = `<tr>
   <td class="productimgname">
   <a class="product-img">
   <img src="../assets/img/product/product7.jpg" alt="product">
@@ -713,22 +697,18 @@ $('#edit-purchase-order-select').on('change', function() {
   </td>
   </tr>`;
 
-  editpurchaseorder_tableBody = $("table #table-edit-purchase-order-list");
-  editpurchaseorder_tableBody.append(editpurchasemarkup);
-  
-});
+    editpurchaseorder_tableBody = $("table #table-edit-purchase-order-list");
+    editpurchaseorder_tableBody.append(editpurchasemarkup);
+  });
 
-
-
-// Add Quotation
+  // Add Quotation
   let addquotation_tableBody;
   let addquotationmarkup = "";
 
-$('#add-quotation-items-select').on('change', function() {
-  console.log( this.value );
+  $("#add-quotation-items-select").on("change", function () {
+    console.log(this.value);
 
-  
-  addquotationmarkup = `<tr>
+    addquotationmarkup = `<tr>
   <td class="productimgname">
   <a class="product-img">
   <img src="../assets/img/product/product6.jpg" alt="product">
@@ -744,21 +724,18 @@ $('#add-quotation-items-select').on('change', function() {
   </td>
   </tr>`;
 
-  addquotation_tableBody = $("table #table-add-quotation-list");
-  addquotation_tableBody.append(addquotationmarkup);
-  
-});
+    addquotation_tableBody = $("table #table-add-quotation-list");
+    addquotation_tableBody.append(addquotationmarkup);
+  });
 
+  // Edit Quotation
+  let editquotation_tableBody;
+  let editquotationmarkup = "";
 
-// Edit Quotation
-let editquotation_tableBody;
-let editquotationmarkup = "";
+  $("#edit-quotation-items-select").on("change", function () {
+    console.log(this.value);
 
-$('#edit-quotation-items-select').on('change', function() {
-console.log( this.value );
-
-
-editquotationmarkup = `<tr>
+    editquotationmarkup = `<tr>
 <td class="productimgname">
 <a class="product-img">
 <img src="../assets/img/product/product6.jpg" alt="product">
@@ -774,13 +751,7 @@ editquotationmarkup = `<tr>
 </td>
 </tr>`;
 
-editquotation_tableBody = $("table #table-edit-quotation-list");
-editquotation_tableBody.append(editquotationmarkup);
-
-});
-
-
-
-
-  
+    editquotation_tableBody = $("table #table-edit-quotation-list");
+    editquotation_tableBody.append(editquotationmarkup);
+  });
 });

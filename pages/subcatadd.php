@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $datetime = date("Y-m-d H:i:s");
     $min = 1; // Minimum value
-    $max = 1000000; // Maximum value
+    $max = 10000000000; // Maximum value
 
     $subcatcode = rand($min, $max);
 

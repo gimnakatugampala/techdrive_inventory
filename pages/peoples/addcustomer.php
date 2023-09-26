@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $datetime = date("Y-m-d H:i:s");
     $min = 1;
-    $max = 1000000;
+    $max = 10000000000;
 
     $cuscode = rand($min, $max);
 

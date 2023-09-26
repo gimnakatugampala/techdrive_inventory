@@ -39,6 +39,11 @@
 <script src="../assets/js/addproduct.js"></script>
 <script src="../assets/js/productlist.js"></script>
 <script src="../assets/js/editproduct.js"></script>
+<script src="../assets/js/addpurchase.js"></script>
+<script src="../assets/js/addsale.js"></script>
+<script src="../assets/js/purchaselist.js"></script>
+<script src="../assets/js/salelist.js"></script>
+<script src="../assets/js/editpurchase.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>
 <script src="../assets/js/People/customerlist.js"></script>
@@ -52,6 +57,11 @@
 <script src="../assets/js/productalllist/cmbbrandlist.js"></script>
 <script src="../assets/js/productalllist/cmbcatlist.js"></script>
 <script src="../assets/js/productalllist/cmbsubcatlist.js"></script>
+<script src="../assets/js/productalllist/cmbsupplier.js"></script>
+<script src="../assets/js/productalllist/cmbproduct.js"></script>
+<script src="../assets/js/productalllist/cmbpaidstatus.js"></script>
+<script src="../assets/js/productalllist/cmdstatus.js"></script>
+<script src="../assets/js/productalllist/cmdcustomer.js"></script>
 
 
 </body>
