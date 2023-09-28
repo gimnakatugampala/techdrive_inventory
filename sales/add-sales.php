@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase Add</title>
     <!-- Add your CSS and JavaScript includes here -->
 </head>
+
 <body>
     <?php require_once '../includes/header.php'; ?>
     <?php require_once '../includes/sidebar.php'; ?>
@@ -40,7 +42,8 @@
                             <div class="form-group">
                                 <label for="purchaseDate">Sale Date</label>
                                 <div class="input-groupicon">
-                                    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate" name="purchaseDate">
+                                    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate"
+                                        name="purchaseDate">
                                     <div class="addonset">
                                         <img src="../assets/img/icons/calendars.svg" alt="img">
                                     </div>
@@ -90,48 +93,48 @@
                     </div>
                 </div>
 
-<div class="row">
-<div class="col-lg-6 ">
-<div class="total-order w-100 max-widthauto m-auto mb-4">
+                <div class="row">
+                    <div class="col-lg-6 ">
+                        <div class="total-order w-100 max-widthauto m-auto mb-4">
 
-</div>
-</div>
-<div class="col-lg-6 ">
-<div class="total-order w-100 max-widthauto m-auto mb-4">
-<ul>
-<li>
-<h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Discount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. 0.00</h5>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-<a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="total-order w-100 max-widthauto m-auto mb-4">
+                            <ul>
+                                <li>
+                                    <h4>Grand Total</h4>
+                                    <h5>Rs. 0.00</h5>
+                                </li>
+                                <li>
+                                    <h4>Discount</h4>
+                                    <h5>Rs. 0.00</h5>
+                                </li>
+                                <li>
+                                    <h4>Paid Amount</h4>
+                                    <h5>Rs. 0.00</h5>
+                                </li>
+                                <li class="total">
+                                    <h4>To Be Paid</h4>
+                                    <h5>Rs. 0.00</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <a class="btn btn-submit me-2" id="addSale">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
     <?php require_once '../includes/footer.php'; ?>
 
     <!-- Include your JavaScript file here -->
 </body>
+
 </html>
