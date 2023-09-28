@@ -1,47 +1,55 @@
-﻿<?php require_once '../includes/header.php' ?>
+<?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
 
 <div class="page-wrapper">
 <div class="content">
 <div class="page-header">
 <div class="page-title">
-<h4>Sale Details</h4>
-<h6>View sale details</h6>
+<h4>Purchase Order Details</h4>
+<h6>View purchase details</h6>
 </div>
 </div>
 <div class="card">
 <div class="card-body">
 <div class="card-sales-split">
-
 <div>
-    <h3>Sales Invoice</h3>
+    <h3>Purchase Order Invoice</h3>
     <h2>Tech Drive Solutions</h2>
     <span>• Bambalapitiya   • 0764961707   • techdrive@gmail.com</span>
 </div>
 
 <ul>
-<li>
-<a href="../sales/edit-sales.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
-</li>
-<li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
-</li>
-<li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
-</li>
-<li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
-</li>
+    <li>
+    <a href="../purchase/editpurchase.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+    </li>
+    <li>
+    <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+    </li>
+    <li>
+    <a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
+    </li>
+    <li>
+    <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
+    </li>
 </ul>
+
+
 </div>
+
+
 <div class="invoice-box table-height" style="max-width: 1600px;width:100%;overflow: auto;margin:15px auto;padding: 0;font-size: 14px;line-height: 24px;color: #555;">
+
 <table cellpadding="0" cellspacing="0" style="width: 100%;line-height: inherit;text-align: left;">
-<tbody><tr class="top">
+<tbody>
+<tr class="top">
 <td colspan="6" style="padding: 5px;vertical-align: top;">
 <table style="width: 100%;line-height: inherit;text-align: left;">
-<tbody><tr>
+
+
+<tbody>
+<tr>
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
-<font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Customer Info</font></font><br>
+<font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Supplier Info</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> walk-in-customer</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="mailto:gimna@gmail.com" class="__cf_email__" >gimna@gmail.com</a></font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 123456780</font></font><br>
@@ -54,17 +62,26 @@
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Payment Status</font></font><br>
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Status</font></font><br>
 </td>
+
+
 <td style="padding:5px;vertical-align:top;text-align:right;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">&nbsp;</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">SL0101 </font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#2E7D32;font-weight: 400;"> Paid</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#2E7D32;font-weight: 400;"> Completed</font></font><br>
 </td>
+
+
 </tr>
+
 </tbody>
 </table>
+
+
 </td>
 </tr>
+
+
 <tr class="heading " style="background: #F3F2F7;">
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Product Name

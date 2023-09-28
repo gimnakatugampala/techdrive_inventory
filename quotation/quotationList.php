@@ -120,6 +120,10 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+    
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
@@ -128,9 +132,12 @@
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -151,15 +158,24 @@
 <td><span class="badges bg-lightyellow">Ordered</span></td>
 <td>410</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -180,15 +196,24 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>210</td>
 <td>
+
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
 </td>
 </tr>
 <tr>
@@ -209,15 +234,24 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>500</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -238,15 +272,25 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>1050</td>
 <td>
+
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -267,15 +311,23 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>2530</td>
 <td>
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -296,15 +348,24 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -325,15 +386,24 @@
 <td><span class="badges bg-lightgreen">Ordered</span></td>
 <td>550</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -354,15 +424,23 @@
 <td><span class="badges bg-lightred">Pending</span></td>
 <td>210</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
 </td>
 </tr>
 <tr>
@@ -383,15 +461,24 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>2530</td>
 <td>
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -412,15 +499,25 @@
 <td><span class="badges bg-lightgreen">Sent</span></td>
 <td>550</td>
 <td>
+
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 <tr>
@@ -441,15 +538,25 @@
 <td><span class="badges bg-lightgreen">Ordered</span></td>
 <td>550</td>
 <td>
+
+
+<a class="me-3" href="../quotation/quotation-detail.php">
+    <img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
     <i class="fas fa-exchange-alt fa-lg"></i>
 </a>
+
 <a class="me-3" href="../quotation/editquotation.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
+
 <a class="me-3 confirm-text" href="javascript:void(0);">
-<img src="../assets/img/icons/delete.svg" alt="img">
+<img src="../assets/img/icons/delete.svg"  alt="img">
 </a>
+
+
 </td>
 </tr>
 </tbody>
