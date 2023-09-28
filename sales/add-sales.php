@@ -94,34 +94,51 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6 ">
-                        <div class="total-order w-100 max-widthauto m-auto mb-4">
-
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table tbproductlist">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>QTY</th>
+                                    <th>Purchase Price(Rs)</th>
+                                    <th>Discount(Rs)</th>
+                                    <th class="text-end">Total Cost (Rs)</th>
+                                    <!-- <th>Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="bodySL">
+                                <!-- Rows will be added dynamically -->
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-lg-6 ">
-                        <div class="total-order w-100 max-widthauto m-auto mb-4">
+                </div>
+
+                <!-- Total Order Section -->
+                <div class="row">
+                    <div class="col-lg-12 float-md-right">
+                        <div class="total-order">
                             <ul>
                                 <li>
                                     <h4>Grand Total</h4>
-                                    <h5>Rs. 0.00</h5>
-                                </li>
-                                <li>
-                                    <h4>Discount</h4>
-                                    <h5>Rs. 0.00</h5>
+                                    <h5 id="grandTotal">0.00</h5>
                                 </li>
                                 <li>
                                     <h4>Paid Amount</h4>
-                                    <h5>Rs. 0.00</h5>
+                                    <h5 id="paid">0.00</h5>
+                                </li>
+                                <li style="display:none;">
+                                    <h4>discount</h4>
+                                    <h5 id="dis">0.00</h5>
                                 </li>
                                 <li class="total">
                                     <h4>To Be Paid</h4>
-                                    <h5>Rs. 0.00</h5>
+                                    <h5 id="topaid">0.00</h5>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-12">
                     <a class="btn btn-submit me-2" id="addSale">Submit</a>
                 </div>

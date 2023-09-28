@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase Add</title>
     <!-- Add your CSS and JavaScript includes here -->
 </head>
+
 <body>
     <?php require_once '../includes/header.php'; ?>
     <?php require_once '../includes/sidebar.php'; ?>
@@ -40,7 +42,8 @@
                             <div class="form-group">
                                 <label for="purchaseDate">Purchase Date</label>
                                 <div class="input-groupicon">
-                                    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate" name="purchaseDate">
+                                    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate"
+                                        name="purchaseDate">
                                     <div class="addonset">
                                         <img src="../assets/img/icons/calendars.svg" alt="img">
                                     </div>
@@ -125,9 +128,9 @@
                                     <h5 id="paid">0.00</h5>
                                 </li>
                                 <li style="display:none;">
-    <h4>discount</h4>
-    <h5 id="dis">0.00</h5>
-  </li>
+                                    <h4>discount</h4>
+                                    <h5 id="dis">0.00</h5>
+                                </li>
                                 <li class="total">
                                     <h4>To Be Paid</h4>
                                     <h5 id="topaid">0.00</h5>
@@ -149,4 +152,5 @@
 
     <!-- Include your JavaScript file here -->
 </body>
+
 </html>
