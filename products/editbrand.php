@@ -2,7 +2,6 @@
 <?php require_once '../includes/sidebar.php' ?>
 
 <?php
-// Retrieve brand ID, brand name, and brand description from query parameters
 $brandName = isset( $_GET[ 'brandName' ] ) ? $_GET[ 'brandName' ] : '';
 $brandDescription = isset( $_GET[ 'brandDescription' ] ) ? $_GET[ 'brandDescription' ] : '';
 ?>

@@ -124,7 +124,6 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
           </div>
         </div>
 
-        <!-- Total Order Section -->
         <div class="row">
           <div class="col-lg-12 float-md-right">
             <div class="total-order">

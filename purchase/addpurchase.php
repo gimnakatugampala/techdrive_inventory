@@ -114,7 +114,6 @@
                     </div>
                 </div>
 
-                <!-- Total Order Section -->
                 <div class="row">
                     <div class="col-lg-12 float-md-right">
                         <div class="total-order">
@@ -150,7 +149,6 @@
 
     <?php require_once '../includes/footer.php'; ?>
 
-    <!-- Include your JavaScript file here -->
 </body>
 
 </html>

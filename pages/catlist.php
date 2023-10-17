@@ -7,6 +7,8 @@ $result = $conn->query( $sql );
 $cats = array();
 
 if ( $result->num_rows > 0 ) {
+
+    
     while ( $row = $result->fetch_assoc() ) {
         $cats[] = $row;
     }
@@ -14,3 +16,5 @@ if ( $result->num_rows > 0 ) {
 
 echo json_encode( $cats );
 ?>
+
+

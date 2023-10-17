@@ -73,7 +73,6 @@
                             </div>
                         </div>
 
-                        <!-- Paid Amount Input -->
                         <div class="col-lg-4 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="paidAmount">Paid Amount</label>
