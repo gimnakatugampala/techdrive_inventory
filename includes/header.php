@@ -7,7 +7,7 @@
 <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>Dreams Pos admin template</title>
+<title>Tech Drive Solutions</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
 
@@ -159,7 +159,7 @@
         </ul>
         </div>
         <div class="topnav-dropdown-footer">
-        <a href="activities.html">View all Notifications</a>
+        <a href="../activities/activities.php">View all Notifications</a>
         </div>
         </div>
         </li>

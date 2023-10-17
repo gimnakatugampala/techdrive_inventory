@@ -126,6 +126,9 @@
 <td>550</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -155,6 +158,9 @@
 <td>550</td>
 <td><span class="badges bg-lightyellow">Partial</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -184,6 +190,9 @@
 <td>210</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -213,6 +222,9 @@
 <td>210</td>
 <td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -242,6 +254,9 @@
 <td>210</td>
 <td><span class="badges bg-lightred">UnPaid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -271,6 +286,9 @@
 <td>210</td>
 <td><span class="badges bg-lightgreen">paid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -300,6 +318,9 @@
 <td>1000</td>
 <td><span class="badges bg-lightyellow">Partial</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -329,6 +350,9 @@
 <td>210</td>
 <td><span class="badges bg-lightgreen">paid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -358,6 +382,9 @@
 <td>5500</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -387,6 +414,9 @@
 <td>2580</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
@@ -416,6 +446,9 @@
 <td>2580</td>
 <td><span class="badges bg-lightred">Unpaid</span></td>
 <td>
+<a class="me-3" href="../return/purchasereturn-detail.php">
+<img src="../assets/img/icons/eye1.svg" alt="img">
+</a>
 <a class="me-3" href="../return/editpurchasereturn.php">
 <img src="../assets/img/icons/edit.svg" alt="img">
 </a>
