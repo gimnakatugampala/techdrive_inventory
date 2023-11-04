@@ -67,7 +67,7 @@
                         <div class="col-lg-4 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="paidStatus">Paid Status</label>
-                                <select id="paidStatus" class="select">
+                                <select id="paidStatus" class="form-select">
                                     <option value="0">Choose Paid Status</option>
                                 </select>
                             </div>
@@ -84,7 +84,7 @@
                         <div class="col-lg-4 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                <select id="progressstatus" class="select">
+                                <select id="progressstatus" class="form-select">
                                     <option>Choose Status</option>
                                 </select>
                             </div>

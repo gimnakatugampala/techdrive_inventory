@@ -1,6 +1,7 @@
 $(document).ready(function () {
   var dropdown = document.getElementById("productcmb");
   var tableBody = $("#bodySL");
+
   const paidAmountInput = document.getElementById("paidAmount");
   const paid = document.getElementById("paid");
   const grandTotal = document.getElementById("grandTotal");
@@ -32,6 +33,7 @@ $(document).ready(function () {
       error: function () {},
     });
 
+    // Get All the Sales List
     function populateTable(data) {
       data.forEach(function (plist) {
         var row = $("<tr>");
@@ -51,9 +53,9 @@ $(document).ready(function () {
           "<td><input type='number' class='form-control discount' value='0' name='discountp'></td>"
         );
         row.append("<td class='text-end total'></td>");
-        // row.append(
-        //   "<td><a class='delete-set'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
-        // );
+        row.append(
+          "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+        );
         tableBody.append(row);
 
         // Add the new item to the items array
@@ -130,7 +132,7 @@ $(document).ready(function () {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Please Select Supplier Name",
+        text: "Please Select Customer Name",
       });
     } else if (purchaseDate === "") {
       Swal.fire({
@@ -186,6 +188,7 @@ $(document).ready(function () {
           completeddate: completeddate,
         },
         success: function (response) {
+          console.log(response)
           if (response === "success") {
             Swal.fire({
               icon: "success",
@@ -221,5 +224,6 @@ $(document).ready(function () {
     $("#dis").text("0.00");
     $("#topaid").text("0.00");
   }
+
 
 });

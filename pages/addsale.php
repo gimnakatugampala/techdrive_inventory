@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $max = 10000000000;
     $picode = rand($min, $max);
 
-    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isdeleted) VALUES ('$socode', '$selectSup', '$selectPS', '$progressstatus', '$salesorderdate',0)";
+    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$selectPS', '$progressstatus', '$salesorderdate',0)";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
         $insertedPurchaseOrderID = $conn->insert_id; // Get the ID of the inserted row
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $sql = "INSERT INTO tborderitem (pid,soid,quantity,price,discount) VALUES ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
+            $sql = "INSERT INTO tborderitem (pid,salesorderid,quantity,price,discount) VALUES ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
                 echo 'Error: ' . $sql . '<br>' . $conn->error;
                 exit();
@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isPaid,completeddate,soid,paidamount,topaid,invoicecode) 
-        VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$topaid','$picode')";
+        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isPaid,completeddate,soid,paidamount,invoicecode) 
+        VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
         if ($conn->query($sql2) !== true) {
             echo 'Error: ' . $sql2 . '<br>' . $conn->error;
             exit();
