@@ -98,14 +98,16 @@
                     <table class="table datanew purchaselist">
                         <thead>
                             <tr>
-                                <th>Supplier Name</th>
                                 <th>Order Code</th>
-                                <th>Created Date</th>
+                                <th>Supplier Name</th>
+                                <th>Placed Date</th>
                                 <th>Status</th>
+                                <th>Paid Status</th>
+                                <th>Completed Date</th>
                                 <th>Grand Total</th>
                                 <th>Amount Paid</th>
                                 <th>Discount</th>
-                                <th>Payment Status</th>
+                                <th>Due Amount</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

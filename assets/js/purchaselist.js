@@ -1,18 +1,20 @@
 $(document).ready(function () {
   // Function to populate the table with data
   function populateTable(data) {
-    var tableBody = $("table.purchaselist #purchaselistbody");
+    var tableBody = $("table.datanew.purchaselist #purchaselistbody");
+
+    console.log(data)
 
     data.forEach(function (plist) {
       var row = $("<tr>");
-      row.append("<td style='display:none;'>" + plist.id + "</td>");
-      row.append("<td style='display:none;'>" + plist.statusid + "</td>");
-      row.append("<td style='display:none;'>" + plist.paidstatusid + "</td>");
-      row.append("<td style='display:none;'>" + plist.paidamount + "</td>");
-      row.append("<td>" + plist.supname + "</td>");
       row.append("<td>" + plist.pocode + "</td>");
-      row.append("<td>" + plist.createdate + "</td>");
-      row.append("<td style='display:none;'>" + plist.poid + "</td>");
+      row.append("<td>" + plist.supname + "</td>");
+      row.append("<td>" + plist.created_date + "</td>");
+      // row.append("<td>" + plist.paidamount + "</td>");
+      // row.append("<td>" + plist.supname + "</td>");
+      // row.append("<td>" + plist.pocode + "</td>");
+      // row.append("<td>" + plist.createdate + "</td>");
+      // row.append("<td>" + plist.poid + "</td>");
       if (plist.statusid === "1") {
         row.append(
           "<td> <span class='badges bg-lightgreen'>Completed</span></td>"
@@ -28,21 +30,29 @@ $(document).ready(function () {
       } else {
         row.append("<td> <span class='badges bg-lightred'>Draft</span></td>");
       }
-      row.append("<td>" + plist.grandtotal + "</td>");
-      row.append("<td>" + plist.tobepaid + "</td>");
-      row.append("<td>" + plist.discount + "</td>");
-      if (plist.paidstatusid === "1") {
+
+      if (plist.paid_status  === "1") {
         row.append(
           "<td> <span class='badges bg-lightred'>Not Paid</span></td>"
         );
-      } else if (plist.paidstatusid === "2") {
+      } else if (plist.paid_status  === "2") {
         row.append(
           "<td><span class='badges bg-lightyellow'>Advance</span></td>"
         );
       } else {
         row.append("<td> <span class='badges bg-lightgreen'>Paid</span></td>");
       }
-      row.append("<td style=display:none;>" + plist.id + "</td>");
+      
+      
+
+      row.append("<td>" + plist.completeddate + "</td>");
+      row.append("<td>" + plist.grandtotal + "</td>");
+      row.append("<td>" + plist.paidamount + "</td>");
+      row.append("<td>" + plist.discount + "</td>");
+      row.append(`<td>${parseFloat(plist.grandtotal) - (parseFloat(plist.paidamount))}</td>`);
+
+    
+      // row.append("<td>" + plist.id + "</td>");
       row.append(
         "<td><a class='me-3 btnedit'data-plist-id='" +
           plist.cid +
@@ -50,6 +60,7 @@ $(document).ready(function () {
           plist.id +
           "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
       );
+      row.append("</tr>");
       tableBody.append(row);
     });
   }
