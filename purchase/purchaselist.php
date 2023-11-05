@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table purchaselist">
+                    <table class="table datanew purchaselist">
                         <thead>
                             <tr>
                                 <th>Supplier Name</th>

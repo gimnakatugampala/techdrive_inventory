@@ -33,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $max = 10000000000;
     $picode = rand($min, $max);
 
-    $insertPurchaseOrderSQL = "INSERT INTO tbpurchaseorder (pocode, invoiceissued, supid, statusid,paidstatusid,isdeleted,createdate) VALUES ('$pocode', '$invoiceissueddate', '$selectSup', '$progressstatus', '$selectPS',0,'$createddate')";
+    $insertPurchaseOrderSQL = "INSERT INTO tbpurchaseorder (pocode, supid, statusid,paid_status,created_date) VALUES 
+    ('$pocode', '$selectSup', '$progressstatus', '$selectPS','$createddate')";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
         $insertedPurchaseOrderID = $conn->insert_id; // Get the ID of the inserted row
@@ -43,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $sql = "INSERT INTO tbpurchaseorderitem (product_id, poid, qty, price, discount) VALUES ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
+            $sql = "INSERT INTO tbpurchaseorderitem (product_id, poid, qty, price, discount) VALUES 
+            ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
                 echo 'Error: ' . $sql . '<br>' . $conn->error;
                 exit();
@@ -51,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "INSERT INTO tbpurchaseinvoice (paidamount,grandtotal,tobepaid, isPaid, createdate, discount, poid, picode, completeddate) VALUES ('$paidAmount','$grandTotal','$topaid', '$isPaid', '$purchaseDate', '$dis', '$insertedPurchaseOrderID', '$picode', '$comdate')";
+        $sql2 = "INSERT INTO tbpurchaseinvoice (paidamount,grandtotal, isSuccess, discount, poid, picode, completeddate) VALUES 
+        ('$paidAmount','$grandTotal', '$isPaid', '$dis', '$insertedPurchaseOrderID', '$picode', '$comdate')";
         if ($conn->query($sql2) !== true) {
             echo 'Error: ' . $sql2 . '<br>' . $conn->error;
             exit();

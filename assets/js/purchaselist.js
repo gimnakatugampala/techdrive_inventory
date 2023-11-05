@@ -26,7 +26,7 @@ $(document).ready(function () {
           "<td> <span class='badges bg-lightred'>Canceled</span></td>"
         );
       } else {
-        row.append("<td> <span class='badges bg-lightred'>Deaft</span></td>");
+        row.append("<td> <span class='badges bg-lightred'>Draft</span></td>");
       }
       row.append("<td>" + plist.grandtotal + "</td>");
       row.append("<td>" + plist.tobepaid + "</td>");

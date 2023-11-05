@@ -186,6 +186,7 @@ $(document).ready(function () {
           completeddate: completeddate,
         },
         success: function (response) {
+          console.log(response)
           if (response === "success") {
             Swal.fire({
               icon: "success",
