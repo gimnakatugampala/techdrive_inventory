@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $max = 10000000000;
     $picode = rand($min, $max);
 
-    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$selectPS', '$progressstatus', '$salesorderdate',0)";
+    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$salesorderdate',0)";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
         $insertedPurchaseOrderID = $conn->insert_id; // Get the ID of the inserted row
@@ -50,13 +50,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
+        if($progressstatus == "1" && $selectPS == "3"){
+
         // Insert into tbpurchaseinvoice
-        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isPaid,completeddate,soid,paidamount,invoicecode) 
-        VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
+        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
+        VALUES ('$grandTotal','$dis','1','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
         if ($conn->query($sql2) !== true) {
             echo 'Error: ' . $sql2 . '<br>' . $conn->error;
             exit();
         }
+
+        }else{
+
+        // Insert into tbpurchaseinvoice
+        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
+        VALUES ('$grandTotal','$dis','0','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
+        if ($conn->query($sql2) !== true) {
+            echo 'Error: ' . $sql2 . '<br>' . $conn->error;
+            exit();
+        }
+            
+        }
+
+        // // Insert into tbpurchaseinvoice
+        // $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
+        // VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
+        // if ($conn->query($sql2) !== true) {
+        //     echo 'Error: ' . $sql2 . '<br>' . $conn->error;
+        //     exit();
+        // }
 
         echo 'success';
     } else {

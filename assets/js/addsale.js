@@ -164,6 +164,18 @@ $(document).ready(function () {
         title: "Error",
         text: "Please Select Status",
       });
+    } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "If Status Completed Paid Status Should be Paid",
+      });
+    } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Cannot Select Canceled Status or Draft Status",
+      });
     } else {
       if (selectPS === "3" && progressstatus === "1") {
         isPaid = "1";

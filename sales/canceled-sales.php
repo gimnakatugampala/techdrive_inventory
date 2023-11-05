@@ -72,7 +72,9 @@
 </div>
 
 <div class="table-responsive">
-<table class="table  datanew">
+
+
+<!-- <table class="table  datanew">
 <thead>
 <tr>
 <th>
@@ -93,6 +95,7 @@
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -121,6 +124,9 @@
 </ul>
 </td>
 </tr>
+
+
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -402,17 +408,65 @@
 </td>
 </tr>
 </tbody>
+</table> -->
+
+
+
+<!-- NEW -->
+<table class="table  datanew canceledsaleslist">
+<thead>
+<tr>
+<th>Sales Code</th>
+<th>Customer Name</th>
+<th>Status</th>
+<th>Paid Status</th>
+<th>Placed Date</th>
+<th>Canceled Date</th>
+<th>Grand Total</th>
+<th>Amount Paid</th>
+<th>Due Amount</th>
+<th class="text-center">Action</th>
+</tr>
+</thead>
+<tbody id="canceledsaleslistbody">
+
+<!-- <tr>
+<td>walk-in-customer</td>
+<td>19 Nov 2022</td>
+<td>SL0101</td>
+<td><span class="badges bg-lightgreen">Completed</span></td>
+<td><span class="badges bg-lightgreen">Paid</span></td>
+<td>0.00</td>
+<td>IN001</td>
+<td>19 Nov 2023</td>
+<td>19 Nov 2023</td>
+<td class="text-center">
+<a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+</li>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+</li>
+</ul>
+</td>
+</tr> -->
+
+</tbody>
 </table>
-</div>
-</div>
-</div>
 
 </div>
 </div>
 </div>
 
+</div>
+</div>
+</div>
 
-<div class="modal fade" id="showpayment" tabindex="-1" aria-labelledby="showpayment" aria-hidden="true">
+
+<!-- <div class="modal fade" id="showpayment" tabindex="-1" aria-labelledby="showpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -455,10 +509,10 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
-<div class="modal fade" id="createpayment" tabindex="-1" aria-labelledby="createpayment" aria-hidden="true">
+<!-- <div class="modal fade" id="createpayment" tabindex="-1" aria-labelledby="createpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -520,10 +574,10 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
-<div class="modal fade" id="editpayment" tabindex="-1" aria-labelledby="editpayment" aria-hidden="true">
+<!-- <div class="modal fade" id="editpayment" tabindex="-1" aria-labelledby="editpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -585,7 +639,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
 <?php require_once '../includes/footer.php' ?>
