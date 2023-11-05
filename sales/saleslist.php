@@ -535,14 +535,15 @@
                     <table class="table saleslist">
                         <thead>
                             <tr>
-                                <th>Customer Name</th>
-                                <th>Date</th>
                                 <th>Sales Code</th>
+                                <th>Customer Name</th>
                                 <th>Status</th>
-                                <th>Payment</th>
+                                <th>Paid Status</th>
+                                <th>Placed Date</th>
                                 <th>Grand Total</th>
                                 <th>Amount Paid</th>
-                                <th>Due</th>
+                                <th>Due Amount</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="saleslistbody"></tbody>

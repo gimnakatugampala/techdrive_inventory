@@ -1,7 +1,9 @@
 <?php
 require_once '../includes/db_config.php';
 
-$sql = 'SELECT tbcustomer.id,tbcustomer.cusname,tbsalesorder.socode,tbinvoice.paidamount,tbsalesorder.salesorderdate,tbsalesorder.sid,tbinvoice.grandtotal,tbinvoice.topaid,tbinvoice.discount,tbsalesorder.paidstatusid FROM tbsalesorder INNER JOIN tbcustomer ON tbsalesorder.cusid = tbcustomer.id INNER JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid where tbsalesorder.isdeleted = 0';
+$sql = 'SELECT * from tbsalesorder 
+JOIN tbcustomer ON tbsalesorder.cusid = tbcustomer.id
+JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.sid != 4 AND tbsalesorder.paidstatusid != 4';
 $result = $conn->query( $sql );
 
 $plist = array();

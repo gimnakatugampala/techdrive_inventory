@@ -3,16 +3,18 @@ $(document).ready(function () {
   function populateTable(data) {
     var tableBody = $("table.saleslist #saleslistbody");
 
+    console.log(data)
+
     data.forEach(function (saleli) {
       var row = $("<tr>");
-      row.append("<td style='display:none;'>" + saleli.id + "</td>");
-      row.append("<td style='display:none;'>" + saleli.statusid + "</td>");
-      row.append("<td style='display:none;'>" + saleli.paidstatusid + "</td>");
-      row.append("<td style='display:none;'>" + saleli.paidamount + "</td>");
-      row.append("<td>" + saleli.cusname + "</td>");
-      row.append("<td>" + saleli.salesorderdate + "</td>");
       row.append("<td>" + saleli.socode + "</td>");
-      row.append("<td style='display:none;'>" + saleli.soid + "</td>");
+      // row.append("<td style='display:none;'>" + saleli.statusid + "</td>");
+      // row.append("<td style='display:none;'>" + saleli.paidstatusid + "</td>");
+      // row.append("<td style='display:none;'>" + saleli.paidamount + "</td>");
+      row.append("<td>" + saleli.cusname + "</td>");
+      // row.append("<td>" + saleli.salesorderdate + "</td>");
+      // row.append("<td>" + saleli.socode + "</td>");
+      // row.append("<td style='display:none;'>" + saleli.soid + "</td>");
       if (saleli.sid === "1") {
         row.append(
           "<td> <span class='badges bg-lightgreen'>Completed</span></td>"
@@ -25,12 +27,11 @@ $(document).ready(function () {
         row.append(
           "<td> <span class='badges bg-lightred'>Canceled</span></td>"
         );
-      } else {
-        row.append("<td> <span class='badges bg-lightred'>Deaft</span></td>");
-      }
-      row.append("<td>" + saleli.grandtotal + "</td>");
-      row.append("<td>" + saleli.topaid + "</td>");
-      row.append("<td>" + saleli.discount + "</td>");
+      } 
+
+      // else {
+      //   row.append("<td> <span class='badges bg-lightred'>Draft</span></td>");
+      // }
       if (saleli.paidstatusid === "1") {
         row.append(
           "<td> <span class='badges bg-lightred'>Not Paid</span></td>"
@@ -42,14 +43,47 @@ $(document).ready(function () {
       } else {
         row.append("<td> <span class='badges bg-lightgreen'>Paid</span></td>");
       }
-      row.append("<td style=display:none;>" + saleli.id + "</td>");
-      row.append(
-        "<td><a class='me-3 btnedit'data-saleli-id='" +
-          saleli.id +
-          "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-saleli-id='" +
-          saleli.id +
-          "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
-      );
+
+
+      row.append("<td>" + saleli.salesorderdate + "</td>");
+     
+      row.append("<td>" + saleli.grandtotal + "</td>");
+      row.append("<td>" + saleli.paidamount + "</td>");
+      row.append(`<td>${parseFloat(saleli.grandtotal) - parseFloat(saleli.paidamount)}</td>`);
+      row.append(`<td class="text-center">
+      <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
+      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      </a>
+      <ul class="dropdown-menu">
+      <li>
+      <a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Details</a>
+      </li>
+      <li>
+      <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+      </li>
+      
+      <li>
+      <a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+      </li>
+      <li>
+      <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
+      </li>
+      <li>
+      <a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
+      </li>
+      </ul>
+      </td>`)
+
+   
+
+      // row.append("<td style=display:none;>" + saleli.id + "</td>");
+      // row.append(
+      //   "<td><a class='me-3 btnedit'data-saleli-id='" +
+      //     saleli.id +
+      //     "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-saleli-id='" +
+      //     saleli.id +
+      //     "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
+      // );
       tableBody.append(row);
     });
   }
