@@ -532,7 +532,7 @@
 </div> -->
 
                 <div class="table-responsive">
-                    <table class="table saleslist">
+                    <table class="table datanew saleslist">
                         <thead>
                             <tr>
                                 <th>Sales Code</th>

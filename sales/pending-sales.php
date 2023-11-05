@@ -74,7 +74,8 @@
 </div>
 
 <div class="table-responsive">
-<table class="table  datanew">
+
+<!-- <table class="table  datanew">
 <thead>
 <tr>
 <th>
@@ -509,17 +510,73 @@
 </td>
 </tr>
 </tbody>
+</table> -->
+
+
+
+<!-- NEW -->
+<table class="table datanew pendingsaleslist">
+<thead>
+<tr>
+<th>Sales Code</th>
+<th>Customer Name</th>
+<th>Status</th>
+<th>Paid Status</th>
+<th>Placed Date</th>
+<th>Grand Total</th>
+<th>Amount Paid</th>
+<th>Due</th>
+<th class="text-center">Action</th>
+</tr>
+</thead>
+<tbody id="pendingsaleslistbody">
+<!-- <tr>
+<td>SL0111</td>
+<td>Gimna Katugampala</td>
+<td><span class="badges bg-lightred">Pending</span></td>
+<td><span class="badges bg-lightred">Due</span></td>
+<td>19 Nov 2022</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td class="text-center">
+<a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
+<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+</li>
+<li>
+<a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+</li>
+<li>
+<a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+</li>
+<li>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
+</li>
+<li>
+<a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
+</li>
+</ul>
+</td>
+</tr> -->
+</tbody>
 </table>
-</div>
-</div>
-</div>
+
+
 
 </div>
 </div>
 </div>
 
+</div>
+</div>
+</div>
 
-<div class="modal fade" id="showpayment" tabindex="-1" aria-labelledby="showpayment" aria-hidden="true">
+
+<!-- <div class="modal fade" id="showpayment" tabindex="-1" aria-labelledby="showpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -558,14 +615,16 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
-<div class="modal fade" id="createpayment" tabindex="-1" aria-labelledby="createpayment" aria-hidden="true">
+</div>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<!-- <div class="modal fade" id="createpayment" tabindex="-1" aria-labelledby="createpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -627,10 +686,10 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
-<div class="modal fade" id="editpayment" tabindex="-1" aria-labelledby="editpayment" aria-hidden="true">
+<!-- <div class="modal fade" id="editpayment" tabindex="-1" aria-labelledby="editpayment" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -692,7 +751,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
 <?php require_once '../includes/footer.php' ?>
