@@ -30,6 +30,8 @@
     <ul>
     <li><a <?php echo ($_SERVER['REQUEST_URI'] == "/inventory_tech_drive_lk/sales/saleslist.php" || $_SERVER['REQUEST_URI'] == "/sales/saleslist.php") ? 'class="active"' : '';   ?> href="../sales/saleslist.php">Sales List</a></li>
 
+    <li><a <?php echo ($_SERVER['REQUEST_URI'] == "/inventory_tech_drive_lk/sales/completed-sales.php" || $_SERVER['REQUEST_URI'] == "/sales/completed-sales.php") ? 'class="active"' : '';   ?> href="../sales/completed-sales.php">Completed Sales</a></li>
+
     <li><a <?php echo ($_SERVER['REQUEST_URI'] == "/inventory_tech_drive_lk/sales/pending-sales.php" || $_SERVER['REQUEST_URI'] == "/sales/pending-sales.php") ? 'class="active"' : '';   ?> href="../sales/pending-sales.php">Pending Sales</a></li>
 
     <li><a <?php echo ($_SERVER['REQUEST_URI'] == "/inventory_tech_drive_lk/sales/canceled-sales.php" || $_SERVER['REQUEST_URI'] == "/sales/canceled-sales.php") ? 'class="active"' : '';   ?> href="../sales/canceled-sales.php">Canceled Sales</a></li>

@@ -45,6 +45,7 @@
 <script src="../assets/js/salelist.js"></script>
 <script src="../assets/js/pendingsaleslist.js"></script>
 <script src="../assets/js/canceledsaleslist.js"></script>
+<script src="../assets/js/completedsaleslist.js"></script>
 <script src="../assets/js/editpurchase.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>
