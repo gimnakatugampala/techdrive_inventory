@@ -46,6 +46,7 @@ $(document).ready(function () {
   
   
         row.append("<td>" + saleli.salesorderdate + "</td>");
+        row.append("<td>" + saleli.completeddate + "</td>");
        
         row.append("<td>" + saleli.grandtotal + "</td>");
         row.append("<td>" + saleli.paidamount + "</td>");
@@ -56,20 +57,9 @@ $(document).ready(function () {
         </a>
         <ul class="dropdown-menu">
         <li>
-        <a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Details</a>
+        <a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
         </li>
-        <li>
-        <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
-        </li>
-        
-        <li>
         <a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
-        </li>
-        <li>
-        <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
-        </li>
-        <li>
-        <a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
         </li>
         </ul>
         </td>`)
