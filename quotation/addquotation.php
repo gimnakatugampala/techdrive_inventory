@@ -21,9 +21,8 @@
 <label>Customer</label>
 <div class="row">
 <div class="col-lg-12 col-sm-10 col-10">
-<select class="form-select">
-<option>Choose</option>
-<option>Customer Name</option>
+<select class="form-select" id="selectCus">
+<option value="0">Select Customer</option>
 </select>
 </div>
 </div>
@@ -42,35 +41,32 @@
 </div>
 </div>
 
-<div class="col-lg-12 col-sm-6 col-12">
-<div class="form-group">
-<label>Product Name</label>
-<select id="add-quotation-items-select" class="form-select"  aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">Mac Book Pro</option>
-  <option value="2">Iphone 15</option>
-  <option value="3">Watch</option>
-</select>
-</div>
-</div>
+        <div class="col-lg-12 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="productcmb">Product Name</label>
+                            <select id="productcmb" class="form-select">
+                                <option value="0">Select Product</option>
+                            </select>
+                        </div>
+                    </div>
 
 </div>
 
 <div class="row">
 <div class="table-responsive">
-<table class="table">
+<table class="table tbproductlist">
 <thead>
 <tr>
-<th>Product</th>
-<th>Price(Rs.)	</th>
-<th>Qty</th>
-<th>Discount( Rs. )	</th>
-<th class="text-end">Subtotal (Rs.)</th>
-<th></th>
+  <th>Product Name</th>
+  <th>QTY</th>
+  <th>Purchase Price(Rs)</th>
+  <th>Discount(Rs)</th>
+  <th class="text-end">Total Cost (Rs)</th>
 </tr>
 </thead>
-<tbody id="table-add-quotation-list">
-<tr>
+<tbody id="bodyQL">
+
+<!-- <tr>
 <td class="productimgname">
 <a class="product-img">
 <img src="../assets/img/product/product7.jpg" alt="product">
@@ -84,8 +80,9 @@
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
 </td>
-</tr>
-<tr>
+</tr> -->
+
+<!-- <tr>
 <td class="productimgname">
 <a class="product-img">
 <img src="../assets/img/product/product6.jpg" alt="product">
@@ -99,7 +96,8 @@
 <td>
 <a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
 </td>
-</tr>
+</tr> -->
+
 </tbody>
 </table>
 </div>
@@ -107,33 +105,30 @@
 
 
 <div class="row">
-<div class="col-lg-6 ">
-<div class="total-order w-100 max-widthauto m-auto mb-4">
+            <div class="col-lg-12 float-md-right">
+                <div class="total-order">
+                    <ul>
+                        <li>
+                            <h4>Grand Total</h4>
+                            <h5 id="grandTotal">0.00</h5>
+                        </li>
+                        <li>
+                            <h4>Paid Amount</h4>
+                            <h5 id="paid">0.00</h5>
+                        </li>
+                        <li style="display:none;">
+                            <h4>discount</h4>
+                            <h5 id="dis">0.00</h5>
+                        </li>
+                        <li class="total">
+                            <h4>To Be Paid</h4>
+                            <h5 id="topaid">0.00</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-</div>
-</div>
-<div class="col-lg-6 ">
-<div class="total-order w-100 max-widthauto m-auto mb-4">
-<ul>
-<li>
-<h4>Discount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-
-<li>
-<h4>Sub Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-
-<li class="total">
-<h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-
-</ul>
-</div>
-</div>
-</div>
 <div class="row">
 
 <div class="col-lg-12">

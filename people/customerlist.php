@@ -77,7 +77,7 @@
 
 
 <div class="table-responsive">
-                    <table class="table customerlist">
+                    <table class="table datanew customerlist">
                         <thead>
                             <tr>
                             <th>Customer Name</th>

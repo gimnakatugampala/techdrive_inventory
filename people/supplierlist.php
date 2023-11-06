@@ -76,7 +76,7 @@
 </div>
 
 <div class="table-responsive">
-<table class="table supplierlist">
+<table class="table datanew supplierlist">
 <thead>
 <tr>
 <th>Supplier Name</th>
