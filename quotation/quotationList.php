@@ -87,32 +87,18 @@
 <table class="table  datanew">
 <thead>
 <tr>
-<th>
-<label class="checkboxs">
-<input type="checkbox" id="select-all">
-<span class="checkmarks"></span>
-</label>
-</th>
-<th>Customer Name</th>
 <th>Quotation Code</th>
-<th>Date</th>
+<th>Customer Name</th>
+<th>Placed Date</th>
 <th>Status</th>
 <th>Grand Total ( Rs.)</th>
 <th>Action</th>
 </tr>
 </thead>
 <tbody>
+
 <tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
 <td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product1.jpg" alt="product">
-</a>
 <a href="javascript:void(0);">Macbook pro</a>
 </td>
 <td>PT001</td>
@@ -140,17 +126,9 @@
 
 </td>
 </tr>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
+
+<!-- <tr>
 <td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="../assets/img/product/product2.jpg" alt="product">
-</a>
 <a href="javascript:void(0);">Orange</a>
 </td>
 <td>PT002</td>
@@ -177,8 +155,9 @@
 
 
 </td>
-</tr>
-<tr>
+</tr> -->
+
+<!-- <tr>
 <td>
 <label class="checkboxs">
 <input type="checkbox">
@@ -558,7 +537,7 @@
 
 
 </td>
-</tr>
+</tr> -->
 </tbody>
 </table>
 </div>
