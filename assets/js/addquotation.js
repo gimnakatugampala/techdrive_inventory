@@ -102,8 +102,8 @@ $(document).ready(function () {
       var data = [];
       const selectPro = dropdown.value;
       const selectSup = $("#selectCus").val();
-      const selectPS = $("#paidStatus").val();
-      const progressstatus = $("#progressstatus").val();
+      const selectPS = 4;
+      const progressstatus = 4;
       var paidAmount = parseFloat(0);
       var quotationdate = $("#quotationdate").val();
   
@@ -157,65 +157,56 @@ $(document).ready(function () {
           title: "Error",
           text: "Please Enter a Valid Paid Amount",
         });
-      } else if (progressstatus === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Status",
-        });
-      } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "If Status Completed Paid Status Should be Paid",
-        });
-      } else if (progressstatus === "3" ||  progressstatus == "4" ) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Cannot Select Canceled Status or Draft Status",
-        });
       } else {
-        if (selectPS === "3" && progressstatus === "1") {
-          isPaid = "1";
-          completeddate = "1";
-        }
+      
+
+        console.log("1-"+JSON.stringify(data)) // Select Product List
+        console.log("2-"+selectPro)
+        console.log("3-"+selectSup) // Selected Customer
+        console.log("4-"+selectPS) // Paid Status
+        console.log("5-"+progressstatus) // Status
+        console.log("6-"+paidAmount) // Paid Amount - 0
+        console.log("7-"+quotationdate) // Quotation Date
+        console.log("8-"+isPaid) // Success Full Or Not
+        console.log("9-"+grandTotal) // Final Total
+        console.log("10-"+topaid) // To Be Paid Amount
+        console.log("11-"+dis) // Disount
   
-        // $.ajax({
-        //   type: "POST",
-        //   url: "../pages/addpurchase.php",
-        //   data: {
-        //     data: JSON.stringify(data),
-        //     selectPro: selectPro,
-        //     selectSup: selectSup,
-        //     selectPS: selectPS,
-        //     progressstatus: progressstatus,
-        //     paidAmount: paidAmount,
-        //     quotationdate: quotationdate,
-        //     isPaid: isPaid,
-        //     grandTotal: grandTotal,
-        //     topaid: topaid,
-        //     dis: dis,
-        //     completeddate: completeddate,
-        //   },
-        //   success: function (response) {
-        //     console.log(response)
-        //     if (response === "success") {
-        //       Swal.fire({
-        //         icon: "success",
-        //         title: "Success",
-        //         text: "Successfully added Purchase",
-        //       });
-        //       clearAB();
-        //     } else {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Error",
-        //         text: "An error occurred while saving the data.",
-        //       });
-        //     }
-        //   },
-        // });
+        $.ajax({
+          type: "POST",
+          url: "../pages/addquotation.php",
+          data: {
+            data: JSON.stringify(data),
+            selectPro: selectPro,
+            selectSup: selectSup,
+            selectPS: selectPS,
+            progressstatus: progressstatus,
+            paidAmount: paidAmount,
+            quotationdate: quotationdate,
+            isPaid: isPaid,
+            grandTotal: grandTotal,
+            topaid: topaid,
+            dis: dis,
+            completeddate: completeddate,
+          },
+          success: function (response) {
+            console.log(response)
+            if (response === "success") {
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Successfully added Quotation",
+              });
+              clearAB();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred while saving the data.",
+              });
+            }
+          },
+        });
 
       }
     });
