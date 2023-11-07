@@ -33,7 +33,7 @@
 <div class="form-group">
 <label>Quotation Date</label>
 <div class="input-groupicon">
-<input type="text" placeholder="Choose Date" class="datetimepicker">
+<input type="text" placeholder="Choose Date" id="quotationdate" class="datetimepicker">
 <a class="addonset">
 <img src="../assets/img/icons/calendars.svg" alt="img">
 </a>
@@ -112,7 +112,7 @@
                             <h4>Grand Total</h4>
                             <h5 id="grandTotal">0.00</h5>
                         </li>
-                        <li>
+                        <li style="display:none;">
                             <h4>Paid Amount</h4>
                             <h5 id="paid">0.00</h5>
                         </li>
@@ -132,7 +132,7 @@
 <div class="row">
 
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
+<a id="addQuotation" class="btn btn-submit me-2">Submit</a>
 <a href="../quotation/quotationList.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
