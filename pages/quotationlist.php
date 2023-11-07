@@ -3,7 +3,7 @@ require_once '../includes/db_config.php';
 
 $sql = 'SELECT * from tbsalesorder 
 JOIN tbcustomer ON tbsalesorder.cusid = tbcustomer.id
-JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.sid = 4 AND tbsalesorder.paidstatusid = 4';
+JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.sid = 4 AND tbsalesorder.paidstatusid = 4 AND tbsalesorder.isquotation = 1 ORDER BY tbsalesorder.salesorderdate DESC';
 $result = $conn->query( $sql );
 
 $plist = array();

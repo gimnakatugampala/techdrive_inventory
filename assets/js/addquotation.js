@@ -166,7 +166,7 @@ $(document).ready(function () {
         console.log("4-"+selectPS) // Paid Status
         console.log("5-"+progressstatus) // Status
         console.log("6-"+paidAmount) // Paid Amount - 0
-        console.log("7-"+quotationdate) // Quotation Date
+        console.log("7-"+ new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString()) // Quotation Date
         console.log("8-"+isPaid) // Success Full Or Not
         console.log("9-"+grandTotal) // Final Total
         console.log("10-"+topaid) // To Be Paid Amount
@@ -182,7 +182,7 @@ $(document).ready(function () {
             selectPS: selectPS,
             progressstatus: progressstatus,
             paidAmount: paidAmount,
-            quotationdate: quotationdate,
+            quotationdate: new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString(),
             isPaid: isPaid,
             grandTotal: grandTotal,
             topaid: topaid,

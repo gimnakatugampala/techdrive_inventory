@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $selectPS = $_POST['selectPS'];
     $progressstatus = $_POST['progressstatus'];
     $paidAmount = $_POST['paidAmount'];
-    $purchaseDate = $_POST['quotationdate'];
+    $purchaseDate = date($_POST['quotationdate']);
     $isPaid = $_POST['isPaid'];
     $grandTotal = $_POST['grandTotal'];
     $topaid = $_POST['topaid'];
@@ -33,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $max = 10000000000;
     $picode = rand($min, $max);
 
-    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$salesorderdate',0)";
+    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES 
+    ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$purchaseDate',1)";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
         $insertedPurchaseOrderID = $conn->insert_id; // Get the ID of the inserted row

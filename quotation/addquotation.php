@@ -33,7 +33,8 @@
 <div class="form-group">
 <label>Quotation Date</label>
 <div class="input-groupicon">
-<input type="text" placeholder="Choose Date" id="quotationdate" class="datetimepicker">
+<!-- class="datetimepicker" -->
+<input type="date" placeholder="Choose Date" id="quotationdate" class="form-control" >
 <a class="addonset">
 <img src="../assets/img/icons/calendars.svg" alt="img">
 </a>
