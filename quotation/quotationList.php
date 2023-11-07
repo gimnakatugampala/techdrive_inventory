@@ -84,7 +84,7 @@
 </div>
 
 <div class="table-responsive">
-<table class="table  datanew">
+<table class="table datanew quotationlist">
 <thead>
 <tr>
 <th>Quotation Code</th>
@@ -95,8 +95,8 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody>
-
+<tbody id="quotationlistbody">
+<!-- 
 <tr>
 <td class="productimgname">
 <a href="javascript:void(0);">Macbook pro</a>
@@ -125,7 +125,7 @@
 
 
 </td>
-</tr>
+</tr> -->
 
 <!-- <tr>
 <td class="productimgname">
