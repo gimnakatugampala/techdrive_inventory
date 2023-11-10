@@ -48,12 +48,15 @@
 <script src="../assets/js/completedsaleslist.js"></script>
 <script src="../assets/js/editpurchase.js"></script>
 
+<script src="../assets/js/addsalesreturn.js"></script>
+
 <script src="../assets/js/addquotation.js"></script>
 <script src="../assets/js/quotationlist.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>
 <script src="../assets/js/People/customerlist.js"></script>
 <script src="../assets/js/People/editcustomer.js"></script>
+
 
 
 <script src="../assets/js/People/addsupplier.js"></script>

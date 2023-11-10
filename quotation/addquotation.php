@@ -35,21 +35,21 @@
 <div class="input-groupicon">
 <!-- class="datetimepicker" -->
 <input type="date" placeholder="Choose Date" id="quotationdate" class="form-control" >
-<a class="addonset">
+<!-- <a class="addonset">
 <img src="../assets/img/icons/calendars.svg" alt="img">
-</a>
+</a> -->
 </div>
 </div>
 </div>
 
-        <div class="col-lg-12 col-sm-6 col-12">
-                        <div class="form-group">
-                            <label for="productcmb">Product Name</label>
-                            <select id="productcmb" class="form-select">
-                                <option value="0">Select Product</option>
-                            </select>
-                        </div>
-                    </div>
+<div class="col-lg-12 col-sm-6 col-12">
+            <div class="form-group">
+                <label for="productcmb">Product Name</label>
+                <select id="productcmb" class="form-select">
+                    <option value="0">Select Product</option>
+                </select>
+            </div>
+        </div>
 
 </div>
 
