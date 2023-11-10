@@ -90,41 +90,25 @@
 </div>
 
 <div class="table-responsive">
-<table class="table datanew">
+<table class="table datanew salesreturnlist">
 <thead>
 <tr>
-<th>
-<label class="checkboxs">
-<input type="checkbox" id="select-all">
-<span class="checkmarks"></span>
-</label>
-</th>
-<th>Date</th>
-<th>Customer</th>
+<th>Sales Code</th>
+<th>Customer Name</th>
 <th>Status</th>
+<th>Placed Date</th>
 <th>Grand Total ($)</th>
-<th>Paid ($)</th>
-<th>Due ($)</th>
-<th>Payment Status</th>
 <th>Action</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
+<tbody id="salesreturnlistbody">
 
-<td>19 Nov 2022</td>
-<td>Thomas</td>
+<!-- <tr>
+<td>2030430</td>
+<td>Gimna Katugampala</td>
 <td><span class="badges bg-lightgreen">Received</span></td>
+<td>19 Nov 2022</td>
 <td>550</td>
-<td>120</td>
-<td>550</td>
-<td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
 <a class="me-3" href="../return/salesreturn-detail.php">
 <img src="../assets/img/icons/eye1.svg" alt="img">
@@ -136,8 +120,10 @@
 <img src="../assets/img/icons/delete.svg" alt="img">
 </a>
 </td>
-</tr>
-<tr>
+</tr> -->
+
+
+<!-- <tr>
 <td>
 <label class="checkboxs">
 <input type="checkbox">
@@ -163,6 +149,7 @@
 </a>
 </td>
 </tr>
+
 <tr>
 <td>
 <label class="checkboxs">
@@ -474,7 +461,8 @@
 <img src="../assets/img/icons/delete.svg" alt="img">
 </a>
 </td>
-</tr>
+</tr> -->
+
 </tbody>
 </table>
 </div>
