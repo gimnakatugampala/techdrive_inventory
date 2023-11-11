@@ -28,10 +28,9 @@ value = "<?php echo htmlspecialchars($_GET['brandName']); ?>">
 <div class = 'col-lg-12'>
 <div class = 'form-group'>
 <label>Description</label>
-<textarea id = 'brandDescription' name = 'brandDescription'
+<textarea  id = 'brandDescription' name = 'brandDescription'
 
-class = 'form-control'><?php echo htmlspecialchars( $_GET[ 'brandDescription' ] );
-?></textarea>
+class = 'form-control'><?php echo htmlspecialchars($_GET[ 'brandDescription' ]);?></textarea>
 </div>
 </div>
 <div class = 'col-lg-12'>

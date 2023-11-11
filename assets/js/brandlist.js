@@ -24,6 +24,7 @@ $(document).ready(function () {
     populateTable(data);
   });
 
+
   $("table.brandlist").on("click", ".btnedit", function () {
     var brandId = $(this).data("brand-id");
     var brandName = $(this).closest("tr").find("td:nth-child(2)").text();
