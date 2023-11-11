@@ -83,48 +83,29 @@
 </div>
 
 <div class="table-responsive">
-<table class="table datanew">
+<table class="table datanew purchasereturnlist">
+
 <thead>
 <tr>
-<th>
-<label class="checkboxs">
-<input type="checkbox" id="select-all">
-<span class="checkmarks"></span>
-</label>
-</th>
-<th>Image</th>
-<th>Date</th>
-<th>Supplier</th>
+
 <th>POR Code</th>
+<th>Supplier Name</th>
+<th>Placed Date</th>
 <th>Status</th>
 <th>Grand Total (Rs.)</th>
-<th>Paid (Rs.)</th>
-<th>Discount (Rs.)</th>
-<th>Payment Status</th>
 <th>Action</th>
 </tr>
 </thead>
-<tbody>
+
+<tbody id="purchasereturnlistbody">
+
 <tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
-<td>
-<a class="product-img">
-<img src="../assets/img/product/product1.jpg" alt="product">
-</a>
-</td>
-<td>2/27/2022</td>
-<td>Apex Computers </td>
+
 <td>PT001</td>
+<td>Apex Computers </td>
+<td>2/27/2022</td>
 <td><span class="badges bg-lightgreen">Received</span></td>
 <td>550</td>
-<td>120</td>
-<td>550</td>
-<td><span class="badges bg-lightgreen">Paid</span></td>
 <td>
 <a class="me-3" href="../return/purchasereturn-detail.php">
 <img src="../assets/img/icons/eye1.svg" alt="img">
@@ -137,7 +118,8 @@
 </a>
 </td>
 </tr>
-<tr>
+
+<!-- <tr>
 <td>
 <label class="checkboxs">
 <input type="checkbox">
@@ -456,7 +438,7 @@
 <img src="../assets/img/icons/delete.svg" alt="img">
 </a>
 </td>
-</tr>
+</tr> -->
 </tbody>
 </table>
 </div>
