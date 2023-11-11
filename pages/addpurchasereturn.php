@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $selectPro = $_POST['selectPro'];
     $selectSup = $_POST['selectSup'];
     $desc = $_POST['desc'];
+    // $pocode = $_POST['code'];
     // $selectPS = $_POST['selectPS'];
     $progressstatus = $_POST['progressstatus'];
     // $paidAmount = $_POST['paidAmount'];

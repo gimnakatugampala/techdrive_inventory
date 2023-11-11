@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+  // Brand Code
+
   $("#addBrandBtn").click(function () {
     var brandName = $("#brandName").val();
     var description = $("#description").val();
@@ -22,6 +25,7 @@ $(document).ready(function () {
         data: {
           brandName: brandName,
           description: description,
+          code:generateUUID()
         },
         success: function (response) {
           if (response === "success") {
