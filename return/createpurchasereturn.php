@@ -32,7 +32,7 @@
 <div class="form-group">
 <label>Purchase Return Date</label>
 <div class="input-groupicon">
-<input type="date" placeholder="DD-MM-YYYY" class="form-control" >
+<input type="date" placeholder="DD-MM-YYYY" id="purchaseRDate" class="form-control" >
 <!-- <div class="addonset">
 <img src="../assets/img/icons/calendars.svg" alt="img">
 </div> -->
@@ -76,7 +76,7 @@
 <div class="col-lg-12">
 <div class="form-group">
 <label>Description</label>
-<textarea class="form-control"></textarea>
+<textarea id="PORDesc" class="form-control"></textarea>
 </div>
 </div>
 
@@ -100,16 +100,15 @@
 <div class="row">
       <div class="table-responsive">
           <table class="table tbproductlist">
-              <thead>
-                  <tr>
-                      <th>Product Name</th>
-                      <th>QTY</th>
-                      <th>Purchase Price(Rs)</th>
-                      <th>Discount(Rs)</th>
-                      <th class="text-end">Total Cost (Rs)</th>
-                      <!-- <th>Action</th> -->
-                  </tr>
-              </thead>
+          <thead>
+<tr>
+  <th>Product Name</th>
+  <th>QTY</th>
+  <th>Purchase Price(Rs)</th>
+  <th>Discount(Rs)</th>
+  <th class="text-end">Total Cost (Rs)</th>
+</tr>
+</thead>
               <tbody id="bodyPOR">
                   <!-- Rows will be added dynamically -->
               </tbody>

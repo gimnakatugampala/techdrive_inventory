@@ -51,9 +51,9 @@ $(document).ready(function () {
             "<td><input type='number' class='form-control discount' value='0' name='discountp'></td>"
           );
           row.append("<td class='text-end total'></td>");
-          // row.append(
-          //   "<td><a class='delete-set'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
-          // );
+          row.append(
+            "<td><a class='delete-set'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+          );
           tableBody.append(row);
   
           // Add the new item to the items array
@@ -89,26 +89,27 @@ $(document).ready(function () {
         totalAmount += itemTotal;
         dis += discount;
   
-        to = totalAmount - parseFloat(paid.textContent);
+        // to = totalAmount - parseFloat(paid.textContent);
       });
       $("#grandTotal").text(totalAmount.toFixed(2));
       $("#dis").text(dis.toFixed(2));
   
-      $("#topaid").text(to.toFixed(2));
+      // $("#topaid").text(to.toFixed(2));
     }
   
     $("#addpurchasereturnbtn").click(function () {
       var data = [];
       const selectPro = dropdown.value;
       const selectSup = $("#selectSup").val();
-      const selectPS = $("#paidStatus").val();
+      // const selectPS = $("#paidStatus").val();
       const progressstatus = $("#progressstatus").val();
-      var paidAmount = parseFloat(paidAmountInput.value);
-      var purchaseDate = $("#purchaseDate").val();
+      const desc = $("#PORDesc").val();
+      // var paidAmount = parseFloat(paidAmountInput.value);
+      var purchaseDate = $("#purchaseRDate").val();
   
       var grandTotal = parseFloat($("#grandTotal").text());
       var dis = parseFloat($("#dis").text());
-      var topaid = parseFloat($("#topaid").text());
+      // var topaid = parseFloat($("#topaid").text());
       var isPaid = "0";
       var completeddate = "";
   
@@ -144,29 +145,11 @@ $(document).ready(function () {
           title: "Error",
           text: "Please Select Product Name",
         });
-      } else if (selectPS === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Paid Status",
-        });
-      } else if (isNaN(paidAmount) || paidAmount < 0) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Enter a Valid Paid Amount",
-        });
       } else if (progressstatus === "0") {
         Swal.fire({
           icon: "error",
           title: "Error",
           text: "Please Select Status",
-        });
-      } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "If Status Completed Paid Status Should be Paid",
         });
       } else if (progressstatus === "3" ||  progressstatus == "4" ) {
         Swal.fire({
@@ -174,26 +157,33 @@ $(document).ready(function () {
           title: "Error",
           text: "Cannot Select Canceled Status or Draft Status",
         });
+      }else if (desc == "" ) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Description Cannot be Empty",
+        });
       } else {
-        if (selectPS === "3" && progressstatus === "1") {
+        if (progressstatus === "1") {
           isPaid = "1";
           completeddate = "1";
         }
   
         $.ajax({
           type: "POST",
-          url: "../pages/addpurchase.php",
+          url: "../pages/addpurchasereturn.php",
           data: {
             data: JSON.stringify(data),
             selectPro: selectPro,
             selectSup: selectSup,
-            selectPS: selectPS,
+            // selectPS: selectPS,
             progressstatus: progressstatus,
-            paidAmount: paidAmount,
+            // paidAmount: paidAmount,
             purchaseDate: purchaseDate,
             isPaid: isPaid,
             grandTotal: grandTotal,
-            topaid: topaid,
+            // topaid: topaid,
+            desc:desc,
             dis: dis,
             completeddate: completeddate,
           },
@@ -226,13 +216,13 @@ $(document).ready(function () {
       $(".quantity").val("");
       $(".price").val("");
       $(".discount").val("0");
-      $("#paidAmount").val("");
-      $("#purchaseDate").val("");
-      $("#bodyPL").empty();
+      $("#PORDesc").val("");
+      $("#purchaseRDate").val("");
+      $("#bodyPOR").empty();
       $("#grandTotal").text("0.00");
       $("#paid").text("0.00");
       $("#dis").text("0.00");
-      $("#topaid").text("0.00");
+      $("#totalsub").text("0.00");
     }
   
     // $(document).on("click", ".delete-set", function () {
