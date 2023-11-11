@@ -99,7 +99,7 @@
 
 <tbody id="purchasereturnlistbody">
 
-<tr>
+<!-- <tr>
 
 <td>PT001</td>
 <td>Apex Computers </td>
@@ -117,7 +117,7 @@
 <img src="../assets/img/icons/delete.svg" alt="img">
 </a>
 </td>
-</tr>
+</tr> -->
 
 <!-- <tr>
 <td>
