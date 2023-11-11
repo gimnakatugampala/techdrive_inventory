@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $("#addSubCat").click(function () {
-    const selectElement = document.getElementById("categorySelect");
+    const selectElement = document.getElementById("selectCat");
     const cid = selectElement.value;
     var subcatname = $("#subcatname").val();
 
@@ -23,6 +23,7 @@ $(document).ready(function () {
         data: {
           subcatname: subcatname,
           cid: cid,
+          code:generateUUID()
         },
         success: function (response) {
           if (response === "success") {
@@ -52,7 +53,7 @@ $(document).ready(function () {
 });
 
 function clearASC() {
-  var selectElement = document.getElementById("categorySelect");
+  var selectElement = document.getElementById("selectCat");
   selectElement.selectedIndex = 0;
   var description = document.getElementById("subcatname");
   description.value = "";

@@ -38,6 +38,7 @@ $(document).ready(function () {
           supemail: supemail,
           supphone: supphone,
           supaddress: supaddress,
+          code:generateUUID()
         },
         success: function (response) {
           if (response === "success") {

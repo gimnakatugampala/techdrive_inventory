@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   $("#addCat").click(function () {
     var catname = $("#catname").val();
     var catdis = $("#catdis").val();
@@ -22,6 +23,7 @@ $(document).ready(function () {
         data: {
           catname: catname,
           catdis: catdis,
+          code:generateUUID()
         },
         success: function (response) {
           if (response === "success") {

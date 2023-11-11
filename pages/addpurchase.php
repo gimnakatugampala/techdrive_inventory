@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $topaid = $_POST['topaid'];
     $dis = $_POST['dis'];
     $completeddate = $_POST['completeddate'];
+    $pocode = $_POST['pocode'];
+    $picode = $_POST['picode'];
 
     $comdate = '';
     if ($completeddate == '1') {
@@ -25,13 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $invoiceissueddate = date('Y-m-d H:i:s');
     $createddate = date('Y-m-d H:i:s');
 
-    $min = 1;
-    $max = 10000000000;
-    $pocode = rand($min, $max);
+    // $min = 1;
+    // $max = 10000000000;
+    // $pocode = rand($min, $max);
 
-    $min = 1;
-    $max = 10000000000;
-    $picode = rand($min, $max);
+    // $min = 1;
+    // $max = 10000000000;
+    // $picode = rand($min, $max);
 
     $insertPurchaseOrderSQL = "INSERT INTO tbpurchaseorder (pocode, supid, statusid,paid_status,created_date) VALUES 
     ('$pocode', '$selectSup', '$progressstatus', '$selectPS','$createddate')";

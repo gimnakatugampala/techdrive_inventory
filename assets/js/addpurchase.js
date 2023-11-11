@@ -196,9 +196,11 @@ $(document).ready(function () {
           topaid: topaid,
           dis: dis,
           completeddate: completeddate,
+          pocode:generateUUID(),
+          picode:generateUUID()
         },
         success: function (response) {
-          console.log(response)
+          // console.log(response)
           if (response === "success") {
             Swal.fire({
               icon: "success",

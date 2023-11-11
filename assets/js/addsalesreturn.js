@@ -192,6 +192,8 @@ $(document).ready(function () {
             // topaid: topaid,
             dis: dis,
             completeddate: completeddate,
+            srcode:generateUUID(),
+            sricode:generateUUID()
           },
           success: function (response) {
             console.log(response)

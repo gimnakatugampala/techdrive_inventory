@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // $topaid = $_POST['topaid'];
     $dis = $_POST['dis'];
     $completeddate = $_POST['completeddate'];
+    $socode = $_POST['srcode'];
+    $picode = $_POST['sricode'];
 
     $comdate = '';
     if ($completeddate == '1') {
@@ -25,13 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $salesorderdate = date('Y-m-d H:i:s');
     $createddate = date('Y-m-d H:i:s');
 
-    $min = 1;
-    $max = 10000000000;
-    $socode = rand($min, $max);
+    // $min = 1;
+    // $max = 10000000000;
+    // $socode = rand($min, $max);
 
-    $min = 1;
-    $max = 10000000000;
-    $picode = rand($min, $max);
+    // $min = 1;
+    // $max = 10000000000;
+    // $picode = rand($min, $max);
 
     $insertPurchaseOrderSQL = "INSERT INTO tbsalesorderreturn (sorcode, cusid , sid ,salesorderreturndate,description) VALUES ('$socode', '$selectSup', '$progressstatus', '$salesorderdate','$description')";
 

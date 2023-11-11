@@ -6,12 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cusemail = $_POST['cusemail'];
     $cusphone = $_POST['cusphone'];
     $cusaddress = $_POST['cusaddress'];
+    $cuscode = $_POST['code'];
 
     $datetime = date("Y-m-d H:i:s");
-    $min = 1;
-    $max = 10000000000;
+    // $min = 1;
+    // $max = 10000000000;
 
-    $cuscode = rand($min, $max);
+    // $cuscode = rand($min, $max);
 
     $sql = "INSERT INTO tbcustomer (cusname, cusemail, cusaddress, cusphone,cusadddate,isdeleted,cuscode) VALUES ('$cusname', '$cusemail', '$cusaddress','$cusphone','$datetime','0','$cuscode')";
     if ($conn->query($sql) === TRUE) {

@@ -86,6 +86,7 @@ $(document).ready(function () {
           selectavailablity: selectavailablity,
           sprice: sprice,
           bprice: bprice,
+          code:generateUUID()
         },
         success: function (response) {
           if (response === "success") {

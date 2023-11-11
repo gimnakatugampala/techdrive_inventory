@@ -160,17 +160,17 @@ $(document).ready(function () {
       } else {
       
 
-        console.log("1-"+JSON.stringify(data)) // Select Product List
-        console.log("2-"+selectPro)
-        console.log("3-"+selectSup) // Selected Customer
-        console.log("4-"+selectPS) // Paid Status
-        console.log("5-"+progressstatus) // Status
-        console.log("6-"+paidAmount) // Paid Amount - 0
-        console.log("7-"+ new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString()) // Quotation Date
-        console.log("8-"+isPaid) // Success Full Or Not
-        console.log("9-"+grandTotal) // Final Total
-        console.log("10-"+topaid) // To Be Paid Amount
-        console.log("11-"+dis) // Disount
+        // console.log("1-"+JSON.stringify(data)) // Select Product List
+        // console.log("2-"+selectPro)
+        // console.log("3-"+selectSup) // Selected Customer
+        // console.log("4-"+selectPS) // Paid Status
+        // console.log("5-"+progressstatus) // Status
+        // console.log("6-"+paidAmount) // Paid Amount - 0
+        // console.log("7-"+ new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString()) // Quotation Date
+        // console.log("8-"+isPaid) // Success Full Or Not
+        // console.log("9-"+grandTotal) // Final Total
+        // console.log("10-"+topaid) // To Be Paid Amount
+        // console.log("11-"+dis) // Disount
   
         $.ajax({
           type: "POST",
@@ -188,6 +188,8 @@ $(document).ready(function () {
             topaid: topaid,
             dis: dis,
             completeddate: completeddate,
+            qocode:generateUUID(),
+            qicode:generateUUID()
           },
           success: function (response) {
             console.log(response)

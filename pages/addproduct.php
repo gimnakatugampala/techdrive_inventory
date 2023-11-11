@@ -12,12 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $selectavailablity = $_POST['selectavailablity'];
     $sprice = $_POST['sprice'];
     $bprice = $_POST['bprice'];
+    $pcode = $_POST['code'];
 
     $datetime = date("Y-m-d H:i:s");
-    $min = 1;
-    $max = 10000000000;
+    // $min = 1;
+    // $max = 10000000000;
 
-    $pcode = rand($min, $max);
+    // $pcode = rand($min, $max);
 
     $sql = "INSERT INTO tbproduct (productname,quantity,warrenty, minquanity,avlid,sellingprice,buyingprice,pcode,isdeleted,adddate,catid,scatid,bid) VALUES ('$pname','$qty',$warrenty,'$mqty','$selectavailablity','$sprice','$bprice','$pcode',0,'$datetime','$selectcatid','$selectsubcatid','$selectbrandid')";
     if ($conn->query($sql) === TRUE) {

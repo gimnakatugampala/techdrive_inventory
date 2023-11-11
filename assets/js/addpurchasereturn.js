@@ -187,6 +187,9 @@ $(document).ready(function () {
             desc:desc,
             dis: dis,
             completeddate: completeddate,
+            porcode:generateUUID(),
+            poricode:generateUUID()
+
           },
           success: function (response) {
             console.log(response)
