@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table brandlist">
+                    <table class="table datanew brandlist">
                         <thead>
                             <tr>
                                 <th>Brand Name</th>

@@ -22,7 +22,7 @@ $subcatid = isset( $_GET[ 'subcatid' ] ) ? $_GET[ 'subcatid' ] : '';
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Select Category Name</label>
-<select class="form-select"  id="subcategorySelect">
+<select class="form-select"  id="selectCat">
 <option value="0">Select a Sub Category</option>
 </select>
 </div>

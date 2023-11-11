@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const categorySelect = document.getElementById("subcategorySelect");
+  const categorySelect = document.getElementById("selectCat");
   var subcatid = $("#subcatid").val();
 
   // Function to load categories using AJAX
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $("#editSubCat").click(function () {
     var subcatname = $("#subcatname").val();
-    const selectElement = document.getElementById("subcategorySelect");
+    const selectElement = document.getElementById("selectCat");
     var scid = selectElement.value;
     var id = $("#id").val();
 

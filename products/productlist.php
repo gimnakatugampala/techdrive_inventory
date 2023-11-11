@@ -101,7 +101,7 @@
 </div>
 
 <div class="table-responsive">
-<table class="table tbplist">
+<table class="table datanew tbplist">
 <thead>
 <tr>
 <th>Product Name</th>

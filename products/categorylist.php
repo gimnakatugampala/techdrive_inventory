@@ -80,7 +80,7 @@
 </div>
 </div>
 <div class="table-responsive">
-                    <table class="table categorylist">
+                    <table class="table datanew categorylist">
                         <thead>
                             <tr>
                             <th>Category name</th>
