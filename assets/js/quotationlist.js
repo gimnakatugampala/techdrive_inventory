@@ -44,7 +44,7 @@ $(document).ready(function () {
         row.append("<td>" + saleli.grandtotal + "</td>");
         row.append(`<td>
     
-        <a class="me-3" href="../quotation/quotation-detail.php">
+        <a class="me-3" href="../quotation/quotation-detail.php?code=${saleli.socode}">
             <img src="../assets/img/icons/eye1.svg" alt="img">
         </a>
         

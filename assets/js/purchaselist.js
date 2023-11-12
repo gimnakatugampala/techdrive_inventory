@@ -21,7 +21,7 @@ $(document).ready(function () {
         );
       } else if (plist.statusid === "2") {
         row.append(
-          "<td><span class='badges bg-lightyellow'>Pending</span></td>"
+          "<td><span class='badges bg-primary'>Pending</span></td>"
         );
       } else if (plist.statusid === "3") {
         row.append(
