@@ -35,7 +35,7 @@ $(document).ready(function () {
        
         row.append("<td>" + saleli.grandtotal + "</td>");
         row.append(`<td>
-        <a class="me-3" href="../return/salesreturn-detail.php">
+        <a class="me-3" href="../return/salesreturn-detail.php?code=${saleli.sorcode}">
         <img src="../assets/img/icons/eye1.svg" alt="img">
         </a>
         <a class="me-3" href="../return/editsalesreturn.php">
