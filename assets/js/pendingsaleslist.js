@@ -56,7 +56,7 @@ $(document).ready(function () {
         </a>
         <ul class="dropdown-menu">
         <li>
-        <a href="../sales/sales-details.php" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Details</a>
+        <a href="../sales/sales-details.php?code=${saleli.socode}" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Details</a>
         </li>
         <li>
         <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
