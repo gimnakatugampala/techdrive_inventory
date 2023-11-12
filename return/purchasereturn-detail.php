@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/purchasereturndetails.php' ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -50,25 +51,39 @@
 <tr>
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Supplier Info</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> walk-in-customer</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="mailto:gimna@gmail.com" class="__cf_email__" >gimna@gmail.com</a></font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 123456780</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> N45 , Dhaka</font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo $purchasesordersreturns[0]["supname"];?></font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <a href="mailto:<?php echo $purchasesordersreturns[0]["supemail"];?>" class="__cf_email__" ><?php echo $purchasesordersreturns[0]["supemail"];?></a></font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo '+94'.$purchasesordersreturns[0]["supphone"];?></font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo $purchasesordersreturns[0]["supaddress"];?></font></font><br>
 </td>
 
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Invoice Info</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Reference </font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Payment Status</font></font><br>
+
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Status</font></font><br>
 </td>
 
 
 <td style="padding:5px;vertical-align:top;text-align:right;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">&nbsp;</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">SL0101 </font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#2E7D32;font-weight: 400;"> Paid</font></font><br>
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#2E7D32;font-weight: 400;"> Completed</font></font><br>
+
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"><?php echo $purchasesordersreturns[0]["porcode"];?> </font></font><br>
+
+
+
+<font style="vertical-align: inherit;">
+<?php if ($purchasesordersreturns[0]["sid"] == "1"): ?>
+<font class="text-success"> Completed</font></font><br>
+<?php elseif ($purchasesordersreturns[0]["sid"] == "2"): ?>
+<font class="text-primary"> Inprogress</font></font><br>
+<?php elseif ($purchasesordersreturns[0]["sid"] == "3"): ?>
+<font class="text-danger"> Canceled</font></font><br>
+<?php elseif ($purchasesordersreturns[0]["sid"] == "4"): ?>
+<font class="text-info"> Quotation</font></font><br>
+<?php endif; ?>
+
+
 </td>
 
 
@@ -86,12 +101,15 @@
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Product Name
 </td>
-<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
-Price
-</td>
+
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 QTY
 </td>
+
+<td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+Price
+</td>
+
 
 <td style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
 Dicount
@@ -101,28 +119,31 @@ Dicount
 Subtotal
 </td>
 </tr>
+
+<?php foreach ($productlist as $item): ?>
 <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
 <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
 <img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
-Macbook pro
+<?php echo $item["productname"]; ?>
 </td>
 <td style="padding: 10px;vertical-align: top; ">
-1500.00
-</td>
-
-<td style="padding: 10px;vertical-align: top; ">
-1.00
+<?php echo $item["QTY"]; ?>
 </td>
 
 <td style="padding: 10px;vertical-align: top; ">
-00.00
+<?php echo $item["price"]; ?>
+</td>
+
+<td style="padding: 10px;vertical-align: top; ">
+<?php echo $item["discount"]; ?>
 </td>
 <td style="padding: 10px;vertical-align: top; ">
-1500.00
+<?php echo floatval($item["QTY"]) * floatval($item["price"]) - floatval($item["discount"]); ?>
 </td>
 </tr>
+<?php endforeach;?>
 
-<tr class="details" style="border-bottom:1px solid #E9ECEF ;">
+<!-- <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
 <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
 <img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
 Apple Earpods
@@ -161,7 +182,7 @@ samsung
 <td style="padding: 10px;vertical-align: top; ">
 1500.00
 </td>
-</tr>
+</tr> -->
 
 </tbody></table>
 </div>
@@ -175,22 +196,23 @@ samsung
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
 <ul>
+
+<li>
+<h4>Sub Total</h4>
+<h5>Rs. <?php echo floatval($purchasesordersreturns[0]["grandtotal"]) + floatval($purchasesordersreturns[0]["DIS"]); ?></h5>
+</li>
+
+<li>
+<h4>Total Discount</h4>
+<h5>Rs. <?php echo $purchasesordersreturns[0]["DIS"]; ?></h5>
+</li>
+
 <li>
 <h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
+<h5>Rs. <?php echo $purchasesordersreturns[0]["grandtotal"]; ?></h5>
 </li>
-<li>
-<h4>Discount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. 0.00</h5>
-</li>
+
+
 </ul>
 </div>
 </div>

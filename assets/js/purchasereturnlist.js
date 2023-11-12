@@ -43,11 +43,15 @@ $(document).ready(function () {
       
         // row.append("<td>" + porlist.id + "</td>");
         row.append(
-          "<td><a class='me-3 btnedit'data-porlist-id='" +
-            porlist.cid +
-            "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-porlist-id='" +
-            porlist.id +
-            "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
+          `<td>
+
+          <a class="me-3" href="../return/purchasereturn-detail.php?code=${porlist.porcode}">
+          <img src="../assets/img/icons/eye1.svg" alt="img">
+          </a>
+
+          <a class='me-3 btnedit'data-porlist-id=${porlist.cid}><img src='../assets/img/icons/edit.svg' alt='img'></a>
+          <a class='me-3 btn-delete' data-porlist-id=${porlist.id}><img src='../assets/img/icons/delete.svg' alt='img'></a>
+            </td>`
         );
         row.append("</tr>");
         tableBody.append(row);
