@@ -21,7 +21,7 @@ $(document).ready(function () {
           );
         } else if (porlist.sid === "2") {
           row.append(
-            "<td><span class='badges bg-lightyellow'>Pending</span></td>"
+            "<td><span class='badges bg-primary'>Pending</span></td>"
           );
         } else if (porlist.sid === "3") {
           row.append(
