@@ -3,7 +3,7 @@ require_once '../includes/db_config.php';
 
 $code  = htmlspecialchars($_GET['code']);
 
-print_r($code);
+// print_r($code);
 
 $sql = "SELECT * FROM tbsalesorder WHERE socode = '$code'";
 $result = $conn->query( $sql );
@@ -28,7 +28,7 @@ if ( $resultsales->num_rows > 0 ) {
 }
 
 
-echo json_encode( $salesorders );
+// echo json_encode( $salesorders );
 
 
 // Product Items List
@@ -47,6 +47,6 @@ if ( $resultprolist->num_rows > 0 ) {
 }
 
 
-echo json_encode( $productlist );
+// echo json_encode( $productlist );
 
 ?>

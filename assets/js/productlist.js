@@ -30,11 +30,11 @@ $(document).ready(function () {
       row.append("<td style='display:none;'>" + productlist.scatid + "</td>");
       row.append("<td style='display:none;'>" + productlist.bid + "</td>");
       row.append(
-        "<td><a class='me-3 btnedit'data-productlist-id='" +
-          productlist.id +
-          "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-productlist-id='" +
-          productlist.id +
-          "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
+        `<td>
+       
+        <a class='me-3 btnedit'data-productlist-id='${productlist.id}'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+
+        <a class='me-3 btn-delete' data-productlist-id='${productlist.id}'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>`
       );
 
       tableBody.append(row);

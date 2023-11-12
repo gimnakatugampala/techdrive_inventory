@@ -51,14 +51,17 @@ $(document).ready(function () {
       row.append("<td>" + plist.discount + "</td>");
       row.append(`<td>${parseFloat(plist.grandtotal) - (parseFloat(plist.paidamount))}</td>`);
 
-    
+
+
       // row.append("<td>" + plist.id + "</td>");
       row.append(
-        "<td><a class='me-3 btnedit'data-plist-id='" +
-          plist.cid +
-          "'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-plist-id='" +
-          plist.id +
-          "'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>"
+        `<td>
+         <a class="me-3" href="../purchase/purchase-order-details.php?code=${plist.pocode}">
+        <img src="../assets/img/icons/eye1.svg" alt="img">
+        </a>
+
+        <a class='me-3 btnedit'data-plist-id='${plist.cid}'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-plist-id='${plist.id}'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+        </td>`
       );
       row.append("</tr>");
       tableBody.append(row);
