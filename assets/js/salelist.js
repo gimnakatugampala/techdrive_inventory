@@ -59,7 +59,7 @@ $(document).ready(function () {
       <a href="../sales/sales-details.php?code=${saleli.socode}" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Details</a>
       </li>
       <li>
-      <a href="../sales/edit-sales.php" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+      <a href="../sales/edit-sales.php?code=${saleli.socode}" class="dropdown-item"><img src="../assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
       </li>
       
       <li>

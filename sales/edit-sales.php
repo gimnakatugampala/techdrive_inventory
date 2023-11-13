@@ -18,11 +18,9 @@
 <label>Customer</label>
 <div class="row">
 <div class="col-lg-12 col-sm-10 col-10">
-<select class="select">
-<option>Choose</option>
-<option selected>Gimna Katugampala</option>
-<option>Viraj Kaushlya</option>
-</select>
+  <select id="selectCus" class="form-select">
+  <option selected>Choose</option>
+  </select>
 </div>
 <!-- <div class="col-lg-2 col-sm-2 col-2 ps-0">
 <div class="add-icon">
@@ -32,6 +30,7 @@
 </div>
 </div>
 </div>
+
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Sale Date</label>
@@ -45,27 +44,72 @@
 </div>
 
 
-<div class="col-lg-12 col-sm-6 col-12">
+
+
+<div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
-<label>Product Name</label>
-<select id="edit-sales-items-select" class="form-select"  aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">Mac Book Pro</option>
-  <option value="2">Iphone 15</option>
-  <option value="3">Watch</option>
+
+<label>Paid Status</label>
+<select id="paidStatus" class="form-select">
+<option value="0">Choose Paid Status</option>
 </select>
-<!-- <div class="input-groupicon">
-<input type="text" placeholder="Please type product code and select...">
-<div class="addonset">
-<img src="../assets/img/icons/scanners.svg" alt="img">
-</div>
-</div> -->
+
 </div>
 </div>
 
+<div class="col-lg-4 col-sm-6 col-12">
+<div class="form-group">
+<label>Paid Amount</label>
+<input value="1300.00" type="text">
+</div>
+</div>
+
+<div class="col-lg-4 col-sm-6 col-12">
+<div class="form-group">
+    <label for="status">Status</label>
+    <select id="progressstatus" class="form-select">
+        <option>Choose Status</option>
+    </select>
+</div>
+</div>
+
+<div class="col-lg-12 col-sm-6 col-12">
+      <div class="form-group">
+          <label for="productcmb">Product Name</label>
+          <select id="productcmb" class="form-select">
+              <option value="0">Select Product</option>
+          </select>
+      </div>
+  </div>
+
+
+
+
 
 </div>
+
 <div class="row">
+      <div class="table-responsive">
+          <table class="table tbproductlist">
+              <thead>
+                  <tr>
+                      <th>Product Name</th>
+                      <th>QTY</th>
+                      <th>Purchase Price(Rs)</th>
+                      <th>Discount(Rs)</th>
+                      <th class="text-end">Total Cost (Rs)</th>
+                      <!-- <th>Action</th> -->
+                  </tr>
+              </thead>
+              <tbody id="bodyESL">
+                  <!-- Rows will be added dynamically -->
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+
+<!-- <div class="row">
 <div class="table-responsive mb-3">
 <table class="table">
 <thead>
@@ -131,38 +175,13 @@
 </tbody>
 </table>
 </div>
-</div>
+</div> -->
+
+
 <div class="row">
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
 
-<label>Paid Status</label>
-<select class="select">
-<option>Choose Paid Status</option>
-<option>Not Paid</option>
-<option selected>Advance</option>
-<option>Paid</option>
-</select>
 
-</div>
-</div>
 
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Paid Amount</label>
-<input value="1300.00" type="text">
-</div>
-</div>
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Status</label>
-<select class="select">
-<option>Choose Status</option>
-<option>Completed</option>
-<option selected>Inprogress</option>
-</select>
-</div>
-</div>
 <div class="row">
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
@@ -197,6 +216,7 @@
 <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
+
 </div>
 </div>
 </div>
