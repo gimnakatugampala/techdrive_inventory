@@ -3,7 +3,7 @@ $(document).ready(function () {
     function populateTable(data) {
       var tableBody = $("table.datanew.comepletedsaleslist #completedsaleslistbody");
   
-      console.log(data)
+      // console.log(data)
   
       data.forEach(function (saleli) {
         var row = $("<tr>");

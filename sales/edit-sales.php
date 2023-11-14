@@ -19,7 +19,7 @@
 <div class="row">
 <div class="col-lg-12 col-sm-10 col-10">
   <select id="selectCus" class="form-select">
-  <option selected>Choose</option>
+  <option value="0">Select Customer</option>
   </select>
 </div>
 <!-- <div class="col-lg-2 col-sm-2 col-2 ps-0">
@@ -33,12 +33,9 @@
 
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
-<label>Sale Date</label>
+<label>Sales Date</label>
 <div class="input-groupicon">
-<input value="16-09-2023" type="text" placeholder="Choose Date" class="datetimepicker">
-<a class="addonset">
-<img src="../assets/img/icons/calendars.svg" alt="img">
-</a>
+<input type="date" placeholder="Choose Date" id="salesdate" class="form-control" >
 </div>
 </div>
 </div>
@@ -60,7 +57,7 @@
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Paid Amount</label>
-<input value="1300.00" type="text">
+<input id="paidamountVal" type="text">
 </div>
 </div>
 
@@ -68,7 +65,7 @@
 <div class="form-group">
     <label for="status">Status</label>
     <select id="progressstatus" class="form-select">
-        <option>Choose Status</option>
+        <option value="0">Choose Status</option>
     </select>
 </div>
 </div>
@@ -191,22 +188,22 @@
 <div class="col-lg-6 ">
 <div class="total-order w-100 max-widthauto m-auto mb-4">
 <ul>
-<li>
-<h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Discount	</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. 0.00</h5>
-</li>
+    <li>
+        <h4>Grand Total</h4>
+        <h5 id="grandTotal">0.00</h5>
+    </li>
+    <li>
+        <h4>Paid Amount</h4>
+        <h5 id="paid">0.00</h5>
+    </li>
+    <li>
+        <h4>discount</h4>
+        <h5 id="dis">0.00</h5>
+    </li>
+    <li class="total">
+        <h4>To Be Paid</h4>
+        <h5 id="topaid">0.00</h5>
+    </li>
 </ul>
 </div>
 </div>
