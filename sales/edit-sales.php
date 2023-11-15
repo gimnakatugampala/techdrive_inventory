@@ -210,7 +210,7 @@
 </div>
 </div>
 <div class="col-lg-12">
-<a href="javascript:void(0);" id="" class="btn btn-submit me-2">Update</a>
+<a id="UpdateSales" class="btn btn-submit me-2">Update</a>
 <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
 </div>
 </div>

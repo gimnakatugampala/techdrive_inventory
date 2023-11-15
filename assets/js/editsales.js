@@ -140,11 +140,11 @@ $(document).ready(function () {
         
         totalAmount += itemTotal;
         console.log(totalAmount)
-        console.log(totalAmount + parseFloat(grandt))
+        // console.log(totalAmount + parseFloat(grandt))
 
         document.getElementById("grandTotal").style.display = "none"
         document.getElementById("editsales-grandTotal").style.display = "block"
-        document.getElementById("editsales-grandTotal").textContent = totalAmount + parseFloat(grandt)
+        document.getElementById("editsales-grandTotal").textContent = totalAmount 
 
         console.log("----")
         dis += discount;
@@ -159,16 +159,17 @@ $(document).ready(function () {
       $("#topaid").text(to.toFixed(2));
     }
   
-    $("#updateSale").click(function () {
+    $("#UpdateSales").click(function () {
       var data = [];
       const selectPro = dropdown.value;
       const selectSup = $("#selectCus").val();
       const selectPS = $("#paidStatus").val();
       const progressstatus = $("#progressstatus").val();
       var paidAmount = parseFloat(paidAmountInput.value);
-      var purchaseDate = $("#purchaseDate").val();
+      var purchaseDate = $("#salesdate").val();
   
-      var grandTotal = parseFloat($("#grandTotal").text());
+      var grandTotal = parseFloat($("#editsales-grandTotal").text());
+      var oldgrandTotal = parseFloat($("#grandTotal").text());
       var dis = parseFloat($("#dis").text());
       var topaid = parseFloat($("#topaid").text());
       var isPaid = "0";
@@ -187,99 +188,113 @@ $(document).ready(function () {
           discount: discount,
         });
       });
+
+      console.log("arr"+data)
+      console.log("product"+selectPro)
+      console.log("customer "+selectSup)
+      console.log("paid status "+selectPS)
+      console.log("status "+progressstatus)
+      console.log("status "+paidAmount)
+      console.log("purchase date"+purchaseDate)
+      console.log("grand total "+grandTotal)
+      console.log("old grand total "+oldgrandTotal)
+      console.log("discount "+dis)
+      console.log("to pay"+topaid)
   
-      if (selectSup === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Customer Name",
-        });
-      } else if (purchaseDate === "") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Purchase Date",
-        });
-      } else if (selectPro === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Product Name",
-        });
-      } else if (selectPS === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Paid Status",
-        });
-      } else if (isNaN(paidAmount) || paidAmount < 0) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Enter a Valid Paid Amount",
-        });
-      } else if (progressstatus === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Status",
-        });
-      } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "If Status Completed Paid Status Should be Paid",
-        });
-      } else if (progressstatus === "3" ||  progressstatus == "4" ) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Cannot Select Canceled Status or Draft Status",
-        });
-      } else {
-        if (selectPS === "3" && progressstatus === "1") {
-          isPaid = "1";
-          completeddate = "1";
-        }
+      // if (selectSup === "0") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Select Customer Name",
+      //   });
+      // } else if (purchaseDate === "") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Select Purchase Date",
+      //   });
+      // } else if (selectPro === "0") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Select Product Name",
+      //   });
+      // } else if (selectPS === "0") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Select Paid Status",
+      //   });
+      // } else if (isNaN(paidAmount) || paidAmount < 0) {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Enter a Valid Paid Amount",
+      //   });
+      // } else if (progressstatus === "0") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Please Select Status",
+      //   });
+      // } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "If Status Completed Paid Status Should be Paid",
+      //   });
+      // } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "Cannot Select Canceled Status or Draft Status",
+      //   });
+      // } else {
+      //   if (selectPS === "3" && progressstatus === "1") {
+      //     isPaid = "1";
+      //     completeddate = "1";
+      //   }
+
+      //   console.log
   
-        $.ajax({
-          type: "POST",
-          url: "../pages/addsale.php",
-          data: {
-            data: JSON.stringify(data),
-            selectPro: selectPro,
-            selectSup: selectSup,
-            selectPS: selectPS,
-            progressstatus: progressstatus,
-            paidAmount: paidAmount,
-            purchaseDate: purchaseDate,
-            isPaid: isPaid,
-            grandTotal: grandTotal,
-            topaid: topaid,
-            dis: dis,
-            completeddate: completeddate,
-            socode:generateUUID(),
-            picode:generateUUID()
-          },
-          success: function (response) {
-            // console.log(response)
-            if (response === "success") {
-              Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Successfully added Sale",
-              });
-              clearAB();
-            } else {
-              Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "An error occurred while saving the data.",
-              });
-            }
-          },
-        });
-      }
+      //   // $.ajax({
+      //   //   type: "POST",
+      //   //   url: "../pages/addsale.php",
+      //   //   data: {
+      //   //     data: JSON.stringify(data),
+      //   //     selectPro: selectPro,
+      //   //     selectSup: selectSup,
+      //   //     selectPS: selectPS,
+      //   //     progressstatus: progressstatus,
+      //   //     paidAmount: paidAmount,
+      //   //     purchaseDate: purchaseDate,
+      //   //     isPaid: isPaid,
+      //   //     grandTotal: grandTotal,
+      //   //     topaid: topaid,
+      //   //     dis: dis,
+      //   //     completeddate: completeddate,
+      //   //     socode:generateUUID(),
+      //   //     picode:generateUUID()
+      //   //   },
+      //   //   success: function (response) {
+      //   //     // console.log(response)
+      //   //     if (response === "success") {
+      //   //       Swal.fire({
+      //   //         icon: "success",
+      //   //         title: "Success",
+      //   //         text: "Successfully added Sale",
+      //   //       });
+      //   //       clearAB();
+      //   //     } else {
+      //   //       Swal.fire({
+      //   //         icon: "error",
+      //   //         title: "Error",
+      //   //         text: "An error occurred while saving the data.",
+      //   //       });
+      //   //     }
+      //   //   },
+      //   // });
+      // }
     });
   
     function clearAB() {
@@ -291,7 +306,7 @@ $(document).ready(function () {
       $(".price").val("");
       $(".discount").val("0");
       $("#paidAmount").val("");
-      $("#purchaseDate").val("");
+      $("#salesdate").val("");
       $("#bodySL").empty();
       $("#grandTotal").text("0.00");
       $("#paid").text("0.00");
@@ -300,15 +315,13 @@ $(document).ready(function () {
     }
 
     function getDataSales(){
-
-
       $.ajax({
         type: "POST",
         url: "../pages/getsalesdata.php",
         data: { code: myParam },
         dataType: "json",
         success: function (data) {
-          console.log(data);
+          // console.log(data);
 
           loadData = data;
 
@@ -361,7 +374,7 @@ $(document).ready(function () {
         // Grand Total
         GrandTotalElement.textContent = `${data.SalesOrder[0].grandtotal}.00`
 
-        grandt = data.SalesOrder[0].grandtotal
+        // grandt = data.SalesOrder[0].grandtotal
 
         // Paid Amount
         PaidAElement.textContent = `${data.SalesOrder[0].paidamount}.00`
