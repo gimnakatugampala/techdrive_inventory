@@ -191,12 +191,13 @@
     <li>
         <h4>Grand Total</h4>
         <h5 id="grandTotal">0.00</h5>
+        <h5 style="display: none;" id="editsales-grandTotal">0.00</h5>
     </li>
     <li>
         <h4>Paid Amount</h4>
         <h5 id="paid">0.00</h5>
     </li>
-    <li>
+    <li style="display: none;">
         <h4>discount</h4>
         <h5 id="dis">0.00</h5>
     </li>
@@ -209,7 +210,7 @@
 </div>
 </div>
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Update</a>
+<a href="javascript:void(0);" id="" class="btn btn-submit me-2">Update</a>
 <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
 </div>
 </div>

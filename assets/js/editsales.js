@@ -6,18 +6,29 @@ $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('code');
 
+    document.addEventListener('DOMContentLoaded', getDataSales());
+
+    // Get the Current Grand Total
+    let grandt;
+
+    // Get The Load Data
+    let loadData;
+
     // console.log(myParam)
   
-    const paidAmountInput = document.getElementById("paidAmount");
+    const paidAmountInput = document.getElementById("paidamountVal");
     const paid = document.getElementById("paid");
     const grandTotal = document.getElementById("grandTotal");
+
   
-    // paidAmountInput.addEventListener("input", function () {
-    //   const inputText = paidAmountInput.value;
-    //   paid.textContent = inputText + ".00";
-    //   var t = parseFloat(grandTotal.textContent) - parseFloat(paid.textContent);
-    //   $("#topaid").text(t.toFixed(2));
-    // });
+
+  
+    paidAmountInput.addEventListener("input", function () {
+      const inputText = paidAmountInput.value;
+      paid.textContent = inputText + ".00";
+      var t = parseFloat(grandTotal.textContent) - parseFloat(paid.textContent);
+      $("#topaid").text(t.toFixed(2));
+    });
   
     var items = [];
   
@@ -34,7 +45,22 @@ $(document).ready(function () {
         data: { productId: productId },
         dataType: "json",
         success: function (data) {
-          populateTable(data);
+
+          const found = loadData.Productlists.some(el => el.pid === productId);
+
+          if(found){
+
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Product Already Exist",
+            });
+            return
+
+          }else{
+            populateTable(data);
+          }
+       
         },
         error: function () {},
       });
@@ -63,6 +89,8 @@ $(document).ready(function () {
             "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
           );
           tableBody.append(row);
+
+          
   
           // Add the new item to the items array
           var item = {
@@ -71,6 +99,7 @@ $(document).ready(function () {
             discountInput: row.find(".discount")[0],
             totalCell: row.find(".total")[0],
           };
+
           items.push(item);
   
           item.quantityInput.addEventListener("input", calculateTotal);
@@ -82,30 +111,55 @@ $(document).ready(function () {
       }
     });
   
+
+
     function calculateTotal() {
       var totalAmount = 0;
       var to = 0;
       var dis = 0;
       items.forEach(function (item) {
+
+        
+        // console.log(parseInt(document.getElementById("paid").innerText))
+        // console.log(parseInt(document.getElementById("dis").innerText))
+        // console.log(parseInt(document.getElementById("topaid").innerText))
+    
         var quantity = parseFloat(item.quantityInput.value);
         var price = parseFloat(item.priceInput.value);
         var discount = parseFloat(item.discountInput.value);
   
         var itemTotal = quantity * price - discount;
         item.totalCell.textContent = itemTotal.toFixed(2);
-  
+
+        // console.log(parseFloat(GrandTotalElement.innerText))
+        // console.log(PaidAElement.innerText)
+        // console.log(DiscountElement.innerText)
+        // console.log(ToBePaidElement.innerText)
+        console.log(grandt)
+        console.log(items)
+        
         totalAmount += itemTotal;
+        console.log(totalAmount)
+        console.log(totalAmount + parseFloat(grandt))
+
+        document.getElementById("grandTotal").style.display = "none"
+        document.getElementById("editsales-grandTotal").style.display = "block"
+        document.getElementById("editsales-grandTotal").textContent = totalAmount + parseFloat(grandt)
+
+        console.log("----")
         dis += discount;
   
         to = totalAmount - parseFloat(paid.textContent);
       });
+      // After Input On Input
       $("#grandTotal").text(totalAmount.toFixed(2));
+      
       $("#dis").text(dis.toFixed(2));
   
       $("#topaid").text(to.toFixed(2));
     }
   
-    $("#addSale").click(function () {
+    $("#updateSale").click(function () {
       var data = [];
       const selectPro = dropdown.value;
       const selectSup = $("#selectCus").val();
@@ -247,6 +301,7 @@ $(document).ready(function () {
 
     function getDataSales(){
 
+
       $.ajax({
         type: "POST",
         url: "../pages/getsalesdata.php",
@@ -255,16 +310,20 @@ $(document).ready(function () {
         success: function (data) {
           console.log(data);
 
+          loadData = data;
+
           let cusSelectElement = document.getElementById("selectCus");
           let salesDateElement = document.getElementById("salesdate");
           let paidStatusElement = document.getElementById("paidStatus");
           let paidAmountElement = document.getElementById("paidamountVal");
           let statusElement = document.getElementById("progressstatus");
 
-          let GrandTotalElement = document.getElementById("grandTotal");
-          let PaidAElement = document.getElementById("paid");
-          let DiscountElement = document.getElementById("dis");
-          let ToBePaidElement = document.getElementById("topaid");
+          var GrandTotalElement = document.getElementById("grandTotal");
+          var PaidAElement = document.getElementById("paid");
+          var DiscountElement = document.getElementById("dis");
+          var ToBePaidElement = document.getElementById("topaid");
+
+          
 
           // Customer
           for (var i = 0; i < cusSelectElement.options.length; i++) {
@@ -302,6 +361,8 @@ $(document).ready(function () {
         // Grand Total
         GrandTotalElement.textContent = `${data.SalesOrder[0].grandtotal}.00`
 
+        grandt = data.SalesOrder[0].grandtotal
+
         // Paid Amount
         PaidAElement.textContent = `${data.SalesOrder[0].paidamount}.00`
 
@@ -311,7 +372,45 @@ $(document).ready(function () {
         // To be Paid
         ToBePaidElement.textContent = `${parseFloat(data.SalesOrder[0].grandtotal) - (parseFloat(data.SalesOrder[0].paidamount) + parseFloat(data.SalesOrder[0].discount))}.00`
             
-        
+        // Get The Product Order Item List
+        data.Productlists.forEach(function (plist) {
+          var row = $("<tr>");
+          row.append("<td style='display:none;'>" + plist.id + "</td>");
+          row.append("<td>" + plist.productname + "</td>");
+          row.append(
+            "<td><input type='number' class='form-control quantity'  value=" +
+              plist.QTY +
+              " name='qty'></td>"
+          );
+          row.append(
+            "<td><input type='number' class='form-control price' value=" +
+              plist.price +
+              " name='pprice'></td>"
+          );
+          row.append(
+            "<td><input type='number' class='form-control discount' value="+
+            plist.discount +" name='discountp'></td>"
+          );
+          row.append(`<td class='text-end total'>${parseFloat(plist.price) * parseFloat(plist.QTY) - parseFloat(plist.discount)}</td>`);
+          row.append(
+            "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+          );
+          tableBody.append(row);
+
+          var item = {
+            quantityInput: row.find(".quantity")[0],
+            priceInput: row.find(".price")[0],
+            discountInput: row.find(".discount")[0],
+            totalCell: row.find(".total")[0],
+          };
+
+          items.push(item);
+  
+          item.quantityInput.addEventListener("input", calculateTotal);
+          item.priceInput.addEventListener("input", calculateTotal);
+          item.discountInput.addEventListener("input", calculateTotal);
+  
+        });
 
         },
         error: function () {},
@@ -319,7 +418,8 @@ $(document).ready(function () {
 
     }
 
-    getDataSales()
+    
+
   
   
   });
