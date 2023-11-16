@@ -196,105 +196,114 @@ $(document).ready(function () {
       console.log("status "+progressstatus)
       console.log("status "+paidAmount)
       console.log("purchase date"+purchaseDate)
-      console.log("grand total "+grandTotal)
-      console.log("old grand total "+oldgrandTotal)
+      if(grandTotal == 0){
+        console.log("old grand total "+oldgrandTotal)
+      }else{
+        console.log("grand total "+grandTotal)
+      }
       console.log("discount "+dis)
       console.log("to pay"+topaid)
   
-      // if (selectSup === "0") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Select Customer Name",
-      //   });
-      // } else if (purchaseDate === "") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Select Purchase Date",
-      //   });
-      // } else if (selectPro === "0") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Select Product Name",
-      //   });
-      // } else if (selectPS === "0") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Select Paid Status",
-      //   });
-      // } else if (isNaN(paidAmount) || paidAmount < 0) {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Enter a Valid Paid Amount",
-      //   });
-      // } else if (progressstatus === "0") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Please Select Status",
-      //   });
-      // } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "If Status Completed Paid Status Should be Paid",
-      //   });
-      // } else if (progressstatus === "3" ||  progressstatus == "4" ) {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "Cannot Select Canceled Status or Draft Status",
-      //   });
-      // } else {
-      //   if (selectPS === "3" && progressstatus === "1") {
-      //     isPaid = "1";
-      //     completeddate = "1";
-      //   }
+      if (selectSup === "0") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Select Customer Name",
+        });
+      } else if (purchaseDate === "") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Select Purchase Date",
+        });
+      } else if (data.length == 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Select Product Name",
+        });
+      } else if (selectPS === "0") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Select Paid Status",
+        });
+      } else if (isNaN(paidAmount) || paidAmount < 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Enter a Valid Paid Amount",
+        });
+      } else if (progressstatus === "0") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Please Select Status",
+        });
+      } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "If Status Completed Paid Status Should be Paid",
+        });
+      } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Cannot Select Canceled Status or Draft Status",
+        });
+      } else {
+        if (selectPS === "3" && progressstatus === "1") {
+          isPaid = "1";
+          completeddate = "1";
+        }
 
-      //   console.log
+        console.log(loadData.Productlists)
+
+        if(grandTotal == 0){
+          console.log("old grand total "+oldgrandTotal)
+        }else{
+          console.log("grand total "+grandTotal)
+        }
   
-      //   // $.ajax({
-      //   //   type: "POST",
-      //   //   url: "../pages/addsale.php",
-      //   //   data: {
-      //   //     data: JSON.stringify(data),
-      //   //     selectPro: selectPro,
-      //   //     selectSup: selectSup,
-      //   //     selectPS: selectPS,
-      //   //     progressstatus: progressstatus,
-      //   //     paidAmount: paidAmount,
-      //   //     purchaseDate: purchaseDate,
-      //   //     isPaid: isPaid,
-      //   //     grandTotal: grandTotal,
-      //   //     topaid: topaid,
-      //   //     dis: dis,
-      //   //     completeddate: completeddate,
-      //   //     socode:generateUUID(),
-      //   //     picode:generateUUID()
-      //   //   },
-      //   //   success: function (response) {
-      //   //     // console.log(response)
-      //   //     if (response === "success") {
-      //   //       Swal.fire({
-      //   //         icon: "success",
-      //   //         title: "Success",
-      //   //         text: "Successfully added Sale",
-      //   //       });
-      //   //       clearAB();
-      //   //     } else {
-      //   //       Swal.fire({
-      //   //         icon: "error",
-      //   //         title: "Error",
-      //   //         text: "An error occurred while saving the data.",
-      //   //       });
-      //   //     }
-      //   //   },
-      //   // });
-      // }
+        $.ajax({
+          type: "POST",
+          url: "../pages/editsales.php",
+          data: {
+            data: JSON.stringify(data),
+            oldorderitems:JSON.stringify(loadData.Productlists),
+            selectSup: selectSup,
+            selectPS: selectPS,
+            progressstatus: progressstatus,
+            paidAmount: paidAmount,
+            purchaseDate: purchaseDate,
+            isPaid: isPaid,
+            grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
+            topaid: topaid,
+            dis: dis,
+            completeddate: completeddate,
+            soid:loadData.ID.id,            
+            piid:loadData.SalesOrder[0].id,
+          },
+          success: function (response) {
+            // console.log(response)
+            if (response === "success") {
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Successfully Updated Sale",
+              });
+              clearAB();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred while saving the data.",
+              });
+            }
+          },
+        });
+      }
     });
   
     function clearAB() {
