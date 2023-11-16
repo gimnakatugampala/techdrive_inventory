@@ -286,7 +286,7 @@ $(document).ready(function () {
             piid:loadData.SalesOrder[0].id,
           },
           success: function (response) {
-            // console.log(response)
+            console.log(response)
             if (response === "success") {
               Swal.fire({
                 icon: "success",
@@ -307,20 +307,20 @@ $(document).ready(function () {
     });
   
     function clearAB() {
-      $("#productcmb").val("0");
-      $("#selectCus").val("0");
-      $("#paidStatus").val("0");
-      $("#progressstatus").val("0");
-      $(".quantity").val("");
-      $(".price").val("");
-      $(".discount").val("0");
-      $("#paidAmount").val("");
-      $("#salesdate").val("");
-      $("#bodySL").empty();
-      $("#grandTotal").text("0.00");
-      $("#paid").text("0.00");
-      $("#dis").text("0.00");
-      $("#topaid").text("0.00");
+      // $("#productcmb").val("0");
+      // $("#selectCus").val("0");
+      // $("#paidStatus").val("0");
+      // $("#progressstatus").val("0");
+      // $(".quantity").val("");
+      // $(".price").val("");
+      // $(".discount").val("0");
+      // $("#paidAmount").val("");
+      // $("#salesdate").val("");
+      // $("#bodySL").empty();
+      // $("#grandTotal").text("0.00");
+      // $("#paid").text("0.00");
+      // $("#dis").text("0.00");
+      // $("#topaid").text("0.00");
     }
 
     function getDataSales(){

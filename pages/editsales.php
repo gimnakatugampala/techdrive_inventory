@@ -53,12 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // DELETE ORDER ITEMS
         foreach ($olditems as $row) {
-            $product = $row['product'];
+            $product = $row['pid'];
             $quantity = $row['quantity'];
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $delsql = "DELETE FROM tborderitem (pid,salesorderid) VALUES ('$product', '$soid')";
+            $delsql = "DELETE FROM tborderitem WHERE pid = '$product' AND
+            salesorderid = '$soid'";
             if ($conn->query($delsql) !== true) {
                 echo 'Error: ' . $delsql . '<br>' . $conn->error;
                 exit();
@@ -71,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $sql = "INSERT INTO tborderitem (pid,salesorderid,quantity,price,discount) VALUES ('$product', '$updatesalesOrderSQL', '$quantity', '$price', '$discount')";
+            $sql = "INSERT INTO tborderitem (pid,salesorderid,quantity,price,discount) VALUES ('$product', '$soid', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
                 echo 'Error: ' . $sql . '<br>' . $conn->error;
                 exit();
@@ -81,18 +82,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($progressstatus == "1" && $selectPS == "3"){
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
-        VALUES ('$grandTotal','$dis','1','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
+        $sql2 = "UPDATE tbinvoice SET 
+        grandtotal = '$grandTotal',
+        discount = '$dis',
+        isSuccess = '1',
+        paidamount = '$paidAmount',
+        completeddate = '$comdate'
+        WHERE id = '$piid'";
         if ($conn->query($sql2) !== true) {
             echo 'Error: ' . $sql2 . '<br>' . $conn->error;
             exit();
         }
 
         }else{
+            
+// // Insert into tbpurchaseinvoice
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
-        VALUES ('$grandTotal','$dis','0','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
+        $sql2 = "UPDATE tbinvoice SET 
+        grandtotal = '$grandTotal',
+        discount = '$dis',
+        isSuccess = '0',
+        paidamount = '$paidAmount'
+        WHERE id = '$piid'";
+
         if ($conn->query($sql2) !== true) {
             echo 'Error: ' . $sql2 . '<br>' . $conn->error;
             exit();
@@ -100,17 +113,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
         }
 
-        // // Insert into tbpurchaseinvoice
-        // $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
-        // VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
-        // if ($conn->query($sql2) !== true) {
-        //     echo 'Error: ' . $sql2 . '<br>' . $conn->error;
-        //     exit();
-        // }
 
         echo 'success';
     } else {
-        echo 'Error: ' . $insertPurchaseOrderSQL . '<br>' . $conn->error;
+        echo 'Error: ' . $updatesalesOrderSQL . '<br>' . $conn->error;
     }
 }
 ?>
