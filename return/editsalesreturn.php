@@ -19,13 +19,12 @@
 <div class="form-group">
 <label>Customer</label>
 <div class="row">
-<div class="col-lg-12 col-sm-10 col-10">
-<select class="select">
-<option>Choose</option>
-<option>Customer Name</option>
-</select>
-</div>
-</div>
+      <div class="col-lg-12 col-sm-10 col-10">
+          <select class="form-select" id="selectCus">
+              <option value="0">Select Customer</option>
+          </select>
+      </div>
+  </div>
 </div>
 </div>
 
@@ -33,66 +32,42 @@
 <div class="form-group">
 <label>Sale Date</label>
 <div class="input-groupicon">
-<input type="text" placeholder="Choose Date" class="datetimepicker">
-<a class="addonset">
-<img src="../assets/img/icons/calendars.svg" alt="img">
-</a>
+    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate"
+        name="purchaseDate">
+    <div class="addonset">
+        <img src="../assets/img/icons/calendars.svg" alt="img">
+    </div>
 </div>
 </div>
 </div>
 
 
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-
-<label>Paid Status</label>
-<select class="select">
-<option>Choose Paid Status</option>
-<option>Not Paid</option>
-<option>Advance</option>
-<option>Paid</option>
-</select>
-
-</div>
-</div>
 
 
 
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Paid Amount</label>
-<input type="text">
-</div>
-</div>
-
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Status</label>
-<select class="select">
-<option>Choose Status</option>
-<option>Completed</option>
-<option>Inprogress</option>
-</select>
-</div>
+<div class="col-lg-12 col-sm-6 col-12">
+  <div class="form-group">
+      <label for="status">Status</label>
+      <select id="progressstatus" class="form-select">
+          <option value="0">Choose Status</option>
+      </select>
+  </div>
 </div>
 
 <div class="col-lg-12">
 <div class="form-group">
 <label>Description</label>
-<textarea class="form-control"></textarea>
+<textarea id="description-sales-return" class="form-control"></textarea>
 </div>
 </div>
 
 <div class="col-lg-12 col-sm-6 col-12">
-<div class="form-group">
-<label>Product Name</label>
-<select id="edit-sales-return-items-select" class="form-select"  aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">Mac Book Pro</option>
-  <option value="2">Iphone 15</option>
-  <option value="3">Watch</option>
-</select>
-</div>
+    <div class="form-group">
+        <label for="productcmb">Product Name</label>
+        <select id="productcmb" class="form-select">
+            <option value="0">Select Product</option>
+        </select>
+    </div>
 </div>
 
 
@@ -100,81 +75,24 @@
 
 
 <div class="row">
-<div class="table-responsive mb-3">
-<table class="table">
-<thead>
-<tr>
-<th>#</th>
-<th>Product Name</th>
-<th>Price</th>
-<th>QTY</th>
-<th>Discount</th>
-<th>Subtotal</th>
-<th></th>
-</tr>
-</thead>
-
-<tbody id="table-edit-sales-return">
-
-<tr>
-<td>1</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="../assets/img/product/noimage.png" alt="product">
-</a>
-<a href="javascript:void(0);">Apple Earpods</a>
-</td>
-<td>1500.00</td>
-<td><input type="number" class="form-control" value="1"></td>
-<td><input type="text" class="form-control" value="0.00"></td>
-<td>1500.00</td>
-<td>
-<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
-</td>
-</tr>
-
-<tr>
-
-<td>2</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="../assets/img/product/noimage.png" alt="product">
-</a>
-<a href="javascript:void(0);">iPhone 11</a>
-</td>
-<td>1500.00</td>
-<td><input type="number" class="form-control" value="1"></td>
-<td><input type="text" class="form-control" value="0.00"></td>
-<td>1500.00</td>
-<td>
-<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
-</td>
-</tr>
-
-
-<tr>
-<td>2</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="../assets/img/product/noimage.png" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook pro</a>
-</td>
-<td>1500.00</td>
-<td><input type="number" class="form-control" value="1"></td>
-<td><input type="text" class="form-control" value="0.00"></td>
-<td>1500.00</td>
-<td>
-<a href="javascript:void(0);" class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
-</td>
-</tr>
-
-
-</tbody>
-</table>
-</div>
-</div>
-
+      <div class="table-responsive">
+          <table class="table tbproductlist">
+              <thead>
+                  <tr>
+                      <th>Product Name</th>
+                      <th>QTY</th>
+                      <th>Purchase Price(Rs)</th>
+                      <th>Discount(Rs)</th>
+                      <th class="text-end">Total Cost (Rs)</th>
+                      <!-- <th>Action</th> -->
+                  </tr>
+              </thead>
+              <tbody id="bodyESORL">
+                  <!-- Rows will be added dynamically -->
+              </tbody>
+          </table>
+      </div>
+  </div>
 
 
 <div class="row">

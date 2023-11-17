@@ -51,6 +51,7 @@
 <script src="../assets/js/editsales.js"></script>
 
 <script src="../assets/js/addsalesreturn.js"></script>
+<script src="../assets/js/editsalesreturn.js"></script>
 <script src="../assets/js/salesreturnlist.js"></script>
 
 <script src="../assets/js/addpurchasereturn.js"></script>

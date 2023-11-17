@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var dropdown = document.getElementById("productcmb");
-    const tableBody = $("#bodyEPORL");
+    const tableBody = $("#bodyESORL");
   
        // Get the Current Grand Total
        let grandt;
