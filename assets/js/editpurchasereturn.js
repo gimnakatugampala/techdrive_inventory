@@ -265,7 +265,7 @@ $(document).ready(function () {
               Swal.fire({
                 icon: "success",
                 title: "Success",
-                text: "Successfully Updated Sale",
+                text: "Successfully Purchase Return Updated",
               });
               clearAB();
             } else {
