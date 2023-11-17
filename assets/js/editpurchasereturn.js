@@ -101,9 +101,9 @@ $(document).ready(function () {
         item.totalCell.textContent = itemTotal.toFixed(2);
         totalAmount += itemTotal;
   
-        // document.getElementById("grandTotal").style.display = "none"
-        // document.getElementById("editpo-grandTotal").style.display = "block"
-        // document.getElementById("editpo-grandTotal").textContent = totalAmount 
+        document.getElementById("grandTotal").style.display = "none"
+        document.getElementById("editpo-grandTotal").style.display = "block"
+        document.getElementById("editpo-grandTotal").textContent = `${totalAmount}.00` 
   
   
         dis += discount;

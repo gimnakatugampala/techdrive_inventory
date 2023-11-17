@@ -100,17 +100,17 @@
         <li>
               <!-- <h4>Total</h4> -->
               <!-- <h5 id="totalsub">0.00</h5> -->
+              
+            </li>
+            
+          <li>
+            <h4>Total Discount</h4>
+            <h5 id="dis">0.00</h5>
+          </li>
+          <li>
+            <h4>Grand Total</h4>
+            <h5 id="grandTotal">0.00</h5>
             <h5 style="display: none;" id="editpo-grandTotal">0.00</h5>
-
-          </li>
-          
-          <li>
-              <h4>Total Discount</h4>
-              <h5 id="dis">0.00</h5>
-          </li>
-          <li>
-              <h4>Grand Total</h4>
-              <h5 id="grandTotal">0.00</h5>
           </li>
         
         </ul>
