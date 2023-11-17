@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log("13")
     var dropdown = document.getElementById("productcmb");
     const tableBody = $("#bodyESORL");
   
@@ -14,11 +15,11 @@ $(document).ready(function () {
      const urlParams = new URLSearchParams(window.location.search);
      const myParam = urlParams.get('code');
   
-     document.addEventListener('DOMContentLoaded', getDataPurchaseReturns());
+     document.addEventListener('DOMContentLoaded', getDataSalesReturns());
   
     // const paidAmountInput = document.getElementById("paidAmountEditVal");
     // const paid = document.getElementById("paid");
-    const grandTotal = document.getElementById("grandTotal");
+    // const grandTotal = document.getElementById("grandTotal");
     
     // paidAmountInput.addEventListener("input", function () {
     //   const inputText = paidAmountInput.value;
@@ -41,7 +42,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (data) {
 
-            const found = loadData.Productlists.some(el => el.product_id === productId);
+            const found = loadData.Productlists.some(el => el.pid == productId);
 
             if(found){
   
@@ -116,9 +117,9 @@ $(document).ready(function () {
         item.totalCell.textContent = itemTotal.toFixed(2);
         totalAmount += itemTotal;
   
-        document.getElementById("grandTotal").style.display = "none"
-        document.getElementById("editpo-grandTotal").style.display = "block"
-        document.getElementById("editpo-grandTotal").textContent = `${totalAmount}.00` 
+        // document.getElementById("grandTotal").style.display = "none"
+        // document.getElementById("editpo-grandTotal").style.display = "block"
+        // document.getElementById("editpo-grandTotal").textContent = `${totalAmount}.00` 
   
   
         dis += discount;
@@ -133,30 +134,30 @@ $(document).ready(function () {
     }
     
     function clearAB() {
-      $("#productcmb").val("0");
-      $("#selectSup").val("0");
-      $("#progressstatus").val("0");
-      $(".quantity").val("");
-      $(".price").val("");
-      $(".discount").val("0");
-      $("#paidAmount").val("");
-      $("#purchaseDate").val("");
-      $("#bodyEPORL").empty();
-      $("#grandTotal").text("0.00");
-    //   $("#paid").text("0.00");
-      $("#dis").text("0.00");
+    //   $("#productcmb").val("0");
+    //   $("#selectSup").val("0");
+    //   $("#progressstatus").val("0");
+    //   $(".quantity").val("");
+    //   $(".price").val("");
+    //   $(".discount").val("0");
+    //   $("#paidAmount").val("");
+    //   $("#purchaseDate").val("");
+    //   $("#bodyEPORL").empty();
+    //   $("#grandTotal").text("0.00");
+    // //   $("#paid").text("0.00");
+    //   $("#dis").text("0.00");
     //   $("#topaid").text("0.00");
     }
   
-    $("#editPORBtn").click(function () {
+    $("#updateSalesOrderReturnBtn").click(function () {
   
       var data = [];
       const selectPro = dropdown.value;
-      const selectSup = $("#selectSup").val();
+      const selectSup = $("#selectCus").val();
       const progressstatus = $("#progressstatus").val();
-      const Description = $("#description").val();
+      const Description = $("#description-sales-return").val();
     //   var paidAmount = parseFloat(paidAmountInput.value);
-      var purchaseDate = $("#editpurchaseDate").val();
+      var purchaseDate = $("#editsalesDate").val();
   
       var grandTotal = parseFloat($("#editpo-grandTotal").text());
       var oldgrandTotal = parseFloat($("#grandTotal").text());
@@ -241,7 +242,7 @@ $(document).ready(function () {
   
         $.ajax({
           type: "POST",
-          url: "../pages/editpurchasesreturn.php",
+          url: "../pages/editsalesreturn.php",
           data: {
             data: JSON.stringify(data),
             oldorderitems:JSON.stringify(loadData.Productlists),
@@ -257,7 +258,7 @@ $(document).ready(function () {
             dis: dis,
             completeddate: completeddate,
             poid:loadData.ID.id,            
-            piid:loadData.PurchaseOrderRetrun[0].id,
+            piid:loadData.SalesOrderReturns[0].id,
           },
           success: function (response) {
             console.log(response)
@@ -281,10 +282,10 @@ $(document).ready(function () {
     });
     
     
-    function getDataPurchaseReturns(){
+    function getDataSalesReturns(){
       $.ajax({
         type: "POST",
-        url: "../pages/getpurchasesreturndata.php",
+        url: "../pages/getsalesreturndata.php",
         data: { code: myParam },
         dataType: "json",
         success: function (data) {
@@ -293,27 +294,27 @@ $(document).ready(function () {
   
           loadData = data;
   
-          let supSelectElement = document.getElementById("selectSup");
-          let purchaseDateElement = document.getElementById("editpurchaseDate");
-          let DescElement = document.getElementById("description");
+          let CusSelectElement = document.getElementById("selectCus");
+          let SalesDateElement = document.getElementById("editsalesDate");
+          let DescElement = document.getElementById("description-sales-return");
           let statusElement = document.getElementById("progressstatus");
   
           var GrandTotalElement = document.getElementById("grandTotal");
           var DiscountElement = document.getElementById("dis");
-        //   var ToBePaidElement = document.getElementById("topaid");
+
   
           
   
-          // Suppplier
-          for (var i = 0; i < supSelectElement.options.length; i++) {
-            if (supSelectElement.options[i].value === data.PurchaseOrderRetrun[0].supid) {
-                supSelectElement.options[i].selected = true;
+          // Cus
+          for (var i = 0; i < CusSelectElement.options.length; i++) {
+            if (CusSelectElement.options[i].value === data.SalesOrderReturns[0].cusid) {
+                CusSelectElement.options[i].selected = true;
                 break;
             }
           }
   
             // Sales date
-            purchaseDateElement.value = data.PurchaseOrderRetrun[0].created_date.split(' ')[0]
+            SalesDateElement.value = data.SalesOrderReturns[0].salesorderreturndate.split(' ')[0]
   
        
 
@@ -323,7 +324,7 @@ $(document).ready(function () {
   
           // Status
           for (var i = 0; i < statusElement.options.length; i++) {
-            if (statusElement.options[i].value === data.PurchaseOrderRetrun[0].sid) {
+            if (statusElement.options[i].value === data.SalesOrderReturns[0].sid) {
               statusElement.options[i].selected = true;
                 break;
           }
@@ -331,16 +332,14 @@ $(document).ready(function () {
   
   
         // Grand Total
-        GrandTotalElement.textContent = `${data.PurchaseOrderRetrun[0].grandtotal}.00`
+        GrandTotalElement.textContent = `${data.SalesOrderReturns[0].grandtotal}.00`
   
-        grandt = data.PurchaseOrderRetrun[0].grandtotal
+        grandt = data.SalesOrderReturns[0].grandtotal
         
   
         // Discount
-        DiscountElement.textContent = `${data.PurchaseOrderRetrun[0].discount}.00`
+        DiscountElement.textContent = `${data.SalesOrderReturns[0].discount}.00`
   
-        // // To be Paid
-        // ToBePaidElement.textContent = `${parseFloat(data.PurchaseOrderRetrun[0].grandtotal) - (parseFloat(data.PurchaseOrderRetrun[0].paidamount))}.00`
             
         // Get The Product Order Item List
         data.Productlists.forEach(function (plist) {

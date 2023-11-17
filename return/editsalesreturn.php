@@ -32,11 +32,7 @@
 <div class="form-group">
 <label>Sale Date</label>
 <div class="input-groupicon">
-    <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate"
-        name="purchaseDate">
-    <div class="addonset">
-        <img src="../assets/img/icons/calendars.svg" alt="img">
-    </div>
+  <input type="date" placeholder="DD-MM-YYYY" class="form-control" id="editsalesDate">
 </div>
 </div>
 </div>
@@ -100,21 +96,14 @@
 <div class="total-order">
 <ul>
 <li>
-<h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Discount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. 0.00</h5>
-</li>
+    <h4>Total Discount</h4>
+    <h5 id="dis">0.00</h5>
+  </li>
+  <li>
+    <h4>Grand Total</h4>
+    <h5 id="grandTotal">0.00</h5>
+    <h5 style="display: none;" id="editpo-grandTotal">0.00</h5>
+  </li>
 </ul>
 </div>
 </div>
@@ -122,7 +111,7 @@
 <div class="row">
 
 <div class="col-lg-12">
-<a class="btn btn-submit me-2">Update</a>
+<a id="updateSalesOrderReturnBtn" class="btn btn-submit me-2">Update</a>
 <a href="../return/salesreturnlist.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
