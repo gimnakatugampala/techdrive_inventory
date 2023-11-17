@@ -117,22 +117,172 @@ $(document).ready(function () {
     $("#topaid").text(to.toFixed(2));
   }
   
-  // function clearAB() {
-  //   $("#productcmb").val("0");
-  //   $("#selectSup").val("0");
-  //   $("#paidStatus").val("0");
-  //   $("#progressstatus").val("0");
-  //   $(".quantity").val("");
-  //   $(".price").val("");
-  //   $(".discount").val("0");
-  //   $("#paidAmount").val("");
-  //   $("#purchaseDate").val("");
-  //   $("#bodyPL").empty();
-  //   $("#grandTotal").text("0.00");
-  //   $("#paid").text("0.00");
-  //   $("#dis").text("0.00");
-  //   $("#topaid").text("0.00");
-  // }
+  function clearAB() {
+    $("#productcmb").val("0");
+    $("#selectSup").val("0");
+    $("#paidStatus").val("0");
+    $("#progressstatus").val("0");
+    $(".quantity").val("");
+    $(".price").val("");
+    $(".discount").val("0");
+    $("#paidAmount").val("");
+    $("#purchaseDate").val("");
+    $("#bodyEPL").empty();
+    $("#grandTotal").text("0.00");
+    $("#paid").text("0.00");
+    $("#dis").text("0.00");
+    $("#topaid").text("0.00");
+  }
+
+  $("#editpurchaseBtn").click(function () {
+
+    var data = [];
+    const selectPro = dropdown.value;
+    const selectSup = $("#selectSup").val();
+    const selectPS = $("#paidStatus").val();
+    const progressstatus = $("#progressstatus").val();
+    var paidAmount = parseFloat(paidAmountInput.value);
+    var purchaseDate = $("#editpurchaseDate").val();
+
+    var grandTotal = parseFloat($("#editpo-grandTotal").text());
+    var oldgrandTotal = parseFloat($("#grandTotal").text());
+    var dis = parseFloat($("#dis").text());
+    var topaid = parseFloat($("#topaid").text());
+    var isPaid = "0";
+    var completeddate = "";
+
+    $(".quantity").each(function () {
+      var product = $(this).closest("tr").find("td:nth-child(1)").text();
+      var quantity = $(this).closest("tr").find(".quantity").val();
+      var price = $(this).closest("tr").find(".price").val();
+      var discount = $(this).closest("tr").find(".discount").val();
+
+      data.push({
+        product: product,
+        quantity: quantity,
+        price: price,
+        discount: discount,
+      });
+    });
+
+    console.log("arr"+data)
+    console.log("product"+selectPro)
+    console.log("customer "+selectSup)
+    console.log("paid status "+selectPS)
+    console.log("status "+progressstatus)
+    console.log("status "+paidAmount)
+    console.log("purchase date"+purchaseDate)
+    if(grandTotal == 0){
+      console.log("old grand total "+oldgrandTotal)
+    }else{
+      console.log("grand total "+grandTotal)
+    }
+    console.log("discount "+dis)
+    console.log("to pay"+topaid)
+
+    if (selectSup === "0") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Select Customer Name",
+      });
+    } else if (purchaseDate === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Select Purchase Date",
+      });
+    } else if (data.length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Select Product Name",
+      });
+    } else if (selectPS === "0") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Select Paid Status",
+      });
+    } else if (isNaN(paidAmount) || paidAmount < 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Enter a Valid Paid Amount",
+      });
+    } else if (progressstatus === "0") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Please Select Status",
+      });
+    } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "If Status Completed Paid Status Should be Paid",
+      });
+    } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Cannot Select Canceled Status or Draft Status",
+      });
+    } else {
+      if (selectPS === "3" && progressstatus === "1") {
+        isPaid = "1";
+        completeddate = "1";
+      }
+
+      console.log(loadData.Productlists)
+      console.log(data)
+      console.log(dis)
+
+      if(grandTotal == 0){
+        console.log("old grand total "+oldgrandTotal)
+      }else{
+        console.log("grand total "+grandTotal)
+      }
+
+      $.ajax({
+        type: "POST",
+        url: "../pages/editpurchases.php",
+        data: {
+          data: JSON.stringify(data),
+          oldorderitems:JSON.stringify(loadData.Productlists),
+          selectSup: selectSup,
+          selectPS: selectPS,
+          progressstatus: progressstatus,
+          paidAmount: paidAmount,
+          purchaseDate: purchaseDate,
+          isPaid: isPaid,
+          grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
+          topaid: topaid,
+          dis: dis,
+          completeddate: completeddate,
+          poid:loadData.ID.id,            
+          piid:loadData.PurchaseOrder[0].id,
+        },
+        success: function (response) {
+          console.log(response)
+          if (response === "success") {
+            Swal.fire({
+              icon: "success",
+              title: "Success",
+              text: "Successfully Updated Sale",
+            });
+            clearAB();
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "An error occurred while saving the data.",
+            });
+          }
+        },
+      });
+    }
+  });
   
   
   function getDataPurchases(){
@@ -205,7 +355,7 @@ $(document).ready(function () {
       DiscountElement.textContent = `${data.PurchaseOrder[0].discount}.00`
 
       // To be Paid
-      ToBePaidElement.textContent = `${parseFloat(data.PurchaseOrder[0].grandtotal) - (parseFloat(data.PurchaseOrder[0].paidamount) + parseFloat(data.PurchaseOrder[0].discount))}.00`
+      ToBePaidElement.textContent = `${parseFloat(data.PurchaseOrder[0].grandtotal) - (parseFloat(data.PurchaseOrder[0].paidamount))}.00`
           
       // Get The Product Order Item List
       data.Productlists.forEach(function (plist) {

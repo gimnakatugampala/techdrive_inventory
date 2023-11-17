@@ -127,7 +127,7 @@
 
         <!-- Submit and Cancel Buttons -->
         <div class="col-lg-12">
-          <a class="btn btn-submit me-2" id="editpurchase">Update</a>
+          <a class="btn btn-submit me-2" id="editpurchaseBtn">Update</a>
           <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
         </div>
       </div>

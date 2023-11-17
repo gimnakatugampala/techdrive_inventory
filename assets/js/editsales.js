@@ -118,11 +118,6 @@ $(document).ready(function () {
       var to = 0;
       var dis = 0;
       items.forEach(function (item) {
-
-        
-        // console.log(parseInt(document.getElementById("paid").innerText))
-        // console.log(parseInt(document.getElementById("dis").innerText))
-        // console.log(parseInt(document.getElementById("topaid").innerText))
     
         var quantity = parseFloat(item.quantityInput.value);
         var price = parseFloat(item.priceInput.value);
@@ -130,13 +125,6 @@ $(document).ready(function () {
   
         var itemTotal = quantity * price - discount;
         item.totalCell.textContent = itemTotal.toFixed(2);
-
-        // console.log(parseFloat(GrandTotalElement.innerText))
-        // console.log(PaidAElement.innerText)
-        // console.log(DiscountElement.innerText)
-        // console.log(ToBePaidElement.innerText)
-        console.log(grandt)
-        console.log(items)
         
         totalAmount += itemTotal;
         console.log(totalAmount)
@@ -146,16 +134,14 @@ $(document).ready(function () {
         document.getElementById("editsales-grandTotal").style.display = "block"
         document.getElementById("editsales-grandTotal").textContent = totalAmount 
 
-        console.log("----")
         dis += discount;
   
         to = totalAmount - parseFloat(paid.textContent);
       });
+
       // After Input On Input
       $("#grandTotal").text(totalAmount.toFixed(2));
-      
       $("#dis").text(dis.toFixed(2));
-  
       $("#topaid").text(to.toFixed(2));
     }
   
@@ -392,7 +378,7 @@ $(document).ready(function () {
         DiscountElement.textContent = `${data.SalesOrder[0].discount}.00`
 
         // To be Paid
-        ToBePaidElement.textContent = `${parseFloat(data.SalesOrder[0].grandtotal) - (parseFloat(data.SalesOrder[0].paidamount) + parseFloat(data.SalesOrder[0].discount))}.00`
+        ToBePaidElement.textContent = `${parseFloat(data.SalesOrder[0].grandtotal) - (parseFloat(data.SalesOrder[0].paidamount))}.00`
             
         // Get The Product Order Item List
         data.Productlists.forEach(function (plist) {

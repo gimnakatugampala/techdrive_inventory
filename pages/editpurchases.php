@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $topaid = $_POST['topaid'];
     $dis = $_POST['dis'];
     $completeddate = $_POST['completeddate'];
-    $soid = $_POST['soid'];
+    $soid = $_POST['poid'];
     $piid = $_POST['piid'];
 
     $comdate = '';
@@ -37,12 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$salesorderdate',0)";
 
-    $updatesalesOrderSQL = "UPDATE tbsalesorder SET 
-    cusid = '$selectSup',
-    sid = '$progressstatus',
-    paidstatusid = '$selectPS',
-    salesorderdate = '$salesorderdate',
-    isquotation = 0
+    $updatesalesOrderSQL = "UPDATE tbpurchaseorder SET 
+    supid = '$selectSup',
+    statusid = '$progressstatus',
+    paid_status = '$selectPS',
+    created_date = '$salesorderdate'
     WHERE
     id = '$soid'
     ";
@@ -52,13 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // DELETE ORDER ITEMS
         foreach ($olditems as $row) {
-            $product = $row['pid'];
-            $quantity = $row['quantity'];
+            $product = $row['product_id'];
+            $quantity = $row['qty'];
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $delsql = "DELETE FROM tborderitem WHERE pid = '$product' AND
-            salesorderid = '$soid'";
+            $delsql = "DELETE FROM tbpurchaseorderitem WHERE product_id = '$product' AND
+            poid = '$soid'";
             if ($conn->query($delsql) !== true) {
                 echo 'Error: ' . $delsql . '<br>' . $conn->error;
                 exit();
@@ -71,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
-            $sql = "INSERT INTO tborderitem (pid,salesorderid,quantity,price,discount) VALUES ('$product', '$soid', '$quantity', '$price', '$discount')";
+            $sql = "INSERT INTO tbpurchaseorderitem (product_id,poid,qty,price,discount) VALUES ('$product', '$soid', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
                 echo 'Error: ' . $sql . '<br>' . $conn->error;
                 exit();
@@ -81,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($progressstatus == "1" && $selectPS == "3"){
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "UPDATE tbinvoice SET 
+        $sql2 = "UPDATE tbpurchaseinvoice SET 
         grandtotal = '$grandTotal',
         discount = '$dis',
         isSuccess = '1',
@@ -98,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // // Insert into tbpurchaseinvoice
 
         // Insert into tbpurchaseinvoice
-        $sql2 = "UPDATE tbinvoice SET 
+        $sql2 = "UPDATE tbpurchaseinvoice SET 
         grandtotal = '$grandTotal',
         discount = '$dis',
         isSuccess = '0',
