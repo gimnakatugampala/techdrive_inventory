@@ -15,84 +15,54 @@
 <div class="row">
 
 <div class="col-lg-6 col-sm-6 col-12">
-<div class="form-group">
-<label>Supplier Name</label>
-<div class="row">
-<div class="col-lg-12 col-sm-10 col-10">
-<select class="form-select">
-<option disabled selected>Select Supplier</option>
-<option>Supplier</option>
-</select>
-</div>
-</div>
-</div>
-</div>
+    <div class="form-group">
+      <label for="selectSup">Supplier Name</label>
+      <div class="row">
+        <div class="col-lg-12 col-sm-10 col-10">
+          <select class="form-select" id="selectSup">
+            <option value="0">Select Supplier</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="col-lg-6 col-sm-6 col-12">
 <div class="form-group">
 <label>Purchase Return Date</label>
 <div class="input-groupicon">
-<input type="text" placeholder="DD-MM-YYYY" class="datetimepicker">
-<div class="addonset">
-<img src="../assets/img/icons/calendars.svg" alt="img">
+  <input type="date" placeholder="DD-MM-YYYY" class="form-control" id="editpurchaseDate">
 </div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-
-<label>Paid Status</label>
-<select class="select">
-<option>Choose Paid Status</option>
-<option>Not Paid</option>
-<option>Advance</option>
-<option>Paid</option>
-</select>
-
-</div>
-</div>
-
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Paid Amount</label>
-<input type="text">
 </div>
 </div>
 
 
 
-<div class="col-lg-4 col-sm-6 col-12">
-<div class="form-group">
-<label>Status</label>
-<select class="select">
-<option>Choose Status</option>
-<option>Completed</option>
-<option>Inprogress</option>
-</select>
-</div>
-</div>
+  <div class="col-lg-12 col-sm-6 col-12">
+      <div class="form-group">
+        <label for="progressstatus">Status</label>
+        <select id="progressstatus" class="form-select">
+          <option value="0">Choose Status</option>
+        </select>
+      </div>
+    </div>
 
 <div class="col-lg-12">
 <div class="form-group">
 <label>Description</label>
-<textarea class="form-control"></textarea>
+<textarea id="description" class="form-control"></textarea>
 </div>
 </div>
 
 
 
 <div class="col-lg-12 col-sm-6 col-12">
-<div class="form-group">
-<label>Product Name</label>
-<select id="edit-purchase-return-items-select" class="form-select"  aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">Mac Book Pro</option>
-  <option value="2">Iphone 15</option>
-  <option value="3">Watch</option>
-</select>
-</div>
+  <div class="form-group">
+    <label for="productcmb">Product Name</label>
+    <select id="productcmb" class="form-select">
+      <option value="0">Select Product</option>
+    </select>
+  </div>
 </div>
 
 
@@ -101,92 +71,58 @@
 
 
 <div class="row">
-<div class="table-responsive">
-<table class="table">
-<thead>
-<tr>
-<th>Product Name</th>
-<th>QTY</th>
-<th>Purchase Price($)	</th>
-<th>Discount($)	</th>
-
-<th class="text-end">Total Cost ($)	</th>
-<th></th>
-</tr>
-</thead>
-
-<tbody id="table-edit-purchase-order-return">
-
-<tr>
-<td class="productimgname">
-<a class="product-img">
-<img src="../assets/img/product/noimage.png" alt="product">
-</a>
-<a href="javascript:void(0);">Apple Earpods</a>
-</td>
-<td><input type="text" class="form-control" value="10.00"></td>
-<td><input type="text" class="form-control" value="2000.00"></td>
-<td><input type="text" class="form-control" value="0.00"></td>
-<td class="text-end">2000.00</td>
-<td>
-<a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
-</td>
-</tr>
-
-<tr>
-<td class="productimgname">
-<a class="product-img">
-<img src="../assets/img/product/noimage.png" alt="product">
-</a>
-<a href="javascript:void(0);">Macbook Pro</a>
-</td>
-<td><input type="text" class="form-control" value="15.00"></td>
-<td><input type="text" class="form-control" value="6000.00"></td>
-<td><input type="text" class="form-control" value="0.00"></td>
-<td class="text-end">1000.00</td>
-<td>
-<a class="delete-set"><img src="../assets/img/icons/delete.svg" alt="svg"></a>
-</td>
-</tr>
-
-</tbody>
-</table>
-</div>
+  <div class="table-responsive">
+    <table class="table tbproductlist">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>QTY</th>
+          <th>Purchase Price(Rs)</th>
+          <th>Discount(Rs)</th>
+          <th class="text-end">Total Cost (Rs)</th>
+          <!-- <th>Action</th> -->
+        </tr>
+      </thead>
+      <tbody id="bodyEPORL">
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
 
 
 <div class="row">
-<div class="col-lg-12 float-md-right">
-<div class="total-order">
-<ul>
-<li>
-<h4>Grand Total</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Discount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. 0.00</h5>
-</li>
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. 0.00</h5>
-</li>
-</ul>
-</div>
-</div>
-</div>
+    <div class="col-lg-12 float-md-right">
+      <div class="total-order">
+        <ul>
+        <li>
+              <!-- <h4>Total</h4> -->
+              <!-- <h5 id="totalsub">0.00</h5> -->
+            <h5 style="display: none;" id="editpo-grandTotal">0.00</h5>
+
+          </li>
+          
+          <li>
+              <h4>Total Discount</h4>
+              <h5 id="dis">0.00</h5>
+          </li>
+          <li>
+              <h4>Grand Total</h4>
+              <h5 id="grandTotal">0.00</h5>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
 <div class="row">
 
 <div class="col-lg-12">
-<a class="btn btn-submit me-2">Update</a>
+<a id="editPORBtn" class="btn btn-submit me-2">Update</a>
 <a href="../return/purchasereturnlist.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>

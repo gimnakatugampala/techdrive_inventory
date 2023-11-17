@@ -55,6 +55,7 @@
 
 <script src="../assets/js/addpurchasereturn.js"></script>
 <script src="../assets/js/purchasereturnlist.js"></script>
+<script src="../assets/js/editpurchasereturn.js"></script>
 
 <script src="../assets/js/addquotation.js"></script>
 <script src="../assets/js/quotationlist.js"></script>
