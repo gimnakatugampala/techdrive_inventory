@@ -106,6 +106,7 @@
                 <li>
                   <h4>Grand Total</h4>
                   <h5 id="grandTotal">0.00</h5>
+                  <h5 style="display: none;" id="editpo-grandTotal">0.00</h5>
                 </li>
                 <li>
                   <h4>Paid Amount</h4>

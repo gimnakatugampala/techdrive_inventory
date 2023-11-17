@@ -89,27 +89,31 @@ $(document).ready(function () {
 
 
   function calculateTotal() {
-    let totalAmount = 0;
-    let to = 0;
-    let dis = 0;
-
-  
+    var totalAmount = 0;
+    var to = 0;
+    var dis = 0;
     items.forEach(function (item) {
-      const quantity = parseFloat(item.quantityInput.value);
-      const price = parseFloat(item.priceInput.value);
-      const discount = parseFloat(item.discountInput.value);
-  
-      const itemTotal = quantity * price - discount;
+      var quantity = parseFloat(item.quantityInput.value);
+      var price = parseFloat(item.priceInput.value);
+      var discount = parseFloat(item.discountInput.value);
+
+      var itemTotal = quantity * price - discount;
       item.totalCell.textContent = itemTotal.toFixed(2);
-  
       totalAmount += itemTotal;
+
+      document.getElementById("grandTotal").style.display = "none"
+      document.getElementById("editpo-grandTotal").style.display = "block"
+      document.getElementById("editpo-grandTotal").textContent = totalAmount 
+
+
       dis += discount;
-  
       to = totalAmount - parseFloat(paid.textContent);
     });
+    // After Input On Input
     $("#grandTotal").text(totalAmount.toFixed(2));
+    
     $("#dis").text(dis.toFixed(2));
-  
+
     $("#topaid").text(to.toFixed(2));
   }
   
