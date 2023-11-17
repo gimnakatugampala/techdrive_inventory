@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<?php
-$pocode = isset($_GET['pocode']) ? $_GET['pocode'] : '';
-$paidamount = isset($_GET['paidamount']) ? $_GET['paidamount'] : '';
-$purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
-// $quantity = isset( $_GET[ 'quantity' ] ) ? $_GET[ 'quantity' ] : '';
-// $sellingprice = isset( $_GET[ 'sellingprice' ] ) ? $_GET[ 'sellingprice' ] : '';
-// $minquanity = isset( $_GET[ 'minquanity' ] ) ? $_GET[ 'minquanity' ] : '';
-?>
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Purchase Add</title>
-  <!-- Add your CSS and JavaScript includes here -->
-</head>
-
-<body>
   <?php require_once '../includes/header.php'; ?>
   <?php require_once '../includes/sidebar.php'; ?>
 
@@ -35,10 +15,10 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
             <!-- Supplier Name Dropdown -->
             <div class="col-lg-6 col-sm-6 col-12">
               <div class="form-group">
-                <label for="editselectSup">Supplier Name</label>
+                <label for="selectSup">Supplier Name</label>
                 <div class="row">
                   <div class="col-lg-12 col-sm-10 col-10">
-                    <select class="form-select" id="editselectSup">
+                    <select class="form-select" id="selectSup">
                       <option value="0">Select Supplier</option>
                     </select>
                   </div>
@@ -51,11 +31,7 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
               <div class="form-group">
                 <label for="purchaseDate">Purchase Date</label>
                 <div class="input-groupicon">
-                  <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker" id="purchaseDate"
-                    name="purchaseDate" value="<?php echo htmlspecialchars($_GET['purchaseDate']); ?>">
-                  <div class="addonset">
-                    <img src="../assets/img/icons/calendars.svg" alt="img">
-                  </div>
+                  <input type="date" placeholder="DD-MM-YYYY" class="form-control" id="editpurchaseDate">
                 </div>
               </div>
             </div>
@@ -75,8 +51,8 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
             <!-- Paid Status Dropdown -->
             <div class="col-lg-4 col-sm-6 col-12">
               <div class="form-group">
-                <label for="editpaidStatus">Paid Status</label>
-                <select id="editpaidStatus" class="form-select">
+                <label for="paidStatus">Paid Status</label>
+                <select id="paidStatus" class="form-select">
                   <option value="0">Choose Paid Status</option>
                 </select>
               </div>
@@ -86,16 +62,15 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
             <div class="col-lg-4 col-sm-6 col-12">
               <div class="form-group">
                 <label for="paidAmount">Paid Amount</label>
-                <input type="number" id="paidAmount" name="paidAmount"
-                  value="<?php echo htmlspecialchars($_GET['paidamount']); ?>">
+                <input type="number" id="paidAmountEditVal" >
               </div>
             </div>
 
             <!-- Status Dropdown -->
             <div class="col-lg-4 col-sm-6 col-12">
               <div class="form-group">
-                <label for="editprogressstatus">Status</label>
-                <select id="editprogressstatus" class="form-select">
+                <label for="progressstatus">Status</label>
+                <select id="progressstatus" class="form-select">
                   <option value="0">Choose Status</option>
                 </select>
               </div>
@@ -106,7 +81,7 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
         <!-- Table for Product List -->
         <div class="row">
           <div class="table-responsive">
-            <table class="table tbeditproductlist">
+            <table class="table tbproductlist">
               <thead>
                 <tr>
                   <th>Product Name</th>
@@ -117,7 +92,7 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
                   <!-- <th>Action</th> -->
                 </tr>
               </thead>
-              <tbody id="editbodyPL">
+              <tbody id="bodyEPL">
                 <!-- Rows will be added dynamically -->
               </tbody>
             </table>
@@ -134,7 +109,7 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
                 </li>
                 <li>
                   <h4>Paid Amount</h4>
-                  <h5 id="paid" value="<?php echo htmlspecialchars($_GET['paidamount']); ?>">0.00</h5>
+                  <h5 id="paid">0.00</h5>
                 </li>
                 <li style="display:none;">
                   <h4>discount</h4>
@@ -151,27 +126,11 @@ $purchaseDate = isset($_GET['purchaseDate']) ? $_GET['purchaseDate'] : '';
 
         <!-- Submit and Cancel Buttons -->
         <div class="col-lg-12">
-          <a class="btn btn-submit me-2" id="editpurchase">Submit</a>
+          <a class="btn btn-submit me-2" id="editpurchase">Update</a>
+          <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
         </div>
-        <input type='hidden' id='supid' name='supid' value="<?php echo htmlspecialchars(
-          $_GET['supid']
-        ); ?>">
-        <input type='hidden' id='statusid' name='statusid' value="<?php echo htmlspecialchars(
-          $_GET['statusid']
-        ); ?>">
-        <input type='hidden' id='paidstatusid' name='paidstatusid' value="<?php echo htmlspecialchars(
-          $_GET['paidstatusid']
-        ); ?>">
-        <input type='hidden' id='poid' name='poid' value="<?php echo htmlspecialchars(
-          $_GET['poid']
-        ); ?>">
       </div>
     </div>
   </div>
 
   <?php require_once '../includes/footer.php'; ?>
-
-  <!-- Include your JavaScript file here -->
-</body>
-
-</html>
