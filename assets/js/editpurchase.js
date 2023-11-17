@@ -2,24 +2,30 @@ $(document).ready(function () {
   var dropdown = document.getElementById("productcmb");
   const tableBody = $("#bodyEPL");
 
-  var items = [];
+     // Get the Current Grand Total
+     let grandt;
+
+     // Get The Load Data
+     let loadData;
+
+    var items = [];
 
    // Get The Code From URL
    const urlParams = new URLSearchParams(window.location.search);
    const myParam = urlParams.get('code');
 
-  //  document.addEventListener('DOMContentLoaded', getDataPurchases());
+   document.addEventListener('DOMContentLoaded', getDataPurchases());
 
-  const paidAmountInput = document.getElementById("paidAmount");
+  const paidAmountInput = document.getElementById("paidAmountEditVal");
   const paid = document.getElementById("paid");
   const grandTotal = document.getElementById("grandTotal");
   
-  // paidAmountInput.addEventListener("input", function () {
-  //   const inputText = paidAmountInput.value;
-  //   paid.textContent = inputText + ".00";
-  //   const t = parseFloat(grandTotal.textContent) - parseFloat(paid.textContent);
-  //   $("#topaid").text(t.toFixed(2));
-  // });
+  paidAmountInput.addEventListener("input", function () {
+    const inputText = paidAmountInput.value;
+    paid.textContent = inputText + ".00";
+    const t = parseFloat(grandTotal.textContent) - parseFloat(paid.textContent);
+    $("#topaid").text(t.toFixed(2));
+  });
 
   dropdown.addEventListener("change", function () {
     var productId = dropdown.value;
@@ -135,114 +141,114 @@ $(document).ready(function () {
 
         console.log(data);
 
-      //   loadData = data;
+        loadData = data;
 
-      //   let cusSelectElement = document.getElementById("selectCus");
-      //   let salesDateElement = document.getElementById("salesdate");
-      //   let paidStatusElement = document.getElementById("paidStatus");
-      //   let paidAmountElement = document.getElementById("paidamountVal");
-      //   let statusElement = document.getElementById("progressstatus");
+        let supSelectElement = document.getElementById("selectSup");
+        let purchaseDateElement = document.getElementById("editpurchaseDate");
+        let paidStatusElement = document.getElementById("paidStatus");
+        let paidAmountElement = document.getElementById("paidAmountEditVal");
+        let statusElement = document.getElementById("progressstatus");
 
-      //   var GrandTotalElement = document.getElementById("grandTotal");
-      //   var PaidAElement = document.getElementById("paid");
-      //   var DiscountElement = document.getElementById("dis");
-      //   var ToBePaidElement = document.getElementById("topaid");
+        var GrandTotalElement = document.getElementById("grandTotal");
+        var PaidAElement = document.getElementById("paid");
+        var DiscountElement = document.getElementById("dis");
+        var ToBePaidElement = document.getElementById("topaid");
 
         
 
-      //   // Customer
-      //   for (var i = 0; i < cusSelectElement.options.length; i++) {
-      //     if (cusSelectElement.options[i].value === data.SalesOrder[0].cusid) {
-      //       cusSelectElement.options[i].selected = true;
-      //         break;
-      //     }
-      //   }
+        // Suppplier
+        for (var i = 0; i < supSelectElement.options.length; i++) {
+          if (supSelectElement.options[i].value === data.PurchaseOrder[0].supid) {
+              supSelectElement.options[i].selected = true;
+              break;
+          }
+        }
 
-      //     // Sales date
-      //     salesDateElement.value = data.SalesOrder[0].salesorderdate.split(' ')[0]
+          // Sales date
+          purchaseDateElement.value = data.PurchaseOrder[0].created_date.split(' ')[0]
 
-      //     // Paid Status
-      //     for (var i = 0; i < paidStatusElement.options.length; i++) {
-      //       if (paidStatusElement.options[i].value === data.SalesOrder[0].paidstatusid) {
-      //         paidStatusElement.options[i].selected = true;
-      //           break;
-      //     }
-      //   }
-
-
-      //   // Paid Amount
-      //   paidAmountElement.value = data.SalesOrder[0].paidamount
+          // Paid Status
+          for (var i = 0; i < paidStatusElement.options.length; i++) {
+            if (paidStatusElement.options[i].value === data.PurchaseOrder[0].paid_status) {
+              paidStatusElement.options[i].selected = true;
+                break;
+          }
+        }
 
 
-      //   // Status
-      //   for (var i = 0; i < statusElement.options.length; i++) {
-      //     if (statusElement.options[i].value === data.SalesOrder[0].sid) {
-      //       statusElement.options[i].selected = true;
-      //         break;
-      //   }
-      // }
+        // Paid Amount
+        paidAmountElement.value = data.PurchaseOrder[0].paidamount
 
 
-      // // Grand Total
-      // GrandTotalElement.textContent = `${data.SalesOrder[0].grandtotal}.00`
+        // Status
+        for (var i = 0; i < statusElement.options.length; i++) {
+          if (statusElement.options[i].value === data.PurchaseOrder[0].statusid) {
+            statusElement.options[i].selected = true;
+              break;
+        }
+      }
 
-      // // grandt = data.SalesOrder[0].grandtotal
 
-      // // Paid Amount
-      // PaidAElement.textContent = `${data.SalesOrder[0].paidamount}.00`
+      // Grand Total
+      GrandTotalElement.textContent = `${data.PurchaseOrder[0].grandtotal}.00`
 
-      // // Discount
-      // DiscountElement.textContent = `${data.SalesOrder[0].discount}.00`
+      grandt = data.PurchaseOrder[0].grandtotal
 
-      // // To be Paid
-      // ToBePaidElement.textContent = `${parseFloat(data.SalesOrder[0].grandtotal) - (parseFloat(data.SalesOrder[0].paidamount) + parseFloat(data.SalesOrder[0].discount))}.00`
+      // Paid Amount
+      PaidAElement.textContent = `${data.PurchaseOrder[0].paidamount}.00`
+
+      // Discount
+      DiscountElement.textContent = `${data.PurchaseOrder[0].discount}.00`
+
+      // To be Paid
+      ToBePaidElement.textContent = `${parseFloat(data.PurchaseOrder[0].grandtotal) - (parseFloat(data.PurchaseOrder[0].paidamount) + parseFloat(data.PurchaseOrder[0].discount))}.00`
           
-      // // Get The Product Order Item List
-      // data.Productlists.forEach(function (plist) {
-      //   var row = $("<tr>");
-      //   row.append("<td style='display:none;'>" + plist.id + "</td>");
-      //   row.append("<td>" + plist.productname + "</td>");
-      //   row.append(
-      //     "<td><input type='number' class='form-control quantity'  value=" +
-      //       plist.QTY +
-      //       " name='qty'></td>"
-      //   );
-      //   row.append(
-      //     "<td><input type='number' class='form-control price' value=" +
-      //       plist.price +
-      //       " name='pprice'></td>"
-      //   );
-      //   row.append(
-      //     "<td><input type='number' class='form-control discount' value="+
-      //     plist.discount +" name='discountp'></td>"
-      //   );
-      //   row.append(`<td class='text-end total'>${parseFloat(plist.price) * parseFloat(plist.QTY) - parseFloat(plist.discount)}</td>`);
-      //   row.append(
-      //     "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
-      //   );
-      //   tableBody.append(row);
+      // Get The Product Order Item List
+      data.Productlists.forEach(function (plist) {
+        var row = $("<tr>");
+        row.append("<td style='display:none;'>" + plist.id + "</td>");
+        row.append("<td>" + plist.productname + "</td>");
+        row.append(
+          "<td><input type='number' class='form-control quantity'  value=" +
+            plist.QTY +
+            " name='qty'></td>"
+        );
+        row.append(
+          "<td><input type='number' class='form-control price' value=" +
+            plist.price +
+            " name='pprice'></td>"
+        );
+        row.append(
+          "<td><input type='number' class='form-control discount' value="+
+          plist.discount +" name='discountp'></td>"
+        );
+        row.append(`<td class='text-end total'>${parseFloat(plist.price) * parseFloat(plist.QTY) - parseFloat(plist.discount)}</td>`);
+        row.append(
+          "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+        );
+        tableBody.append(row);
 
-      //   var item = {
-      //     quantityInput: row.find(".quantity")[0],
-      //     priceInput: row.find(".price")[0],
-      //     discountInput: row.find(".discount")[0],
-      //     totalCell: row.find(".total")[0],
-      //   };
+        var item = {
+          quantityInput: row.find(".quantity")[0],
+          priceInput: row.find(".price")[0],
+          discountInput: row.find(".discount")[0],
+          totalCell: row.find(".total")[0],
+        };
 
-      //   items.push(item);
+        items.push(item);
 
-      //   item.quantityInput.addEventListener("input", calculateTotal);
-      //   item.priceInput.addEventListener("input", calculateTotal);
-      //   item.discountInput.addEventListener("input", calculateTotal);
+        item.quantityInput.addEventListener("input", calculateTotal);
+        item.priceInput.addEventListener("input", calculateTotal);
+        item.discountInput.addEventListener("input", calculateTotal);
 
-      // });
+      });
 
       },
       error: function () {},
     });
   }
 
-  getDataPurchases()
+  
 
 });
 
