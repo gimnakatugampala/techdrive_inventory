@@ -38,7 +38,7 @@ $(document).ready(function () {
         <a class="me-3" href="../return/salesreturn-detail.php?code=${saleli.sorcode}">
         <img src="../assets/img/icons/eye1.svg" alt="img">
         </a>
-        <a class="me-3" href="../return/editsalesreturn.php">
+        <a class="me-3" href="../return/editsalesreturn.php?code=${saleli.sorcode}">
         <img src="../assets/img/icons/edit.svg" alt="img">
         </a>
         <a class="me-3 confirm-text" href="javascript:void(0);">

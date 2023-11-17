@@ -49,7 +49,7 @@ $(document).ready(function () {
           <img src="../assets/img/icons/eye1.svg" alt="img">
           </a>
 
-          <a class='me-3 btnedit'data-porlist-id=${porlist.cid}><img src='../assets/img/icons/edit.svg' alt='img'></a>
+          <a href="../return/editpurchasereturn.php?code=${porlist.porcode}" class='me-3 btnedit'data-porlist-id=${porlist.cid}><img src='../assets/img/icons/edit.svg' alt='img'></a>
           <a class='me-3 btn-delete' data-porlist-id=${porlist.id}><img src='../assets/img/icons/delete.svg' alt='img'></a>
             </td>`
         );
