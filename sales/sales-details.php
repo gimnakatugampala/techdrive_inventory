@@ -22,7 +22,7 @@
 
 <ul>
 <li>
-<a href="../sales/edit-sales.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+<a href="../sales/edit-sales.php?code=<?php echo $salesorders[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
 </li>
 <li>
 <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>

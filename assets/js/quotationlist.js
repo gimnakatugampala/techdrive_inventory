@@ -52,7 +52,7 @@ $(document).ready(function () {
             <i class="fas fa-exchange-alt fa-lg"></i>
         </a>
         
-        <a class="me-3" href="../quotation/editquotation.php">
+        <a class="me-3" href="../quotation/editquotation.php?code=${saleli.socode}">
         <img src="../assets/img/icons/edit.svg" alt="img">
         </a>
         

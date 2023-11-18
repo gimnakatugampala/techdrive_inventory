@@ -21,7 +21,7 @@
 
 <ul>
     <li>
-    <a href="../purchase/editpurchase.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+    <a href="../purchase/editpurchase.php?code=<?php echo $purchasesorders[0]["pocode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
     <li>
     <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>

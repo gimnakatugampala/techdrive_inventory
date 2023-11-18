@@ -59,6 +59,7 @@
 <script src="../assets/js/editpurchasereturn.js"></script>
 
 <script src="../assets/js/addquotation.js"></script>
+<script src="../assets/js/editquotation.js"></script>
 <script src="../assets/js/quotationlist.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>

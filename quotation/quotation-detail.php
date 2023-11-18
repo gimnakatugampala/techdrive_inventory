@@ -21,7 +21,7 @@
 
 <ul>
     <li>
-    <a href="../quotation/editquotation.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+    <a href="../quotation/editquotation.php?code=<?php echo $quotationsales[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
     <li>
     <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>

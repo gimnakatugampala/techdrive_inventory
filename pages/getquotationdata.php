@@ -1,17 +1,18 @@
 <?php
 require_once '../includes/db_config.php';
 
-$code  = htmlspecialchars($_GET['code']);
+$code = $_POST['code'];
 
-// print_r($code);
+$sql = "SELECT * FROM tbsalesorder WHERE socode = '$code' AND isquotation='1'";
+$result = $conn->query( $sql );
 
-$sql = "SELECT * FROM tbsalesorder WHERE socode = '$code'";
 $result = $conn->query( $sql );
 
 // Get the Sales Order ID
 if ( $result->num_rows > 0 ) {
     $id = $result->fetch_assoc();
 }
+
 
 // Get the Customer & Sales Invoice
 $sqlsales = "SELECT *,tbinvoice.discount AS DIS FROM tbsalesorder 
@@ -26,10 +27,6 @@ if ( $resultsales->num_rows > 0 ) {
         $salesorders[] = $row;
     }
 }
-
-
-echo json_encode( $salesorders );
-
 
 // Product Items List
 $sqlproductlist = "SELECT *,tborderitem.quantity AS QTY FROM tborderitem 
@@ -46,7 +43,9 @@ if ( $resultprolist->num_rows > 0 ) {
     }
 }
 
-
-echo json_encode( $productlist );
-
+echo json_encode( [
+    "ID"=>$id,
+    "SalesOrder"=>$salesorders,
+    "Productlists"=>$productlist
+    ] );
 ?>

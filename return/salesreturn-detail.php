@@ -22,7 +22,7 @@
 
 <ul>
     <li>
-    <a href="../return/editsalesreturn.php"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+    <a href="../return/editsalesreturn.php?code=<?php echo $salesordersreturn[0]["sorcode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
     <li>
     <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
