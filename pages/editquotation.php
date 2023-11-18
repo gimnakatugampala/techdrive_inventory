@@ -39,8 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $updatesalesOrderSQL = "UPDATE tbsalesorder SET 
     cusid = '$selectSup',
-    salesorderdate = '$salesorderdate',
-    isquotation = 0
+    salesorderdate = '$purchaseDate'
     WHERE
     id = '$soid'
     ";
