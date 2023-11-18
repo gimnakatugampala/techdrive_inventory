@@ -145,19 +145,19 @@ $(document).ready(function () {
     //   $("#topaid").text(to.toFixed(2));
     }
   
-    $("#UpdateSales").click(function () {
+    $("#editQuotationBtn").click(function () {
       var data = [];
       const selectPro = dropdown.value;
       const selectSup = $("#selectCus").val();
-      const selectPS = $("#paidStatus").val();
-      const progressstatus = $("#progressstatus").val();
-      var paidAmount = parseFloat(paidAmountInput.value);
-      var purchaseDate = $("#salesdate").val();
+    //   const selectPS = $("#paidStatus").val();
+      // const progressstatus = $("#progressstatus").val();
+    //   var paidAmount = parseFloat(paidAmountInput.value);
+      var purchaseDate = $("#editquotationdate").val();
   
       var grandTotal = parseFloat($("#editsales-grandTotal").text());
       var oldgrandTotal = parseFloat($("#grandTotal").text());
       var dis = parseFloat($("#dis").text());
-      var topaid = parseFloat($("#topaid").text());
+    //   var topaid = parseFloat($("#topaid").text());
       var isPaid = "0";
       var completeddate = "";
   
@@ -178,9 +178,9 @@ $(document).ready(function () {
       console.log("arr"+data)
       console.log("product"+selectPro)
       console.log("customer "+selectSup)
-      console.log("paid status "+selectPS)
-      console.log("status "+progressstatus)
-      console.log("status "+paidAmount)
+    //   console.log("paid status "+selectPS)
+    //   console.log("status "+progressstatus)
+    //   console.log("status "+paidAmount)
       console.log("purchase date"+purchaseDate)
       if(grandTotal == 0){
         console.log("old grand total "+oldgrandTotal)
@@ -188,7 +188,7 @@ $(document).ready(function () {
         console.log("grand total "+grandTotal)
       }
       console.log("discount "+dis)
-      console.log("to pay"+topaid)
+    //   console.log("to pay"+topaid)
   
       if (selectSup === "0") {
         Swal.fire({
@@ -208,42 +208,8 @@ $(document).ready(function () {
           title: "Error",
           text: "Please Select Product Name",
         });
-      } else if (selectPS === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Paid Status",
-        });
-      } else if (isNaN(paidAmount) || paidAmount < 0) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Enter a Valid Paid Amount",
-        });
-      } else if (progressstatus === "0") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Please Select Status",
-        });
-      } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "If Status Completed Paid Status Should be Paid",
-        });
-      } else if (progressstatus === "3" ||  progressstatus == "4" ) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Cannot Select Canceled Status or Draft Status",
-        });
       } else {
-        if (selectPS === "3" && progressstatus === "1") {
-          isPaid = "1";
-          completeddate = "1";
-        }
-
+    
         console.log(loadData.Productlists)
 
         if(grandTotal == 0){
@@ -254,18 +220,18 @@ $(document).ready(function () {
   
         $.ajax({
           type: "POST",
-          url: "../pages/editsales.php",
+          url: "../pages/editquotation.php",
           data: {
             data: JSON.stringify(data),
             oldorderitems:JSON.stringify(loadData.Productlists),
             selectSup: selectSup,
-            selectPS: selectPS,
-            progressstatus: progressstatus,
-            paidAmount: paidAmount,
+            // selectPS: selectPS,
+            // progressstatus: progressstatus,
+            // paidAmount: paidAmount,
             purchaseDate: purchaseDate,
             isPaid: isPaid,
             grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
-            topaid: topaid,
+            // topaid: topaid,
             dis: dis,
             completeddate: completeddate,
             soid:loadData.ID.id,            
@@ -277,9 +243,9 @@ $(document).ready(function () {
               Swal.fire({
                 icon: "success",
                 title: "Success",
-                text: "Successfully Updated Sale",
+                text: "Successfully Updated Quotation",
               });
-              clearAB();
+              // clearAB();
             } else {
               Swal.fire({
                 icon: "error",
@@ -301,7 +267,7 @@ $(document).ready(function () {
       // $(".price").val("");
       // $(".discount").val("0");
       // $("#paidAmount").val("");
-      // $("#salesdate").val("");
+      // $("#editquotationdate").val("");
       // $("#bodySL").empty();
       // $("#grandTotal").text("0.00");
       // $("#paid").text("0.00");
@@ -325,7 +291,7 @@ $(document).ready(function () {
 
           var GrandTotalElement = document.getElementById("grandTotal");
           var DiscountElement = document.getElementById("dis");
-        //   var ToBePaidElement = document.getElementById("topaid");
+          // var StatusElement = document.getElementById("progressstatus");
 
           
 
@@ -352,6 +318,9 @@ $(document).ready(function () {
 
         // Discount
         DiscountElement.textContent = `${data.SalesOrder[0].discount}.00`
+
+        // // Status
+        // StatusElement.value = data.SalesOrder[0].sid
 
         // // To be Paid
         // ToBePaidElement.textContent = `${parseFloat(data.SalesOrder[0].grandtotal) - (parseFloat(data.SalesOrder[0].paidamount))}.00`
