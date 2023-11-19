@@ -229,15 +229,6 @@ samsung
 <h5>Rs. <?php echo $quotationsales[0]["grandtotal"];?></h5>
 </li>
 
-<li>
-<h4>Paid Amount</h4>
-<h5>Rs. <?php echo $quotationsales[0]["paidamount"];?></h5>
-</li>
-
-<li class="total">
-<h4>To Be Paid</h4>
-<h5>Rs. <?php echo floatval($quotationsales[0]["grandtotal"]) - floatval($quotationsales[0]["paidamount"]); ?></h5>
-</li>
 
 
 </ul>

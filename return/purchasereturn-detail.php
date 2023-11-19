@@ -212,10 +212,6 @@ samsung
 <div class="total-order w-100 max-widthauto m-auto mb-4">
 <ul>
 
-<li>
-<h4>Sub Total</h4>
-<h5>Rs. <?php echo floatval($purchasesordersreturns[0]["grandtotal"]) + floatval($purchasesordersreturns[0]["DIS"]); ?></h5>
-</li>
 
 <li>
 <h4>Total Discount</h4>

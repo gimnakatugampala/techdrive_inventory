@@ -217,11 +217,6 @@ samsung
 
 
 <li>
-<h4>Sub Total</h4>
-<h5>Rs. <?php echo floatval($salesordersreturn[0]["grandtotal"]) + floatval($salesordersreturn[0]["DIS"]); ?></h5>
-</li>
-
-<li>
 <h4>Total Discount</h4>
 <h5>Rs. <?php echo $salesordersreturn[0]["DIS"]; ?></h5>
 </li>
