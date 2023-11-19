@@ -63,7 +63,9 @@
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Payment Status</font></font><br>
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Status</font></font><br>
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Placed Date</font></font><br>
+ <?php if ($purchasesorders[0]["statusid"] == "1" && $purchasesorders[0]["paid_status"] == "3"): ?>
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Completed Date</font></font><br>
+ <?php endif; ?>
 </td>
 
 
@@ -94,10 +96,12 @@
 <font class="text-info"> Quotation</font></font><br>
 <?php endif; ?>
 
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 2012-11-19</font></font><br>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo $purchasesorders[0]["created_date"]; ?></font></font><br>
 
-<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 2012-11-19</font></font><br>
 
+<?php if ($purchasesorders[0]["statusid"] == "1" && $purchasesorders[0]["paid_status"] == "3"): ?>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo $purchasesorders[0]["completeddate"]; ?></font></font><br>
+<?php endif; ?>
 </td>
 
 
