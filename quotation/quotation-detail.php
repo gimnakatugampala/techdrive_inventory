@@ -24,7 +24,7 @@
     <a href="../quotation/editquotation.php?code=<?php echo $quotationsales[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+    <a href="../utils/pdf_maker.php?MST_ID=<?php echo $quotationsales[0]["socode"];?>&ACTION=DOWNLOAD&TYPE=QO"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
     <li>
     <a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
