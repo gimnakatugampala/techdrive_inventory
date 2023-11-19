@@ -28,7 +28,7 @@
     <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
+    <a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
     </li>
     <li>
     <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
