@@ -25,7 +25,7 @@
 <a href="../sales/edit-sales.php?code=<?php echo $salesorders[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
 </li>
 <li>
-<a href="../utils/pdf_maker.php?MST_ID=1f15f22c-484f-49fc-a1e5-b9a080a1d65d&ACTION=DOWNLOAD"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+<a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesorders[0]["socode"];?>&ACTION=DOWNLOAD&TYPE=SO"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
 </li>
 <li>
 <a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
@@ -146,46 +146,6 @@ Subtotal (Rs.)
 
 <?php endforeach;?>
 
-<!-- <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
-<td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
-<img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
-Apple Earpods
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-2000.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1.00
-</td>
-
-<td style="padding: 10px;vertical-align: top; ">
-00.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1500.00
-</td>
-</tr> -->
-
-<!-- <tr class="details" style="border-bottom:1px solid #E9ECEF ;">
-<td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
-<img src="../assets/img/product/noimage.png" alt="img" class="me-2" style="width:40px;height:40px;">
-samsung
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-8000.00
-</td>
-
-<td style="padding: 10px;vertical-align: top; ">
-1.00
-</td>
-
-<td style="padding: 10px;vertical-align: top; ">
-00.00
-</td>
-<td style="padding: 10px;vertical-align: top; ">
-1500.00
-</td>
-</tr> -->
 
 </tbody>
 </table>
