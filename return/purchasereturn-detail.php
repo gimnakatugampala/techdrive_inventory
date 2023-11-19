@@ -24,7 +24,7 @@
     <a href="../return/editpurchasereturn.php?code=<?php echo $purchasesordersreturns[0]["porcode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+    <a href="../utils/pdf_maker.php?MST_ID=<?php echo $purchasesordersreturns[0]["porcode"];?>&ACTION=DOWNLOAD&TYPE=POR"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
     <li>
     <a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>

@@ -150,6 +150,45 @@ if($TYPE == "SO"){
 			$Status = "QUOTATION";
 			$CompletedDate = "N/A";
 		}
+}else if($TYPE == "SOR"){
+
+	$inv_mst_query = "SELECT * FROM tbsalesorderreturn WHERE sorcode ='".$MST_ID."' ";             
+	$inv_mst_results = mysqli_query($conn,$inv_mst_query);   
+	$count = mysqli_num_rows($inv_mst_results);  
+
+
+	// Get the Order Data
+	// Get the Customer & Sales Invoice
+	$orders = "SELECT *,tbsalesreturninvoice.discount AS DIS FROM tbsalesorderreturn 
+	JOIN tbcustomer ON tbsalesorderreturn.cusid = tbcustomer.id
+	JOIN tbsalesreturninvoice ON tbsalesorderreturn.id = tbsalesreturninvoice.salesorid WHERE tbsalesorderreturn.sorcode = '$MST_ID'";
+
+	$resultorders = $conn->query( $orders );
+
+	$ordersarr = array();
+
+	if ( $resultorders->num_rows > 0 ) {
+		while ( $row = $resultorders->fetch_assoc() ) {
+			$ordersarr[] = $row;
+		}
+	}
+
+
+		
+		// Get Status Data
+		if ($ordersarr[0]["sid"] == "1"){
+			$Status = "COMPLETED";
+			$CompletedDate = $ordersarr[0]["completeddate"];
+		}else if($ordersarr[0]["sid"] == "2"){
+			$Status = "IN PROGRESS";
+			$CompletedDate = "N/A";
+		}else if($ordersarr[0]["sid"] == "3"){
+			$Status = "CANCELED";
+			$CompletedDate = "N/A";
+		}else if($ordersarr[0]["sid"] == "4"){
+			$Status = "QUOTATION";
+			$CompletedDate = "N/A";
+		}
 }
 
 
@@ -664,6 +703,194 @@ if($count>0) {
 		$inv_det_query = "SELECT *,tborderitem.quantity AS QTY FROM tborderitem 
 		JOIN tbproduct ON tborderitem.pid = tbproduct.id
 		WHERE tborderitem.salesorderid = $inv_mst_data_row[id]";
+		$inv_det_results = mysqli_query($conn,$inv_det_query);    
+		while($inv_det_data_row = mysqli_fetch_array($inv_det_results, MYSQLI_ASSOC)){	
+		
+		//  Calculate
+		$subtotal=floatval($inv_det_data_row["QTY"]) * floatval($inv_det_data_row["price"]) - floatval($inv_det_data_row["discount"]);
+	
+		$content .= '
+		  <tr class="itemrows">
+			  <td class="td" colspan="1">
+				'.$inv_det_data_row["productname"] .'
+			  </td>
+	
+			  <td class="td"  colspan="1">
+			  '.$inv_det_data_row["QTY"] .'
+			  </td>
+	
+			  <td class="td"  colspan="1">
+			  '.$inv_det_data_row["price"] .'
+			</td colspan="1">
+	
+			 <td class="td"  colspan="1">
+			 '.$inv_det_data_row["discount"] .'
+			</td>
+	
+			<td class="td"  colspan="1">
+			'.$subtotal.'
+			</td>
+			
+		  </tr>';
+			// $total=$total+$inv_det_data_row['price'];
+		}
+	
+		$content .= '</tbody></table>';
+	
+			
+			$content .= '
+			<p></p>
+	
+			<table>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>TOTAL DISCOUNT : 1020</b>
+			</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>PAID AMOUNT : 1020</b>
+			</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
+			</td>
+			</tr>
+	
+			<tr colspan="2">
+			<td>&nbsp;</td>
+			<td align="right">------------------------</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>TO BE PAID :435</b>
+			</td>
+			</tr>
+			
+			<tr><td colspan="2" align="right">------------------------</td></tr>
+	
+			<p>--------------------------------------------------------------------------------------------------------------------------------</p>
+	
+			
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2" align="center"><b>THANK YOU ! VISIT AGAIN</b></td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			</table>
+		</table>
+	</table>'; 
+	$pdf->writeHTML($content);
+	}else if($TYPE == "SOR"){
+
+		$content = ''; 
+		$content .= '
+		<style type="text/css">
+		body{
+		font-size:12px;
+		line-height:24px;
+		font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+		color:#000;
+		}
+		table.table, th.th, td.td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding:10px;
+		  }
+	
+		  td.card{
+			padding:100px;
+		  }
+	
+	
+		</style>    
+		<table cellpadding="0" cellspacing="0">
+		<table style="width:100%;" >
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
+		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
+	
+		<br />
+		<br />
+	
+		<tr>
+		<td style="font-size:10px;margin-bottom:45px;">CUSTOMER INFO:</td>
+		<td style="font-size:10px;margin-bottom:45px;" align="right">INVOICE INFO:</td>
+		</tr>
+	
+		<br />
+	
+		<tr>
+		<td><b>CUSTOMER NAME: '.$ordersarr[0]["cusname"].'</b></td>
+		<td align="right"><b>SALES RETURN CODE: '.$ordersarr[0]["sorcode"].'</b> </td>
+		</tr>
+		<br />
+	
+		<tr>
+		<td><b>EMAIL: '.$ordersarr[0]["cusemail"].'</b></td>
+		<td align="right"><b>STATUS: '.$Status.'</b> </td>
+		</tr>
+	
+		<br />
+	
+		<tr>
+		<td><b>MOBILE: +94 '.$ordersarr[0]["cusphone"].' </b></td>
+		<td align="right"><b>PLACED DATE: '.$ordersarr[0]["salesorderreturndate"].'</b> </td>
+		</tr>
+		<br />
+	
+		<tr>
+		<td><b>ADDRESS : '.$ordersarr[0]["cusaddress"].'</b></td>
+		<td align="right"><b>COMPLETED DATE: '.$CompletedDate.'</b> </td>
+
+		</tr>
+	
+	
+		<br />
+	
+	
+	
+		<p>--------------------------------------------------------------------------------------------------------------------------------</p>
+	
+	
+		<tr><td colspan="2" align="center"><b>SALES ORDER RETURN INVOICE</b></td></tr>
+		<p></p>
+	
+		<table class="table" align="center">
+		<tr bgcolor="##BFC9CA">
+			<th class="th"  colspan="1">
+				<b>PRODUCT NAME</b>
+			</th>
+	
+			<th class="th" colspan="1">
+			<b>QTY</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>PRICE (RS.)</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>DISCOUNT (RS.)</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>SUBTOTAL (RS.)</b>
+			</th>
+	
+		</tr>
+		
+	
+	
+		<tbody>
+		';
+		$inv_det_query = "SELECT *,tbsalesorderreturnitem.quantity AS QTY FROM tbsalesorderreturnitem 
+		JOIN tbproduct ON tbsalesorderreturnitem.pid = tbproduct.id
+		WHERE tbsalesorderreturnitem.sales_order_return_id = $inv_mst_data_row[id]";
 		$inv_det_results = mysqli_query($conn,$inv_det_query);    
 		while($inv_det_data_row = mysqli_fetch_array($inv_det_results, MYSQLI_ASSOC)){	
 		
