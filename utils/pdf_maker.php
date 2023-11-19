@@ -89,13 +89,9 @@ if($count>0)
 
 	<tr>
 	<td><b>COLOMBO</b></td>
-	<td align="right">&nbsp;</td>
-	</tr>
-
-	<tr>
-	<td>&nbsp;</td>
 	<td align="right"><b>PLACED DATE: 2023-11-19</b> </td>
 	</tr>
+
 
 	<br />
 
@@ -192,7 +188,7 @@ if($count>0)
 
 		<tr>
 		<td colspan="2" align="right">
-		<b>TO BE PAID : 1020</b>
+		<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
 		</td>
 		</tr>
 
@@ -203,11 +199,13 @@ if($count>0)
 
 		<tr>
 		<td colspan="2" align="right">
-		<b>GRAND&nbsp;TOTAL:&nbsp;'.$total.'</b>
+		<b>TO BE PAID :'.$total.'</b>
 		</td>
 		</tr>
-
+		
 		<tr><td colspan="2" align="right">------------------------</td></tr>
+
+		<p>--------------------------------------------------------------------------------------------------------------------------------</p>
 
 		
 		<tr><td colspan="2">&nbsp;</td></tr>
