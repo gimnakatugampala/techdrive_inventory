@@ -362,6 +362,8 @@ if($count>0) {
 		
 		//  Calculate
 		$subtotal=floatval($inv_det_data_row["QTY"]) * floatval($inv_det_data_row["price"]) - floatval($inv_det_data_row["discount"]);
+		$topaid = floatval($ordersarr[0]["grandtotal"]) - floatval($ordersarr[0]["paidamount"]);
+
 	
 		$content .= '
 		  <tr class="itemrows">
@@ -399,19 +401,19 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TOTAL DISCOUNT : 1020</b>
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
 			</td>
 			</tr>
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>PAID AMOUNT : 1020</b>
+			<b>PAID AMOUNT : '.$ordersarr[0]["paidamount"].'</b>
 			</td>
 			</tr>
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
 			</td>
 			</tr>
 	
@@ -422,7 +424,7 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TO BE PAID :435</b>
+			<b>TO BE PAID : '.$topaid.'</b>
 			</td>
 			</tr>
 			
@@ -554,6 +556,7 @@ if($count>0) {
 		
 		//  Calculate
 		$subtotal=floatval($inv_det_data_row["QTY"]) * floatval($inv_det_data_row["price"]) - floatval($inv_det_data_row["discount"]);
+		$topaid = floatval($ordersarr[0]["grandtotal"]) - floatval($ordersarr[0]["paidamount"]);
 	
 		$content .= '
 		  <tr class="itemrows">
@@ -591,19 +594,19 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TOTAL DISCOUNT : 1020</b>
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
 			</td>
 			</tr>
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>PAID AMOUNT : 1020</b>
+			<b>PAID AMOUNT : '.$ordersarr[0]["paidamount"].'</b>
 			</td>
 			</tr>
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
 			</td>
 			</tr>
 	
@@ -614,7 +617,7 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TO BE PAID :435</b>
+			<b>TO BE PAID :'.$topaid.'</b>
 			</td>
 			</tr>
 			
@@ -780,21 +783,12 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TOTAL DISCOUNT : 1020</b>
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
 			</td>
 			</tr>
 	
-			<tr>
-			<td colspan="2" align="right">
-			<b>PAID AMOUNT : 1020</b>
-			</td>
-			</tr>
 	
-			<tr>
-			<td colspan="2" align="right">
-			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
-			</td>
-			</tr>
+	
 	
 			<tr colspan="2">
 			<td>&nbsp;</td>
@@ -803,7 +797,7 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TO BE PAID :435</b>
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
 			</td>
 			</tr>
 			
@@ -887,7 +881,7 @@ if($count>0) {
 	
 		<br />
 	
-	
+		<span><b>DESCRIPTION : '.$ordersarr[0]["description"].'</b></span>
 	
 		<p>--------------------------------------------------------------------------------------------------------------------------------</p>
 	
@@ -966,23 +960,16 @@ if($count>0) {
 	
 			<table>
 	
-			<tr>
-			<td colspan="2" align="right">
-			<b>TOTAL DISCOUNT : 1020</b>
-			</td>
-			</tr>
+			
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>PAID AMOUNT : 1020</b>
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
 			</td>
 			</tr>
 	
-			<tr>
-			<td colspan="2" align="right">
-			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
-			</td>
-			</tr>
+	
+	
 	
 			<tr colspan="2">
 			<td>&nbsp;</td>
@@ -991,9 +978,11 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TO BE PAID :435</b>
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
 			</td>
 			</tr>
+	
+		
 			
 			<tr><td colspan="2" align="right">------------------------</td></tr>
 	
@@ -1071,12 +1060,13 @@ if($count>0) {
 		<td><b>ADDRESS : '.$ordersarr[0]["supaddress"].'</b></td>
 		<td align="right"><b>COMPLETED DATE: '.$CompletedDate.'</b> </td>
 
-		</tr>
-	
-	
+		</tr>	
+
 		<br />
+
 	
 	
+		<span><b>DESCRIPTION : '.$ordersarr[0]["description"].'</b></span>
 	
 		<p>--------------------------------------------------------------------------------------------------------------------------------</p>
 	
@@ -1157,21 +1147,11 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TOTAL DISCOUNT : 1020</b>
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
 			</td>
 			</tr>
 	
-			<tr>
-			<td colspan="2" align="right">
-			<b>PAID AMOUNT : 1020</b>
-			</td>
-			</tr>
-	
-			<tr>
-			<td colspan="2" align="right">
-			<b>GRAND&nbsp;TOTAL:&nbsp; 1020</b>
-			</td>
-			</tr>
+
 	
 			<tr colspan="2">
 			<td>&nbsp;</td>
@@ -1180,7 +1160,7 @@ if($count>0) {
 	
 			<tr>
 			<td colspan="2" align="right">
-			<b>TO BE PAID :435</b>
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
 			</td>
 			</tr>
 			
