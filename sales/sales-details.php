@@ -25,10 +25,10 @@
 <a href="../sales/edit-sales.php?code=<?php echo $salesorders[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
 </li>
 <li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+<a href="../utils/pdf_maker.php?MST_ID=1f15f22c-484f-49fc-a1e5-b9a080a1d65d&ACTION=DOWNLOAD"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
 </li>
 <li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
+<a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
 </li>
 <li>
 <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
@@ -55,6 +55,8 @@
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Sales Code </font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Payment Status</font></font><br>
  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Status</font></font><br>
+ <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Placed Date</font></font><br>
+ <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> Completed Date</font></font><br>
 </td>
 <td style="padding:5px;vertical-align:top;text-align:right;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">&nbsp;</font></font><br>
@@ -81,6 +83,10 @@
 <?php elseif ($salesorders[0]["sid"] == "4"): ?>
 <font class="text-info"> Quotation</font></font><br>
 <?php endif; ?>
+
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 2012-11-19</font></font><br>
+
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> 2012-11-19</font></font><br>
 
 </td>
 </tr>
@@ -219,6 +225,7 @@ samsung
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </div>
