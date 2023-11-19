@@ -7,7 +7,7 @@
 <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>Dreams Pos admin template</title>
+<title>Order Tracker</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
 
@@ -36,6 +36,18 @@
 
 <div class="page-wrapper ms-0">
 <div class="content">
+
+<div class="row">
+    <div class="col-md-6 mx-auto mb-4 text-center">
+       <h4><b>TECHDRIVE TECHNOLOGIES</b></h4>
+       <h4>WEBSITE : WWW.TECHDRIVE.LK</h4>
+       <h4>CONTACT : +94 764961707</h4>
+
+    </div>
+</div>
+
+<hr>
+
 <div class="row">
 <div class="col-lg-8 col-sm-12 tabs_wrapper">
 <div class="page-header ">
@@ -67,75 +79,21 @@
 <a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="../assets/img/icons/edit-5.svg" alt="img"></a>
 </h4>
 <div class="productlinkset">
-<h5>PT001</h5>
+<h5>QTY : 9</h5>
 </div>
 
 </div>
 </div>
 </li>
-<li>3000.00	</li>
-
-</ul>
-<ul class="product-lists">
 <li>
-<div class="productimg">
-<div class="productimgs">
-<img src="../assets/img/product/product34.jpg" alt="img">
-</div>
-<div class="productcontet">
-<h4>Green Nike
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="../assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
-
-</div>
-</div>
+    <h4>Rs. <b>3000.00</b></h4>
+    <span style="text-align: right;"><strike>Rs.34</strike></span>
 </li>
-<li>3000.00	</li>
 
 </ul>
-<ul class="product-lists">
-<li>
-<div class="productimg">
-<div class="productimgs">
-<img src="../assets/img/product/product35.jpg" alt="img">
-</div>
-<div class="productcontet">
-<h4>Banana
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="../assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
 
-</div>
-</div>
-</li>
-<li>3000.00	</li>
 
-</ul>
-<ul class="product-lists">
-<li>
-<div class="productimg">
-<div class="productimgs">
-<img src="../assets/img/product/product31.jpg" alt="img">
-</div>
-<div class="productcontet">
-<h4>Strawberry
-<a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="../assets/img/icons/edit-5.svg" alt="img"></a>
-</h4>
-<div class="productlinkset">
-<h5>PT001</h5>
-</div>
 
-</div>
-</div>
-</li>
-<li>3000.00	</li>
-
-</ul>
 </div>
 
 
@@ -156,17 +114,20 @@
 <div class="setvalue">
 <ul>
 <li>
-<h5>Subtotal </h5>
+<h5>Grand Total</h5>
 <h6>55.00$</h6>
 </li>
 <li>
-<h5>Discount </h5>
+<h5>Paid Amount</h5>
 <h6>5.00$</h6>
 </li>
+
+<hr>
 <li class="total-value">
-<h5>Total </h5>
+<h5>To Be Paid</h5>
 <h6>50.00$</h6>
 </li>
+
 </ul>
 </div>
 
