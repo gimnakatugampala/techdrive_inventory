@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/brandlist.php' ?>
 
 
 <div class="page-wrapper">
@@ -74,7 +75,17 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="blist"></tbody>
+                        <tbody>
+                        <?php foreach ($brands as $row) : ?>
+                            <tr>
+                            <td><?php echo  $row["brandname"]; ?></td>
+                            <td><?php echo  $row["branddesciption"]; ?></td>
+                            <td>
+                                <a class='me-3 btnedit'data-brand-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+                                <a class='me-3 btn-delete' data-brand-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
