@@ -1,10 +1,18 @@
 <?php                
+
 require_once '../includes/db_config.php';
 require_once '../lib/tcpdf_6_3_2/tcpdf/tcpdf.php';
-// include_once('lib/tcpdf_6_2_13/tcpdf/tcpdf.php');
+
 
 $MST_ID=$_GET['MST_ID'];
 $TYPE=$_GET['TYPE'];
+
+$NAME;
+$MAIN_EMAIL;
+$PLACED_DATE;
+$SALES_CODE;
+$EMAIL_TYPE;
+
 
 if($TYPE == "SO"){
 
@@ -28,6 +36,12 @@ if($TYPE == "SO"){
 			$ordersarr[] = $row;
 		}
 	}
+
+		// Assign CUS Global 
+		$NAME = $ordersarr[0]["cusname"];
+		$MAIN_EMAIL = $ordersarr[0]["cusemail"];
+		$PLACED_DATE = $ordersarr[0]["salesorderdate"];
+		$SALES_CODE = $ordersarr[0]["socode"];
 
 		// Get Paid Data
 		if ($ordersarr[0]["paidstatusid"] == "1"){
@@ -75,6 +89,12 @@ if($TYPE == "SO"){
 			$ordersarr[] = $row;
 		}
 	}
+
+		// Assign SUP Global 
+		$NAME = $ordersarr[0]["supname"];
+		$MAIN_EMAIL = $ordersarr[0]["supemail"];
+		$PLACED_DATE = $ordersarr[0]["created_date"];
+		$SALES_CODE = $ordersarr[0]["pocode"];
 
 
 		// Get Paid Data
@@ -125,6 +145,13 @@ if($TYPE == "SO"){
 		}
 	}
 
+			// Assign CUS Global 
+			$NAME = $ordersarr[0]["cusname"];
+			$MAIN_EMAIL = $ordersarr[0]["cusemail"];
+			$PLACED_DATE = $ordersarr[0]["salesorderdate"];
+			$SALES_CODE = $ordersarr[0]["socode"];
+			
+
 		// Get Paid Data
 		if ($ordersarr[0]["paidstatusid"] == "1"){
 			$paidStatus = "NO PAID";
@@ -173,6 +200,13 @@ if($TYPE == "SO"){
 		}
 	}
 
+		// Assign CUS Global 
+		$NAME = $ordersarr[0]["cusname"];
+		$MAIN_EMAIL = $ordersarr[0]["cusemail"];
+		$PLACED_DATE = $ordersarr[0]["salesorderreturndate"];
+		$SALES_CODE = $ordersarr[0]["sorcode"];
+
+
 		// Get Status Data
 		if ($ordersarr[0]["sid"] == "1"){
 			$Status = "COMPLETED";
@@ -210,6 +244,12 @@ if($TYPE == "SO"){
 		}
 	}
 
+		// Assign CUS Global 
+		$NAME = $ordersarr[0]["supname"];
+		$MAIN_EMAIL = $ordersarr[0]["supemail"];
+		$PLACED_DATE = $ordersarr[0]["created_date"];
+		$SALES_CODE = $ordersarr[0]["porcode"];
+		
 		// Get Status Data
 		if ($ordersarr[0]["sid"] == "1"){
 			$Status = "COMPLETED";
@@ -1180,8 +1220,7 @@ if($count>0) {
 	}
 	
 
-
-$file_location = "../uploads/"; //add your full path of your server
+$file_location = $_SERVER['DOCUMENT_ROOT']."inventory_tech_drive_lk/invoices/"; //add your full path of your server
 //$file_location = "/opt/lampp/htdocs/examples/generate_pdf/uploads/"; //for local xampp server
 
 $datetime=date('dmY_hms');
@@ -1196,17 +1235,32 @@ else if($_GET['ACTION']=='DOWNLOAD')
 {
 	$pdf->Output($file_name, 'D'); // D means download
 }
-else if($_GET['ACTION']=='UPLOAD')
-{
+else if($_GET['ACTION']=='EMAIL'){
 $pdf->Output($file_location.$file_name, 'F'); // F means upload PDF file on some folder
-echo "Upload successfully!!";
+
+// ------------------ SEND EMAIL ------------------
+
+if($TYPE == "SO"){
+	$EMAIL_TYPE = "Sales Invoice";
+}else if($TYPE == "PO"){
+	$EMAIL_TYPE = "Purchase Invoice";
+}else if($TYPE == "QO"){
+	$EMAIL_TYPE = "Quotation Invoice";
+}else if($TYPE == "SOR"){
+	$EMAIL_TYPE = "Sales Order Return Invoice";
+}else if($TYPE == "POR"){
+	$EMAIL_TYPE = "Purchase Order Return Invoice";
+}
+
+$email_invoice_path=$file_location.$file_name; require_once '../utils/send_email.php';
+
+// echo "Upload successfully!!";
 }
 
 //----- End Code for generate pdf
 	
 }
-else
-{
+else{
 	echo 'Record not found for PDF.';
 }
 

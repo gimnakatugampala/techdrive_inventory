@@ -28,7 +28,7 @@
 <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesorders[0]["socode"];?>&ACTION=DOWNLOAD&TYPE=SO"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
 </li>
 <li>
-<a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
+<a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesorders[0]["socode"];?>&ACTION=EMAIL&TYPE=SO"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
 </li>
 <li>
 <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
