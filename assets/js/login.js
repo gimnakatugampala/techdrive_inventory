@@ -24,6 +24,7 @@ $(document).ready(function () {
           password: password,
         },
         success: function (response) {
+
           if (response === "success") {
             window.location.href = "../dashboard";
           } else {

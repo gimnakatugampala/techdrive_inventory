@@ -1,3 +1,15 @@
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['username'])) {
+    header("Location: ../auth/signin.php"); // Redirect to login if not logged in
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,7 +187,7 @@
         <span class="user-img"><img src="../assets/img/profiles/avator1.jpg" alt="">
         <span class="status online"></span></span>
         <div class="profilesets">
-        <h6>John Doe</h6>
+        <h6><?php echo $_SESSION["username"];?></h6>
         <h5>Admin</h5>
         </div>
         </div>
@@ -183,7 +195,7 @@
         <a class="dropdown-item" href="../dashboard/profile.php"> <i class="me-2" data-feather="user"></i> My Profile</a>
         <!-- <a class="dropdown-item" href="../dashboard/generalsettings.php"><i class="me-2" data-feather="settings"></i>Settings</a> -->
         <hr class="m-0">
-        <a class="dropdown-item logout pb-0" href="../auth/signin.php"><img src="../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+        <a class="dropdown-item logout pb-0" href="../auth/logout.php"><img src="../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
         </div>
         </div>
         </li>

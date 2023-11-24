@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once '../includes/db_config.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -11,7 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // User is authenticated
-        echo "success";
+        $row = $result->fetch_assoc();
+
+        // SESSIONS
+        $_SESSION["username"] = $row["username"];
+        $_SESSION["usercode"] = $row["usercode"];
+        
+        echo 'success';
     } else {
         // Authentication failed
         echo "error";
