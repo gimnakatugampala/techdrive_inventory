@@ -140,6 +140,7 @@
     
     
     </td>
+    </tr>
 <?php endforeach; ?>
 
 <!-- 

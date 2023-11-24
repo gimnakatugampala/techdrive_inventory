@@ -586,6 +586,7 @@
         </li>
         </ul>
     </td>
+    </tr>
 <?php endforeach; ?>
 
 
