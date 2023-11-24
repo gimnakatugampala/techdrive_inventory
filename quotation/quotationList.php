@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/quotationlist.php' ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -95,7 +96,52 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody id="quotationlistbody">
+<tbody >
+
+<?php foreach ($plist as $row) : ?>
+    <tr>
+    <td><?php echo  $row["socode"]; ?></td>
+    <td><?php echo  $row["cusname"]; ?></td>
+    <td><?php echo  $row["salesorderdate"]; ?></td>
+    <td><?php 
+    if($row["sid"] == "1") {
+        echo "<span class='badges bg-lightgreen'>Completed</span>";
+    }else if($row["sid"] == "2"){
+        echo "<span class='badges bg-primary'>Pending</span>";
+    }else if($row["sid"] == "3"){
+        echo "<span class='badges bg-lightred'>Canceled</span>";
+    }else if($row["sid"] == "4"){
+        echo "<span class='badges bg-primary'>Draft</span>";
+    }
+            ?>
+    </td>
+
+
+
+    
+    <td><?php echo  $row["grandtotal"]; ?></td>
+    <td>
+    
+    <a class="me-3" href="../quotation/quotation-detail.php?code=<?php echo  $row["socode"]; ?>">
+        <img src="../assets/img/icons/eye1.svg" alt="img">
+    </a>
+    
+    <a class="me-3 confirm-text" href="javascript:void(0);">
+        <i class="fas fa-exchange-alt fa-lg"></i>
+    </a>
+    
+    <a class="me-3" href="../quotation/editquotation.php?code=<?php echo  $row["socode"]; ?>">
+    <img src="../assets/img/icons/edit.svg" alt="img">
+    </a>
+    
+    <a class="me-3 confirm-text" href="javascript:void(0);">
+    <img src="../assets/img/icons/delete.svg"  alt="img">
+    </a>
+    
+    
+    </td>
+<?php endforeach; ?>
+
 <!-- 
 <tr>
 <td class="productimgname">

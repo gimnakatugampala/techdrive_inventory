@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/purchaselist.php' ?>
 
 <div class="page-wrapper">
     <div class="content">
@@ -111,7 +112,50 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="purchaselistbody"></tbody>
+                        <tbody>
+                        <?php foreach ($plist as $row) : ?>
+                        <tr>
+                        <td><?php echo  $row["pocode"]; ?></td>
+                        <td><?php echo  $row["supname"]; ?></td>
+                        <td><?php echo  $row["created_date"]; ?></td>
+                        <td><?php 
+                        if($row["statusid"] == "1") {
+                            echo "<span class='badges bg-lightgreen'>Completed</span>";
+                        }else if($row["statusid"] == "2"){
+                            echo "<span class='badges bg-primary'>Pending</span>";
+                        }else if($row["statusid"] == "3"){
+                            echo "<span class='badges bg-lightred'>Canceled</span>";
+                        }else{
+                            echo "<span class='badges bg-lightred'>Draft</span>";
+                        }
+                                ?>
+                        </td>
+
+                        <td><?php 
+
+                        if($row["paid_status"] == "1") {
+                            echo "<span class='badges bg-lightred'>Not Paid</span>";
+                        }else if($row["paid_status"] == "2"){
+                            echo "<span class='badges bg-lightyellow'>Advance</span>";
+                        }else {
+                            echo "<span class='badges bg-lightgreen'>Paid</span>";
+                        }
+                            ?></td>
+
+                        <td><?php echo  $row["completeddate"]; ?></td>
+                        <td><?php echo  $row["grandtotal"]; ?></td>
+                        <td><?php echo  $row["paidamount"]; ?></td>
+                        <td><?php echo  $row["discount"]; ?></td>
+                        <td><?php echo  floatval($row["grandtotal"]) - floatval($row["paidamount"]); ?></td>
+                        <td>
+                            <a class="me-3" href="../purchase/purchase-order-details.php?code=<?php echo  $row["pocode"]; ?>">
+                            <img src="../assets/img/icons/eye1.svg" alt="img">
+                            </a>
+
+                            <a href="../purchase/editpurchase.php?code=<?php echo  $row["pocode"]; ?>" class='me-3 btnedit'data-plist-id='${plist.cid}'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-plist-id='${plist.id}'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+                            </td>
+                    <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
