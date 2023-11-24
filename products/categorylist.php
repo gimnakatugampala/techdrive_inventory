@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php'; ?>
 <?php require_once '../includes/sidebar.php'; ?>
+<?php require_once '../pages/catlist.php'; ?>
 
 <div class = 'page-wrapper'>
 <div class = 'content'>
@@ -80,20 +81,33 @@
 </div>
 </div>
 <div class="table-responsive">
-                    <table class="table datanew categorylist">
-                        <thead>
-                            <tr>
-                            <th>Category name</th>
-<th>Category Code</th>
-<th>Created Date</th>
-<th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="clist">
+    <table class="table datanew categorylist">
+        <thead>
+            <tr>
+            <th>Category name</th>
+            <th>Category Code</th>
+            <th>Created Date</th>
+            <th>Action</th>
+            </tr>
+        </thead>
 
-                        </tbody>
-                    </table>
-                </div>
+        <tbody>
+
+        <?php foreach ($cats as $row) : ?>
+        <tr>
+         <td><?php echo  $row["catname"]; ?></td>
+         <td><?php echo  $row["catcode"]; ?></td>
+         <td><?php echo  $row["catadddate"]; ?></td>
+         <td>
+          <a class='me-3 btnedit'data-cat-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+          <a class='me-3 btn-delete' data-cat-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>
+        </tr>
+        <?php endforeach; ?>
+
+
+        </tbody>
+    </table>
+    </div>
 </div>
 </div>
 
