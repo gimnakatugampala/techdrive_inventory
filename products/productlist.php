@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/productlist.php' ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -115,8 +116,26 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody id="plist">
+<tbody>
+    
+<?php foreach ($plist as $row) : ?>
+        <tr>
+         <td><?php echo  $row["productname"]; ?></td>
+         <td><?php echo  $row["warrenty"]; ?></td>
+         <td><?php echo  $row["catname"]; ?></td>
+         <td><?php echo  $row["brandname"]; ?></td>
+         <td><?php echo  $row["buyingprice"]; ?></td>
+         <td><?php echo  $row["avlid"] == 1 ? "<span class='badges bg-lightgreen'>InStock</span>" : "<span class='badges bg-lightred'>OutStock</span>" ; ?></td>
 
+         <td><?php echo  $row["quantity"]; ?></td>
+         <td><?php echo  $row["sellingprice"]; ?></td>
+         <td>
+            <a class='me-3 btnedit'data-productlist-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+             <a class='me-3 btn-delete' data-productlist-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+         </td>
+        </tr>
+<?php endforeach; ?>
+    
 </tbody>
 </table>
 </div>
