@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/salesreturnlist.php' ?>
 
 
 <div class="page-wrapper">
@@ -97,11 +98,42 @@
 <th>Customer Name</th>
 <th>Status</th>
 <th>Placed Date</th>
+<th>Completed Date</th>
 <th>Grand Total ($)</th>
 <th>Action</th>
 </tr>
 </thead>
-<tbody id="salesreturnlistbody">
+<tbody>
+
+<?php foreach ($plist as $row) : ?>
+    <tr>
+    <td><?php echo  $row["sorcode"]; ?></td>
+    <td><?php echo  $row["cusname"]; ?></td>
+    <td><?php 
+    if($row["sid"] == "1") {
+        echo "<span class='badges bg-lightgreen'>Completed</span>";
+    }else if($row["sid"] == "2"){
+        echo "<span class='badges bg-primary'>Pending</span>";
+    }else if($row["sid"] == "3"){
+        echo "<span class='badges bg-lightred'>Canceled</span>";
+    }
+            ?>
+    </td>
+    <td><?php echo  $row["salesorderreturndate"]; ?></td>
+    <td><?php echo  $row["completeddate"]; ?></td>
+    <td><?php echo  $row["grandtotal"]; ?></td>
+    <td>
+        <a class="me-3" href="../return/salesreturn-detail.php?code=<?php echo  $row["sorcode"]; ?>">
+        <img src="../assets/img/icons/eye1.svg" alt="img">
+        </a>
+        <a class="me-3" href="../return/editsalesreturn.php?code=<?php echo  $row["sorcode"]; ?>">
+        <img src="../assets/img/icons/edit.svg" alt="img">
+        </a>
+        <a class="me-3 confirm-text" href="javascript:void(0);">
+        <img src="../assets/img/icons/delete.svg" alt="img">
+        </a>
+    </td>
+<?php endforeach; ?>
 
 <!-- <tr>
 <td>2030430</td>

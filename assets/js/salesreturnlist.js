@@ -31,7 +31,7 @@ $(document).ready(function () {
   
     
   
-        row.append("<td>" + saleli.completeddate + "</td>");
+        row.append("<td>" + saleli.salesorderreturndate + "</td>");
        
         row.append("<td>" + saleli.grandtotal + "</td>");
         row.append(`<td>
