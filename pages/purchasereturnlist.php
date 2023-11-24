@@ -14,5 +14,5 @@ if ( $result->num_rows > 0 ) {
     }
 }
 
-echo json_encode( $porlist );
+// echo json_encode( $porlist );
 ?>

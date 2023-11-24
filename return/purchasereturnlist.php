@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/purchasereturnlist.php' ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -92,12 +93,43 @@
 <th>Supplier Name</th>
 <th>Placed Date</th>
 <th>Status</th>
+<th>Completed Date</th>
 <th>Grand Total (Rs.)</th>
 <th>Action</th>
 </tr>
 </thead>
 
-<tbody id="purchasereturnlistbody">
+<tbody>
+
+<?php foreach ($porlist as $row) : ?>
+    <tr>
+    <td><?php echo  $row["porcode"]; ?></td>
+    <td><?php echo  $row["supname"]; ?></td>
+    <td><?php echo  $row["created_date"]; ?></td>
+    <td><?php 
+    if($row["sid"] == "1") {
+        echo "<span class='badges bg-lightgreen'>Completed</span>";
+    }else if($row["sid"] == "2"){
+        echo "<span class='badges bg-primary'>Pending</span>";
+    }else if($row["sid"] == "3"){
+        echo "<span class='badges bg-lightred'>Canceled</span>";
+    }else if($row["sid"] == "4"){
+        echo "<span class='badges bg-lightred'>Draft</span>";
+    }
+    ?>
+    </td>
+    <td><?php echo  $row["completeddate"]; ?></td>
+    <td><?php echo  $row["grandtotal"]; ?></td>
+    <td>
+          <a class="me-3" href="../return/purchasereturn-detail.php?code=<?php echo  $row["porcode"]; ?>">
+          <img src="../assets/img/icons/eye1.svg" alt="img">
+          </a>
+
+          <a href="../return/editpurchasereturn.php?code=<?php echo  $row["porcode"]; ?>" class='me-3 btnedit'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+          <a class='me-3 btn-delete' data-porlist-id=${porlist.id}><img src='../assets/img/icons/delete.svg' alt='img'></a>
+    </td>
+<?php endforeach; ?>
+
 
 <!-- <tr>
 
