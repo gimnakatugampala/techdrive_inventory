@@ -1,5 +1,6 @@
 ﻿<?php require_once '../includes/header.php'; ?>
 <?php require_once '../includes/sidebar.php'; ?>
+<?php require_once '../pages/custoemrlists.php'; ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -77,21 +78,34 @@
 
 
 <div class="table-responsive">
-                    <table class="table datanew customerlist">
-                        <thead>
-                            <tr>
-                            <th>Customer Name</th>
-<th>Customer code</th>
-<th>Phone</th>
-<th>email</th>
-<th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="customerlistbody">
+            <table class="table datanew customerlist">
+                <thead>
+                    <tr>
+                    <th>Customer Name</th>
+                    <th>Customer code</th>
+                    <th>Phone</th>
+                    <th>email</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                        </tbody>
-                    </table>
-                </div>
+                <?php foreach ($cus as $row) : ?>
+                    <tr>
+                    <td><?php echo  $row["cusname"]; ?></td>
+                    <td><?php echo  $row["cuscode"]; ?></td>
+                    <td><?php echo  $row["cusphone"]; ?></td>
+                    <td><?php echo  $row["cusemail"]; ?></td>
+
+                    <td>
+                        <a class='me-3 btnedit'data-customer-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+                        <a class='me-3 btn-delete' data-customer-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+                    </td>
+                <?php endforeach; ?>
+
+                </tbody>
+            </table>
+            </div>
 </div>
 </div>
 

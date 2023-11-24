@@ -1,5 +1,5 @@
 <?php
-require_once '../../includes/db_config.php';
+require_once '../includes/db_config.php';
 
 $sql = 'SELECT * FROM tbcustomer where isdeleted = 0';
 $result = $conn->query( $sql );

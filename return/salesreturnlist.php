@@ -133,6 +133,7 @@
         <img src="../assets/img/icons/delete.svg" alt="img">
         </a>
     </td>
+    </tr>
 <?php endforeach; ?>
 
 <!-- <tr>
