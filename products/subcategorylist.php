@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php'; ?>
 <?php require_once '../includes/sidebar.php'; ?>
+<?php require_once '../pages/subcatlist.php'; ?>
 
 <div class="page-wrapper">
 <div class="content">
@@ -92,7 +93,22 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody id="sclist">
+<tbody>
+
+<?php foreach ($subcats as $row) : ?>
+    <tr>
+    <td><?php echo  $row["catname"]; ?></td>
+    <td><?php echo  $row["subcatname"]; ?></td>
+    <td><?php echo  $row["subcatcode"]; ?></td>
+   
+
+    <td>
+    <a class='me-3 btnedit'data-subcat-id='<?php echo  $row["cid"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+      <a class='me-3 btn-delete' data-subcat-id='<?php echo  $row["cid"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+    </td>
+    </tr>
+<?php endforeach; ?>
+
 </tbody>
 </table>
 </div>
