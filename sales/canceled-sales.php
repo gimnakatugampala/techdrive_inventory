@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/canceledsaleslist.php' ?>
 
 
     <div class="page-wrapper">
@@ -428,7 +429,52 @@
 <th class="text-center">Action</th>
 </tr>
 </thead>
-<tbody id="canceledsaleslistbody">
+<tbody>
+
+<?php foreach ($cancellist as $row) : ?>
+    <tr>
+    <td><?php echo  $row["socode"]; ?></td>
+    <td><?php echo  $row["cusname"]; ?></td>
+    <td><?php 
+    if($row["sid"] == "1") {
+        echo "<span class='badges bg-lightgreen'>Completed</span>";
+    }else if($row["sid"] == "2"){
+        echo "<span class='badges bg-primary'>Pending</span>";
+    }else if($row["sid"] == "3"){
+        echo "<span class='badges bg-lightred'>Canceled</span>";
+    }
+            ?>
+    </td>
+
+    <td><?php 
+
+    if($row["paidstatusid"] == "1") {
+        echo "<span class='badges bg-lightred'>Not Paid</span>";
+    }else if($row["paidstatusid"] == "2"){
+        echo "<span class='badges bg-lightyellow'>Advance</span>";
+    }else {
+        echo "<span class='badges bg-lightgreen'>Paid</span>";
+    }
+        ?></td>
+
+    <td><?php echo  $row["salesorderdate"]; ?></td>
+    <td><?php echo  $row["completeddate"]; ?></td>
+    <td><?php echo  $row["grandtotal"]; ?></td>
+    <td><?php echo  $row["paidamount"]; ?></td>
+    <td><?php echo  floatval($row["grandtotal"]) - floatval($row["paidamount"]); ?></td>
+    <td class="text-center">
+        <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown-menu">
+        <li>
+        <a href="../sales/sales-details.php?code=<?php echo  $row["socode"]; ?>" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+        </li>
+        <a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+        </li>
+        </ul>
+        </td>
+<?php endforeach; ?>
 
 <!-- <tr>
 <td>walk-in-customer</td>
