@@ -175,10 +175,13 @@ $(document).ready(function () {
         text: "Cannot Select Canceled Status or Draft Status",
       });
     } else {
+
       if (selectPS === "3" && progressstatus === "1") {
         isPaid = "1";
         completeddate = "1";
       }
+
+
 
       $.ajax({
         type: "POST",

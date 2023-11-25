@@ -14,7 +14,7 @@ $(document).ready(function () {
   });
 
   var items = [];
-  var pro_qty = []
+  var pro_qty = [];
 
   dropdown.addEventListener("change", function () {
     var productId = dropdown.value;

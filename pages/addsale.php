@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
-            if($progressstatus == "1" || $progressstatus == "2"){
+            if($progressstatus == "1"){
 
             // Update the New Product Quantity
             $query = "SELECT quantity FROM tbproduct WHERE id = $product";
