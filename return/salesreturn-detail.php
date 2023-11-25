@@ -28,10 +28,10 @@
     <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesordersreturn[0]["sorcode"];?>&ACTION=DOWNLOAD&TYPE=SOR"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
+    <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesordersreturn[0]["sorcode"];?>&ACTION=EMAIL&TYPE=SOR"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
+    <a onclick="window.print()"><img src="../assets/img/icons/printer.svg" alt="img"></a>
     </li>
 </ul>
 

@@ -67,6 +67,9 @@
 <script src="../assets/js/People/editcustomer.js"></script>
 
 
+<script src="../assets/js/profiledata.js"></script>
+
+
 
 <script src="../assets/js/People/addsupplier.js"></script>
 <script src="../assets/js/People/supplierlist.js"></script>

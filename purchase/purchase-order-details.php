@@ -27,10 +27,10 @@
     <a href="../utils/pdf_maker.php?MST_ID=<?php echo $purchasesorders[0]["pocode"];?>&ACTION=DOWNLOAD&TYPE=PO" href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
+    <a href="../utils/pdf_maker.php?MST_ID=<?php echo $purchasesorders[0]["pocode"];?>&ACTION=EMAIL&TYPE=PO"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
     </li>
     <li>
-    <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
+    <a onclick="window.print()"><img src="../assets/img/icons/printer.svg" alt="img"></a>
     </li>
 </ul>
 

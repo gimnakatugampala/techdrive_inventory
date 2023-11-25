@@ -31,7 +31,7 @@
 <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesorders[0]["socode"];?>&ACTION=EMAIL&TYPE=SO"><i class="fas fa-envelope" style="font-size: 22px;"></i></a>
 </li>
 <li>
-<a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
+<a onclick="window.print()"><img src="../assets/img/icons/printer.svg" alt="img"></a>
 </li>
 </ul>
 </div>

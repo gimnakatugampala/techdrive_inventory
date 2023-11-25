@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
 
         // SESSIONS
+        $_SESSION["id"] = $row["id"];
         $_SESSION["username"] = $row["username"];
         $_SESSION["usercode"] = $row["usercode"];
         
