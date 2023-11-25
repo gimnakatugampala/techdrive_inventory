@@ -14,6 +14,8 @@ $(document).ready(function () {
     // });
   
     var items = [];
+
+
   
     dropdown.addEventListener("change", function () {
       var productId = dropdown.value;
@@ -171,10 +173,15 @@ $(document).ready(function () {
           text: "Description Cannot empty",
         });
       } else {
+
+
         if (progressstatus === "1") {
           isPaid = "1";
           completeddate = "1";
         }
+
+
+       
   
         $.ajax({
           type: "POST",

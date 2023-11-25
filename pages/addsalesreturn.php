@@ -45,6 +45,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
+            if($progressstatus == "1"){
+
+                // Update the New Product Quantity
+                $query = "SELECT quantity FROM tbproduct WHERE id = $product";
+                $result = $conn->query($query);
+    
+                if ($result->num_rows > 0) {
+                    $current_quantity = $result->fetch_assoc()['quantity'];
+                    $new_quantity = $current_quantity + $quantity;
+    
+                    // Update the database with the new quantity
+                    $update_query = "UPDATE tbproduct SET quantity = $new_quantity WHERE id = $product";
+    
+                    if ($conn->query($update_query) === TRUE) {
+                        // echo "sucess";
+                    } else {
+                        echo "Error updating quantity: " . $conn->error;
+                    }
+                }
+    
+                // Update the New Product Quantity
+    
+                }
+
             $sql = "INSERT INTO tbsalesorderreturnitem (pid,sales_order_return_id,quantity,price,discount) VALUES ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
                 echo 'Error: ' . $sql . '<br>' . $conn->error;
