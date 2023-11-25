@@ -11,6 +11,6 @@ if ($result->num_rows > 0) {
         $catdata[] = $row;
     }
 }
-// echo json_encode($catdata);
+echo json_encode($catdata);
 
 ?>
