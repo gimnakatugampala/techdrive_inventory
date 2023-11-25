@@ -38,6 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
+            if($progressstatus == "1" || $progressstatus == "2"){
+
             // Update the New Product Quantity
             $query = "SELECT quantity FROM tbproduct WHERE id = $product";
             $result = $conn->query($query);
@@ -50,13 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $update_query = "UPDATE tbproduct SET quantity = $new_quantity WHERE id = $product";
 
                 if ($conn->query($update_query) === TRUE) {
-                    echo "Sale recorded successfully!";
+                    // echo "sucess";
                 } else {
                     echo "Error updating quantity: " . $conn->error;
                 }
             }
 
             // Update the New Product Quantity
+
+            }
 
             $sql = "INSERT INTO tborderitem (pid,salesorderid,quantity,price,discount) VALUES ('$product', '$insertedPurchaseOrderID', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {

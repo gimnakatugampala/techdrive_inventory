@@ -14,6 +14,7 @@ $(document).ready(function () {
   });
 
   var items = [];
+  var pro_qty = []
 
   dropdown.addEventListener("change", function () {
     var productId = dropdown.value;
@@ -29,6 +30,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         populateTable(data);
+        pro_qty.push(data[0])
       },
       error: function () {},
     });
@@ -74,6 +76,11 @@ $(document).ready(function () {
         calculateTotal();
       });
     }
+
+
+
+  
+
   });
 
   function calculateTotal() {
@@ -177,11 +184,28 @@ $(document).ready(function () {
         text: "Cannot Select Canceled Status or Draft Status",
       });
     } else {
-      
+
       if (selectPS === "3" && progressstatus === "1") {
         isPaid = "1";
         completeddate = "1";
       }
+
+      // Check if the Quantity is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) > parseInt(pro_qty[i].quantity)){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${pro_qty[i].productname} has a Max QTY of ${pro_qty[i].quantity}`,
+          });
+
+          return
+        }
+
+      }
+
+      // console.log(data)
+      // console.log(pro_qty)
 
       $.ajax({
         type: "POST",
@@ -239,6 +263,8 @@ $(document).ready(function () {
     $("#dis").text("0.00");
     $("#topaid").text("0.00");
   }
+
+
 
 
 });
