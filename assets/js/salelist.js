@@ -89,9 +89,9 @@ $(document).ready(function () {
   }
 
   // Fetch data from the server
-  $.getJSON("../pages/saleslist.php", function (data) {
-    populateTable(data);
-  });
+  // $.getJSON("../pages/saleslist.php", function (data) {
+  //   populateTable(data);
+  // });
 
   $("table.saleslist").on("click", ".btnedit", function () {
     // var poid = $(this).data("saleli-id");
@@ -120,36 +120,63 @@ $(document).ready(function () {
       encodeURIComponent(purchaseDate);
   });
 
-  $("table.saleslist").on("click", ".btn-delete", function () {
-    var pocode = $(this).closest("tr").find("td:nth-child(7)").text();
+  $("table.saleslist").on("click", ".cancel-sale", function () {
+    var pocode = $(this).closest("tr").find("td:nth-child(1)").text();
 
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "This Sales Order will be Canceled!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Cancel it!",
     }).then((result) => {
+
+      console.log(pocode)
+
       if (result.isConfirmed) {
         $.ajax({
-          url: "../pages/deletesale.php",
+          url: "../pages/statuschange.php",
           method: "POST",
-          data: { pocode: pocode },
+          data: { 
+            CancelSO:true,
+            pocode: pocode 
+          },
           success: function (response) {
+
             if (response === "success") {
-              $(this).closest("tr").remove();
+
+            Swal.fire({
+              title: "Sales Order Canceled!",
+              text: "This Order is Now Canceled.",
+              icon: "success"
+            });
+            setTimeout(() => {
               window.location.reload();
+            }, 2000);
+
             } else {
-              alert("Failed to delete the Purchase Item.");
+              Swal.fire({
+                icon: "error",
+                title: "Order Not Canceled",
+                text: "Failed to delete the Purchase Item.",
+              });
+
             }
+
           },
           error: function () {
-            alert("Error occurred while deleting the Purchase Item.");
+            Swal.fire({
+              icon: "error",
+              title: "Order Not Canceled",
+              text: "Failed to delete the Purchase Item.",
+            });
           },
         });
       }
+
     });
   });
+  
 });
