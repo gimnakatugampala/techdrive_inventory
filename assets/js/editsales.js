@@ -22,7 +22,6 @@ $(document).ready(function () {
 
   
 
-  
     paidAmountInput.addEventListener("input", function () {
       const inputText = paidAmountInput.value;
       paid.textContent = inputText + ".00";
@@ -31,6 +30,7 @@ $(document).ready(function () {
     });
   
     var items = [];
+    var pro_qty = [];
   
     dropdown.addEventListener("change", function () {
       var productId = dropdown.value;
@@ -59,6 +59,7 @@ $(document).ready(function () {
 
           }else{
             populateTable(data);
+            pro_qty.push(data[0])
           }
        
         },
@@ -239,12 +240,31 @@ $(document).ready(function () {
           text: "Cannot Select Canceled Status or Draft Status",
         });
       } else {
+
+
         if (selectPS === "3" && progressstatus === "1") {
           isPaid = "1";
           completeddate = "1";
         }
 
-        console.log(loadData.Productlists)
+        const combinedArray = [...loadData.Productlists, ...pro_qty];
+
+        // console.log(loadData.Productlists)
+        console.log(data)
+        console.log(combinedArray)
+
+        // Check if the Quantity is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) > parseInt(combinedArray[i].quantity)){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${combinedArray[i].productname} has a Max QTY of ${combinedArray[i].quantity}`,
+          });
+
+          return
+        }
+      }
 
         if(grandTotal == 0){
           console.log("old grand total "+oldgrandTotal)
@@ -252,43 +272,43 @@ $(document).ready(function () {
           console.log("grand total "+grandTotal)
         }
   
-        $.ajax({
-          type: "POST",
-          url: "../pages/editsales.php",
-          data: {
-            data: JSON.stringify(data),
-            oldorderitems:JSON.stringify(loadData.Productlists),
-            selectSup: selectSup,
-            selectPS: selectPS,
-            progressstatus: progressstatus,
-            paidAmount: paidAmount,
-            purchaseDate: purchaseDate,
-            isPaid: isPaid,
-            grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
-            topaid: topaid,
-            dis: dis,
-            completeddate: completeddate,
-            soid:loadData.ID.id,            
-            piid:loadData.SalesOrder[0].id,
-          },
-          success: function (response) {
-            console.log(response)
-            if (response === "success") {
-              Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Successfully Updated Sale",
-              });
-              clearAB();
-            } else {
-              Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "An error occurred while saving the data.",
-              });
-            }
-          },
-        });
+        // $.ajax({
+        //   type: "POST",
+        //   url: "../pages/editsales.php",
+        //   data: {
+        //     data: JSON.stringify(data),
+        //     oldorderitems:JSON.stringify(loadData.Productlists),
+        //     selectSup: selectSup,
+        //     selectPS: selectPS,
+        //     progressstatus: progressstatus,
+        //     paidAmount: paidAmount,
+        //     purchaseDate: purchaseDate,
+        //     isPaid: isPaid,
+        //     grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
+        //     topaid: topaid,
+        //     dis: dis,
+        //     completeddate: completeddate,
+        //     soid:loadData.ID.id,            
+        //     piid:loadData.SalesOrder[0].id,
+        //   },
+        //   success: function (response) {
+        //     console.log(response)
+        //     if (response === "success") {
+        //       Swal.fire({
+        //         icon: "success",
+        //         title: "Success",
+        //         text: "Successfully Updated Sale",
+        //       });
+        //       clearAB();
+        //     } else {
+        //       Swal.fire({
+        //         icon: "error",
+        //         title: "Error",
+        //         text: "An error occurred while saving the data.",
+        //       });
+        //     }
+        //   },
+        // });
       }
     });
   

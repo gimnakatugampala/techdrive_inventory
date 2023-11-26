@@ -201,7 +201,6 @@ $(document).ready(function () {
 
           return
         }
-
       }
 
       // console.log(data)
