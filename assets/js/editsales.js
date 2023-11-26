@@ -250,8 +250,8 @@ $(document).ready(function () {
         const combinedArray = [...loadData.Productlists, ...pro_qty];
 
         // console.log(loadData.Productlists)
-        console.log(data)
-        console.log(combinedArray)
+        // console.log(data)
+        // console.log(combinedArray)
 
         // Check if the Quantity is Sufficient
       for(let i = 0; i < data.length; i++){

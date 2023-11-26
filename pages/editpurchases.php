@@ -27,13 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $salesorderdate = date('Y-m-d H:i:s');
     $createddate = date('Y-m-d H:i:s');
 
-    // $min = 1;
-    // $max = 10000000000;
-    // $socode = rand($min, $max);
-
-    // $min = 1;
-    // $max = 10000000000;
-    // $picode = rand($min, $max);
 
     // $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$salesorderdate',0)";
 
@@ -69,6 +62,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $quantity = $row['quantity'];
             $price = $row['price'];
             $discount = $row['discount'];
+
+
+            if($progressstatus == "1"){
+
+                // Update the New Product Quantity
+                $query = "SELECT quantity FROM tbproduct WHERE id = $product";
+                $result = $conn->query($query);
+    
+                if ($result->num_rows > 0) {
+                    $current_quantity = $result->fetch_assoc()['quantity'];
+                    $new_quantity = $current_quantity + $quantity;
+
+                    // Update the database with the new quantity
+                    $update_query = "UPDATE tbproduct SET quantity = $new_quantity WHERE id = $product";
+
+                    if ($conn->query($update_query) === TRUE) {
+                        // echo "sucess";
+                    } else {
+                        echo "Error updating quantity: " . $conn->error;
+                    }
+                }
+
+                // Update the New Product Quantity
+                }
 
             $sql = "INSERT INTO tbpurchaseorderitem (product_id,poid,qty,price,discount) VALUES ('$product', '$soid', '$quantity', '$price', '$discount')";
             if ($conn->query($sql) !== true) {
