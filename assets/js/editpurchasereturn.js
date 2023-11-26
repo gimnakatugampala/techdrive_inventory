@@ -9,6 +9,7 @@ $(document).ready(function () {
        let loadData;
   
       var items = [];
+      var pro_qty = [];
   
      // Get The Code From URL
      const urlParams = new URLSearchParams(window.location.search);
@@ -54,6 +55,7 @@ $(document).ready(function () {
   
             }else{
               populateTable(data);
+              pro_qty.push(data[0])
             }
 
         },
@@ -224,14 +226,31 @@ $(document).ready(function () {
           text: "Cannot Select Canceled Status or Draft Status",
         });
       } else {
+
+
         if (progressstatus === "1") {
           isPaid = "1";
           completeddate = "1";
         }
+
+        const combinedArray = [...loadData.Productlists, ...pro_qty];
+
+          // Check if the Quantity is Sufficient
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].quantity) > parseInt(combinedArray[i].quantity)){
+              Swal.fire({
+                icon: "error",
+                title: "Quantity Error",
+                text: `${combinedArray[i].productname} has a Max QTY of ${combinedArray[i].quantity}`,
+              });
+
+              return
+            }
+          }
   
-        console.log(loadData.Productlists)
-        console.log(data)
-        console.log(dis)
+        // console.log(loadData.Productlists)
+        // console.log(data)
+        // console.log(dis)
   
         if(grandTotal == 0){
           console.log("old grand total "+oldgrandTotal)
