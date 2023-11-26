@@ -175,7 +175,7 @@ $(document).ready(function () {
 
 
            // Check if the Quantity is Sufficient
-      for(let i = 0; i < data.length; i++){
+      for(let i = 0; i < data.length; i++){      
         if(parseInt(data[i].quantity) > parseInt(pro_qty[i].quantity)){
           Swal.fire({
             icon: "error",

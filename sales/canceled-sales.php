@@ -470,7 +470,7 @@
         <li>
         <a href="../sales/sales-details.php?code=<?php echo  $row["socode"]; ?>" class="dropdown-item"><img src="../assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
         </li>
-        <a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+        <a href="../utils/pdf_maker.php?MST_ID=<?php echo $row["socode"];?>&ACTION=DOWNLOAD&TYPE=SO" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
         </li>
         </ul>
         </td>

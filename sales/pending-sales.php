@@ -576,7 +576,7 @@
         </li>
         
         <li>
-        <a href="javascript:void(0);" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
+        <a href="../utils/pdf_maker.php?MST_ID=<?php echo $row["socode"];?>&ACTION=DOWNLOAD&TYPE=SO" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
         </li>
         <li>
         <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
