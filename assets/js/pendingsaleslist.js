@@ -211,5 +211,64 @@ $(document).ready(function () {
   
       });
     });
+
+    $("table.pendingsaleslist").on("click", ".complete-sale", function () {
+      var pocode = $(this).closest("tr").find("td:nth-child(1)").text();
+  
+      Swal.fire({
+        title: "Are you sure?",
+        text: "This Sales Order will be Completed!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Complete it!",
+      }).then((result) => {
+  
+        // console.log(pocode)
+  
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "../pages/statuschange.php",
+            method: "POST",
+            data: { 
+              CompletedSO:true,
+              pocode: pocode 
+            },
+            success: function (response) {
+  
+              if (response === "success") {
+  
+              Swal.fire({
+                title: "Sales Order Completed!",
+                text: "This Order is Now Completed.",
+                icon: "success"
+              });
+              setTimeout(() => {
+                window.location.reload();
+              }, 2000);
+  
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "Order Not Completed!",
+                  text: "Failed to delete the Purchase Item.",
+                });
+  
+              }
+  
+            },
+            error: function () {
+              Swal.fire({
+                icon: "error",
+                title: "Order Not Completed!",
+                text: "Failed to delete the Purchase Item.",
+              });
+            },
+          });
+        }
+  
+      });
+    });
   });
   

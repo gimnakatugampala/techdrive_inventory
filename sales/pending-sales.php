@@ -582,7 +582,7 @@
         <a href="javascript:void(0);" class="dropdown-item cancel-sale"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
         </li>
         <li>
-        <a href="javascript:void(0);" class="dropdown-item confirm-text"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
+        <a href="javascript:void(0);" class="dropdown-item complete-sale"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
         </li>
         </ul>
     </td>
