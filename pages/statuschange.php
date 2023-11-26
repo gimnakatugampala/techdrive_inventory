@@ -18,7 +18,18 @@ if(isset($_POST["CancelSO"])){
 
 
 // Complete Sales Order
+if(isset($_POST["CompletedSO"])){
 
+    $socode = $_POST['pocode'];
+
+    $sql = "UPDATE tbsalesorder SET sid = 1 WHERE socode = '$socode'";
+    if ($conn->query($sql) === TRUE) {
+        echo "success";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+}
 
 
 
