@@ -21,9 +21,11 @@
 </div>
 
 <ul>
+<?php if ($salesorders[0]["sid"] == "2"): ?>
 <li>
 <a href="../sales/edit-sales.php?code=<?php echo $salesorders[0]["socode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
 </li>
+<?php endif; ?>
 <li>
 <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesorders[0]["socode"];?>&ACTION=DOWNLOAD&TYPE=SO"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
 </li>

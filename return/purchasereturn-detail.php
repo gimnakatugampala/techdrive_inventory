@@ -20,9 +20,11 @@
 </div>
 
 <ul>
+    <?php if ($purchasesordersreturns[0]["sid"] == "2"): ?>
     <li>
     <a href="../return/editpurchasereturn.php?code=<?php echo $purchasesordersreturns[0]["porcode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
+    <?php endif; ?>
     <li>
     <a href="../utils/pdf_maker.php?MST_ID=<?php echo $purchasesordersreturns[0]["porcode"];?>&ACTION=DOWNLOAD&TYPE=POR"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>

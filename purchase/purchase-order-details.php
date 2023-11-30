@@ -20,9 +20,13 @@
 </div>
 
 <ul>
+
+<?php if ($purchasesorders[0]["statusid"] == "2"): ?>
     <li>
     <a href="../purchase/editpurchase.php?code=<?php echo $purchasesorders[0]["pocode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
+<?php endif; ?>
+
     <li>
     <a href="../utils/pdf_maker.php?MST_ID=<?php echo $purchasesorders[0]["pocode"];?>&ACTION=DOWNLOAD&TYPE=PO" href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>

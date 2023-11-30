@@ -21,9 +21,12 @@
 </div>
 
 <ul>
+    <?php if ($salesordersreturn[0]["sid"] == "2"): ?>
     <li>
     <a href="../return/editsalesreturn.php?code=<?php echo $salesordersreturn[0]["sorcode"];?>"><img src="../assets/img/icons/edit.svg" alt="img"></a>
     </li>
+    <?php endif; ?>
+
     <li>
     <a href="../utils/pdf_maker.php?MST_ID=<?php echo $salesordersreturn[0]["sorcode"];?>&ACTION=DOWNLOAD&TYPE=SOR"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
     </li>
