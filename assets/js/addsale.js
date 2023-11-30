@@ -167,18 +167,68 @@ $(document).ready(function () {
         title: "Error",
         text: "Please Select Status",
       });
-    } else if (progressstatus === "1" && selectPS == "1" || progressstatus === "1" && selectPS == "2" || progressstatus === "1" && selectPS == "4") {
+    } else if (selectPS == "4") {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "If Status Completed Paid Status Should be Paid",
+        text: "Cannot Select Quotation Paid Status",
       });
-    } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      
+    }else if (progressstatus == "4") {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Cannot Select Canceled Status or Draft Status",
+        text: "Cannot Select Draft-Quotation Status",
       });
+    }else if (selectPS == "1" && progressstatus == "1") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Not Paid Status and Completed Status Cannot be selected Together",
+      });
+
+    }else if (selectPS == "1" && progressstatus == "4") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Not Paid Status and Draft Status Cannot be selected Together",
+      });
+      
+    }else if (selectPS == "2" && progressstatus == "1") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Advance Status and Completed Status Cannot be selected Together",
+      });
+      
+    }else if (selectPS == "2" && progressstatus == "3") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Advance Status and Canceled Status Cannot be selected Together",
+      });
+      
+    }else if (selectPS == "3" && progressstatus == "2") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Paid Status and Inprogress Status Cannot be selected Together",
+      });
+      
+    }else if (selectPS == "3" && progressstatus == "3") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Paid Status and Canceled Status Cannot be selected Together",
+      });
+      
+    }else if (selectPS == "3" && progressstatus == "4") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Paid Status and Draft Status Cannot be selected Together",
+      });
+      
     } else {
 
       if (selectPS === "3" && progressstatus === "1") {
