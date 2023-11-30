@@ -121,70 +121,72 @@ $(document).ready(function () {
   });
 
   $("table.saleslist").on("click", ".cancel-sale", function () {
-    var pocode = $(this).closest("tr").find("td:nth-child(1)").text();
+    var socode = $(this).closest("tr").find("td:nth-child(1)").text();
 
-    var soid = $("table.saleslist .cancel-sale").attr("data-soid");
+    console.log(socode)
 
-    // console.log(soid)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This Sales Order will be Canceled!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Cancel it!",
+    }).then((result) => {
 
-    // Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "This Sales Order will be Canceled!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonColor: "#3085d6",
-    //   cancelButtonColor: "#d33",
-    //   confirmButtonText: "Yes, Cancel it!",
-    // }).then((result) => {
+      // console.log(pocode)
 
-    //   // console.log(pocode)
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "../pages/statuschange.php",
+          method: "POST",
+          data: { 
+            CancelSO:true,
+            socode: socode 
+          },
+          success: function (response) {
 
-    //   if (result.isConfirmed) {
-    //     $.ajax({
-    //       url: "../pages/statuschange.php",
-    //       method: "POST",
-    //       data: { 
-    //         CancelSO:true,
-    //         pocode: pocode 
-    //       },
-    //       success: function (response) {
+            console.log(response)
 
-    //         if (response === "success") {
+            if (response === "success") {
 
-    //         Swal.fire({
-    //           title: "Sales Order Canceled!",
-    //           text: "This Order is Now Canceled.",
-    //           icon: "success"
-    //         });
-    //         setTimeout(() => {
-    //           window.location.reload();
-    //         }, 2000);
+            Swal.fire({
+              title: "Sales Order Canceled!",
+              text: "This Order is Now Canceled.",
+              icon: "success"
+            });
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
 
-    //         } else {
-    //           Swal.fire({
-    //             icon: "error",
-    //             title: "Order Not Canceled",
-    //             text: "Failed to delete the Purchase Item.",
-    //           });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Order Not Canceled",
+                text: "Failed to delete the Purchase Item.",
+              });
 
-    //         }
+            }
 
-    //       },
-    //       error: function () {
-    //         Swal.fire({
-    //           icon: "error",
-    //           title: "Order Not Canceled",
-    //           text: "Failed to delete the Purchase Item.",
-    //         });
-    //       },
-    //     });
-    //   }
+          },
+          error: function () {
+            Swal.fire({
+              icon: "error",
+              title: "Order Not Canceled",
+              text: "Failed to delete the Purchase Item.",
+            });
+          },
+        });
+      }
 
-    // });
+    });
   });
 
   $("table.saleslist").on("click", ".complete-sale", function () {
-    var pocode = $(this).closest("tr").find("td:nth-child(1)").text();
+    var socode = $(this).closest("tr").find("td:nth-child(1)").text();
+
+    console.log(socode)
 
     Swal.fire({
       title: "Are you sure?",
@@ -204,9 +206,11 @@ $(document).ready(function () {
           method: "POST",
           data: { 
             CompletedSO:true,
-            pocode: pocode 
+            socode: socode 
           },
           success: function (response) {
+
+            console.log(response)
 
             if (response === "success") {
 

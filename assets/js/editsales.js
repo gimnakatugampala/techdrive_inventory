@@ -272,43 +272,43 @@ $(document).ready(function () {
           console.log("grand total "+grandTotal)
         }
   
-        // $.ajax({
-        //   type: "POST",
-        //   url: "../pages/editsales.php",
-        //   data: {
-        //     data: JSON.stringify(data),
-        //     oldorderitems:JSON.stringify(loadData.Productlists),
-        //     selectSup: selectSup,
-        //     selectPS: selectPS,
-        //     progressstatus: progressstatus,
-        //     paidAmount: paidAmount,
-        //     purchaseDate: purchaseDate,
-        //     isPaid: isPaid,
-        //     grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
-        //     topaid: topaid,
-        //     dis: dis,
-        //     completeddate: completeddate,
-        //     soid:loadData.ID.id,            
-        //     piid:loadData.SalesOrder[0].id,
-        //   },
-        //   success: function (response) {
-        //     console.log(response)
-        //     if (response === "success") {
-        //       Swal.fire({
-        //         icon: "success",
-        //         title: "Success",
-        //         text: "Successfully Updated Sale",
-        //       });
-        //       clearAB();
-        //     } else {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Error",
-        //         text: "An error occurred while saving the data.",
-        //       });
-        //     }
-        //   },
-        // });
+        $.ajax({
+          type: "POST",
+          url: "../pages/editsales.php",
+          data: {
+            data: JSON.stringify(data),
+            oldorderitems:JSON.stringify(loadData.Productlists),
+            selectSup: selectSup,
+            selectPS: selectPS,
+            progressstatus: progressstatus,
+            paidAmount: paidAmount,
+            purchaseDate: purchaseDate,
+            isPaid: isPaid,
+            grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
+            topaid: topaid,
+            dis: dis,
+            completeddate: completeddate,
+            soid:loadData.ID.id,            
+            piid:loadData.SalesOrder[0].id,
+          },
+          success: function (response) {
+            console.log(response)
+            if (response === "success") {
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Successfully Updated Sale",
+              });
+              // clearAB();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred while saving the data.",
+              });
+            }
+          },
+        });
       }
     });
   
