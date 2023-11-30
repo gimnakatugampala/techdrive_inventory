@@ -601,7 +601,7 @@
                                     </li>
                                     
                                     <li>
-                                    <a href="javascript:void(0);" class="dropdown-item cancel-sale"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
+                                    <a data-soid="<?php echo $row["SOID"];?>" href="javascript:void(0);" class="dropdown-item cancel-sale"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
                                     </li>
                                     <li>
                                     <a href="javascript:void(0);" class="dropdown-item complete-sale"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
