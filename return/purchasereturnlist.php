@@ -125,8 +125,15 @@
           <img src="../assets/img/icons/eye1.svg" alt="img">
           </a>
 
-          <a href="../return/editpurchasereturn.php?code=<?php echo  $row["porcode"]; ?>" class='me-3 btnedit'><img src='../assets/img/icons/edit.svg' alt='img'></a>
-          <a class='me-3 btn-delete' data-porlist-id=${porlist.id}><img src='../assets/img/icons/delete.svg' alt='img'></a>
+          <?php
+            if ($row["sid"] == "2") :
+                echo "<a href='../return/editpurchasereturn.php?code={$row["porcode"]}' class='me-3 btnedit'><img src='../assets/img/icons/edit.svg' alt='img'></a>";
+            endif;
+        ?>
+
+          
+
+          <!-- <a class='me-3 btn-delete' data-porlist-id=${porlist.id}><img src='../assets/img/icons/delete.svg' alt='img'></a> -->
     </td>
     </tr>
 <?php endforeach; ?>

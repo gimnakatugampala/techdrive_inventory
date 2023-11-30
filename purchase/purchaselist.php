@@ -151,8 +151,15 @@
                             <a class="me-3" href="../purchase/purchase-order-details.php?code=<?php echo  $row["pocode"]; ?>">
                             <img src="../assets/img/icons/eye1.svg" alt="img">
                             </a>
+                        
+                            <?php 
+                                if ($row["statusid"] == "2") {
+                                    echo "<a href='../purchase/editpurchase.php?code={$row["pocode"]}' class='me-3 btnedit'><img src='../assets/img/icons/edit.svg' alt='img'></a>";
+                                }
+                            ?>
 
-                            <a href="../purchase/editpurchase.php?code=<?php echo  $row["pocode"]; ?>" class='me-3 btnedit'data-plist-id='${plist.cid}'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-plist-id='${plist.id}'><img src='../assets/img/icons/delete.svg' alt='img'></a>
+
+                            <!-- <a class='me-3 btn-delete' data-plist-id='${plist.id}'><img src='../assets/img/icons/delete.svg' alt='img'></a> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>

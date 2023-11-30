@@ -126,12 +126,21 @@
         <a class="me-3" href="../return/salesreturn-detail.php?code=<?php echo  $row["sorcode"]; ?>">
         <img src="../assets/img/icons/eye1.svg" alt="img">
         </a>
-        <a class="me-3" href="../return/editsalesreturn.php?code=<?php echo  $row["sorcode"]; ?>">
-        <img src="../assets/img/icons/edit.svg" alt="img">
-        </a>
-        <a class="me-3 confirm-text" href="javascript:void(0);">
+
+        <?php
+            if ($row["sid"] == "2") :
+                echo "<a class='me-3' href='../return/editsalesreturn.php?code={$row["sorcode"]}'>
+                    <img src='../assets/img/icons/edit.svg' alt='img'>
+                </a>";
+            endif;
+        ?>
+
+        
+
+        <!-- <a class="me-3 confirm-text" href="javascript:void(0);">
         <img src="../assets/img/icons/delete.svg" alt="img">
-        </a>
+        </a> -->
+
     </td>
     </tr>
 <?php endforeach; ?>
