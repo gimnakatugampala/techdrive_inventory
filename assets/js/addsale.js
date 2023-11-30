@@ -77,10 +77,6 @@ $(document).ready(function () {
       });
     }
 
-
-
-  
-
   });
 
   function calculateTotal() {

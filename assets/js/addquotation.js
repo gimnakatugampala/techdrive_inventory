@@ -14,6 +14,7 @@ $(document).ready(function () {
     // });
   
     var items = [];
+    var pro_qty = [];
   
     dropdown.addEventListener("change", function () {
       var productId = dropdown.value;
@@ -29,6 +30,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (data) {
           populateTable(data);
+          pro_qty.push(data[0])
         },
         error: function () {},
       });
@@ -45,7 +47,7 @@ $(document).ready(function () {
           );
           row.append(
             "<td><input type='number' class='form-control price' value=" +
-              plist.buyingprice +
+              plist.sellingprice +
               " name='pprice'></td>"
           );
           row.append(
@@ -171,44 +173,160 @@ $(document).ready(function () {
         // console.log("9-"+grandTotal) // Final Total
         // console.log("10-"+topaid) // To Be Paid Amount
         // console.log("11-"+dis) // Disount
+
+          // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+
+      // ----- QTY ------
+
+      // Check if the Quantity is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) > parseInt(pro_qty[i].quantity)){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${pro_qty[i].productname} has a Max QTY of ${pro_qty[i].quantity}`,
+          });
+
+          return
+        }
+      }
+
+      // Check if the QTY is zero
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) == 0){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${pro_qty[i].productname} QTY Cannot be Zero`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the QTY is Negative
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].quantity) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Quantity Error",
+              text: `${pro_qty[i].productname} QTY Cannot be Negative`,
+            });
   
-        $.ajax({
-          type: "POST",
-          url: "../pages/addquotation.php",
-          data: {
-            data: JSON.stringify(data),
-            selectPro: selectPro,
-            selectSup: selectSup,
-            selectPS: selectPS,
-            progressstatus: progressstatus,
-            paidAmount: paidAmount,
-            quotationdate: new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString(),
-            isPaid: isPaid,
-            grandTotal: grandTotal,
-            topaid: topaid,
-            dis: dis,
-            completeddate: completeddate,
-            qocode:generateUUID(),
-            qicode:generateUUID()
-          },
-          success: function (response) {
-            console.log(response)
-            if (response === "success") {
-              Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Successfully added Quotation",
-              });
-              clearAB();
-            } else {
-              Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "An error occurred while saving the data.",
-              });
-            }
-          },
-        });
+            return
+          }
+        }
+
+
+        // ----- PRODUCT PRICE ------
+          // Check if the Price is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].price) > parseInt(pro_qty[i].sellingprice)){
+          Swal.fire({
+            icon: "error",
+            title: "Price Error",
+            text: `${pro_qty[i].productname} has a Max Price of Rs.${pro_qty[i].sellingprice}`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the Price is zero
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) == 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Price Cannot be Zero`,
+            });
+  
+            return
+          }
+        }
+
+          // Check if the Price is Negative
+          for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Price Cannot be Negative`,
+            });
+  
+            return
+          }
+        }
+
+        // ----- DISCOUNT PRICE ------
+  
+          // Check if the Discount is Negative
+          for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].discount) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Discount Price Cannot be Negative`,
+            });
+
+            return
+          }
+        }
+
+        // Discount cannot be greater than the Price
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].discount) > parseInt(data[i].quantity) * parseInt(data[i].price)){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `Discount Price Cannot be Greater than ${pro_qty[i].productname} Price`,
+            });
+
+            return
+          }
+        }
+
+        // 
+
+      // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+  
+        // $.ajax({
+        //   type: "POST",
+        //   url: "../pages/addquotation.php",
+        //   data: {
+        //     data: JSON.stringify(data),
+        //     selectPro: selectPro,
+        //     selectSup: selectSup,
+        //     selectPS: selectPS,
+        //     progressstatus: progressstatus,
+        //     paidAmount: paidAmount,
+        //     quotationdate: new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString(),
+        //     isPaid: isPaid,
+        //     grandTotal: grandTotal,
+        //     topaid: topaid,
+        //     dis: dis,
+        //     completeddate: completeddate,
+        //     qocode:generateUUID(),
+        //     qicode:generateUUID()
+        //   },
+        //   success: function (response) {
+        //     console.log(response)
+        //     if (response === "success") {
+        //       Swal.fire({
+        //         icon: "success",
+        //         title: "Success",
+        //         text: "Successfully added Quotation",
+        //       });
+        //       clearAB();
+        //     } else {
+        //       Swal.fire({
+        //         icon: "error",
+        //         title: "Error",
+        //         text: "An error occurred while saving the data.",
+        //       });
+        //     }
+        //   },
+        // });
 
       }
     });

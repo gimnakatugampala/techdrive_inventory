@@ -31,6 +31,7 @@ $(document).ready(function () {
     // });
   
     var items = [];
+    var pro_qty = [];
   
     dropdown.addEventListener("change", function () {
       var productId = dropdown.value;
@@ -59,6 +60,7 @@ $(document).ready(function () {
 
           }else{
             populateTable(data);
+            pro_qty.push(data[0])
           }
        
         },
@@ -78,7 +80,7 @@ $(document).ready(function () {
           );
           row.append(
             "<td><input type='number' class='form-control price' value=" +
-              plist.buyingprice +
+              plist.sellingprice +
               " name='pprice'></td>"
           );
           row.append(
@@ -217,44 +219,167 @@ $(document).ready(function () {
         }else{
           console.log("grand total "+grandTotal)
         }
+
+        
+        const combinedArray = [...loadData.Productlists, ...pro_qty];
+
+        // console.log(loadData.Productlists)
+        console.log(data)
+        console.log(combinedArray)
+
+
+
+        // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+
+
+        // Check if the Quantity is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) > parseInt(combinedArray[i].quantity)){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${combinedArray[i].productname} has a Max QTY of ${combinedArray[i].quantity}`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the QTY is zero
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].quantity) == 0){
+            Swal.fire({
+              icon: "error",
+              title: "Quantity Error",
+              text: `${combinedArray[i].productname} QTY Cannot be Zero`,
+            });
   
-        $.ajax({
-          type: "POST",
-          url: "../pages/editquotation.php",
-          data: {
-            data: JSON.stringify(data),
-            oldorderitems:JSON.stringify(loadData.Productlists),
-            selectSup: selectSup,
-            // selectPS: selectPS,
-            // progressstatus: progressstatus,
-            // paidAmount: paidAmount,
-            purchaseDate: purchaseDate,
-            isPaid: isPaid,
-            grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
-            // topaid: topaid,
-            dis: dis,
-            completeddate: completeddate,
-            soid:loadData.ID.id,            
-            piid:loadData.SalesOrder[0].id,
-          },
-          success: function (response) {
-            console.log(response)
-            if (response === "success") {
-              Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Successfully Updated Quotation",
-              });
-              // clearAB();
-            } else {
+            return
+          }
+        }
+
+        // Check if the QTY is Negative
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].quantity) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Quantity Error",
+              text: `${combinedArray[i].productname} QTY Cannot be Negative`,
+            });
+  
+            return
+          }
+        }
+
+        // ----- PRODUCT PRICE ------
+      // Check if the Price is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].price) > parseInt(combinedArray[i].sellingprice)){
+          Swal.fire({
+            icon: "error",
+            title: "Price Error",
+            text: `${combinedArray[i].productname} has a Max Price of Rs.${combinedArray[i].sellingprice}`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the Price is zero
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) == 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${combinedArray[i].productname} Price Cannot be Zero`,
+            });
+  
+            return
+          }
+        }
+
+        // Check if the Price is Negative
+        for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].price) < 0){
+          Swal.fire({
+            icon: "error",
+            title: "Price Error",
+            text: `${combinedArray[i].productname} Price Cannot be Negative`,
+          });
+
+          return
+        }
+      }
+
+         // ----- DISCOUNT PRICE ------
+  
+          // Check if the Discount is Negative
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].discount) < 0){
               Swal.fire({
                 icon: "error",
-                title: "Error",
-                text: "An error occurred while saving the data.",
+                title: "Price Error",
+                text: `${combinedArray[i].productname} Discount Price Cannot be Negative`,
               });
+  
+              return
             }
-          },
-        });
+          }
+
+          // Discount cannot be greater than the Price
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].discount) > parseInt(data[i].quantity) * parseInt(data[i].price)){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `Discount Price Cannot be Greater than ${combinedArray[i].productname} Price`,
+            });
+
+            return
+          }
+        }
+
+
+
+      // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+  
+        // $.ajax({
+        //   type: "POST",
+        //   url: "../pages/editquotation.php",
+        //   data: {
+        //     data: JSON.stringify(data),
+        //     oldorderitems:JSON.stringify(loadData.Productlists),
+        //     selectSup: selectSup,
+        //     // selectPS: selectPS,
+        //     // progressstatus: progressstatus,
+        //     // paidAmount: paidAmount,
+        //     purchaseDate: purchaseDate,
+        //     isPaid: isPaid,
+        //     grandTotal: grandTotal == 0 ? oldgrandTotal : grandTotal,
+        //     // topaid: topaid,
+        //     dis: dis,
+        //     completeddate: completeddate,
+        //     soid:loadData.ID.id,            
+        //     piid:loadData.SalesOrder[0].id,
+        //   },
+        //   success: function (response) {
+        //     console.log(response)
+        //     if (response === "success") {
+        //       Swal.fire({
+        //         icon: "success",
+        //         title: "Success",
+        //         text: "Successfully Updated Quotation",
+        //       });
+        //       // clearAB();
+        //     } else {
+        //       Swal.fire({
+        //         icon: "error",
+        //         title: "Error",
+        //         text: "An error occurred while saving the data.",
+        //       });
+        //     }
+        //   },
+        // });
       }
     });
   
