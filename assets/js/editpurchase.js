@@ -9,6 +9,7 @@ $(document).ready(function () {
      let loadData;
 
     var items = [];
+    var pro_qty = [];
 
    // Get The Code From URL
    const urlParams = new URLSearchParams(window.location.search);
@@ -40,7 +41,22 @@ $(document).ready(function () {
       data: { productId: productId },
       dataType: "json",
       success: function (data) {
-        populateTable(data);
+        const found = loadData.Productlists.some(el => el.product_id == productId);
+
+            if(found){
+  
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Product Already Exist",
+              });
+              return
+  
+            }else{
+              populateTable(data);
+              pro_qty.push(data[0])
+            }
+
       },
       error: function () {},
     });
@@ -237,6 +253,123 @@ $(document).ready(function () {
       console.log(loadData.Productlists)
       console.log(data)
       console.log(dis)
+
+      const combinedArray = [...loadData.Productlists, ...pro_qty];
+
+
+       // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+
+
+        // Check if the Quantity is Sufficient
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].quantity) > parseInt(combinedArray[i].quantity)){
+            Swal.fire({
+              icon: "error",
+              title: "Quantity Error",
+              text: `${combinedArray[i].productname} has a Max QTY of ${combinedArray[i].quantity}`,
+            });
+  
+            return
+          }
+        }
+  
+          // Check if the QTY is zero
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].quantity) == 0){
+              Swal.fire({
+                icon: "error",
+                title: "Quantity Error",
+                text: `${combinedArray[i].productname} QTY Cannot be Zero`,
+              });
+    
+              return
+            }
+          }
+  
+          // Check if the QTY is Negative
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].quantity) < 0){
+              Swal.fire({
+                icon: "error",
+                title: "Quantity Error",
+                text: `${combinedArray[i].productname} QTY Cannot be Negative`,
+              });
+    
+              return
+            }
+          }
+  
+          // ----- PRODUCT PRICE ------
+        // Check if the Price is Sufficient
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) > parseInt(combinedArray[i].buyingprice)){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${combinedArray[i].productname} has a Max Price of Rs.${combinedArray[i].buyingprice}`,
+            });
+  
+            return
+          }
+        }
+  
+          // Check if the Price is zero
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].price) == 0){
+              Swal.fire({
+                icon: "error",
+                title: "Price Error",
+                text: `${combinedArray[i].productname} Price Cannot be Zero`,
+              });
+    
+              return
+            }
+          }
+  
+          // Check if the Price is Negative
+          for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${combinedArray[i].productname} Price Cannot be Negative`,
+            });
+  
+            return
+          }
+        }
+  
+           // ----- DISCOUNT PRICE ------
+    
+            // Check if the Discount is Negative
+            for(let i = 0; i < data.length; i++){
+              if(parseInt(data[i].discount) < 0){
+                Swal.fire({
+                  icon: "error",
+                  title: "Price Error",
+                  text: `${combinedArray[i].productname} Discount Price Cannot be Negative`,
+                });
+    
+                return
+              }
+            }
+  
+            // Discount cannot be greater than the Price
+          for(let i = 0; i < data.length; i++){
+            if(parseInt(data[i].discount) > parseInt(data[i].quantity) * parseInt(data[i].price)){
+              Swal.fire({
+                icon: "error",
+                title: "Price Error",
+                text: `Discount Price Cannot be Greater than ${combinedArray[i].productname} Price`,
+              });
+  
+              return
+            }
+          }
+  
+  
+  
+        // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
 
       if(grandTotal == 0){
         console.log("old grand total "+oldgrandTotal)

@@ -13,6 +13,7 @@ $(document).ready(function () {
   });
 
   var items = [];
+  var pro_qty = [];
 
   dropdown.addEventListener("change", function () {
     var productId = dropdown.value;
@@ -28,6 +29,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         populateTable(data);
+        pro_qty.push(data[0])
       },
       error: function () {},
     });
@@ -180,6 +182,122 @@ $(document).ready(function () {
         isPaid = "1";
         completeddate = "1";
       }
+
+       // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
+
+      // ----- QTY ------
+
+      // Check if the Quantity is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) > parseInt(pro_qty[i].quantity)){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${pro_qty[i].productname} has a Max QTY of ${pro_qty[i].quantity}`,
+          });
+
+          return
+        }
+      }
+
+      // Check if the QTY is zero
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].quantity) == 0){
+          Swal.fire({
+            icon: "error",
+            title: "Quantity Error",
+            text: `${pro_qty[i].productname} QTY Cannot be Zero`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the QTY is Negative
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].quantity) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Quantity Error",
+              text: `${pro_qty[i].productname} QTY Cannot be Negative`,
+            });
+  
+            return
+          }
+        }
+
+
+        // ----- PRODUCT PRICE ------
+          // Check if the Price is Sufficient
+      for(let i = 0; i < data.length; i++){
+        if(parseInt(data[i].price) > parseInt(pro_qty[i].buyingprice)){
+          Swal.fire({
+            icon: "error",
+            title: "Price Error",
+            text: `${pro_qty[i].productname} has a Max Price of Rs.${pro_qty[i].buyingprice}`,
+          });
+
+          return
+        }
+      }
+
+        // Check if the Price is zero
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) == 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Price Cannot be Zero`,
+            });
+  
+            return
+          }
+        }
+
+          // Check if the Price is Negative
+          for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].price) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Price Cannot be Negative`,
+            });
+  
+            return
+          }
+        }
+
+        // ----- DISCOUNT PRICE ------
+  
+          // Check if the Discount is Negative
+          for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].discount) < 0){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `${pro_qty[i].productname} Discount Price Cannot be Negative`,
+            });
+
+            return
+          }
+        }
+
+        // Discount cannot be greater than the Price
+        for(let i = 0; i < data.length; i++){
+          if(parseInt(data[i].discount) > parseInt(data[i].quantity) * parseInt(data[i].price)){
+            Swal.fire({
+              icon: "error",
+              title: "Price Error",
+              text: `Discount Price Cannot be Greater than ${pro_qty[i].productname} Price`,
+            });
+
+            return
+          }
+        }
+
+        // 
+
+      // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
 
 
 
