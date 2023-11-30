@@ -141,5 +141,71 @@ $(document).ready(function () {
         }
       });
     });
+
+
+    // Convert to SO
+    $("table.quotationlist").on("click", ".convert-quotation", function () {
+      var socode = $(this).closest("tr").find("td:nth-child(1)").text();
+  
+      console.log(socode)
+  
+      Swal.fire({
+        title: "Are you sure?",
+        text: "This Quotation will be a Sales Order!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Transfer it!",
+      }).then((result) => {
+  
+        // console.log(pocode)
+  
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "../pages/statuschange.php",
+            method: "POST",
+            data: { 
+              ConvertQO:true,
+              socode: socode 
+            },
+            success: function (response) {
+  
+              console.log(response)
+  
+              if (response === "success") {
+  
+              Swal.fire({
+                title: "Quotation Transfered!",
+                text: "Quotation is Now a Sales Order.",
+                icon: "success"
+              });
+              setTimeout(() => {
+                window.location.reload();
+              }, 2000);
+  
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "Failed!",
+                  text: "Failed to Convert as Sales Order.",
+                });
+  
+              }
+  
+            },
+            error: function () {
+              Swal.fire({
+                icon: "error",
+                title: "Failed!",
+                text: "Failed to Convert as Sales Order.",
+              });
+            },
+          });
+        }
+  
+      });
+    });
+
   });
   

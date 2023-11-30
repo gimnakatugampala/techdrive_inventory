@@ -126,7 +126,7 @@
         <img src="../assets/img/icons/eye1.svg" alt="img">
     </a>
     
-    <a class="me-3 confirm-text" href="javascript:void(0);">
+    <a class="me-3 convert-quotation" href="javascript:void(0);">
         <i class="fas fa-exchange-alt fa-lg"></i>
     </a>
     

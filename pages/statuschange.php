@@ -87,6 +87,20 @@ if(isset($_POST["CompletedSO"])){
 
 }
 
+// Convert Quotation to Sales Order
+if(isset($_POST["ConvertQO"])){
+
+    $socode = $_POST['socode'];
+
+    $sql = "UPDATE tbsalesorder SET sid=2,paidstatusid=1,isquotation=0 WHERE socode='$socode'";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "success";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
 
 
 
