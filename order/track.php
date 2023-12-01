@@ -43,7 +43,7 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto mb-2 text-center">
-       <h4><b>TECHDRIVE TECHNOLOGIES</b></h4>
+       <h4><b>TECH DRIVE SOLUTIONS</b></h4>
        <h4>WEBSITE : WWW.TECHDRIVE.LK</h4>
        <h4>CONTACT : +94 764961707</h4>
 
