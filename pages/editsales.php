@@ -16,12 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $completeddate = $_POST['completeddate'];
     $soid = $_POST['soid'];
     $piid = $_POST['piid'];
+    $socode = $_POST['socode'];
+    $qrcode = $_POST['qrcode'];
 
     $comdate = '';
     if ($completeddate == '1') {
         $comdate = date('Y-m-d H:i:s');
     } else {
         $comdate = '';
+    }
+
+     // Cancel Order Date
+     if($progressstatus == "3"){
+        $comdate = date('Y-m-d H:i:s');
     }
 
     $salesorderdate = date('Y-m-d H:i:s');
@@ -110,9 +117,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
+        }else if($progressstatus == "3"){
+
+        // Insert into tbpurchaseinvoice
+        $sql2 = "UPDATE tbinvoice SET 
+        grandtotal = '$grandTotal',
+        discount = '$dis',
+        isSuccess = '0',
+        paidamount = '$paidAmount',
+        completeddate = '$comdate'
+        WHERE id = '$piid'";
+        if ($conn->query($sql2) !== true) {
+            echo 'Error: ' . $sql2 . '<br>' . $conn->error;
+            exit();
+        }
+
         }else{
-            
-// // Insert into tbpurchaseinvoice
+        
 
         // Insert into tbpurchaseinvoice
         $sql2 = "UPDATE tbinvoice SET 
@@ -129,8 +150,96 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
         }
 
+           // ----------------------- SEND THE EMAIL TO THE CUSTOMER - QR CODE, LINK, PDF -------------
+           $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+           $host = $_SERVER['HTTP_HOST'];
+           $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
+   
+           // CHECK IF THE STATUS TO SEND THE DIFFRENT EMAIL TEMPLATE
+           if($progressstatus == "1"){
+   
+           // -- SEND A GET REQUEST TO THE PDF MAKER ( SOCODE, TYPE, ACTION )
+           $getUrl = $Url . "/utils/pdf_maker.php?MST_ID=$socode&ACTION=EMAIL_STATUS&TYPE=SO_COMPLETED&QRCODE=$qrcode";
+   
+           // Initialize cURL session
+           $ch = curl_init($getUrl);
+   
+           // Set cURL options
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   
+           // Execute cURL session and get the response
+           $response = curl_exec($ch);
+   
+           // Close cURL session
+           curl_close($ch);
+   
+           // Output the response (you might want to process or manipulate it)
+           if ($response == false) {
+               // Handle cURL error
+               echo 'cURL error: ' . curl_error($ch);
+           } else {
+               // Process the response
+               echo $response;
+           }
+   
+   
+           }else if($progressstatus == "2"){
+   
+               // -- SEND A GET REQUEST TO THE PDF MAKER ( SOCODE, TYPE, ACTION )
+               $getUrl = $Url . "/utils/pdf_maker.php?MST_ID=$socode&ACTION=EMAIL_STATUS&TYPE=SO_INPROGRESS&QRCODE=$qrcode";
+   
+               // Initialize cURL session
+               $ch = curl_init($getUrl);
+   
+               // Set cURL options
+               curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   
+               // Execute cURL session and get the response
+               $response = curl_exec($ch);
+   
+               // Close cURL session
+               curl_close($ch);
+   
+               // Output the response (you might want to process or manipulate it)
+               if ($response == false) {
+                   // Handle cURL error
+                   echo 'cURL error: ' . curl_error($ch);
+               } else {
+                   // Process the response
+                   echo $response;
+               }
+   
+           }else if($progressstatus == "3"){
+               
+           // -- SEND A GET REQUEST TO THE PDF MAKER ( SOCODE, TYPE, ACTION )
+           $getUrl = $Url . "/utils/pdf_maker.php?MST_ID=$socode&ACTION=EMAIL_STATUS&TYPE=SO_CANCELED&QRCODE=$qrcode";
+   
+           // Initialize cURL session
+           $ch = curl_init($getUrl);
+   
+           // Set cURL options
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   
+           // Execute cURL session and get the response
+           $response = curl_exec($ch);
+   
+           // Close cURL session
+           curl_close($ch);
+   
+           // Output the response (you might want to process or manipulate it)
+           if ($response == false) {
+               // Handle cURL error
+               echo 'cURL error: ' . curl_error($ch);
+           } else {
+               // Process the response
+               echo $response;
+           }
+   
+           }
+   // ----------------------- SEND THE EMAIL TO THE CUSTOMER - QR CODE, LINK, PDF -------------
 
-        echo 'success';
+
+        // echo 'success';
     } else {
         echo 'Error: ' . $updatesalesOrderSQL . '<br>' . $conn->error;
     }

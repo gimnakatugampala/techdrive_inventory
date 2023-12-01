@@ -443,43 +443,45 @@ $(document).ready(function () {
             completeddate: completeddate,
             soid:loadData.ID.id,            
             piid:loadData.SalesOrder[0].id,
+            socode:loadData.ID.socode,
+            qrcode:loadData.ID.qr_img
           },
           success: function (response) {
             console.log(response)
-            if (response === "success") {
-              Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: "Successfully Updated Sale",
-              });
-              // clearAB();
-            } else {
-              Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "An error occurred while saving the data.",
-              });
-            }
+            // if (response === "success") {
+            //   Swal.fire({
+            //     icon: "success",
+            //     title: "Success",
+            //     text: "Successfully Updated Sale",
+            //   });
+            //   clearAB();
+            // } else {
+            //   Swal.fire({
+            //     icon: "error",
+            //     title: "Error",
+            //     text: "An error occurred while saving the data.",
+            //   });
+            // }
           },
         });
       }
     });
   
     function clearAB() {
-      // $("#productcmb").val("0");
-      // $("#selectCus").val("0");
-      // $("#paidStatus").val("0");
-      // $("#progressstatus").val("0");
-      // $(".quantity").val("");
-      // $(".price").val("");
-      // $(".discount").val("0");
-      // $("#paidAmount").val("");
-      // $("#salesdate").val("");
-      // $("#bodySL").empty();
-      // $("#grandTotal").text("0.00");
-      // $("#paid").text("0.00");
-      // $("#dis").text("0.00");
-      // $("#topaid").text("0.00");
+      $("#productcmb").val("0");
+      $("#selectCus").val("0");
+      $("#paidStatus").val("0");
+      $("#progressstatus").val("0");
+      $(".quantity").val("");
+      $(".price").val("");
+      $(".discount").val("0");
+      $("#paidAmount").val("");
+      $("#salesdate").val("");
+      $("#bodyESL").empty();
+      $("#grandTotal").text("0.00");
+      $("#paid").text("0.00");
+      $("#dis").text("0.00");
+      $("#topaid").text("0.00");
     }
 
     function getDataSales(){
