@@ -290,43 +290,43 @@ $(document).ready(function () {
 
       // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
   
-        // $.ajax({
-        //   type: "POST",
-        //   url: "../pages/addquotation.php",
-        //   data: {
-        //     data: JSON.stringify(data),
-        //     selectPro: selectPro,
-        //     selectSup: selectSup,
-        //     selectPS: selectPS,
-        //     progressstatus: progressstatus,
-        //     paidAmount: paidAmount,
-        //     quotationdate: new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString(),
-        //     isPaid: isPaid,
-        //     grandTotal: grandTotal,
-        //     topaid: topaid,
-        //     dis: dis,
-        //     completeddate: completeddate,
-        //     qocode:generateUUID(),
-        //     qicode:generateUUID()
-        //   },
-        //   success: function (response) {
-        //     console.log(response)
-        //     if (response === "success") {
-        //       Swal.fire({
-        //         icon: "success",
-        //         title: "Success",
-        //         text: "Successfully added Quotation",
-        //       });
-        //       clearAB();
-        //     } else {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Error",
-        //         text: "An error occurred while saving the data.",
-        //       });
-        //     }
-        //   },
-        // });
+        $.ajax({
+          type: "POST",
+          url: "../pages/addquotation.php",
+          data: {
+            data: JSON.stringify(data),
+            selectPro: selectPro,
+            selectSup: selectSup,
+            selectPS: selectPS,
+            progressstatus: progressstatus,
+            paidAmount: paidAmount,
+            quotationdate: new Date ((new Date(quotationdate).getFullYear()),(new Date(quotationdate).getMonth()), (new Date(quotationdate).getDate()), 12, 30, 0).toISOString(),
+            isPaid: isPaid,
+            grandTotal: grandTotal,
+            topaid: topaid,
+            dis: dis,
+            completeddate: completeddate,
+            qocode:generateUUID(),
+            qicode:generateUUID()
+          },
+          success: function (response) {
+            console.log(response)
+            if (response === "success") {
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Successfully added Quotation",
+              });
+              clearAB();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred while saving the data.",
+              });
+            }
+          },
+        });
 
       }
     });

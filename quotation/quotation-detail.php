@@ -49,6 +49,10 @@
 
 <tbody>
 <tr>
+<?php if ($quotationsales[0]["qr_img"] != ""): ?>
+    <img style=float:right; width="100" src='../utils/qrimg/<?php echo $quotationsales[0]["qr_img"];?>' >
+<?php endif; ?>
+
 <td style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
 <font style="vertical-align: inherit;margin-bottom:25px;"><font style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">Customer Info</font></font><br>
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;"> <?php echo $quotationsales[0]["cusname"];?></font></font><br>

@@ -27,16 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $salesorderdate = date('Y-m-d H:i:s');
     $createddate = date('Y-m-d H:i:s');
 
-    // $min = 1;
-    // $max = 10000000000;
-    // $socode = rand($min, $max);
+    // QR CODE GENERATION PART
+    require_once '../utils/qrcode_generator.php';
 
-    // $min = 1;
-    // $max = 10000000000;
-    // $picode = rand($min, $max);
-
-    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES 
-    ('$socode', '$selectSup', '$progressstatus', '$selectPS', '$purchaseDate',1)";
+    $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (qr_img, socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES 
+    ('$qrcode','$socode', '$selectSup', '$progressstatus', '$selectPS', '$purchaseDate',1)";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
         $insertedPurchaseOrderID = $conn->insert_id; // Get the ID of the inserted row
