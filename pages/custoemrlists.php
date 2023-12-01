@@ -12,5 +12,5 @@ if ( $result->num_rows > 0 ) {
     }
 }
 
-echo json_encode( $cus );
+// echo json_encode( $cus );
 ?>

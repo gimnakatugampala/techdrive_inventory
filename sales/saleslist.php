@@ -31,14 +31,14 @@
                     </div>
                     <div class="wordset">
                         <ul>
-                            <li>
+                            <!-- <li>
                                 <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img
                                         src="../assets/img/icons/pdf.svg" alt="img"></a>
-                            </li>
-                            <li>
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
+                            </li> -->
+                            <!-- <li>
+                                <a href="../utils/export_excel.php" data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
                                         src="../assets/img/icons/excel.svg" alt="img"></a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a onclick="window.print()" data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img
                                         src="../assets/img/icons/printer.svg" alt="img"></a>
