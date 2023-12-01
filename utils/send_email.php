@@ -9,6 +9,10 @@ require_once '../lib/phpmailer/src/SMTP.php';
 
 
 
+// GET THE CURRENT HOST
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+$Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
 
 
 // if(isset($_POST["send"])){
@@ -27,9 +31,14 @@ require_once '../lib/phpmailer/src/SMTP.php';
     $mail->Port       = 465;
 
     $mail->setFrom('gimnakatugampala12345@gmail.com');
-    $mail->addAddress($MAIN_EMAIL);  
-    $mail->addAttachment($email_invoice_path);    
-    $mail->Subject = 'Techdrive Invoice - '.$SALES_CODE.'';
+    $mail->addAddress('gimnakatugampala1@gmail.com');   // $MAIN_EMAIL
+    $mail->addAttachment($email_invoice_path);   
+    
+    if($EMAIL_STATS == "INPROGRESS"){
+      // ---------------------- SEND INPROGRESS EMAIL TEMPLATE ---------------
+      
+    $mail->Subject = 'Tech Drive Solutions Invoice - '.$SALES_CODE.'';
+
     $mail->Body    = '
     <head>
     <style>
@@ -85,28 +94,126 @@ require_once '../lib/phpmailer/src/SMTP.php';
   <body>
 
     <div class="container">
-    <h1>'.$EMAIL_TYPE.' from TechDrive Technologies</h1>
+    <h1>'.$EMAIL_TYPE.' from Tech Drive Solutions</h1>
     <h3>Dear '.$NAME.',</h3>
 
-    <p>We hope this email finds you well. Attached to this email is the sales order invoice for the services provided by TechDrive Technologies on the <b>'.$PLACED_DATE.' </b>.</p>
+    <p>Your sales order is in progress. We appreciate your business and look forward to serving you.</p>
+
+    <p>We hope this email finds you well. Attached to this email is the sales order invoice for the services provided by Tech Drive Solutions on the <b>'.$PLACED_DATE.' </b>.</p>
+    
     <p>Please find the attached invoice details below. If you have any questions or concerns, feel free to contact our support team.</p>
+
+    <img width="100" src="'.$Url.'/utils/qrimg/'.$QRCODE.'" >
+
+    <h4>CHECK YOUR ORDER</h4>
+    <h2 id="code">'.$Url.'/order/track/'.$SALES_CODE.'</h2>
 
     <h4>INVOICE CODE</h4>
     <h2 id="code">'.$SALES_CODE.'</h2>
    
-    <p>Thank you for choosing TechDrive Technologies.</p>
+    <p>Thank you for choosing Tech Drive Solutions.</p>
   </div>
   <div class="footer">
-    <p>© 2023 TechDrive Technologies | Address | Phone Number</p>
+    <p>© '.date("Y").' Tech Drive Solutions | Fortune Arcade, 39/11, Galle Road, Bambalapitiya | 0777424239</p>
   </div>
   </body>
 
     '; 
 
+
+    // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------
+      
+      
+    }else{
+      
+      // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------
+      
+    $mail->Subject = 'Tech Drive Solutions Invoice - '.$SALES_CODE.'';
+
+    $mail->Body    = '
+    <head>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border:1px #BFC9CA solid;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    p {
+      color: #666666;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #999999;
+    }
+
+    #code{
+        color:#E67E22;
+    }
+  </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+    <h1>'.$EMAIL_TYPE.' from Tech Drive Solutions</h1>
+    <h3>Dear '.$NAME.',</h3>
+
+    <p>We hope this email finds you well. Attached to this email is the sales order invoice for the services provided by Tech Drive Solutions on the <b>'.$PLACED_DATE.' </b>.</p>
+    <p>Please find the attached invoice details below. If you have any questions or concerns, feel free to contact our support team.</p>
+
+    <h4>INVOICE CODE</h4>
+    <h2 id="code">'.$SALES_CODE.'</h2>
+   
+    <p>Thank you for choosing Tech Drive Solutions.</p>
+  </div>
+  <div class="footer">
+    <p>© '.date("Y").' Tech Drive Solutions | Fortune Arcade, 39/11, Galle Road, Bambalapitiya | 0777424239</p>
+  </div>
+  </body>
+
+    '; 
+
+
+    // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------
+
+
+    }
+    
     $mail->isHTML(true); 
 
     $mail->send();
-    echo 'Message has been sent';
+    
+    echo 'success';
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

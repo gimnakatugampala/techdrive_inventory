@@ -6,12 +6,14 @@ require_once '../lib/tcpdf_6_3_2/tcpdf/tcpdf.php';
 
 $MST_ID=$_GET['MST_ID'];
 $TYPE=$_GET['TYPE'];
+$QRCODE = $_GET['QRCODE'] == null ? "" : $_GET['QRCODE'];
 
 $NAME;
 $MAIN_EMAIL;
 $PLACED_DATE;
 $SALES_CODE;
 $EMAIL_TYPE;
+$EMAIL_STATS;
 
 
 if($TYPE == "SO"){
@@ -264,6 +266,60 @@ if($TYPE == "SO"){
 			$Status = "QUOTATION";
 			$CompletedDate = "N/A";
 		}
+}else if($TYPE == "SO_INPROGRESS"){
+
+	$inv_mst_query = "SELECT * FROM tbsalesorder WHERE socode ='".$MST_ID."' AND sid=2 ";             
+	$inv_mst_results = mysqli_query($conn,$inv_mst_query);   
+	$count = mysqli_num_rows($inv_mst_results);  
+
+
+	// Get the Order Data
+	// Get the Customer & Sales Invoice
+	$orders = "SELECT *,tbinvoice.discount AS DIS FROM tbsalesorder 
+	JOIN tbcustomer ON tbsalesorder.cusid = tbcustomer.id
+	JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.socode = '$MST_ID'";
+
+	$resultorders = $conn->query( $orders );
+
+	$ordersarr = array();
+
+	if ( $resultorders->num_rows > 0 ) {
+		while ( $row = $resultorders->fetch_assoc() ) {
+			$ordersarr[] = $row;
+		}
+	}
+
+		// Assign CUS Global 
+		$NAME = $ordersarr[0]["cusname"];
+		$MAIN_EMAIL = $ordersarr[0]["cusemail"];
+		$PLACED_DATE = $ordersarr[0]["salesorderdate"];
+		$SALES_CODE = $ordersarr[0]["socode"];
+
+		// Get Paid Data
+		if ($ordersarr[0]["paidstatusid"] == "1"){
+			$paidStatus = "NO PAID";
+		 }else if($ordersarr[0]["paidstatusid"] == "2"){
+			$paidStatus = "ADVANCED";
+		 }else if($ordersarr[0]["paidstatusid"] == "3"){
+			$paidStatus = "PAID";
+		 }else if($ordersarr[0]["paidstatusid"] == "4"){
+			$paidStatus = "DRAFT";
+		 }
+		
+		// Get Status Data
+		if ($ordersarr[0]["sid"] == "1"){
+			$Status = "COMPLETED";
+			$CompletedDate = $ordersarr[0]["completeddate"];
+		}else if($ordersarr[0]["sid"] == "2"){
+			$Status = "IN PROGRESS";
+			$CompletedDate = "N/A";
+		}else if($ordersarr[0]["sid"] == "3"){
+			$Status = "CANCELED";
+			$CompletedDate = "N/A";
+		}else if($ordersarr[0]["sid"] == "4"){
+			$Status = "QUOTATION";
+			$CompletedDate = "N/A";
+		}
 }
 
 
@@ -314,7 +370,7 @@ if($count>0) {
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
-		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>TECHD RIVE SOLUTIONS</b></td></tr>
 		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
 		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
 	
@@ -507,7 +563,7 @@ if($count>0) {
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
-		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>TECH DRIVE SOLUTIONS</b></td></tr>
 		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
 		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
 	
@@ -698,7 +754,7 @@ if($count>0) {
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
-		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>TECH DRIVE SOLUTIONS</b></td></tr>
 		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
 		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
 	
@@ -879,7 +935,7 @@ if($count>0) {
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
-		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>TECH DRIVE SOLUTIONS</b></td></tr>
 		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
 		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
 	
@@ -1037,8 +1093,6 @@ if($count>0) {
 	</table>'; 
 	$pdf->writeHTML($content);
 	}else if($TYPE == "POR"){
-
-		
 		$content = ''; 
 		$content .= '
 		<style type="text/css">
@@ -1063,7 +1117,7 @@ if($count>0) {
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
-		<tr><td colspan="2" align="center"><b>TECHDRIVE TECHNOLOGIES</b></td></tr>
+		<tr><td colspan="2" align="center"><b>TECH DRIVE SOLUTIONS</b></td></tr>
 		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
 		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
 	
@@ -1216,7 +1270,200 @@ if($count>0) {
 		</table>
 	</table>'; 
 	$pdf->writeHTML($content);
+	}else if($TYPE == "SO_INPROGRESS"){
 
+		$content = ''; 
+		$content .= '
+		<style type="text/css">
+		body{
+		font-size:12px;
+		line-height:24px;
+		font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+		color:#000;
+		}
+		table.table, th.th, td.td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding:10px;
+		  }
+	
+		  td.card{
+			padding:100px;
+		  }
+	
+	
+		</style>    
+		<table cellpadding="0" cellspacing="0">
+		<table style="width:100%;" >
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><b>TECH DRIVE SOLUTIONS</b></td></tr>
+		<tr><td colspan="2" align="center"><b>CONTACT: +94 764961 707</b></td></tr>
+		<tr><td colspan="2" align="center"><b>WEBSITE: WWW.TECHDRIVE.LK</b></td></tr>
+	
+		<br />
+		<br />
+	
+		<tr>
+		<td style="font-size:10px;margin-bottom:45px;">CUSTOMER INFO:</td>
+		<td style="font-size:10px;margin-bottom:45px;" align="right">INVOICE INFO:</td>
+		</tr>
+	
+		<br />
+	
+		<tr>
+		<td><b>CUSTOMER NAME: '.$ordersarr[0]["cusname"].'</b></td>
+		<td align="right"><b>SALES CODE: '.$ordersarr[0]["socode"].'</b> </td>
+		</tr>
+		<br />
+	
+		<tr>
+		<td><b>EMAIL: '.$ordersarr[0]["cusemail"].'</b></td>
+		<td align="right"><b>PAYMENT STATUS: '.$paidStatus.'</b> </td>
+		</tr>
+	
+		<br />
+	
+		<tr>
+		<td><b>MOBILE: +94 '.$ordersarr[0]["cusphone"].' </b></td>
+		<td align="right"><b>STATUS: '.$Status.'</b> </td>
+		</tr>
+		<br />
+	
+		<tr>
+		<td><b>ADDRESS : '.$ordersarr[0]["cusaddress"].'</b></td>
+		<td align="right"><b>PLACED DATE: '.$ordersarr[0]["salesorderdate"].'</b> </td>
+		</tr>
+	
+	
+		<br />
+	
+		<tr>
+		<td>&nbsp;</td>
+		<td align="right"><b>COMPLETED DATE: '.$CompletedDate.'</b> </td>
+		</tr>
+	
+		<p>--------------------------------------------------------------------------------------------------------------------------------</p>
+	
+	
+		<tr><td colspan="2" align="center"><b>SALES ORDER INVOICE</b></td></tr>
+		<p></p>
+	
+		<table class="table" align="center">
+		<tr bgcolor="##BFC9CA">
+			<th class="th"  colspan="1">
+				<b>PRODUCT NAME</b>
+			</th>
+	
+			<th class="th" colspan="1">
+			<b>QTY</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>PRICE (RS.)</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>DISCOUNT (RS.)</b>
+			</th>
+	
+			<th class="th" colspan="1">
+				<b>SUBTOTAL (RS.)</b>
+			</th>
+	
+		</tr>
+		
+	
+	
+		<tbody>
+		';
+		$inv_det_query = "SELECT *,tborderitem.quantity AS QTY FROM tborderitem 
+		JOIN tbproduct ON tborderitem.pid = tbproduct.id
+		WHERE tborderitem.salesorderid = $inv_mst_data_row[id]";
+		$inv_det_results = mysqli_query($conn,$inv_det_query);    
+		while($inv_det_data_row = mysqli_fetch_array($inv_det_results, MYSQLI_ASSOC)){	
+		
+		//  Calculate
+		$subtotal=floatval($inv_det_data_row["QTY"]) * floatval($inv_det_data_row["price"]) - floatval($inv_det_data_row["discount"]);
+		$topaid = floatval($ordersarr[0]["grandtotal"]) - floatval($ordersarr[0]["paidamount"]);
+
+	
+		$content .= '
+		  <tr class="itemrows">
+			  <td class="td" colspan="1">
+				'.$inv_det_data_row["productname"] .'
+			  </td>
+	
+			  <td class="td"  colspan="1">
+			  '.$inv_det_data_row["QTY"] .'
+			  </td>
+	
+			  <td class="td"  colspan="1">
+			  '.$inv_det_data_row["price"] .'
+			</td colspan="1">
+	
+			 <td class="td"  colspan="1">
+			 '.$inv_det_data_row["discount"] .'
+			</td>
+	
+			<td class="td"  colspan="1">
+			'.$subtotal.'
+			</td>
+			
+		  </tr>';
+			// $total=$total+$inv_det_data_row['price'];
+		}
+	
+		$content .= '</tbody></table>';
+	
+			
+			$content .= '
+			<p></p>
+	
+			<table>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>TOTAL DISCOUNT : '.$ordersarr[0]["DIS"].'</b>
+			</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>PAID AMOUNT : '.$ordersarr[0]["paidamount"].'</b>
+			</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>GRAND&nbsp;TOTAL:&nbsp; '.$ordersarr[0]["grandtotal"].'</b>
+			</td>
+			</tr>
+	
+			<tr colspan="2">
+			<td>&nbsp;</td>
+			<td align="right">------------------------</td>
+			</tr>
+	
+			<tr>
+			<td colspan="2" align="right">
+			<b>TO BE PAID : '.$topaid.'</b>
+			</td>
+			</tr>
+			
+			<tr><td colspan="2" align="right">------------------------</td></tr>
+
+			<img style=float:right; width="100" src="../utils/qrimg/'.$QRCODE.'" >
+	
+			<p>--------------------------------------------------------------------------------------------------------------------------------</p>
+	
+			
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2" align="center"><b>THANK YOU ! VISIT AGAIN</b></td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			</table>
+		</table>
+	</table>'; 
+	$pdf->writeHTML($content);
 	}
 	
 
@@ -1252,9 +1499,22 @@ if($TYPE == "SO"){
 	$EMAIL_TYPE = "Purchase Order Return Invoice";
 }
 
+// SEND INVOICE IN THE EMAIL
 $email_invoice_path=$file_location.$file_name; require_once '../utils/send_email.php';
 
 // echo "Upload successfully!!";
+}else if($_GET['ACTION']=='EMAIL_STATUS'){
+	$pdf->Output($file_location.$file_name, 'F'); // F means upload PDF file on some folder
+
+	if($TYPE == "SO_INPROGRESS"){
+		$EMAIL_TYPE = "Sales Invoice";
+	}
+
+	// SEND INVOICE IN THE EMAIL
+	$email_invoice_path=$file_location.$file_name;$EMAIL_STATS="INPROGRESS"; require_once '../utils/send_email.php';
+
+	// echo $MST_ID;
+	// echo $TYPE;
 }
 
 //----- End Code for generate pdf

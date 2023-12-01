@@ -27,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $salesorderdate = date('Y-m-d H:i:s');
     $createddate = date('Y-m-d H:i:s');
 
-    // QR CODE GENERATION PART
+    // ---------------------- QR CODE GENERATION PART -----------------------
     require_once '../utils/qrcode_generator.php';
 
-
+//  ------------------------- ENTER DATA -----------------------------------
     $insertPurchaseOrderSQL = "INSERT INTO tbsalesorder (qr_img,socode, cusid , sid ,paidstatusid,salesorderdate,isquotation) VALUES ('$qrcode','$socode', '$selectSup', '$progressstatus', '$selectPS', '$salesorderdate',0)";
 
     if ($conn->query($insertPurchaseOrderSQL) === true) {
@@ -41,9 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $price = $row['price'];
             $discount = $row['discount'];
 
+            //  ------------------- IF SO IS COMPLETED --------------------
             if($progressstatus == "1"){
 
-            // Update the New Product Quantity
+            // ------------------------- Update the New Product Quantity ------------------------------
             $query = "SELECT quantity FROM tbproduct WHERE id = $product";
             $result = $conn->query($query);
 
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }
 
-            // Update the New Product Quantity
+            // ------------------------------ Update the New Product Quantity -------------------------------
 
             }
 
@@ -72,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
+        //  ----------------------- ENTER DATA TO INVOICE -------------------------------
         if($progressstatus == "1" && $selectPS == "3"){
 
         // Insert into tbpurchaseinvoice
@@ -94,15 +96,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
         }
 
-        // // Insert into tbpurchaseinvoice
-        // $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
-        // VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
-        // if ($conn->query($sql2) !== true) {
-        //     echo 'Error: ' . $sql2 . '<br>' . $conn->error;
-        //     exit();
-        // }
 
-        echo 'success';
+
+        // SEND THE EMAIL TO THE CUSTOMER - QR CODE, LINK, PDF
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+        $host = $_SERVER['HTTP_HOST'];
+        $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
+
+        // CHECK IF THE STATUS TO SEND THE DIFFRENT EMAIL TEMPLATE
+        if($progressstatus == "1"){
+
+
+        }else if($progressstatus == "2"){
+
+            // -- SEND A GET REQUEST TO THE PDF MAKER ( SOCODE, TYPE, ACTION )
+            $getUrl = $Url . "/utils/pdf_maker.php?MST_ID=$socode&ACTION=EMAIL_STATUS&TYPE=SO_INPROGRESS&QRCODE=$qrcode";
+
+            // Initialize cURL session
+            $ch = curl_init($getUrl);
+
+            // Set cURL options
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            // Execute cURL session and get the response
+            $response = curl_exec($ch);
+
+            // Close cURL session
+            curl_close($ch);
+
+            // Output the response (you might want to process or manipulate it)
+            if ($response == false) {
+                // Handle cURL error
+                echo 'cURL error: ' . curl_error($ch);
+            } else {
+                // Process the response
+                echo $response;
+            }
+
+        }else if($progressstatus == "3"){
+            
+        }
+
+ 
+     
+        // echo $response;
+        // echo 'success';
     } else {
         echo 'Error: ' . $insertPurchaseOrderSQL . '<br>' . $conn->error;
     }
