@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/phpqrcode/qrlib.php');
+require_once('../lib/phpqrcode/qrlib.php');
 
 // Use forward slashes consistently in the directory path
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
