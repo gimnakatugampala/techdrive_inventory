@@ -376,7 +376,7 @@ $(document).ready(function () {
           picode:generateUUID()
         },
         success: function (response) {
-          // console.log(response)
+          console.log(response)
           if (response === "success") {
             Swal.fire({
               icon: "success",
