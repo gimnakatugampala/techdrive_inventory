@@ -2756,7 +2756,7 @@ if($count>0) {
 	
 		<tr>
 		<td><b>ADDRESS : '.$ordersarr[0]["cusaddress"].'</b></td>
-		<td align="right"><b>COMPLETED DATE: '.$CompletedDate.'</b> </td>
+		<td align="right"><b>CANCELED DATE: '.$ordersarr[0]["completeddate"].'</b> </td>
 
 		</tr>
 	

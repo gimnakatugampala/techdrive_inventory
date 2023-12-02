@@ -220,11 +220,11 @@ $(document).ready(function () {
           title: "Error",
           text: "Please Select Status",
         });
-      }  else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      }  else if (progressstatus == "4" ) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Cannot Select Canceled Status or Draft Status",
+          text: "Cannot Select Draft Status",
         });
       } else {
         if (progressstatus === "1") {
@@ -378,6 +378,7 @@ $(document).ready(function () {
             completeddate: completeddate,
             poid:loadData.ID.id,            
             piid:loadData.SalesOrderReturns[0].id,
+            sorcode:loadData.ID.sorcode,
           },
           success: function (response) {
             console.log(response)
