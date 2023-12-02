@@ -30,8 +30,30 @@ $(document).ready(function () {
         data: { productId: productId },
         dataType: "json",
         success: function (data) {
-          populateTable(data);
-          pro_qty.push(data[0])
+          // ---------------
+          let found;
+          if(pro_qty.length > 0){
+            found = pro_qty.some(el => el.id === productId);
+          }else{
+            found = false;
+          }
+
+            if(found){
+
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Product Already Exist",
+              });
+              return
+
+            }else{
+              populateTable(data);
+              pro_qty.push(data[0])
+            }
+
+          // ---------------
+
         },
         error: function () {},
       });
