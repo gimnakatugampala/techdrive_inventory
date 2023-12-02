@@ -390,6 +390,90 @@ $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
     // ------------------- SENDING ONLY QUOTATION - WHEN ASKED  TEMPLATE -----------------
 
 
+    }else if($EMAIL_STATS =="SOR"){
+
+        // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------
+      
+    $mail->Subject = 'Tech Drive Solutions Return Invoice - '.$SALES_CODE.'';
+
+    $mail->Body    = '
+    <head>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border:1px #BFC9CA solid;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    p {
+      color: #666666;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #999999;
+    }
+
+    #code{
+        color:#E67E22;
+    }
+  </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+    <h1>'.$EMAIL_TYPE.' from Tech Drive Solutions</h1>
+    <h3>Dear '.$NAME.',</h3>
+
+    <p>We hope this email finds you well. Attached to this email is the sales order return invoice for the services provided by Tech Drive Solutions on the <b>'.$PLACED_DATE.' </b>.</p>
+    <p>Please find the attached return invoice details below. If you have any questions or concerns, feel free to contact our support team.</p>
+
+    <h4>INVOICE CODE</h4>
+    <h2 id="code">'.$SALES_CODE.'</h2>
+   
+    <p>Thank you for choosing Tech Drive Solutions.</p>
+  </div>
+  <div class="footer">
+    <p>© '.date("Y").' Tech Drive Solutions | Fortune Arcade, 39/11, Galle Road, Bambalapitiya | 0777424239</p>
+  </div>
+  </body>
+
+    '; 
+
+
+    // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------
+
+
+
     }else{
       
       // ------------------- SENDING ONLY INVOICE - WHEN ASKED  TEMPLATE -----------------

@@ -161,11 +161,11 @@ $(document).ready(function () {
           title: "Error",
           text: "Please Select Status",
         });
-      } else if (progressstatus === "3" ||  progressstatus == "4" ) {
+      } else if (progressstatus == "4" ) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Cannot Select Canceled Status or Draft Status",
+          text: "Cannot Select Draft Status",
         });
       }else if (description == "" ) {
         Swal.fire({
