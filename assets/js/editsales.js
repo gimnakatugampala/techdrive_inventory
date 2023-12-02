@@ -448,20 +448,20 @@ $(document).ready(function () {
           },
           success: function (response) {
             console.log(response)
-            // if (response === "success") {
-            //   Swal.fire({
-            //     icon: "success",
-            //     title: "Success",
-            //     text: "Successfully Updated Sale",
-            //   });
-            //   clearAB();
-            // } else {
-            //   Swal.fire({
-            //     icon: "error",
-            //     title: "Error",
-            //     text: "An error occurred while saving the data.",
-            //   });
-            // }
+            if (response === "success") {
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Successfully Updated Sale",
+              });
+              clearAB();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred while saving the data.",
+              });
+            }
           },
         });
       }

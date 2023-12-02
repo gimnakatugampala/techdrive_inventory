@@ -70,15 +70,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
         }
 
-        // // Insert into tbpurchaseinvoice
-        // $sql2 = "INSERT INTO tbinvoice (grandtotal,discount,isSuccess,completeddate,soid,paidamount,invoicecode) 
-        // VALUES ('$grandTotal','$dis','$isPaid','$comdate','$insertedPurchaseOrderID','$paidAmount','$picode')";
-        // if ($conn->query($sql2) !== true) {
-        //     echo 'Error: ' . $sql2 . '<br>' . $conn->error;
-        //     exit();
-        // }
+          // ----------------------- SEND THE EMAIL TO THE CUSTOMER - QR CODE, LINK, PDF -------------
+          $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+          $host = $_SERVER['HTTP_HOST'];
+          $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
+  
+          // CHECK IF THE STATUS TO SEND THE DIFFRENT EMAIL TEMPLATE
+          
+  
+          // -- SEND A GET REQUEST TO THE PDF MAKER ( SOCODE, TYPE, ACTION )
+          $getUrl = $Url . "/utils/pdf_maker.php?MST_ID=$socode&ACTION=EMAIL_STATUS&TYPE=QUO&QRCODE=$qrcode";
+  
+          // Initialize cURL session
+          $ch = curl_init($getUrl);
+  
+          // Set cURL options
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  
+          // Execute cURL session and get the response
+          $response = curl_exec($ch);
+  
+          // Close cURL session
+          curl_close($ch);
+  
+          // Output the response (you might want to process or manipulate it)
+          if ($response == false) {
+              // Handle cURL error
+              echo 'cURL error: ' . curl_error($ch);
+          } else {
+              // Process the response
+              echo $response;
+          }
 
-        echo 'success';
+        // echo 'success';
     } else {
         echo 'Error: ' . $insertPurchaseOrderSQL . '<br>' . $conn->error;
     }
