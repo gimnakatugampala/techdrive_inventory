@@ -1,5 +1,6 @@
 <?php require_once '../includes/header.php' ?>
 <?php require_once '../includes/sidebar.php' ?>
+<?php require_once '../pages/dashboadcontent.php' ?>
 
 <!-- Content -->
 <div class="page-wrapper">
@@ -12,8 +13,8 @@
 <span><img src="../assets/img/icons/dash1.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>Rs.<span class="counters" data-count="307144.00">Rs.307,144.00</span></h5>
-<h6>Total Purchase Due</h6>
+<h5>Rs.<span class="counters" data-count="<?php echo $total_por;?>">Rs.<?php echo $total_por;?></span></h5>
+<h6>Total PO Return</h6>
 </div>
 </div>
 </div>
@@ -24,8 +25,8 @@
 <span><img src="../assets/img/icons/dash2.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>Rs.<span class="counters" data-count="4385.00">Rs.4,385.00</span></h5>
-<h6>Total Sales Due</h6>
+<h5>Rs.<span class="counters" data-count="<?php echo $total_sor;?>">Rs.<?php echo $total_sor;?></span></h5>
+<h6>Total SO Return</h6>
 </div>
 </div>
 </div>
@@ -37,7 +38,7 @@
 <span><img src="../assets/img/icons/dash3.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>Rs.<span class="counters" data-count="385656.50">Rs.385,656.50</span></h5>
+<h5>Rs.<span class="counters" data-count="<?php echo $total_po;?>">Rs.<?php echo $total_po;?></span></h5>
 <h6>Total PO Amount</h6>
 </div>
 </div>
@@ -50,7 +51,7 @@
 <span><img src="../assets/img/icons/dash4.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>Rs.<span class="counters" data-count="40000.00">Rs.400.00</span></h5>
+<h5>Rs.<span class="counters" data-count="<?php echo $total_so ;?>">Rs.<?php echo $total_so;?>.00</span></h5>
 <h6>Total Sale Amount</h6>
 </div>
 </div>
@@ -60,7 +61,7 @@
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count">
 <div class="dash-counts">
-<h4>100</h4>
+<h4><?php echo $count_customer;?></h4>
 <h5>Customers</h5>
 </div>
 <div class="dash-imgs">
@@ -73,7 +74,7 @@
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das1">
 <div class="dash-counts">
-<h4>100</h4>
+<h4><?php echo $count_supplier;?></h4>
 <h5>Suppliers</h5>
 </div>
 <div class="dash-imgs">
@@ -86,7 +87,7 @@
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das2">
 <div class="dash-counts">
-<h4>100</h4>
+<h4><?php echo $count_po;?></h4>
 <h5>Purchase Invoice</h5>
 </div>
 <div class="dash-imgs">
@@ -99,7 +100,7 @@
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das3">
 <div class="dash-counts">
-<h4>105</h4>
+<h4><?php echo $count_so;?></h4>
 <h5>Sales Invoice</h5>
 </div>
 <div class="dash-imgs">
@@ -148,6 +149,7 @@
 </div>
 </div>
 </div>
+
 <div class="col-lg-5 col-sm-12 col-12 d-flex">
 <div class="card flex-fill">
 <div class="card-header pb-0 d-flex justify-content-between align-items-center">
@@ -158,10 +160,10 @@
 </a>
 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 <li>
-<a href="productlist.html" class="dropdown-item">Product List</a>
+<a href="../products/productlist.php" class="dropdown-item">Product List</a>
 </li>
 <li>
-<a href="addproduct.html" class="dropdown-item">Product Add</a>
+<a href="../products/addproduct.php" class="dropdown-item">Product Add</a>
 </li>
 </ul>
 </div>
@@ -177,16 +179,31 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>1</td>
-<td class="productimgname">
-<a href="productlist.html" class="product-img">
-<img src="../assets/img/product/product22.jpg" alt="product">
-</a>
-<a href="productlist.html">Apple Earpods</a>
-</td>
-<td>$891.2</td>
-</tr>
+
+<?php
+
+if ($products->num_rows > 0) {
+    while ($row = $products->fetch_assoc()) {
+     echo '<tr>
+      <td>'.$row['id'].'</td>
+      <td class="productimgname">
+      <a href="#" class="product-img">
+      <img src="../assets/img/product/noimage.png" alt="product">
+      </a>
+      <a href="productlist.html">'.$row['productname'].'</a>
+      </td>
+      <td>Rs. '.$row['sellingprice'].'</td>
+      </tr>';
+    }
+} else {
+    echo "No products found";
+}
+
+
+?>
+
+
+<!-- 
 <tr>
 <td>2</td>
 <td class="productimgname">
@@ -216,13 +233,15 @@
 <a href="productlist.html">Macbook Pro</a>
 </td>
 <td>$291.01</td>
-</tr>
+</tr> -->
+
 </tbody>
 </table>
 </div>
 </div>
 </div>
 </div>
+
 </div>
 
 
@@ -236,19 +255,32 @@
 <th>Sales Code</th>
 <th>Customer Name</th>
 <th>Date</th>
-<th>Grand Total</th>
-<th>Amount Paid</th>
+<th>Email</th>
+<th>Phone</th>
 </tr>
 </thead>
 <tbody>
 
-<tr>
-<td>23423</td>
-<td><a href="javascript:void(0);">Gimna Katugampala</a></td>
-<td>N/D</td>
-<td>Fruits</td>
-<td>12-12-2022</td>
-</tr>
+<?php
+
+if ($pendingorders->num_rows > 0) {
+    while ($row = $pendingorders->fetch_assoc()) {
+     echo '<tr>
+     <td>'.$row['socode'].'</td>
+     <td><a href="javascript:void(0);">'.$row['cusname'].'</a></td>
+     <td>'.$row['created_date'].'</td>
+     <td>'.$row['cusemail'].'</td>
+     <td>'.$row['cusphone'].'</td>
+     </tr>';
+    }
+} else {
+    echo "No Orders found";
+}
+
+
+?>
+
+
 
 
 </tbody>
