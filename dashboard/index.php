@@ -266,6 +266,10 @@ if ($pendingorders->num_rows > 0) {
 </div>
 </div>
 
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="../assets/js/dashboardchart.js"></script>
+
 
 
 <?php require_once '../includes/footer.php' ?>
