@@ -72,7 +72,7 @@ if (!isset($_SESSION['username'])) {
         
         <ul class="nav user-menu">
         
-        <li class="nav-item">
+        <!-- <li class="nav-item">
         <div class="top-nav-search">
         <a href="javascript:void(0);" class="responsive-search">
         <i class="fa fa-search"></i>
@@ -88,11 +88,11 @@ if (!isset($_SESSION['username'])) {
         </form>
         </div>
         </li>
-        
+         -->
         
     
         
-        
+<!--         
         <li class="nav-item dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
         <img src="../assets/img/icons/notification-bing.svg" alt="img"> <span class="badge rounded-pill">4</span>
@@ -175,7 +175,7 @@ if (!isset($_SESSION['username'])) {
         <a href="../activities/activities.php">View all Notifications</a>
         </div>
         </div>
-        </li>
+        </li> -->
         
         <li class="nav-item dropdown has-arrow main-drop">
         <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">

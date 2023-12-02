@@ -580,9 +580,9 @@
         <li>
         <a href="../utils/pdf_maker.php?MST_ID=<?php echo $row["socode"];?>&ACTION=DOWNLOAD&TYPE=SO" class="dropdown-item"><img src="../assets/img/icons/download.svg" class="me-2" alt="img">Download Invoice</a>
         </li>
-        <li>
+        <!-- <li>
         <a href="javascript:void(0);" class="dropdown-item cancel-sale"><img src="../assets/img/icons/delete1.svg" class="me-2" alt="img">Cancel Sale</a>
-        </li>
+        </li> -->
         <!-- <li>
         <a href="javascript:void(0);" class="dropdown-item complete-sale"><i class="far fa-check-circle fa-lg mx-1"></i> Complete Sale</a>
         </li> -->
