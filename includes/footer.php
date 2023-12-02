@@ -1,5 +1,8 @@
 <script src="../assets/js/jquery-3.6.0.min.js"></script>
 
+<!-- <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script> -->
+
 
 <script src="../assets/js/feather.min.js"></script>
 
@@ -24,6 +27,7 @@
 <script src="../assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
 <script src="../assets/js/script.js"></script>
+<!-- <script src="../assets/js/dashboardchart.js"></script> -->
 
 <script src="../assets/js/addbrand.js"></script>
 <script src="../assets/js/brandlist.js"></script>

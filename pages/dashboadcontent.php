@@ -10,6 +10,7 @@
     $total_po = array();
     $total_por = array();
     $total_sor = array();
+    $chart_data = array();
     
 
      // Total Sales Order Return Amount
@@ -133,6 +134,8 @@
     //   Pending Sales
     $sql = "SELECT * FROM tbsalesorder INNER JOIN tbcustomer ON  tbsalesorder.cusid = tbcustomer.id WHERE isquotation=0 AND sid=2 ORDER BY created_date DESC LIMIT 4 ";
     $pendingorders = $conn->query($sql);
+
+    
 
 
 

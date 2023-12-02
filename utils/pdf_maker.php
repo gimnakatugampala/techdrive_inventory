@@ -2914,6 +2914,8 @@ if($TYPE == "SO"){
 	$EMAIL_TYPE = "Purchase Order Return Invoice";
 }
 
+$EMAIL_STATS=null;
+
 // SEND INVOICE IN THE EMAIL
 $email_invoice_path=$file_location.$file_name; require_once '../utils/send_email.php';
 

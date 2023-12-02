@@ -563,7 +563,11 @@ $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
 
     $mail->send();
     
-    echo 'success';
+    // echo 'success';
+    echo '<script>window.history.back();</script>';
+    exit;
+
+
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

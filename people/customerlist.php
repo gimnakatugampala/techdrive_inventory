@@ -98,7 +98,7 @@
                     <td><?php echo  $row["cusemail"]; ?></td>
 
                     <td>
-                        <a class='me-3 btnedit'data-customer-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+                        <a class='me-3 btnedit' data-customer-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
                         <a class='me-3 btn-delete' data-customer-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a>
                     </td>
                 <?php endforeach; ?>
