@@ -31,14 +31,9 @@ $(document).ready(function () {
       success: function (data) {
 
         // ---------------
-        let found;
-        if(pro_qty.length > 0){
-           found = pro_qty.some(el => el.id === productId);
-        }else{
-          found = false;
-        }
+        let foundSales = pro_qty.some(product => product.id == productId);
 
-          if(found){
+          if(foundSales){
 
             Swal.fire({
               icon: "error",
@@ -48,8 +43,9 @@ $(document).ready(function () {
             return
 
           }else{
-            populateTable(data);
+            populateTableSales(data);
             pro_qty.push(data[0])
+            return
           }
 
         // ---------------
@@ -58,7 +54,7 @@ $(document).ready(function () {
     });
 
     // Get All the Sales List
-    function populateTable(data) {
+    function populateTableSales(data) {
       data.forEach(function (plist) {
         var row = $("<tr>");
         row.append("<td style='display:none;'>" + plist.id + "</td>");
@@ -78,7 +74,7 @@ $(document).ready(function () {
         );
         row.append("<td class='text-end total'></td>");
         row.append(
-          "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+          "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
         );
         tableBody.append(row);
 
@@ -437,7 +433,32 @@ $(document).ready(function () {
     $("#topaid").text("0.00");
   }
 
+  $("table.tbproductlist").on("click", ".deleteSaleProduct", function () {
+    var listItem = $(this).data('id');
+    console.log(listItem)
 
+    let indexToRemove = pro_qty.findIndex(item => item.id == listItem);
+
+    if (indexToRemove !== -1) {
+      pro_qty.splice(indexToRemove, 1);
+    }
+
+    // Items Array
+    let indexToRemoveItems = items.findIndex(item => item.id == listItem);
+
+    if (indexToRemoveItems !== -1) {
+      items.splice(indexToRemoveItems, 1);
+    }
+
+  console.log(pro_qty)
+  console.log(items)
+
+    $(this).closest('tr').remove();;
+
+  })
+
+  
 
 
 });
+

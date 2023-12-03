@@ -42,27 +42,27 @@
 <script src="../assets/js/addproduct.js"></script>
 <script src="../assets/js/productlist.js"></script>
 <script src="../assets/js/editproduct.js"></script>
-<script src="../assets/js/addpurchase.js"></script>
-<script src="../assets/js/addsale.js"></script>
+<!-- <script src="../assets/js/addsale.js"></script> -->
+<!-- <script src="../assets/js/addpurchase.js"></script> -->
 <script src="../assets/js/purchaselist.js"></script>
 <script src="../assets/js/salelist.js"></script>
 <script src="../assets/js/pendingsaleslist.js"></script>
 <script src="../assets/js/canceledsaleslist.js"></script>
 <script src="../assets/js/completedsaleslist.js"></script>
-<script src="../assets/js/editpurchase.js"></script>
+<!-- <script src="../assets/js/editpurchase.js"></script> -->
 
-<script src="../assets/js/editsales.js"></script>
+<!-- <script src="../assets/js/editsales.js"></script> -->
 
-<script src="../assets/js/addsalesreturn.js"></script>
-<script src="../assets/js/editsalesreturn.js"></script>
+<!-- <script src="../assets/js/addsalesreturn.js"></script> -->
+<!-- <script src="../assets/js/editsalesreturn.js"></script> -->
 <script src="../assets/js/salesreturnlist.js"></script>
 
-<script src="../assets/js/addpurchasereturn.js"></script>
+<!-- <script src="../assets/js/addpurchasereturn.js"></script> -->
 <script src="../assets/js/purchasereturnlist.js"></script>
-<script src="../assets/js/editpurchasereturn.js"></script>
+<!-- <script src="../assets/js/editpurchasereturn.js"></script> -->
 
-<script src="../assets/js/addquotation.js"></script>
-<script src="../assets/js/editquotation.js"></script>
+<!-- <script src="../assets/js/addquotation.js"></script> -->
+<!-- <script src="../assets/js/editquotation.js"></script> -->
 <script src="../assets/js/quotationlist.js"></script>
 
 <script src="../assets/js/People/addcustomer.js"></script>

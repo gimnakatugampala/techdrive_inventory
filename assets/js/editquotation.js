@@ -47,21 +47,29 @@ $(document).ready(function () {
         dataType: "json",
         success: function (data) {
 
-          const found = loadData.Productlists.some(el => el.pid === productId);
-
-          if(found){
-
+       
+          let foundSalesEditArrayone = loadData.Productlists.some(el => el.id == productId);
+          let foundSalesEditArraytwo = pro_qty.some(product => product.id == productId);
+  
+          let result = foundSalesEditArrayone || foundSalesEditArraytwo;
+  
+    
+          console.log(loadData.Productlists)
+  
+          if(result){
+  
             Swal.fire({
               icon: "error",
               title: "Error",
               text: "Product Already Exist",
             });
             return
-
+  
           }else{
             populateTable(data);
             pro_qty.push(data[0])
           }
+  
        
         },
         error: function () {},
@@ -88,7 +96,7 @@ $(document).ready(function () {
           );
           row.append("<td class='text-end total'></td>");
           row.append(
-            "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+            "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
           );
           tableBody.append(row);
 
@@ -473,7 +481,7 @@ $(document).ready(function () {
           );
           row.append(`<td class='text-end total'>${parseFloat(plist.price) * parseFloat(plist.QTY) - parseFloat(plist.discount)}</td>`);
           row.append(
-            "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+            "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
           );
           tableBody.append(row);
 
@@ -498,7 +506,36 @@ $(document).ready(function () {
 
     }
 
-    
+    $("table.tbproductlist").on("click", ".deleteSaleProduct", function () {
+      var listItem = $(this).data('id');
+  
+      
+      console.log(listItem)
+  
+      // Items Array
+      let indexToRemoveLoadItems = loadData.Productlists.findIndex(item => item.id == listItem);
+  
+      if (indexToRemoveLoadItems !== -1) {
+        loadData.Productlists.splice(indexToRemoveLoadItems, 1);
+      }
+  
+  
+      let indexToRemove = pro_qty.findIndex(item => item.id == listItem);
+  
+      if (indexToRemove !== -1) {
+        pro_qty.splice(indexToRemove, 1);
+      }
+  
+  
+  
+    console.log(pro_qty)
+    console.log(items)
+    console.log(loadData.Productlists)
+  
+      $(this).closest('tr').remove();;
+  
+    })
+  
 
   
   

@@ -6,10 +6,10 @@ $dbname = "db_techdrive";
 
 
 // // Server Cred
-// $servername = "sql108.infinityfree.com";
-// $username = "if0_34939366";
-// $password = "iH1nRWLZ8sr";
-// $dbname = "if0_34939366_db_techdrive";
+// $servername = "sql200.infinityfree.com";
+// $username = "if0_35548233";
+// $password = "btv1OaODZsK";
+// $dbname = "if0_35548233_db_techdrive";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

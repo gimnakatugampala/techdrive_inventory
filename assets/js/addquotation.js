@@ -31,26 +31,21 @@ $(document).ready(function () {
         success: function (data) {
           
          // ---------------
-         let found;
-         if(pro_qty.length > 0){
-            found = pro_qty.some(el => el.id === productId);
+         let foundQuotation = pro_qty.some(product => product.id === productId);
+
+         if(foundQuotation){
+
+           Swal.fire({
+             icon: "error",
+             title: "Error",
+             text: "Product Already Exist",
+           });
+           return
+
          }else{
-           found = false;
+           populateTable(data);
+           pro_qty.push(data[0])
          }
- 
-           if(found){
- 
-             Swal.fire({
-               icon: "error",
-               title: "Error",
-               text: "Product Already Exist",
-             });
-             return
- 
-           }else{
-             populateTable(data);
-             pro_qty.push(data[0])
-           }
  
          // ---------------
         },
@@ -77,7 +72,7 @@ $(document).ready(function () {
           );
           row.append("<td class='text-end total'></td>");
           row.append(
-            "<td><a class='delete-set'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+            "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
           );
           tableBody.append(row);
   
@@ -370,10 +365,28 @@ $(document).ready(function () {
       $("#topaid").text("0.00");
     }
   
-    // $(document).on("click", ".delete-set", function () {
-    //   $(this).parent().parent().hide();
-    //   calculateTotal();
+    $("table.tbproductlist").on("click", ".deleteSaleProduct", function () {
+      var listItem = $(this).data('id');
+      console.log(listItem)
   
-    // });
+      let indexToRemove = pro_qty.findIndex(item => item.id == listItem);
+  
+      if (indexToRemove !== -1) {
+        pro_qty.splice(indexToRemove, 1);
+      }
+  
+      // Items Array
+      let indexToRemoveItems = items.findIndex(item => item.id == listItem);
+  
+      if (indexToRemoveItems !== -1) {
+        items.splice(indexToRemoveItems, 1);
+      }
+  
+    console.log(pro_qty)
+    console.log(items)
+  
+      $(this).closest('tr').remove();;
+  
+    })
   });
   

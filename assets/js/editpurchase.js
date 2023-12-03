@@ -8,8 +8,7 @@ $(document).ready(function () {
      // Get The Load Data
      let loadData;
 
-    var items = [];
-    var pro_qty = [];
+
 
    // Get The Code From URL
    const urlParams = new URLSearchParams(window.location.search);
@@ -28,6 +27,9 @@ $(document).ready(function () {
     $("#topaid").text(t.toFixed(2));
   });
 
+  var items = [];
+  var pro_qty = [];
+
   dropdown.addEventListener("change", function () {
     var productId = dropdown.value;
 
@@ -41,21 +43,28 @@ $(document).ready(function () {
       data: { productId: productId },
       dataType: "json",
       success: function (data) {
-        const found = loadData.Productlists.some(el => el.product_id == productId);
+        
+        let foundSalesEditArrayone = loadData.Productlists.some(el => el.product_id == productId);
+        let foundSalesEditArraytwo = pro_qty.some(product => product.id == productId);
 
-            if(found){
+        let result = foundSalesEditArrayone || foundSalesEditArraytwo;
+
   
-              Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "Product Already Exist",
-              });
-              return
-  
-            }else{
-              populateTable(data);
-              pro_qty.push(data[0])
-            }
+        console.log(loadData.Productlists)
+
+        if(result){
+
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Product Already Exist",
+          });
+          return
+
+        }else{
+          populateTable(data);
+          pro_qty.push(data[0])
+        }
 
       },
       error: function () {},
@@ -81,7 +90,7 @@ $(document).ready(function () {
         );
         row.append("<td class='text-end total'></td>");
         row.append(
-          "<td><a class='delete-set'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+          "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
         );
         tableBody.append(row);
 
@@ -561,7 +570,7 @@ $(document).ready(function () {
         );
         row.append(`<td class='text-end total'>${parseFloat(plist.price) * parseFloat(plist.QTY) - parseFloat(plist.discount)}</td>`);
         row.append(
-          "<td><a class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
+          "<td><a data-id="+plist.id+" class='deleteSaleProduct'><img src='../assets/img/icons/delete.svg' alt='svg'></a></td>"
         );
         tableBody.append(row);
 
@@ -585,7 +594,36 @@ $(document).ready(function () {
     });
   }
 
-  
+  $("table.tbproductlist").on("click", ".deleteSaleProduct", function () {
+    var listItem = $(this).data('id');
+
+    
+    console.log($(this))
+
+    // Items Array
+    let indexToRemoveLoadItems = loadData.Productlists.findIndex(item => item.product_id == listItem);
+
+    if (indexToRemoveLoadItems !== -1) {
+      loadData.Productlists.splice(indexToRemoveLoadItems, 1);
+    }
+
+
+    let indexToRemove = pro_qty.findIndex(item => item.id == listItem);
+
+    if (indexToRemove !== -1) {
+      pro_qty.splice(indexToRemove, 1);
+    }
+
+
+
+  console.log(pro_qty)
+  console.log(items)
+  console.log(loadData.Productlists)
+
+    $(this).closest('tr').remove();;
+
+  })
+
 
 });
 

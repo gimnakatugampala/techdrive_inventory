@@ -89,9 +89,9 @@ $(document).ready(function () {
   }
 
   // Fetch data from the server
-  // $.getJSON("../pages/saleslist.php", function (data) {
-  //   populateTable(data);
-  // });
+  $.getJSON("../pages/saleslist.php", function (data) {
+    populateTable(data);
+  });
 
   $("table.saleslist").on("click", ".btnedit", function () {
     // var poid = $(this).data("saleli-id");
