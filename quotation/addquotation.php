@@ -117,11 +117,11 @@
                             <h4>Paid Amount</h4>
                             <h5 id="paid">0.00</h5>
                         </li>
-                        <li style="display:none;">
-                            <h4>discount</h4>
+                        <li>
+                            <h4>Discount</h4>
                             <h5 id="dis">0.00</h5>
                         </li>
-                        <li class="total">
+                        <li style="display:none;" class="total">
                             <h4>To Be Paid</h4>
                             <h5 id="topaid">0.00</h5>
                         </li>

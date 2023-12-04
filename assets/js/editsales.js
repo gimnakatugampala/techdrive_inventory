@@ -661,7 +661,11 @@ $(document).ready(function () {
 
       // ---------------------- CALCULATE -------------------------
 
-
+      if(items.length  == 0){
+        $("#grandTotal").text(0);
+        $("#dis").text(0);
+        $("#editsales-grandTotal").text(0);
+      }
 
     console.log(pro_qty)
     console.log(items)
