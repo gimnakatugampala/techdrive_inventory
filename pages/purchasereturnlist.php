@@ -3,7 +3,7 @@ require_once '../includes/db_config.php';
 
 $sql = 'SELECT * FROM tbpurchaseorderreturn 
 JOIN  tbsupplier ON tbpurchaseorderreturn.supid = tbsupplier.id
-JOIN tbpurchaseorderreturninvoice ON tbpurchaseorderreturn.id = tbpurchaseorderreturninvoice.porid WHERE tbpurchaseorderreturn.sid != 4 ORDER BY tbpurchaseorderreturn.created_date DESC';
+JOIN tbpurchaseorderreturninvoice ON tbpurchaseorderreturn.id = tbpurchaseorderreturninvoice.porid WHERE tbpurchaseorderreturn.sid != 4 ORDER BY tbpurchaseorderreturn.generated_date DESC';
 $result = $conn->query( $sql );
 
 $porlist = array();

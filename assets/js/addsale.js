@@ -450,8 +450,10 @@ $(document).ready(function () {
       items.splice(indexToRemoveItems, 1);
     }
 
-  console.log(pro_qty)
-  console.log(items)
+  
+
+    console.log(pro_qty)
+    console.log(items)
 
     $(this).closest('tr').remove();;
 
