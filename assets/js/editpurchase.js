@@ -73,7 +73,7 @@ $(document).ready(function () {
     function populateTable(data) {
       data.forEach(function (plist) {
         var row = $("<tr>");
-        row.append("<td style='display:none;'>" + plist.id + "</td>");
+        row.append("<td class='rowID' style='display:none;'>" + plist.id + "</td>");
         row.append("<td>" + plist.productname + "</td>");
         row.append(
           "<td><input type='number' class='form-control quantity'  value=" +
@@ -96,6 +96,7 @@ $(document).ready(function () {
 
         // Add the new item to the items array
         const item = {
+          rowID: row.find(".rowID")[0],
           quantityInput: row.find(".quantity")[0],
           priceInput: row.find(".price")[0],
           discountInput: row.find(".discount")[0],
@@ -552,7 +553,7 @@ $(document).ready(function () {
       // Get The Product Order Item List
       data.Productlists.forEach(function (plist) {
         var row = $("<tr>");
-        row.append("<td style='display:none;'>" + plist.id + "</td>");
+        row.append("<td class='rowID' style='display:none;'>" + plist.id + "</td>");
         row.append("<td>" + plist.productname + "</td>");
         row.append(
           "<td><input type='number' class='form-control quantity'  value=" +
@@ -575,6 +576,7 @@ $(document).ready(function () {
         tableBody.append(row);
 
         var item = {
+          rowID: row.find(".rowID")[0],
           quantityInput: row.find(".quantity")[0],
           priceInput: row.find(".price")[0],
           discountInput: row.find(".discount")[0],
@@ -597,8 +599,6 @@ $(document).ready(function () {
   $("table.tbproductlist").on("click", ".deleteSaleProduct", function () {
     var listItem = $(this).data('id');
 
-    
-    console.log($(this))
 
     // Items Array
     let indexToRemoveLoadItems = loadData.Productlists.findIndex(item => item.product_id == listItem);
@@ -614,6 +614,55 @@ $(document).ready(function () {
       pro_qty.splice(indexToRemove, 1);
     }
 
+
+    // Items Array
+    let indexToRemoveItems = items.findIndex(item => item.rowID.innerText == listItem);
+
+    if (indexToRemoveItems !== -1) {
+      items.splice(indexToRemoveItems, 1);
+    }
+
+
+      // ----------------- CALCULATE -------------------------
+
+      var totalAmount = 0;
+      var to = 0;
+      var dis = 0;
+      items.forEach(function (item) {
+    
+        var quantity = parseFloat(item.quantityInput.value);
+        var price = parseFloat(item.priceInput.value);
+        var discount = parseFloat(item.discountInput.value);
+  
+        var itemTotal = quantity * price - discount;
+        item.totalCell.textContent = itemTotal.toFixed(2);
+        
+        totalAmount += itemTotal;
+        console.log(totalAmount)
+        // console.log(totalAmount + parseFloat(grandt))
+
+        document.getElementById("grandTotal").style.display = "none"
+        document.getElementById("editpo-grandTotal").style.display = "block"
+        document.getElementById("editpo-grandTotal").textContent = totalAmount 
+
+        dis += discount;
+  
+        to = totalAmount - parseFloat(paid.textContent);
+      });
+
+      // After Input On Input
+      $("#grandTotal").text(totalAmount.toFixed(2));
+      $("#editpo-grandTotal").text(totalAmount.toFixed(2));
+      $("#dis").text(dis.toFixed(2));
+      $("#topaid").text(to.toFixed(2));
+
+      // ----------------- CALCULATE -------------------------
+
+      if(items.length  == 0){
+        $("#grandTotal").text(0);
+        $("#dis").text(0);
+        $("#editsales-grandTotal").text(0);
+      }
 
 
   console.log(pro_qty)
