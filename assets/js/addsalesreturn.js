@@ -318,6 +318,10 @@ $(document).ready(function () {
 
       // ---------------- PRODUCT ITEM ADDED VALIDATION -----------------
 
+        // SHOW LOADING BTN
+        document.getElementById("SubmitBtnContainer").style.display = "none"
+        document.getElementById("btn-loading").style.display = "block"
+
        
   
         $.ajax({
@@ -348,12 +352,23 @@ $(document).ready(function () {
                 text: "Successfully added Sale Return",
               });
               clearAB();
+
+               // SHOW LOADING BTN
+            document.getElementById("SubmitBtnContainer").style.display = "block"
+            document.getElementById("btn-loading").style.display = "none"
+
+
             } else {
               Swal.fire({
                 icon: "error",
                 title: "Error",
                 text: "An error occurred while saving the data.",
               });
+
+              // SHOW LOADING BTN
+            document.getElementById("SubmitBtnContainer").style.display = "block"
+            document.getElementById("btn-loading").style.display = "none"
+            
             }
           },
         });
