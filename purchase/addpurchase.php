@@ -140,9 +140,18 @@
                 </div>
 
                 <!-- Submit and Cancel Buttons -->
-                <div class="col-lg-12">
+                <div id="SubmitBtnContainer"  class="col-lg-2 m-3">
                     <a class="btn btn-submit me-2" id="addProduct">Submit</a>
                 </div>
+
+                <div style="display: none;"  class="col-md-2 m-3" id="btn-loading">
+                <a class="btn btn-submit btn-sm me-2" >
+                    <div class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                    </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
