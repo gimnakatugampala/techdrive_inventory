@@ -121,10 +121,22 @@
 
 <div class="row">
 
-<div class="col-lg-12">
+<div id="SubmitBtnContainer"  class="col-lg-2">
 <a id="editPORBtn" class="btn btn-submit me-2">Update</a>
+</div>
+
+<div style="display: none;" class="col-lg-2" id="btn-loading">
+    <a class="btn btn-submit btn-sm me-1" >
+        <div class="spinner-border spinner-border-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+        </div>
+        </a>
+</div>
+
+<div class="col-lg-2">
 <a href="../return/purchasereturnlist.php" class="btn btn-cancel">Cancel</a>
 </div>
+
 </div>
 
 </div>
