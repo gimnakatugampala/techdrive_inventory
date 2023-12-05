@@ -175,7 +175,7 @@
                     <div class="col-lg-12 float-md-right">
                         <div class="total-order">
                             <ul>
-                            <li>
+                            <li >
                                     <h4>Total</h4>
                                     <h5 id="totalsub">0.00</h5>
                                 </li>
