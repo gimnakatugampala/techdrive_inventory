@@ -167,6 +167,10 @@ $(document).ready(function () {
       var topaid = parseFloat($("#topaid").text());
       var isPaid = "0";
       var completeddate = "";
+
+      if(paidAmount == "" && selectPS == "1" || isNaN(paidAmount) && selectPS == "1"){
+        paidAmount = 0
+      }
   
       $(".quantity").each(function () {
         var product = $(this).closest("tr").find("td:nth-child(1)").text();

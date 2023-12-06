@@ -142,6 +142,12 @@ $(document).ready(function () {
       var price = $(this).closest("tr").find(".price").val();
       var discount = $(this).closest("tr").find(".discount").val();
 
+      if(paidAmount == "" && selectPS == "1" || isNaN(paidAmount) && selectPS == "1"){
+        paidAmount = 0
+      }
+
+      console.log(paidAmount)
+
       data.push({
         product: product,
         quantity: quantity,
