@@ -19,8 +19,13 @@ $qrcode = time() . ".png";
 $qrcod_save_path = $path . $qrcode;
 
 // GENERATE SALES ORDER LINK
-$qr_link = $baseUrl . "/order/track.php?code=$socode";
 
+// DEVELOPMENT
+// $qr_link = $baseUrl . "/order/track.php?code=$socode";
+
+
+// PRODUCTION
+$qr_link = $baseUrl . "order/track.php?code=$socode";
 
 QRcode::png($qr_link, $qrcod_save_path, 'H', 4, 4);
 // echo "<img src='" . $qrcod_save_path . "'>";
