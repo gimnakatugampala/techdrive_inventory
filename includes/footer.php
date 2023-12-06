@@ -86,6 +86,7 @@
 <script src="../assets/js/productalllist/cmbpaidstatus.js"></script>
 <script src="../assets/js/productalllist/cmdstatus.js"></script>
 <script src="../assets/js/productalllist/cmdcustomer.js"></script>
+<!-- <script src="../assets/js/productalllist/cmbavilb.js"></script> -->
 
 
 

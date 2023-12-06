@@ -564,7 +564,9 @@ $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
     $mail->send();
     
     echo 'success';
-    // echo '<script>window.history.back();</script>';
+    if($EMAIL_STATS == null){
+      echo '<script>window.history.back();</script>';
+    }
     // exit;
 
 

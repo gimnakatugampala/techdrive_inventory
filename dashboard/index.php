@@ -58,7 +58,7 @@
 </div>
 
 
-<div class="col-lg-3 col-sm-6 col-12 d-flex">
+<a  href="../people/customerlist.php" class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count">
 <div class="dash-counts">
 <h4><?php echo $count_customer;?></h4>
@@ -68,10 +68,10 @@
 <i data-feather="user"></i>
 </div>
 </div>
-</div>
+</a>
 
 
-<div class="col-lg-3 col-sm-6 col-12 d-flex">
+<a href="../people/supplierlist.php" class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das1">
 <div class="dash-counts">
 <h4><?php echo $count_supplier;?></h4>
@@ -81,10 +81,10 @@
 <i data-feather="user-check"></i>
 </div>
 </div>
-</div>
+</a>
 
 
-<div class="col-lg-3 col-sm-6 col-12 d-flex">
+<a href="../purchase/purchaselist.php" class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das2">
 <div class="dash-counts">
 <h4><?php echo $count_po;?></h4>
@@ -94,10 +94,10 @@
 <i data-feather="file-text"></i>
 </div>
 </div>
-</div>
+</a>
 
 
-<div class="col-lg-3 col-sm-6 col-12 d-flex">
+<a href="../sales/saleslist.php" class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das3">
 <div class="dash-counts">
 <h4><?php echo $count_so;?></h4>
@@ -107,7 +107,7 @@
 <i data-feather="file"></i>
 </div>
 </div>
-</div>
+</a>
 
 
 </div>

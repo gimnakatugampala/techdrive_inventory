@@ -130,7 +130,7 @@
          <td><?php echo  $row["quantity"]; ?></td>
          <td><?php echo  $row["sellingprice"]; ?></td>
          <td>
-            <a class='me-3 btnedit'data-productlist-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
+            <a class='me-3 btnedit' data-warrenty='<?php echo  $row["warrenty"]; ?>' data-buyingprice='<?php echo  $row["buyingprice"]; ?>' data-sellingprice='<?php echo  $row["sellingprice"]; ?>' data-avlid='<?php echo  $row["avlid"]; ?>' data-minqty='<?php echo  $row["minquanity"]; ?>' data-bid='<?php echo  $row["bid"]; ?>' data-scatid='<?php echo  $row["scatid"]; ?>'  data-catid='<?php echo  $row["catid"]; ?>' data-productlist-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a>
              <a class='me-3 btn-delete' data-productlist-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a>
          </td>
         </tr>

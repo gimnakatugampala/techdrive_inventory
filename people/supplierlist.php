@@ -97,7 +97,7 @@
     <td><?php echo  $row["supphone"]; ?></td>
     <td><?php echo  $row["supemail"]; ?></td>
 
-    <td><a class='me-3 btnedit'data-supplier-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-supplier-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>
+    <td><a class='me-3 btnedit' data-address="<?php echo $row["supaddress"]; ?>" data-email="<?php echo $row["supemail"]; ?>" data-supplier-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/edit.svg' alt='img'></a><a class='me-3 btn-delete' data-supplier-id='<?php echo  $row["id"]; ?>'><img src='../assets/img/icons/delete.svg' alt='img'></a></td>
     </tr>
 <?php endforeach; ?>
 

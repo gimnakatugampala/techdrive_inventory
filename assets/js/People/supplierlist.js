@@ -28,10 +28,10 @@ $(document).ready(function () {
 
   $("table.supplierlist").on("click", ".btnedit", function () {
     var supid = $(this).data("supplier-id");
+    var supemail = $(this).data("email");
+    var supaddress = $(this).data("address");
     var supname = $(this).closest("tr").find("td:nth-child(1)").text();
-    var supemail = $(this).closest("tr").find("td:nth-child(2)").text();
     var supphone = $(this).closest("tr").find("td:nth-child(3)").text();
-    var supaddress = $(this).closest("tr").find("td:nth-child(4)").text();
 
     window.location.href =
       "editsupplier.php?supid=" +

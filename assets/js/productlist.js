@@ -48,19 +48,26 @@ $(document).ready(function () {
 
   $("table.tbplist").on("click", ".btnedit", function () {
     var pid = $(this).data("productlist-id");
+    var catid = $(this).data("catid");
+    var scatid = $(this).data("scatid");
+    var bid = $(this).data("bid");
+    var minquanity = $(this).data("minqty");
+    var quantity = $(this).closest("tr").find("td:nth-child(7)").text();
+    var avlid = $(this).data("avlid");
     var productname = $(this).closest("tr").find("td:nth-child(1)").text();
-    var minquanity = $(this).closest("tr").find("td:nth-child(2)").text();
-    var warrenty = $(this).closest("tr").find("td:nth-child(3)").text();
+    var warrenty = $(this).data("warrenty");
     var catname = $(this).closest("tr").find("td:nth-child(4)").text();
     var subcatname = $(this).closest("tr").find("td:nth-child(5)").text();
     var brandname = $(this).closest("tr").find("td:nth-child(6)").text();
-    var buyingprice = $(this).closest("tr").find("td:nth-child(7)").text();
-    var avlid = $(this).closest("tr").find("td:nth-child(8)").text();
-    var quantity = $(this).closest("tr").find("td:nth-child(10)").text();
-    var sellingprice = $(this).closest("tr").find("td:nth-child(11)").text();
-    var catid = $(this).closest("tr").find("td:nth-child(12)").text();
-    var scatid = $(this).closest("tr").find("td:nth-child(13)").text();
-    var bid = $(this).closest("tr").find("td:nth-child(14)").text();
+    
+    
+    var buyingprice = $(this).data("buyingprice");
+    var sellingprice = $(this).data("sellingprice");
+    
+    
+    console.log(avlid)
+
+  
 
     window.location.href =
       "editproduct.php?pid=" +

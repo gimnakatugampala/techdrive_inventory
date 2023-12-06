@@ -28,10 +28,10 @@ $(document).ready(function () {
 
   $("table.customerlist").on("click", ".btnedit", function () {
     var cusid = $(this).data("customer-id");
+    var cusemail = $(this).data("email");
+    var cusaddress = $(this).data("address");
     var cusname = $(this).closest("tr").find("td:nth-child(1)").text();
-    var cusemail = $(this).closest("tr").find("td:nth-child(2)").text();
     var cusphone = $(this).closest("tr").find("td:nth-child(3)").text();
-    var cusaddress = $(this).closest("tr").find("td:nth-child(4)").text();
 
     window.location.href =
       "editcustomer.php?cusid=" +
