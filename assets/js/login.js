@@ -24,9 +24,11 @@ $(document).ready(function () {
           password: password,
         },
         success: function (response) {
-
           if (response === "success") {
+
             window.location.href = "../dashboard";
+
+
           } else {
             Swal.fire({
                 icon: "error",

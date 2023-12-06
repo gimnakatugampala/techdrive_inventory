@@ -31,7 +31,7 @@ $Url = "{$protocol}://{$host}" . dirname($_SERVER['PHP_SELF'], 2);
     $mail->Port       = 465;
 
     $mail->setFrom('gimnakatugampala12345@gmail.com');
-    $mail->addAddress('gimnakatugampala1@gmail.com');   // $MAIN_EMAIL
+    $mail->addAddress($MAIN_EMAIL);   // 'gimnakatugampala1@gmail.com'
     $mail->addAttachment($email_invoice_path);   
     
     if($EMAIL_STATS == "INPROGRESS"){
