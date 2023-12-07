@@ -13,10 +13,7 @@ require_once '../includes/db_config.php';
     }
 
     // Total Sales Order Amount
-    $sql = "SELECT tbsalesorder.id, SUM(tbinvoice.grandtotal) AS total_so
-    FROM tbsalesorder
-    INNER JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.sid = 1 AND tbsalesorder.isquotation =0
-    GROUP BY tbsalesorder.id";
+    $sql = "SELECT SUM(grandtotal) AS total_so FROM tbinvoice WHERE isSuccess=1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -28,10 +25,7 @@ require_once '../includes/db_config.php';
 
 
       // Total Purchase Order Amount
-      $sql = "SELECT tbpurchaseorder.id, SUM(tbpurchaseinvoice.grandtotal) AS total_po
-      FROM tbpurchaseorder
-      INNER JOIN tbpurchaseinvoice ON tbpurchaseorder.id = tbpurchaseinvoice.poid WHERE tbpurchaseorder.statusid = 1 AND tbpurchaseinvoice.isSuccess = 1
-      GROUP BY tbpurchaseorder.id";
+      $sql = "SELECT SUM(grandtotal) AS total_po FROM tbpurchaseinvoice WHERE isSuccess = 1";
       $result = $conn->query($sql);
   
       if ($result->num_rows > 0) {

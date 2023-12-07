@@ -14,11 +14,8 @@
     
 
      // Total Sales Order Return Amount
-     $sql = "SELECT tbsalesorderreturn.id, SUM(tbsalesreturninvoice.grandtotal) AS total_sor
-     FROM tbsalesorderreturn
-     INNER JOIN tbsalesreturninvoice ON tbsalesorderreturn.id = tbsalesreturninvoice.salesorid WHERE tbsalesorderreturn.sid = 1 AND tbsalesreturninvoice.isSuccess =1
-     GROUP BY tbsalesorderreturn.id";
-     $result = $conn->query($sql);
+     $sql1 = "SELECT SUM(grandtotal) AS total_sor FROM tbsalesreturninvoice WHERE isSuccess =1";
+     $result = $conn->query($sql1);
  
      if ($result->num_rows > 0) {
          // Fetch the result as an associative array
@@ -29,11 +26,8 @@
      }
 
     // Total Purchase Order Return Amount
-    $sql = "SELECT tbpurchaseorderreturn.id, SUM(tbpurchaseorderreturninvoice.grandtotal) AS total_por
-    FROM tbpurchaseorderreturn
-    INNER JOIN tbpurchaseorderreturninvoice ON tbpurchaseorderreturn.id = tbpurchaseorderreturninvoice.porid
-    WHERE tbpurchaseorderreturninvoice.isSuccess = 1 AND tbpurchaseorderreturn.sid = 1 GROUP BY tbpurchaseorderreturn.id";
-    $result = $conn->query($sql);
+    $sql2 = "SELECT SUM(grandtotal) AS total_por FROM tbpurchaseorderreturninvoice WHERE isSuccess = 1";
+    $result = $conn->query($sql2);
 
     if ($result->num_rows > 0) {
         // Fetch the result as an associative array
@@ -45,11 +39,8 @@
 
 
     // Total Purchase Order Amount
-    $sql = "SELECT tbpurchaseorder.id, SUM(tbpurchaseinvoice.grandtotal) AS total_po
-    FROM tbpurchaseorder
-    INNER JOIN tbpurchaseinvoice ON tbpurchaseorder.id = tbpurchaseinvoice.poid WHERE tbpurchaseorder.statusid = 1 AND tbpurchaseinvoice.isSuccess = 1
-    GROUP BY tbpurchaseorder.id";
-    $result = $conn->query($sql);
+    $sql3 = "SELECT SUM(grandtotal) AS total_po FROM tbpurchaseinvoice WHERE isSuccess = 1";
+    $result = $conn->query($sql3);
 
     if ($result->num_rows > 0) {
         // Fetch the result as an associative array
@@ -61,11 +52,8 @@
    
 
     // Total Sales Order Amount
-    $sql = "SELECT tbsalesorder.id, SUM(tbinvoice.grandtotal) AS total_so
-    FROM tbsalesorder
-    INNER JOIN tbinvoice ON tbsalesorder.id = tbinvoice.soid WHERE tbsalesorder.sid = 1 AND tbsalesorder.isquotation =0
-    GROUP BY tbsalesorder.id";
-    $result = $conn->query($sql);
+    $sql4 = "SELECT SUM(grandtotal) AS total_so FROM tbinvoice WHERE isSuccess=1";
+    $result = $conn->query($sql4);
 
     if ($result->num_rows > 0) {
         // Fetch the result as an associative array
@@ -77,8 +65,8 @@
 
 
     // Customer Table
-    $sql = "SELECT COUNT(*) as count_cus FROM tbcustomer WHERE isdeleted=0";
-    $result = $conn->query($sql);
+    $sql5 = "SELECT COUNT(*) as count_cus FROM tbcustomer WHERE isdeleted=0";
+    $result = $conn->query($sql5);
 
     if ($result->num_rows > 0) {
         // Fetch the result as an associative array
@@ -90,8 +78,8 @@
 
 
      // Supplier Table
-     $sql = "SELECT COUNT(*) as count_sup FROM tbsupplier WHERE isdeleted=0";
-     $result = $conn->query($sql);
+     $sql6 = "SELECT COUNT(*) as count_sup FROM tbsupplier WHERE isdeleted=0";
+     $result = $conn->query($sql6);
  
      if ($result->num_rows > 0) {
          // Fetch the result as an associative array
@@ -102,8 +90,8 @@
      }
 
       // Purchase Order Table
-      $sql = "SELECT COUNT(*) as count_po FROM tbpurchaseorder";
-      $result = $conn->query($sql);
+      $sql7 = "SELECT COUNT(*) as count_po FROM tbpurchaseorder";
+      $result = $conn->query($sql7);
   
       if ($result->num_rows > 0) {
           // Fetch the result as an associative array
@@ -115,8 +103,8 @@
 
 
       // Sales Order Table
-      $sql = "SELECT COUNT(*) as count_so FROM tbsalesorder WHERE isquotation=0";
-      $result = $conn->query($sql);
+      $sql8 = "SELECT COUNT(*) as count_so FROM tbsalesorder WHERE isquotation=0";
+      $result = $conn->query($sql8);
   
       if ($result->num_rows > 0) {
           // Fetch the result as an associative array
@@ -127,13 +115,13 @@
       }
 
     //   Recently Product Only 4
-      $sql = "SELECT * FROM tbproduct WHERE isdeleted=0 ORDER BY adddate DESC LIMIT 4 ";
-      $products = $conn->query($sql);
+      $sql9 = "SELECT * FROM tbproduct WHERE isdeleted=0 ORDER BY adddate DESC LIMIT 4 ";
+      $products = $conn->query($sql9);
   
 
     //   Pending Sales
-    $sql = "SELECT * FROM tbsalesorder INNER JOIN tbcustomer ON  tbsalesorder.cusid = tbcustomer.id WHERE isquotation=0 AND sid=2 ORDER BY created_date DESC LIMIT 4 ";
-    $pendingorders = $conn->query($sql);
+    $sql10 = "SELECT * FROM tbsalesorder INNER JOIN tbcustomer ON  tbsalesorder.cusid = tbcustomer.id WHERE isquotation=0 AND sid=2 ORDER BY created_date DESC LIMIT 4 ";
+    $pendingorders = $conn->query($sql10);
 
     
 
