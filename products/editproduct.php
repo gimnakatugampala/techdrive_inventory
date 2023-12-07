@@ -81,8 +81,8 @@ value = "<?php echo htmlspecialchars($_GET['quantity']); ?>">
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Availablity</label>
-<select class="form-select" id="Availablity">
-<option value="1">In Stock</option>
+<select  class="form-select" id="Availablity">
+<option  value="1">In Stock</option>
 <option value="2">Out of Stock</option>
 </select>
 </div>

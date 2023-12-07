@@ -80,7 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (avlid === 1) {
+  // console.log(avlid)
+  if (avlid == 1) {
     cmbavailablity.value = "1";
   } else {
     cmbavailablity.value = "2";
