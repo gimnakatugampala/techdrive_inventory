@@ -5,11 +5,11 @@ $password = "";
 $dbname = "db_techdrive";
 
 
-// // Server Cred
-// $servername = "sql200.infinityfree.com";
-// $username = "if0_35548233";
-// $password = "btv1OaODZsK";
-// $dbname = "if0_35548233_db_techdrive";
+// Server Cred
+// $servername = "localhost";
+// $username = "autoserv_root";
+// $password = "PBh*n[{iR9Gs";
+// $dbname = "autoserv_inventory";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

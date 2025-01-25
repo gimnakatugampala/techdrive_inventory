@@ -854,7 +854,8 @@ if($count>0) {
 		  }
 	
 	
-		</style>    
+		</style>  
+		  
 		<table cellpadding="0" cellspacing="0">
 		<table style="width:100%;" >
 		<tr><td colspan="2">&nbsp;</td></tr>
@@ -2882,10 +2883,10 @@ if($count>0) {
 	
 	
 // Production
-// $file_location = $_SERVER['DOCUMENT_ROOT']."/invoices/"; 
+$file_location = $_SERVER['DOCUMENT_ROOT']."/invoices/"; 
 
 // Development
-$file_location = $_SERVER['DOCUMENT_ROOT']."inventory_tech_drive_lk/invoices/"; 
+// $file_location = $_SERVER['DOCUMENT_ROOT']."inventory_tech_drive_lk/invoices/"; 
 
 
 //$file_location = "/opt/lampp/htdocs/examples/generate_pdf/uploads/"; //for local xampp server
